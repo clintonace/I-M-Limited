@@ -27,13 +27,12 @@ class AiConverterController extends Controller
     public function aiWorkArea($id = null)
     {
 
-        $data['result'] = AiUpload::where('batch',$id)->where('status', 'converted')->get();
+        $data['results'] = AiUpload::where('batch',$id)->where('status', 'converted')->get();
         return view('ai-project.workarea', $data);
     }
 
     // public function aiUploadFile(AiUploaadedRequest $request)
     // {
-
     //     return back();
     // }
 
