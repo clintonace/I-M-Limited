@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Ai;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AiUploaadedRequest;
 use App\Models\AiUpload;
+use App\Models\ConvertedId;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\MessageBag;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Str;
 
 class AiConverterController extends Controller
 {
@@ -25,7 +27,7 @@ class AiConverterController extends Controller
     public function aiWorkArea($id = null)
     {
 
-        $data['result'] = AiUpload::where('id',$id)->where('status', 'converted')->first();
+        $data['result'] = AiUpload::where('batch',$id)->where('status', 'converted')->get();
         return view('ai-project.workarea', $data);
     }
 
@@ -43,7 +45,7 @@ class AiConverterController extends Controller
         ]);
 
 
-        $uploadedFilesId = [];
+        $batch = Str::random(5) . Str::random(5) . "CB";
 
         foreach ($request->file('files') as $f) {
 
@@ -65,6 +67,7 @@ class AiConverterController extends Controller
                 $upload = new AiUpload();
                 $upload->file_name = $uniqueName;
                 $upload->path = 'uploads/'.$uniqueName;
+                $upload->batch = $batch;
                 $upload->save();
 
                 $data = $response->json(); // Decode the JSON response
@@ -99,11 +102,6 @@ class AiConverterController extends Controller
                 $data['base_file'] = $upload->base_file;
                 $data['original_name'] = $originalFileName;
 
-                $uploadedFilesId[]= $upload->id;
-                // You can dreate a db that implodes the list of uploaded files ids
-                // Then the id of that db will be sent to the ai-workarea route and 
-                // the work area will fetch all the files with that id
-
             }else{
 
                 Alert::info('Error', 'One or all of you files did not process successfully.');
@@ -114,8 +112,8 @@ class AiConverterController extends Controller
         }
 
         // The list of the uploaded files ids to be imploded here. 
-        Alert::success('Success', 'AI processing successful.');
-        return redirect()->route('ai-workarea', ['id' => $uploadsId->id]);
+        Alert::success('Erfolgreich', 'Verarbeitung erfolgreich.');
+        return redirect()->route('ai-workarea', ['id' => $upload->batch]);
 
     }
 

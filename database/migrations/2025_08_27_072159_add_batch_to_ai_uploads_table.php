@@ -13,11 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('converted_ids', function (Blueprint $table) {
-            $table->id();
-            $table->longText('converted_ids'); 
-            $table->longText('slug')->nullable();
-            $table->timestamps();
+        Schema::table('ai_uploads', function (Blueprint $table) {
+            $table->longText('batch')->nullable();
         });
     }
 
@@ -28,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('converted_ids');
+        Schema::table('ai_uploads', function (Blueprint $table) {
+            $table->dropColumn('batch');
+        });
     }
 };
