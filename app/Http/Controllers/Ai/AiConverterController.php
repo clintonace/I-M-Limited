@@ -17,6 +17,7 @@ class AiConverterController extends Controller
 {
     public function aiProject()
     {
+
         return view('ai-project.index');
 
     }
@@ -36,11 +37,6 @@ class AiConverterController extends Controller
 
     public function aiUploadFile(AiUploaadedRequest $request)
     {
-
-
-
-        // dd('here', $request->files);
-
         $validated = $request->validate([
             'files' => 'required|array',
             'files.*' => 'file|mimes:pdf|max:10240',
@@ -104,6 +100,9 @@ class AiConverterController extends Controller
                 $data['original_name'] = $originalFileName;
 
                 $uploadedFilesId[]= $upload->id;
+                // You can dreate a db that implodes the list of uploaded files ids
+                // Then the id of that db will be sent to the ai-workarea route and 
+                // the work area will fetch all the files with that id
 
             }else{
 
@@ -114,6 +113,7 @@ class AiConverterController extends Controller
 
         }
 
+        // The list of the uploaded files ids to be imploded here. 
         Alert::success('Success', 'AI processing successful.');
         return redirect()->route('ai-workarea', ['id' => $uploadsId->id]);
 
