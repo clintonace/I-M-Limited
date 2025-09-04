@@ -122,7 +122,7 @@
                                                     <i data-tw-merge="" data-lucide="folder" class="tooltip cursor-pointer rounded-full shadow-[0px_0px_0px_2px_#fff,_1px_1px_5px_rgba(0,0,0,0.32)] dark:shadow-[0px_0px_0px_2px_#3f4865,_1px_1px_5px_rgba(0,0,0,0.32)]"></i>
                                                 </div>
                                                 <div class="ml-3.5">
-                                                    <a class="whitespace-nowrap font-medium" href="#">
+                                                    <a class="whitespace-nowrap font-medium" href="{{route('ai.see', ['path' => $r?->file_name])}}">
                                                         {{$r?->original_name}}
                                                     </a>
                                                     <div class="mt-0.5 whitespace-nowrap text-xs text-slate-500">

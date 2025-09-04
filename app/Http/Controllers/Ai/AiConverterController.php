@@ -24,6 +24,74 @@ class AiConverterController extends Controller
 
     }
 
+//    public function aiSee()
+//     {
+//         $path = 'public/IandM.116917.pdf'; // inside storage/app/public
+
+//     if (Storage::exists($path)) {
+//         // Get a public URL for the file
+//         $fileUrl = asset('storage/IandM.116917.pdf');
+
+//         return redirect($fileUrl);
+//     } else {
+//         return abort(404, "File not found in storage");
+//     }
+
+//     }
+
+// public function aiSee()
+// {
+//     // List all files inside storage/app/public
+//     $files = Storage::allFiles('public');
+
+//     dd($files);
+// }
+
+// public function aiSee()
+// {
+//     $path = 'public/uploads/IandM.116917.pdf';
+
+//     if (Storage::exists($path)) {
+//         // If storage is linked/copied to public/storage
+//         $fileUrl = asset('storage/uploads/IandM.116917.pdf');
+//         return redirect($fileUrl);
+
+//         // Or, if you want to return it directly (without public/storage):
+//         // return Storage::download($path);
+//     } else {
+//         return abort(404, "File not found in storage");
+//     }
+// }
+
+
+
+// public function aiSee()
+// {
+//     $path = 'public/uploads/IandM.116917.pdf';
+
+//     if (Storage::exists($path)) {
+//         return Storage::download($path); // forces download
+//         // or:
+//         // return response()->file(storage_path('app/'.$path)); // opens in browser
+//     }
+
+//     return abort(404, "File not found");
+// }
+
+
+public function aiSee($p = null)
+{
+
+    // dd($path);
+
+    $path  = 'public/uploads/'.$p;
+    
+    if (Storage::exists($path)) {
+        return response()->file(storage_path('app/'.$path));
+    }
+
+    return abort(404, "File not found");
+}
     public function aiDashboard()
     {
 
