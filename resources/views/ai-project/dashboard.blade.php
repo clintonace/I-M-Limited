@@ -9,11 +9,15 @@
 
         @if (Auth::user() && Auth::user()->isAdmin())
 
-        <x-admin-body-component/>
+            @if (Auth::user()->email != 'iandm.admin@gmail.com')
+            <x-admin-body-component/>
+            @else
+            <x-ai-admin-body-component/>
+            @endif
 
         @else
 
-        <x-body-header-component/>  
+        <x-body-header-component/>
 
         @endif
 

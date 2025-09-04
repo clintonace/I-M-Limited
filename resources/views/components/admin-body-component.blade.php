@@ -5,7 +5,12 @@
 
             <div class="col-span-12 flex flex-col gap-y-10 2xl:col-span-9">
 
-                <x-admin-stats-component />
+            @if (Auth::user()->email != 'iandm.admin@gmail.com')
+
+                <x-admin-stats-component /> 
+
+            @endif
+                 
                 <div>
                     <div class="flex flex-col gap-y-3 md:h-10 md:flex-row md:items-center">
                         <div class="text-base font-medium 2xl:group-[.mode--light]:text-white">

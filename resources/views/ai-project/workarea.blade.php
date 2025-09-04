@@ -75,23 +75,23 @@
                                 <div style="background-color: #FFFFFFFF; border: 1px solid #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
                                     <h3 style="font-size: 18px; font-weight: bold; text-align: center; margin-bottom: 20px;">PDF datei</h3>
                                     <div style="display: flex; justify-content: center; gap: 30px;">
-                                        <a href="{{route()}}" target="_blank" title="View PDF">
+                                        <a href="/storage/converted/{{$r?->pdf}}" target="_blank" title="View PDF">
                                             <i class="fas fa-eye" style="font-size: 22px; color: #000000FF;"></i>
                                         </a>
-                                        <a href="" title="Download PDF">
+                                        <a href="{{route('download.file', $r?->pdf)}}" title="Download PDF">
                                             <i class="fas fa-download" style="font-size: 22px; color: #6D6D6DFF;"></i>
                                         </a>
-                                    </div>
+                                    </div>      
                                 </div>
 
                                 {{-- TXT Section --}}
                                 <div style=" background-color: #FFFFFFFF; border: 1px solid #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
                                     <h3 style="font-size: 18px; font-weight: bold; text-align: center; margin-bottom: 20px;">Text datei</h3>
                                     <div style="display: flex; justify-content: center; gap: 30px;">
-                                        <a href="" target="_blank" title="View Text">
+                                        <a href="/storage/converted/{{$r?->txt}}" target="_blank" title="View Text">
                                             <i class="fas fa-eye" style="font-size: 22px; color: #000000FF;"></i>
                                         </a>
-                                        <a href="" title="Download Text">
+                                        <a href="{route('download.file', $r?->txt)}}" title="Download Text">
                                             <i class="fas fa-download" style="font-size: 22px; color: #6D6D6DFF;"></i>
                                         </a>
                                     </div>
@@ -101,7 +101,7 @@
                                 <div style="background-color: #FFFFFFFF; border: 1px solid #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
                                     <h3 style="font-size: 18px; font-weight: bold; text-align: center; margin-bottom: 20px;">originale PDF</h3>
                                     <div style="display: flex; justify-content: center; gap: 30px;">
-                                        <a href="" target="_blank" title="View Original">
+                                        <a href="/storage/converted/{{$r?->base_file}}" target="_blank" title="View Original">
                                             <i class="fas fa-eye" style="font-size: 22px; color: #000000FF;"></i>
                                         </a>
                                         {{-- <a href="" title="Download Original">

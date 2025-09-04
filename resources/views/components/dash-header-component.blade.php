@@ -299,7 +299,11 @@
             @if (Auth::user() && Auth::user()->isAdmin())
             <div
                 class="flex w-[200px] cursor-pointer items-center rounded-[0.5rem] border bg-slate-50 px-3.5 py-2 text-slate-400 transition-colors hover:bg-slate-100">
-                ADMIN DASHBOARD
+                @if (Auth::user()->email == 'iandm.admin@gmail.com')
+                AI File Manager
+                @else
+                Admin Dashboard 
+                @endif
             </div>
             @endif
             @if (Auth::user() && Auth::user()->isCandidate())
@@ -322,10 +326,13 @@
         <!-- BEGIN: Notification & User Menu -->
         <div class="flex flex-1 items-center">
             <div class="ml-auto flex items-center gap-1">
+
+            @if (Auth::user()->email != 'iandm.admin@gmail.com')
                 <a class="rounded-full p-2 hover:bg-slate-100" data-tw-toggle="modal" data-tw-target="#activities-panel"
                     href="javascript:;">
                     <i data-tw-merge="" data-lucide="layout-grid" class="stroke-[1] h-[18px] w-[18px]"></i>
                 </a>
+            @endif
                 <a class="request-full-screen rounded-full p-2 hover:bg-slate-100" href="javascript:;">
                     <i data-tw-merge="" data-lucide="expand" class="stroke-[1] h-[18px] w-[18px]"></i>
                 </a>
@@ -333,21 +340,21 @@
             <div data-tw-merge="" data-tw-placement="bottom-end" class="dropdown relative ml-5">
 
                 @if (Auth::user() && Auth::user()->isEmployer())
-
                 <button
                     data-tw-toggle="dropdown" aria-expanded="false"
                     class="cursor-pointer image-fit h-[36px] w-[36px] overflow-hidden rounded-full border-[3px] border-slate-200/70"><img
                         src="{{$user?->company?->company_logo}}" alt="codeBrown">
                 </button>
                 @endif
-                @if (Auth::user() && Auth::user()->isAdmin())
 
+                @if (Auth::user() && Auth::user()->isAdmin())
                 <button
                     data-tw-toggle="dropdown" aria-expanded="false"
                     class="cursor-pointer image-fit h-[36px] w-[36px] overflow-hidden rounded-full border-[3px] border-slate-200/70"><img
                         src="/dash/dist/images/users/avatar.jpeg" alt="codeBrown">
                 </button>
                 @endif
+
                 <div data-transition="" data-selector=".show" data-enter="transition-all ease-linear duration-150"
                     data-enter-from="absolute !mt-5 invisible opacity-0 translate-y-1"
                     data-enter-to="!mt-1 visible opacity-100 translate-y-0"
@@ -359,7 +366,7 @@
                         class="dropdown-content rounded-md border-transparent bg-white p-2 shadow-[0px_3px_10px_#00000017] dark:border-transparent dark:bg-darkmode-600 mt-1 w-56">
 
 
-                        @if (Auth::user() && Auth::user()->isAdmin())
+                        @if (Auth::user()->email != 'iandm.admin@gmail.com' && Auth::user()->isAdmin())
 
                         <div class="h-px my-2 -mx-2 bg-slate-200/60 dark:bg-darkmode-400">
                         </div>

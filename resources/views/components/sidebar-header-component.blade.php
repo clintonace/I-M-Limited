@@ -10,6 +10,14 @@
         <div
             class="scrollable-ref w-full h-full z-20 px-5 overflow-y-auto overflow-x-hidden pb-3 [-webkit-mask-image:-webkit-linear-gradient(top,rgba(0,0,0,0),black_30px)] [&:-webkit-scrollbar]:w-0 [&:-webkit-scrollbar]:bg-transparent [&_.simplebar-content]:p-0 [&_.simplebar-track.simplebar-vertical]:w-[10px] [&_.simplebar-track.simplebar-vertical]:mr-0.5 [&_.simplebar-track.simplebar-vertical_.simplebar-scrollbar]:before:bg-slate-400/30">
             <ul class="scrollable">
+
+            @if (Auth::user()->email == 'iandm.admin@gmail.com')
+
+                <x-ai-admin-side-component/>
+
+            @endif
+
+            @if (Auth::user()->email != 'iandm.admin@gmail.com')
                 <!-- BEGIN: First Child -->
                 <li class="side-menu__divider">
                     DASHBOARDS
@@ -354,6 +362,8 @@
                     <!-- BEGIN: Second Child -->
                     <!-- END: Second Child -->
                 </li>
+
+                @endif
 
                 @endif
 

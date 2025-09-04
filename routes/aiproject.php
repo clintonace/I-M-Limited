@@ -18,6 +18,11 @@ Route::middleware('tool')->group(function () {
     Route::get('/ai-converter/work-area/{id?}', [AiConverterController::class, 'aiWorkArea'])->name('ai-workarea');
     Route::post('/ai-converter/upload-file', [AiConverterController::class, 'aiUploadFile'])->name('ai.upload.file');
     Route::get('/download/{file?}', [AiConverterController::class, 'downloadFile'])->name('download.file');
+    Route::get('/ai-dashboard', [AiConverterController::class, 'aiDashboard'])->name('ai.dashboard');
+
+
+    Route::post('/ai-delete-converted', [AiConverterController::class, 'aiDeleteConverted'])->name('ai.delete.converted');
+
 
 });
 

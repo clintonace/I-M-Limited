@@ -49,7 +49,18 @@
                                 Dieses Tool kann Dateien im Wert von bis zu 10 MB verarbeiten.</span>
                             </div>
 
-
+                            <!-- 
+                                <div style="margin-top: 20px;">
+                                    <label for="convertType" style="display: block; margin-bottom: 8px; font-size: 16px;">Konvertierungsregel auswählen</label>
+                                    <select id="convertType" name="convert_type" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #999; font-size: 16px;">
+                                        <option value="" disabled selected>Bitte wählen Sie ein Regelmodell</option>
+                                        <option value="1">Finger Hause</option>
+                                        <option value="2">Schwörer</option>
+                                        <option value="3">DFH</option>
+                                        <option value="4">Haas</option>
+                                    </select>
+                                </div> 
+                            -->
                                 @csrf
 
                                 <button

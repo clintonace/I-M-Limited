@@ -17,17 +17,19 @@
                     class="nav-link w-nav-link">Contact</a> --}}
 
             </nav>
-            {{-- <div class="nav-cta"><a href="#" class="log-in-text">Log In</a>
+            <div class="nav-cta">
+                
+            <!-- <a href="#" class="log-in-text">Log In</a> -->
                 <div class="button-wrap is-nav-button">
-                    <div data-w-id="de95544a-5391-afeb-99a8-8c06f63947a1" class="button-outline"><a href="{{route('ai-project')}}"
-                            class="button is-primary w-button">Get Started</a>
+                    <div data-w-id="de95544a-5391-afeb-99a8-8c06f63947a1" class="button-outline"><a href="{{route('ai.dashboard')}}"
+                            class="button is-primary w-button">Dashboard</a>
                         <div class="button-hover-effect"></div>
                     </div>
                 </div>
-            </div> --}}
-            <div class="button-text w-nav-button">
+            </div>      
+            <!-- <div class="button-text w-nav-button"> 
                 <div class="w-icon-nav-menu"></div>
-            </div>
+            </div> -->
         </div>
     </div>
 </header>

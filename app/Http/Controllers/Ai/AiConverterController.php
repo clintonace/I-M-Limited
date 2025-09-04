@@ -24,6 +24,38 @@ class AiConverterController extends Controller
 
     }
 
+    public function aiDashboard()
+    {
+
+        return view('ai-project.dashboard');
+    }
+
+    public function aiDeleteConverted (Request $request, $id = null){
+
+    
+        $file = AiUpload::find($request->id);
+
+       
+
+        if($file != null){
+
+            $filePath = storage_path('app/public/converted/' . $file->pdf);
+
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+
+            $file->delete();
+
+            Alert::success('Erfolgreich', 'Datei erfolgreich gelöscht.');
+            return back();
+
+
+        }
+        Alert::info('Info', 'Datei nicht gefunden.');
+        return back();
+    }
+
     public function aiWorkArea($id = null)
     {
 
@@ -41,8 +73,20 @@ class AiConverterController extends Controller
         $validated = $request->validate([
             'files' => 'required|array',
             'files.*' => 'file|mimes:pdf|max:10240',
+            // 'convert_type'=>'required',      
         ]);
 
+        // In the future, we will want the admin to be able to add this automatically form the admin panel. 
+        // the admin will be able to do this if we make a model to hold the models type.
+        //Then we can call out the model type here and on the frontend.
+
+        //for now 
+        //finger hause = 1
+        //schwörer = 2
+        //dfh = 3
+        //haas = 4
+
+        $route = 'https://ai-bxij.onrender.com';
 
         $batch = Str::random(5) . Str::random(5) . "CB";
 
@@ -58,7 +102,8 @@ class AiConverterController extends Controller
                 'file',          // name of form field expected by FastAPI
                 file_get_contents($fullPath),
                 $uniqueName
-            )->post('https://ai-bxij.onrender.com/process_pdf/');
+                //The url should carry the covert type as a param 
+            )->post($route .'/process_pdf/');
 
             if ($response->successful()) {
 
@@ -82,7 +127,7 @@ class AiConverterController extends Controller
                 $base = $data['base_filename'];
 
                 foreach ($files as $type => $filename) {
-                    $downloadUrl = "https://ai-bxij.onrender.com/download/{$filename}";
+                    $downloadUrl = $route."/{$filename}";
 
                     $fileResponse = Http::get($downloadUrl);
 
@@ -164,5 +209,6 @@ class AiConverterController extends Controller
             'login' => 'Invalid credentials. Please try again.'
         ]))->withInput();
     }
+
 
 }
