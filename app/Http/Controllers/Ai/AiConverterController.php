@@ -246,6 +246,9 @@ class AiConverterController extends Controller
 
     public function downloadFile($file)
     {
+
+        // dd($file);
+
         $path = storage_path("app/public/converted/{$file}");
 
         // dd($path);
