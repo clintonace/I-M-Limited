@@ -25,7 +25,7 @@ class AiAdminBodyComponent extends Component
     public function render()
     {
 
-        $data['results'] = AiUpload::latest()->paginate(4);
+        $data['results'] = AiUpload::latest()->paginate(20);
         return view('components.ai-admin-body-component', $data);
     }
 }

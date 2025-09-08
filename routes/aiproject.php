@@ -22,7 +22,9 @@ Route::middleware('tool')->group(function () {
 
 
     Route::post('/ai-delete-converted', [AiConverterController::class, 'aiDeleteConverted'])->name('ai.delete.converted');
-    Route::get('/ai-see/{path?}', [AiConverterController::class, 'aiSee'])->name('ai.see');
+    Route::get('/ai-see-uploads/{path?}', [AiConverterController::class, 'aiSeeUploads'])->name('ai.see.uploads');
+    Route::get('/ai-see-converted/{path?}', [AiConverterController::class, 'aiSeeConverted'])->name('ai.see.converted');
+    
 });
 
 Route::get('/ai-login', [AiConverterController::class, 'aiLogin'])->name('ai-login');

@@ -79,19 +79,30 @@ class AiConverterController extends Controller
 // }
 
 
-public function aiSee($p = null)
-{
+    public function aiSeeUploads($p = null)
+    {
+        $path  = 'public/uploads/'.$p;
+        
+        if (Storage::exists($path)) {
+            return response()->file(storage_path('app/'.$path));
+            // dd(response()->file(storage_path('app/'.$path)));
+        }
 
-    // dd($path);
-
-    $path  = 'public/uploads/'.$p;
-    
-    if (Storage::exists($path)) {
-        return response()->file(storage_path('app/'.$path));
+        return abort(404, "File not found");
     }
 
-    return abort(404, "File not found");
-}
+    public function aiSeeConverted($p = null)
+    {
+        $path  = 'public/converted/'.$p;
+        
+        if (Storage::exists($path)) {
+            return response()->file(storage_path('app/'.$path));
+            // dd(response()->file(storage_path('app/'.$path)));
+        }
+
+        return abort(404, "File not found");
+    }
+
     public function aiDashboard()
     {
 
@@ -195,12 +206,16 @@ public function aiSee($p = null)
                 $base = $data['base_filename'];
 
                 foreach ($files as $type => $filename) {
-                    $downloadUrl = $route."/{$filename}";
+                    $downloadUrl = $route."/download/{$filename}";
 
+                    // dd($downloadUrl);
                     $fileResponse = Http::get($downloadUrl);
+
+                    // dd($fileResponse);
 
                     if ($fileResponse->successful()) {
 
+                        // $converted = 
                         Storage::disk('local')->put("public/converted/{$filename}", $fileResponse->body());
                     }
 

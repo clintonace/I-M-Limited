@@ -75,7 +75,7 @@
                                 <div style="background-color: #FFFFFFFF; border: 1px solid #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
                                     <h3 style="font-size: 18px; font-weight: bold; text-align: center; margin-bottom: 20px;">PDF datei</h3>
                                     <div style="display: flex; justify-content: center; gap: 30px;">
-                                        <a href="/storage/converted/{{$r?->pdf}}" target="_blank" title="View PDF">
+                                        <a href="{{route('ai.see.converted', $r?->pdf)}}" target="_blank" title="View PDF">
                                             <i class="fas fa-eye" style="font-size: 22px; color: #000000FF;"></i>
                                         </a>
                                         <a href="{{route('download.file', $r?->pdf)}}" title="Download PDF">
@@ -88,7 +88,7 @@
                                 <div style=" background-color: #FFFFFFFF; border: 1px solid #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
                                     <h3 style="font-size: 18px; font-weight: bold; text-align: center; margin-bottom: 20px;">Text datei</h3>
                                     <div style="display: flex; justify-content: center; gap: 30px;">
-                                        <a href="/storage/converted/{{$r?->txt}}" target="_blank" title="View Text">
+                                        <a href="{{route('ai.see.converted', $r?->txt)}}" target="_blank" title="View Text">
                                             <i class="fas fa-eye" style="font-size: 22px; color: #000000FF;"></i>
                                         </a>
                                         <a href="{route('download.file', $r?->txt)}}" title="Download Text">
@@ -101,7 +101,7 @@
                                 <div style="background-color: #FFFFFFFF; border: 1px solid #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
                                     <h3 style="font-size: 18px; font-weight: bold; text-align: center; margin-bottom: 20px;">originale PDF</h3>
                                     <div style="display: flex; justify-content: center; gap: 30px;">
-                                        <a href="/storage/converted/{{$r?->base_file}}" target="_blank" title="View Original">
+                                        <a href="{{route('ai.see.uploads', $r?->base_file)}}" target="_blank" title="View Original">
                                             <i class="fas fa-eye" style="font-size: 22px; color: #000000FF;"></i>
                                         </a>
                                         {{-- <a href="" title="Download Original">
