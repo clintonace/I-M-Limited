@@ -31,12 +31,12 @@
                                 ondrop="handleDrop(event)"
                                 style="border: 2px dashed #999; border-radius: 10px; padding: 40px; text-align: center; cursor: pointer; background-color: #fff;">
 
-                                <input id="fileInput"
-                                    name="files[]"
-                                    multiple
-                                    type="file"
-                                    hidden
-                                    onchange="handleFiles(this.files)" />
+                                 <input id="fileInput"
+                                        name="files[]"
+                                        multiple
+                                        type="file"
+                                        hidden
+                                        onchange="addFiles(this.files)" />
 
                                 <div id="fileInfo" class="file-info" style="margin-bottom: 10px;"></div>
 
@@ -94,7 +94,7 @@
 
 
 
-<script>
+<!-- <script>
     function handleDrop(event) {
       event.preventDefault();
       const files = event.dataTransfer.files;
@@ -109,7 +109,47 @@
         fileInfo.innerHTML += `<div style="margin-top: 10px;">📄 ${files[i].name}</div>`;
       }
     }
-  </script>
-    </x-slot>
+  </script> -->
 
+
+    <script>
+        let selectedFiles = [];
+
+        function handleDrop(event) {
+            event.preventDefault();
+            addFiles(event.dataTransfer.files);
+        }
+
+        function addFiles(files) {
+            selectedFiles = selectedFiles.concat(Array.from(files));
+            renderFiles();
+        }
+
+        function renderFiles() {
+            const fileInfo = document.getElementById('fileInfo');
+            fileInfo.innerHTML = "";
+            selectedFiles.forEach((file, index) => {
+            fileInfo.innerHTML += `
+                <div style="margin-top: 10px;">
+                📄 ${file.name}
+                <button type="button" onclick="removeFile(${index})" style="margin-left:10px; color:red; cursor:pointer;">❌</button>
+                </div>`;
+            });
+
+            // Update the hidden input so form submits correctly
+            updateFileInput();
+        }
+
+        function removeFile(index) {
+            selectedFiles.splice(index, 1);
+            renderFiles();
+        }
+
+        function updateFileInput() {
+            const dataTransfer = new DataTransfer();
+            selectedFiles.forEach(file => dataTransfer.items.add(file));
+            document.getElementById('fileInput').files = dataTransfer.files;
+        }
+    </script>
+</x-slot>
 </x-ai-project.layout-component>

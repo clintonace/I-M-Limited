@@ -24,6 +24,10 @@ Route::middleware('tool')->group(function () {
     Route::post('/ai-delete-converted', [AiConverterController::class, 'aiDeleteConverted'])->name('ai.delete.converted');
     Route::get('/ai-see-uploads/{path?}', [AiConverterController::class, 'aiSeeUploads'])->name('ai.see.uploads');
     Route::get('/ai-see-converted/{path?}', [AiConverterController::class, 'aiSeeConverted'])->name('ai.see.converted');
+
+    Route::get('/download-all-txt/{batch?}', [AiConverterController::class, 'downloadTxt'])->name('download.txt');
+    Route::get('/download-all-pdf/{batch?}', [AiConverterController::class, 'downloadPdf'])->name('download.pdf');
+
     
 });
 

@@ -2059,7 +2059,7 @@ textarea.w-input, textarea.w-select {
 :root {
     --text-color: #4f4d5c;
     --heading-color: #222129;
-    --primary-color: #6659df;
+    --primary-color: #ffffff;
     --border-primary\<deleted\|variable-e28237d9-894a-4573-be0e-8d2a9b03c7c7\>: var(--gray-rgb);
     --light-color: #f8f9fa;
     --primary-rgb: #6659df40;
@@ -4976,7 +4976,7 @@ blockquote {
     color: var(--primary-color);
     letter-spacing: .2px;
     background-color: #3898ec00;
-    background-image: linear-gradient(-75deg, #b5aefc33, #6659df33);
+    background-image: linear-gradient(-75deg, #00000033, #00000033);
     border-radius: 12px;
     margin: 1px;
     padding: 12px 24px;
@@ -4989,12 +4989,12 @@ blockquote {
 
 .button:hover {
     color: var(--white);
-    background-image: linear-gradient(-72deg, #6659df, #b5aefc)
+    background-image: linear-gradient(-72deg, #000000, #000000)
 }
 
 .button.is-secondary {
     color: var(--white);
-    background-image: linear-gradient(-72deg, #6659df, #978ef1);
+    background-image: linear-gradient(-72deg, #6659df, #978ef1);        
     box-shadow: inset 4px 4px 8px #ffffff40
 }
 

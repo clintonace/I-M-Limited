@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\MessageBag;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Str;
+use ZipArchive;
 
 class AiConverterController extends Controller
 {
@@ -319,7 +320,6 @@ class AiConverterController extends Controller
                     $fileResponse = Http::get($downloadUrl);
 
                     // dd($fileResponse);
-
                     if ($fileResponse->successful()) {
 
                         // $converted = 
@@ -345,6 +345,10 @@ class AiConverterController extends Controller
 
         }
 
+        //Download all files as zip
+        self::downloadAll($upload->batch, 'txt');
+        self::downloadAll($upload->batch, 'pdf');
+
         // The list of the uploaded files ids to be imploded here. 
         Alert::success('Erfolgreich', 'Verarbeitung erfolgreich.');
         return redirect()->route('ai-workarea', ['id' => $upload->batch]);
@@ -353,12 +357,7 @@ class AiConverterController extends Controller
 
     public function downloadFile($file)
     {
-
-        // dd($file);
-
         $path = storage_path("app/public/converted/{$file}");
-
-        // dd($path);
 
         if (!file_exists($path)) {
             abort(404, 'File not found');
@@ -367,6 +366,18 @@ class AiConverterController extends Controller
         Alert::success('Success', 'File Downloaded');
         return response()->download($path);
     }
+
+    public function downloadTxt($batch)
+    {
+        return self::downloadAll($batch, 'txt');
+    } 
+
+    public function downloadPdf($batch)
+    {
+        return self::downloadAll($batch, 'pdf');
+    }
+
+
 
     // https://ai-bxij.onrender.com/
     public function aiLogin()
@@ -402,6 +413,42 @@ class AiConverterController extends Controller
             'login' => 'Invalid credentials. Please try again.'
         ]))->withInput();
     }
+
+    private static function downloadAll($batch, $type){
+
+
+         $files = AiUpload::where('batch', $batch)->pluck($type);
+         $num = rand(0, 9999);
+
+            if ($files->isEmpty()) {
+                Alert::info('Info', 'No files found for this batch.');
+            }
+
+            // Define zip filename + path
+            $zipFileName = "batch_{$type}_{$batch}_{$num}.zip";
+            $zipPath = storage_path("app/public/converted/{$zipFileName}");
+
+            // Create new zip archive
+            $zip = new ZipArchive;
+            if ($zip->open($zipPath, \ZipArchive::CREATE | \ZipArchive::OVERWRITE) === true) {
+                foreach ($files as $file) {
+                    $filePath = storage_path("app/public/converted/{$file}");
+                    if (file_exists($filePath)) {
+                        $zip->addFile($filePath, basename($filePath));
+                    }
+                }
+                $zip->close();
+            } else {
+                Alert::info('Error', 'Could not create zip file.');
+            }
+
+            // Return the zip for download and delete it afterwards
+            Alert::success('Success', 'All files downloaded');
+            return response()->download($zipPath)->deleteFileAfterSend(true);
+
+    }
+
+   
 
 
 }

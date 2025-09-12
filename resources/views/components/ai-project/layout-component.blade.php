@@ -128,8 +128,6 @@
     <script src="/ai-project/js/jquery.js" type="text/javascript"></script>
     <script src="/ai-project/js/alzen-ai-saas-website-template.09bc3721.28d12a49d5f53b5d.js" type="text/javascript">
     </script>
-
-    
 </body>
 
 </html>
