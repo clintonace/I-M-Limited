@@ -147,6 +147,113 @@ class AiConverterController extends Controller
     //     return back();
     // }
 
+    // public function aiUploadFile(AiUploaadedRequest $request)
+    // {
+    //     $validated = $request->validate([
+    //         'files' => 'required|array',
+    //         'files.*' => 'file|mimes:pdf|max:10240',
+    //         // 'convert_type'=>'required',      
+    //     ]);
+
+    //     // In the future, we will want the admin to be able to add this automatically form the admin panel. 
+    //     // the admin will be able to do this if we make a model to hold the models type.
+    //     //Then we can call out the model type here and on the frontend.
+
+    //     //for now 
+    //     //finger hause = 1
+    //     //schwörer = 2
+    //     //dfh = 3
+    //     //haas = 4
+
+    //     $route = 'http://31.97.126.130:2000';
+
+    //     $batch = Str::random(5) . Str::random(5) . "CB";
+
+    //     foreach ($request->file('files') as $f) {
+
+    //         $file = $f;
+    //         $originalFileName = $file->getClientOriginalName();
+    //         $uniqueName = 'IandM.' . rand(100000, 999999) . '.pdf';
+    //         $path = $file->storeAs('/public/uploads', $uniqueName);
+    //         $fullPath = storage_path('app/' . $path);
+
+    //         $response = Http::attach(
+    //             'pdf_files',          // name of form field expected by FastAPI
+    //             file_get_contents($fullPath),
+    //             $uniqueName
+    //             //The url should carry the covert type as a param 
+    //         )->post($route.'/process_multiple_pdfs/');
+
+    //         if ($response->successful()) {
+                
+    //             // Log into DB
+    //             $upload = new AiUpload();
+    //             $upload->file_name = $uniqueName;
+    //             $upload->path = 'uploads/'.$uniqueName;
+    //             $upload->batch = $batch;
+                
+                    
+    //             $data = $response->json(); // Decode the JSON response
+
+                
+    //             $upload->excel = $data['0']['excel_download_url'] ?? null;
+    //             $upload->pdf = $data['0']['pdf_download_url'] ?? null;
+    //             $upload->base_file = $data['base_filename'] ?? null;
+    //             $upload->original_name = $originalFileName ?? null;
+    //             foreach ($data['0']['txt_download_urls'] as $txt) {
+    //                 $upload->txt = $txt ?? null;
+    //             }
+
+    //             //no need to array the text files
+                
+    //             $files = $data['0'];
+    //             $base = $upload->base_file;
+
+    //             $cFiles = [
+    //                 'txt'=> $files['txt_download_urls'][0],
+    //                 'excel' => $files['excel_download_url'],
+    //                 'pdf' => $files['pdf_download_url'],
+    //             ];
+
+
+    //             foreach ($cFiles as $type => $filename) {
+
+
+    //                 // dd($filename);
+                    
+    //                 $downloadUrl = $route."{$filename}";
+
+    //                 // dd($downloadUrl);
+    //                 $fileResponse = Http::get($downloadUrl);
+
+    //                 // dd($fileResponse);
+
+    //                 if ($fileResponse->successful()) {
+
+    //                     // $converted = 
+    //                     Storage::disk('local')->put("public/converted/{$filename}", $fileResponse->body());
+    //                 }
+
+    //                 $upload->status = 'converted';
+    //                 $upload->save();
+    //             }
+
+    //         }else{
+
+    //             Alert::info('Error', 'One or all of you files did not process successfully.');
+    //             return back();
+
+    //         }
+
+    //     }
+
+    //     // The list of the uploaded files ids to be imploded here. 
+    //     Alert::success('Erfolgreich', 'Verarbeitung erfolgreich.');
+    //     return redirect()->route('ai-workarea', ['id' => $upload->batch]);
+
+    // }
+
+
     public function aiUploadFile(AiUploaadedRequest $request)
     {
         $validated = $request->validate([

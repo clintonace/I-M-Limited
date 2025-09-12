@@ -23,10 +23,17 @@ class Kernel extends ConsoleKernel
      *
      * @return void
      */
-    protected function commands()
-    {
-        $this->load(__DIR__.'/Commands');
+    // protected function commands()
+    // {
 
-        require base_path('routes/console.php');
-    }
+    //     // \App\Console\Commands\CleanOldUploads::class;
+
+    //     $this->load(__DIR__.'/Commands');
+
+    //     // require base_path('routes/console.php');
+    // }
+
+//     protected $commands = [
+//     \App\Console\Commands\CleanOldUploads::class,
+// ];
 }

@@ -20,7 +20,7 @@
                     <div class="box box--stacked mt-3.5">
                         <div
                             class="grid grid-cols-2 gap-y-5 border-b px-5 py-10 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7">
-                            <a class="flex flex-col items-center" target="blank" href="{{route('ai-workarea')}}">
+                            <a class="flex flex-col items-center" target="blank" href="{{route('ai-project')}}">
                                 <div
                                     class="flex h-12 w-12 items-center justify-center rounded-full border border-primary/10 bg-primary/10">
                                     <i data-tw-merge="" data-lucide="credit-card"
@@ -57,6 +57,8 @@
                                     <i data-tw-merge="" data-lucide="search" class="absolute inset-y-0 left-0 z-10 my-auto ml-3 h-4 w-4 stroke-[1.3] text-slate-500"></i>
                                     <input data-tw-merge="" type="text" placeholder="Search users..." class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 [&[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 [&[type='file']]:border file:mr-4 file:py-2 file:px-4 file:rounded-l-md file:border-0 file:border-r-[1px] file:border-slate-100/10 file:text-sm file:font-semibold file:bg-slate-100 file:text-slate-500/70 hover:file:bg-200 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10 rounded-[0.5rem] pl-9 sm:w-64">
                                 </div>
+
+                                
                             </div>
                             <div class="flex flex-col gap-x-3 gap-y-2 sm:ml-auto sm:flex-row">
                             </div>
@@ -65,38 +67,37 @@
                                     Latest Converted Files
                                 </div>
                             </div>
+                            
                         </div>
-                        <div class="overflow-auto xl:overflow-visible">
-                            <table data-tw-merge="" class="w-full text-left border-b border-slate-200/60">
-                                <thead data-tw-merge="" class="">
-                                    <tr data-tw-merge="" class="">
-
-                                        <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 font-medium text-slate-500">
+                        <div class="overflow-x-auto">
+                            <table data-tw-merge="" class="min-w-full text-center border-b border-slate-200/60">
+                                <thead>
+                                    <tr>
+                                        <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
                                             No.
                                         </td>
-                                        <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 font-medium text-slate-500">
+                                        <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
                                             Batch Code
                                         </td>
-                                        <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 font-medium text-slate-500">
+                                        <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
                                             Original Name
                                         </td>
-                                        <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 font-medium text-slate-500">
+                                        <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
                                             Txt
                                         </td>
-                                         <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 font-medium text-slate-500">
+                                        <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
                                             Pdf
                                         </td>
-                                        <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 font-medium text-slate-500">
+                                        <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
                                             Excel
                                         </td>
-                                       
-                                        <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 text-center font-medium text-slate-500">
+                                        <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
                                             Status
                                         </td>
-                                        <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 font-medium text-slate-500">
-                                            Date
+                                        <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
+                                            Deleting in 
                                         </td>
-                                        <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 w-20 border-t border-slate-200/60 bg-slate-50 py-4 text-center font-medium text-slate-500">
+                                        <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500 w-28">
                                             Action
                                         </td>
                                     </tr>
