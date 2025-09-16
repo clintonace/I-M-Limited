@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Models\AiUpload;
+use App\Models\Deleted;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -21,10 +22,29 @@ class Kernel extends ConsoleKernel
         $schedule->call(function () {
             try {
                 $updated = AiUpload::where('created_at', '<', now()->subMinutes(2))
-                    ->whereNull('status')
-                    ->update(['status' => 'failedd']);
+                    ->where('status','converted')
+                    ->update(['status' => 'deleted']);
+
+                    $delete = AiUpload::where('created_at', '<', now()->subDay())
+                    ->where('status', 'deleted')->get();
+
+                    foreach($delete as $deleted){
+
+                        $deletedUploads = new Deleted();
+                        $deletedUploads->file_name = $deleted->file_name;
+                        $deletedUploads->path = $deleted->path;
+                        $deletedUploads->original_name = $deleted->original_name;
+                        $deletedUploads->status = 'deleted_permanently';
+                        $deletedUploads->txt = $deleted->txt;
+                        $deletedUploads->batch = $deleted->batch;
+                        $deletedUploads->save();
+                    }
+
+                    $delete->delete();
 
                 \Log::info("Scheduler: Marked {$updated} uploads as failed.");
+                \Log::info("Scheduler: Marked {$deleted} uploads as failed.");
+
             } catch (\Throwable $e) {
                 \Log::error("Scheduler failed: " . $e->getMessage(), [
                     'file' => $e->getFile(),

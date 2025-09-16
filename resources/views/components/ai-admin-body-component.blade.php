@@ -122,9 +122,17 @@
 
                                         <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
 
-                                            <a class="whitespace-nowrap font-medium" target="_blank" href="{{route('ai.see.uploads', ['path' => $r?->file_name])}}">
-                                                        {{$r?->original_name}}
-                                                    </a>
+                                            
+
+                                            @if($r?->status == 'deleted')
+                                                <span class="text-danger">File Deleted</span>
+                                            @else
+
+                                                <a class="whitespace-nowrap font-medium" target="_blank" href="{{route('ai.see.uploads', ['path' => $r?->file_name])}}">
+                                                    {{$r?->original_name}}
+                                                </a>
+                                           
+                                            @endif
                                                     <div class="mt-0.5 whitespace-nowrap text-xs text-slate-500">
                                                         {{$r?->file_name}}
                                                     </div>
@@ -132,8 +140,12 @@
 
                                          <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
 
+                                            @if($r?->status == 'deleted')
+                                                <span class="text-danger">File Deleted</span>
+                                            @else
                                             <a href="{{route('ai.see.converted', ['path' => $r?->txt])}}" target="_blank" class="cursor-pointer flex items-center p-2 transition duration-300 ease-in-out rounded-md hover:bg-slate-200/60 dark:bg-darkmode-600 dark:hover:bg-darkmode-400 dropdown-item text-success"><i data-tw-merge="" data-lucide="eye" class="stroke-[1] mr-2 h-4 w-4"></i>
                                                                 View</a>
+                                            @endif
                                         </td>
 
                                         
