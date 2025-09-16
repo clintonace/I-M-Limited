@@ -85,12 +85,7 @@
                                         <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
                                             Txt
                                         </td>
-                                        <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
-                                            Pdf
-                                        </td>
-                                        <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
-                                            Excel
-                                        </td>
+                                       
                                         <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
                                             Status
                                         </td>
@@ -123,40 +118,24 @@
                                             $url = asset('public/uploads/app/'.$r->file_name);
                                        @endphp 
 
-                                        <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 w-80 border-dashed py-4 dark:bg-darkmode-600">
-                                            <div class="flex items-center">
-                                                <div class="image-fit zoom-in h-9 w-9">
-                                                    <i data-tw-merge="" data-lucide="folder" class="tooltip cursor-pointer rounded-full shadow-[0px_0px_0px_2px_#fff,_1px_1px_5px_rgba(0,0,0,0.32)] dark:shadow-[0px_0px_0px_2px_#3f4865,_1px_1px_5px_rgba(0,0,0,0.32)]"></i>
-                                                </div>
-                                                <div class="ml-3.5">
-                                                    <!-- <a href="{{$url}}" target="_blank" rel="noopener noreferrer">blank</a> -->
-                                                    <a class="whitespace-nowrap font-medium" target="_blank" href="{{route('ai.see.uploads', ['path' => $r?->file_name])}}">
+                                       
+
+                                        <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
+
+                                            <a class="whitespace-nowrap font-medium" target="_blank" href="{{route('ai.see.uploads', ['path' => $r?->file_name])}}">
                                                         {{$r?->original_name}}
                                                     </a>
                                                     <div class="mt-0.5 whitespace-nowrap text-xs text-slate-500">
                                                         {{$r?->file_name}}
                                                     </div>
-                                                </div>
-                                            </div>
                                         </td>
 
-                                        <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
+                                         <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
 
                                             <a href="{{route('ai.see.converted', ['path' => $r?->txt])}}" target="_blank" class="cursor-pointer flex items-center p-2 transition duration-300 ease-in-out rounded-md hover:bg-slate-200/60 dark:bg-darkmode-600 dark:hover:bg-darkmode-400 dropdown-item text-success"><i data-tw-merge="" data-lucide="eye" class="stroke-[1] mr-2 h-4 w-4"></i>
                                                                 View</a>
                                         </td>
 
-                                        <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
-
-                                            <a href="{{route('ai.see.converted', ['path' => $r?->pdf])}}" target="_blank" class="cursor-pointer flex items-center p-2 transition duration-300 ease-in-out rounded-md hover:bg-slate-200/60 dark:bg-darkmode-600 dark:hover:bg-darkmode-400 dropdown-item text-success"><i data-tw-merge="" data-lucide="eye" class="stroke-[1] mr-2 h-4 w-4"></i>
-                                                                View</a>
-                                        </td>
-
-                                        <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
-
-                                            <a href="{{route('ai.see.converted', ['path' => $r?->excel])}}" target="_blank" class="cursor-pointer flex items-center p-2 transition duration-300 ease-in-out rounded-md hover:bg-slate-200/60 dark:bg-darkmode-600 dark:hover:bg-darkmode-400 dropdown-item text-success"><i data-tw-merge="" data-lucide="eye" class="stroke-[1] mr-2 h-4 w-4"></i>
-                                                                View</a>
-                                        </td>
                                         
                                
                                         <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">

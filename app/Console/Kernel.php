@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Models\AiUpload;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -16,6 +17,39 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
+
+        $schedule->call(function () {
+            try {
+                $updated = AiUpload::where('created_at', '<', now()->subHour())
+                    ->whereNull('status')
+                    ->update(['status' => 'failedd']);
+
+                \Log::info("Scheduler: Marked {$updated} uploads as failed.");
+            } catch (\Throwable $e) {
+                \Log::error("Scheduler failed: " . $e->getMessage(), [
+                    'file' => $e->getFile(),
+                    'line' => $e->getLine(),
+                    'trace' => $e->getTraceAsString(),
+                ]);
+            }
+
+                //         try {
+                //     $query = AiUpload::where('created_at', '<', now()->subHour())
+                //         ->whereNull('status');
+
+                //     $count = $query->count(); // how many rows match?
+                //     \Log::info("Scheduler: Found {$count} uploads older than 1hr with NULL status.");
+
+                //     $updated = $query->update(['status' => 'failed']);
+                //     \Log::info("Scheduler: Marked {$updated} uploads as failed.");
+                // } catch (\Throwable $e) {
+                //     \Log::error("Scheduler failed: " . $e->getMessage(), [
+                //         'file' => $e->getFile(),
+                //         'line' => $e->getLine(),
+                //     ]);
+                // }
+        })->everyMinute();
+
     }
 
     /**
@@ -23,15 +57,15 @@ class Kernel extends ConsoleKernel
      *
      * @return void
      */
-    // protected function commands()
-    // {
+    protected function commands()
+    {
 
-    //     // \App\Console\Commands\CleanOldUploads::class;
+        // \App\Console\Commands\CleanOldUploads::class;
 
-    //     $this->load(__DIR__.'/Commands');
+        $this->load(__DIR__.'/Commands');
 
-    //     // require base_path('routes/console.php');
-    // }
+        require base_path('routes/console.php');
+    }
 
 //     protected $commands = [
 //     \App\Console\Commands\CleanOldUploads::class,

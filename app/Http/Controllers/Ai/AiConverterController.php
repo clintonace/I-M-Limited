@@ -346,8 +346,8 @@ class AiConverterController extends Controller
         }
 
         //Download all files as zip
-        self::downloadAll($upload->batch, 'txt');
-        self::downloadAll($upload->batch, 'pdf');
+        // self::downloadAll($upload->batch, 'txt');
+        // self::downloadAll($upload->batch, 'pdf');
 
         // The list of the uploaded files ids to be imploded here. 
         Alert::success('Erfolgreich', 'Verarbeitung erfolgreich.');
