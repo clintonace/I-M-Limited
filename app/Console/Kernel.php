@@ -30,17 +30,20 @@ class Kernel extends ConsoleKernel
 
                     foreach($delete as $deleted){
 
-                        $deletedUploads = new Deleted();
-                        $deletedUploads->file_name = $deleted->file_name;
-                        $deletedUploads->path = $deleted->path;
-                        $deletedUploads->original_name = $deleted->original_name;
-                        $deletedUploads->status = 'deleted_permanently';
-                        $deletedUploads->txt = $deleted->txt;
-                        $deletedUploads->batch = $deleted->batch;
-                        $deletedUploads->save();
+                         Deleted::create([
+                            'file_name'      => $deleted->file_name,
+                            'path'           => $deleted->path,
+                            'original_name'  => $deleted->original_name,
+                            'status'         => 'deleted_permanently',
+                            'txt'            => $deleted->txt,
+                            'batch'          => $deleted->batch,
+                        ]);
+
+                        // remove from AiUpload table
+                        $deleted->delete();
                     }
 
-                    $delete->delete();
+                    // $delete->delete();
 
                 \Log::info("Scheduler: Marked {$updated} uploads as failed.");
                 \Log::info("Scheduler: Marked {$deleted} uploads as failed.");
