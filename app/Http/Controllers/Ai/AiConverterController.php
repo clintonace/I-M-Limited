@@ -141,8 +141,6 @@ class AiConverterController extends Controller
         // dd($id);
 
         $data['results'] = AiUpload::where('batch',$id)->where('status', 'converted')->get();
-        // dd($data['results']);
-        // dd(AiUpload::all());
         return view('ai-project.workarea', $data);
     }
 

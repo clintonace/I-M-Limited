@@ -132,7 +132,7 @@
             fileInfo.innerHTML += `
                 <div style="margin-top: 10px;">
                 📄 ${file.name}
-                <button type="button" onclick="removeFile(${index})" style="margin-left:10px; color:red; cursor:pointer;">❌</button>
+                <button type="button" id="justDeleteDontOpenFilemanager" onclick="removeFile(${index}, event)" style="margin-left:10px; color:red; cursor:pointer;">❌</button>
                 </div>`;
             });
 
@@ -140,7 +140,8 @@
             updateFileInput();
         }
 
-        function removeFile(index) {
+        function removeFile(index, event) {
+            if (event) event.stopPropagation(); 
             selectedFiles.splice(index, 1);
             renderFiles();
         }
