@@ -76,9 +76,7 @@
                                         <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
                                             No.
                                         </td>
-                                        <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
-                                            Batch Code
-                                        </td>
+                                       
                                         <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
                                             Original Name
                                         </td>
@@ -108,22 +106,15 @@
                                             {{$loop->index += 1}}
                                         </td>
 
-                                        <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
-
-                                            {{$r?->batch}}
-                                        </td>
-
                                        @php
                                             $path = 'public/uploads/' . $r->file_name;
                                             $url = asset('public/uploads/app/'.$r->file_name);
                                        @endphp 
 
-                                       
-
+                                    
                                         <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
 
-                                            
-
+                                        
                                             @if($r?->status == 'deleted')
                                                 <span class="text-danger">File Deleted</span>
                                             @else
@@ -149,7 +140,6 @@
                                         </td>
 
                                         
-                               
                                         <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
                                             @if ($r?->status == 'converted')
 
@@ -212,12 +202,10 @@
                                     <div>No Converted Files yet!</div>
                                     @endif
 
-                                    
                                     @endforeach
                                 </tbody>
 
                             </table>
-
                         </div>
 
                         <div class="mt-3.5 px-5 pb-5">

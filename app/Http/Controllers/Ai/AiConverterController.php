@@ -138,121 +138,13 @@ class AiConverterController extends Controller
 
     public function aiWorkArea($id = null)
     {
+        // dd($id);
 
         $data['results'] = AiUpload::where('batch',$id)->where('status', 'converted')->get();
+        // dd($data['results']);
+        // dd(AiUpload::all());
         return view('ai-project.workarea', $data);
     }
-
-    // public function aiUploadFile(AiUploaadedRequest $request)
-    // {
-    //     return back();
-    // }
-
-    // public function aiUploadFile(AiUploaadedRequest $request)
-    // {
-    //     $validated = $request->validate([
-    //         'files' => 'required|array',
-    //         'files.*' => 'file|mimes:pdf|max:10240',
-    //         // 'convert_type'=>'required',      
-    //     ]);
-
-    //     // In the future, we will want the admin to be able to add this automatically form the admin panel. 
-    //     // the admin will be able to do this if we make a model to hold the models type.
-    //     //Then we can call out the model type here and on the frontend.
-
-    //     //for now 
-    //     //finger hause = 1
-    //     //schwörer = 2
-    //     //dfh = 3
-    //     //haas = 4
-
-    //     $route = 'http://31.97.126.130:2000';
-
-    //     $batch = Str::random(5) . Str::random(5) . "CB";
-
-    //     foreach ($request->file('files') as $f) {
-
-    //         $file = $f;
-    //         $originalFileName = $file->getClientOriginalName();
-    //         $uniqueName = 'IandM.' . rand(100000, 999999) . '.pdf';
-    //         $path = $file->storeAs('/public/uploads', $uniqueName);
-    //         $fullPath = storage_path('app/' . $path);
-
-    //         $response = Http::attach(
-    //             'pdf_files',          // name of form field expected by FastAPI
-    //             file_get_contents($fullPath),
-    //             $uniqueName
-    //             //The url should carry the covert type as a param 
-    //         )->post($route.'/process_multiple_pdfs/');
-
-    //         if ($response->successful()) {
-                
-    //             // Log into DB
-    //             $upload = new AiUpload();
-    //             $upload->file_name = $uniqueName;
-    //             $upload->path = 'uploads/'.$uniqueName;
-    //             $upload->batch = $batch;
-                
-                    
-    //             $data = $response->json(); // Decode the JSON response
-
-                
-    //             $upload->excel = $data['0']['excel_download_url'] ?? null;
-    //             $upload->pdf = $data['0']['pdf_download_url'] ?? null;
-    //             $upload->base_file = $data['base_filename'] ?? null;
-    //             $upload->original_name = $originalFileName ?? null;
-    //             foreach ($data['0']['txt_download_urls'] as $txt) {
-    //                 $upload->txt = $txt ?? null;
-    //             }
-
-    //             //no need to array the text files
-                
-    //             $files = $data['0'];
-    //             $base = $upload->base_file;
-
-    //             $cFiles = [
-    //                 'txt'=> $files['txt_download_urls'][0],
-    //                 'excel' => $files['excel_download_url'],
-    //                 'pdf' => $files['pdf_download_url'],
-    //             ];
-
-
-    //             foreach ($cFiles as $type => $filename) {
-
-
-    //                 // dd($filename);
-                    
-    //                 $downloadUrl = $route."{$filename}";
-
-    //                 // dd($downloadUrl);
-    //                 $fileResponse = Http::get($downloadUrl);
-
-    //                 // dd($fileResponse);
-
-    //                 if ($fileResponse->successful()) {
-
-    //                     // $converted = 
-    //                     Storage::disk('local')->put("public/converted/{$filename}", $fileResponse->body());
-    //                 }
-
-    //                 $upload->status = 'converted';
-    //                 $upload->save();
-    //             }
-
-    //         }else{
-
-    //             Alert::info('Error', 'One or all of you files did not process successfully.');
-    //             return back();
-
-    //         }
-
-    //     }
-
-    //     // The list of the uploaded files ids to be imploded here. 
-    //     Alert::success('Erfolgreich', 'Verarbeitung erfolgreich.');
-    //     return redirect()->route('ai-workarea', ['id' => $upload->batch]);
-
-    // }
 
 
     public function aiUploadFile(AiUploaadedRequest $request)
@@ -260,20 +152,14 @@ class AiConverterController extends Controller
         $validated = $request->validate([
             'files' => 'required|array',
             'files.*' => 'file|mimes:pdf|max:10240',
-            // 'convert_type'=>'required',      
+               
         ]);
 
-        // In the future, we will want the admin to be able to add this automatically form the admin panel. 
-        // the admin will be able to do this if we make a model to hold the models type.
-        //Then we can call out the model type here and on the frontend.
+        // $route = 'https://ai-bxij.onrender.com';
+        $route = 'http://31.97.126.130:2000';
+        // $route = 'http://localhost:5000';
 
-        //for now 
-        //finger hause = 1
-        //schwörer = 2
-        //dfh = 3
-        //haas = 4
-
-        $route = 'https://ai-bxij.onrender.com';
+        
 
         $batch = Str::random(5) . Str::random(5) . "CB";
 
@@ -286,11 +172,13 @@ class AiConverterController extends Controller
             $fullPath = storage_path('app/' . $path);
 
             $response = Http::attach(
-                'file',          // name of form field expected by FastAPI
+                'pdf_files',
                 file_get_contents($fullPath),
                 $uniqueName
-                //The url should carry the covert type as a param 
-            )->post($route .'/process_pdf/');
+            // )->post($route .'/process_pdf/');
+            )->post($route .'/process_multiple_pdfs/');
+            // )->post('http://31.97.126.130:2000/process_multiple_pdfs');
+
 
             if ($response->successful()) {
 
@@ -300,41 +188,58 @@ class AiConverterController extends Controller
                 $upload->path = 'uploads/'.$uniqueName;
                 $upload->batch = $batch;
                 $upload->save();
-
+                
                 $data = $response->json(); // Decode the JSON response
 
-                $upload->txt = $data['output_files']['txt'] ?? null;
-                $upload->excel = $data['output_files']['excel'] ?? null;
-                $upload->pdf = $data['output_files']['pdf'] ?? null;
-                $upload->base_file = $data['base_filename'] ?? null;
-                $upload->original_name = $originalFileName ?? null;
-                $upload->save();
+                // dd($data);
+                foreach ($data['output_files']as $output) {
+                    
+                    $upload->txt = $output['txt'] ?? null;
+                    $upload->excel = $output['excel'] ?? null;
+                    $upload->pdf = $output['pdf'] ?? null;
+                    $upload->base_file = $output['base_filename'] ?? null;
+                    $upload->original_name = $originalFileName ?? null;
+                    $upload->save();
+
+                    $downloadUrl = $route."/download/output_file/{$upload->txt}";
+
+                 }
 
                 $files = $data['output_files'];
-                $base = $data['base_filename'];
+                $base = $upload->base_file;
+                // dd($files);
 
                 foreach ($files as $type => $filename) {
-                    $downloadUrl = $route."/download/{$filename}";
 
-                    // dd($downloadUrl);
-                    $fileResponse = Http::get($downloadUrl);
+                            $downloadables = [
 
-                    // dd($fileResponse);
-                    if ($fileResponse->successful()) {
+                            'excel'=> $filename['excel'],
+                            'txt'=> $filename['txt'],
+                            'txtb'=> $filename['txtb'],
+                            'pdf' => $filename['pdf'],
 
-                        // $converted = 
-                        Storage::disk('local')->put("public/converted/{$filename}", $fileResponse->body());
+                        ];
+
+
+                    foreach ($downloadables as $key => $d) {
+
+                        if ($d == null) {
+                            continue; // Skip if the URL is null
+                        }
+                      
+                        $downloadUrl = $route."/download/output_file/{$d}";
+
+                        $fileResponse = Http::get($downloadUrl);
+
+                        if ($fileResponse->successful()) {
+                            Storage::disk('local')->put("public/converted/{$d}", $fileResponse->body());
+                        }
                     }
+                     
 
                     $upload->status = 'converted';
                     $upload->save();
                 }
-
-                $data['txt'] = $upload->txt;
-                $data['excel'] = $upload->excel;
-                $data['pdf'] = $upload->pdf;
-                $data['base_file'] = $upload->base_file;
-                $data['original_name'] = $originalFileName;
 
             }else{
 
@@ -345,15 +250,12 @@ class AiConverterController extends Controller
 
         }
 
-        //Download all files as zip
-        // self::downloadAll($upload->batch, 'txt');
-        // self::downloadAll($upload->batch, 'pdf');
-
         // The list of the uploaded files ids to be imploded here. 
         Alert::success('Erfolgreich', 'Verarbeitung erfolgreich.');
         return redirect()->route('ai-workarea', ['id' => $upload->batch]);
 
     }
+
 
     public function downloadFile($file)
     {
