@@ -193,6 +193,7 @@ class AiConverterController extends Controller
                 foreach ($data['output_files']as $output) {
                     
                     $upload->txt = $output['txt'] ?? null;
+                    $upload->txtb = $output['txtb'] ?? null;
                     $upload->excel = $output['excel'] ?? null;
                     $upload->pdf = $output['pdf'] ?? null;
                     $upload->base_file = $output['base_filename'] ?? null;

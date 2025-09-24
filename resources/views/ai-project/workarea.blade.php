@@ -75,62 +75,6 @@
                        
                         
 
-                        <div style="max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-
-                                
-                            @foreach ($results as $r)
-
-                                {{-- TXT Section --}}   
-                                <div style=" background-color: #FFFFFFFF; border: 1px solid #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                    <h3 style="font-size: 18px; font-weight: bold; text-align: left; margin-bottom: 20px;">Text datei</h3>
-                                    <h4 style="font-size: 18px; font-weight: bold; text-align: left; margin-bottom: 20px;">Original Name: {{$r?->original_name}}</h4>
-
-                                    <div style="display: flex; justify-content: left; gap: 30px;">
-                                        <a href="{{route('ai.see.converted', $r?->txt)}}" target="_blank" title="View Text">
-                                            <i class="fas fa-eye" style="font-size: 22px; color: #000000FF;"></i>
-                                        </a>
-                                        <a href="{{route('download.file', $r?->txt)}}" title="Download Text">
-                                            <i class="fas fa-download" style="font-size: 22px; color: #6D6D6DFF;"></i>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                @endforeach
-
-                            </div>
-                        </div>
-
-
-                    <h5 style="margin-top: 10px" data-w-id="2750b49e-f3a5-41af-730f-5a77f295728e" style="opacity:1"
-                                class="heading-title">Converted Result(s) Display option 2</h5>
-                       
-                    @foreach ($results as $r)
-                        <div style="max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-
-                            
-                                {{-- TXT Section --}}   
-                                <div style=" background-color: #FFFFFFFF; border: 1px solid #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                    <h3 style="font-size: 18px; font-weight: bold; text-align: left; margin-bottom: 20px;">Text datei</h3>
-                                    <h4 style="font-size: 18px; font-weight: bold; text-align: left; margin-bottom: 20px;">Original Name: {{$r?->original_name}}</h4>
-
-                                    <div style="display: flex; justify-content: left; gap: 30px;">
-                                        <a href="{{route('ai.see.converted', $r?->txt)}}" target="_blank" title="View Text">
-                                            <i class="fas fa-eye" style="font-size: 22px; color: #000000FF;"></i>
-                                        </a>
-                                        <a href="{{route('download.file', $r?->txt)}}" title="Download Text">
-                                            <i class="fas fa-download" style="font-size: 22px; color: #6D6D6DFF;"></i>
-                                        </a>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                        @endforeach
-
                         <h5 style="margin-top: 10px" data-w-id="2750b49e-f3a5-41af-730f-5a77f295728e" style="opacity:1"
                                 class="heading-title">Converted Result(s) Display option 3</h5>
                        
@@ -156,9 +100,14 @@
                                     <td style="padding: 12px; border-bottom: 1px solid #ddd;">Text Datei</td>
                                     <td style="padding: 12px; border-bottom: 1px solid #ddd;">{{$r?->original_name}}</td>
                                     <td style="padding: 12px; border-bottom: 1px solid #ddd;">
-                                        <a href="{{route('ai.see.converted', $r?->txt)}}" target="_blank" title="View Text">
+                                        <a href="{{route('ai.see.converted', $r?->txt)}}" target="_blank" title="View Text">A
                                             <i class="fas fa-eye" style="font-size: 20px; color: #000000;"></i>
                                         </a>
+                                        @if(!is_null($r->txtb))
+                                            <a href="{{ route('ai.see.converted', $r->txtb) }}" target="_blank" title="View Text B" style="margin-left: 15px;">B
+                                                <i class="fas fa-eye" style="font-size: 20px; color: #16a34a;"></i>
+                                            </a>
+                                        @endif
                                         <a href="{{route('download.file', $r?->txt)}}" title="Download Text" style="margin-left: 15px;">
                                             <i class="fas fa-download" style="font-size: 20px; color: #6D6D6D;"></i>
                                         </a>
