@@ -315,6 +315,12 @@ class AiConverterController extends Controller
         ]))->withInput();
     }
 
+    public function aiLogout()
+    {
+        Auth::logout();
+        return redirect()->route('ai-login');
+    }
+
     private static function downloadAll($batch, $type){
 
 

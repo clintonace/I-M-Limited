@@ -401,12 +401,27 @@
                             Candidate Profile Info</a>
                         @endif
 
+                        
+
+                        @if (Auth::user()->email == 'iandm.admin@gmail.com')
+
+                        <form action="{{route('ai-logout-action')}}" method="POST">@csrf
+                            <button type="submit"
+                                class="cursor-pointer flex items-center p-2 transition duration-300 ease-in-out rounded-md hover:bg-slate-200/60 dark:bg-darkmode-600 dark:hover:bg-darkmode-400 dropdown-item"><i
+                                    data-tw-merge="" data-lucide="power" class="stroke-[1] mr-2 h-4 w-4"></i>
+                                Logout</button>
+                        </form>
+
+                        @else
+
                         <form action="{{route('logout')}}" method="POST">@csrf
                             <button type="submit"
                                 class="cursor-pointer flex items-center p-2 transition duration-300 ease-in-out rounded-md hover:bg-slate-200/60 dark:bg-darkmode-600 dark:hover:bg-darkmode-400 dropdown-item"><i
                                     data-tw-merge="" data-lucide="power" class="stroke-[1] mr-2 h-4 w-4"></i>
                                 Logout</button>
                         </form>
+
+                        @endif
 
                     </div>
                 </div>

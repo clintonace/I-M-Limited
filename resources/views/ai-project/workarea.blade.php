@@ -73,10 +73,6 @@
                         <h5 style="margin-top: 10px" data-w-id="2750b49e-f3a5-41af-730f-5a77f295728e" style="opacity:1"
                                 class="heading-title">Converted Result(s)</h5>
                        
-                        
-
-                        <h5 style="margin-top: 10px" data-w-id="2750b49e-f3a5-41af-730f-5a77f295728e" style="opacity:1"
-                                class="heading-title">Converted Result(s) Display option 3</h5>
                        
                     <div style="max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
@@ -86,7 +82,7 @@
                             <thead>
                                 <tr style="background-color: #f9f9f9; text-align: left;">
                                     <th style="padding: 10px; border-bottom: 1px solid #ddd;">No.</th>
-                                    <th style="padding: 12px; border-bottom: 1px solid #ddd;">Datei Typ</th>
+                                    <th style="padding: 12px; border-bottom: 1px solid #ddd;">Datei Type</th>
                                     <th style="padding: 12px; border-bottom: 1px solid #ddd;">Original Name</th>
                                     <th style="padding: 12px; border-bottom: 1px solid #ddd;">Aktionen</th>
                                 </tr>
@@ -95,31 +91,38 @@
                             @foreach($results as $r)
 
                                 <tr>
-
-                                    <td style="padding: 12px; border-bottom: 1px solid #ddd;">{{$loop->index += 1}}</td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #ddd;">{{$loop->index += 1}}.</td>
                                     <td style="padding: 12px; border-bottom: 1px solid #ddd;">Text Datei</td>
                                     <td style="padding: 12px; border-bottom: 1px solid #ddd;">{{$r?->original_name}}</td>
                                     <td style="padding: 12px; border-bottom: 1px solid #ddd;">
-                                        <a href="{{route('ai.see.converted', $r?->txt)}}" target="_blank" title="View Text">A
-                                            <i class="fas fa-eye" style="font-size: 20px; color: #000000;"></i>
-                                        </a>
-                                        @if(!is_null($r->txtb))
-                                            <a href="{{ route('ai.see.converted', $r->txtb) }}" target="_blank" title="View Text B" style="margin-left: 15px;">B
-                                                <i class="fas fa-eye" style="font-size: 20px; color: #16a34a;"></i>
+                                        <div style="padding: 10px;">
+                                            <a href="{{route('ai.see.converted', $r?->txt)}}" target="_blank" title="View Text Rollo.txt">Rollo.txt
+                                                <i class="fas fa-eye" style="font-size: 20px; color: #000000;"></i>
                                             </a>
+                                            <a href="{{route('download.file', $r?->txt)}}" title="Download Text" style="margin-left: 15px;">
+                                                <i class="fas fa-download" style="font-size: 20px; color: #6D6D6D;"></i>
+                                            </a>
+                                        </div>
+                                        
+                                        @if(!is_null($r->txtb))
+                                        <div style="padding: 10px;">
+
+                                            <a href="{{ route('ai.see.converted', $r->txtb) }}" target="_blank" title="View Text Raffstore.txt" style="margin-left: 15px;">Raffstore.txt
+                                                <i class="fas fa-eye" style="font-size: 20px; color: #000000ff;"></i>
+                                            </a>
+                                            <a href="{{route('download.file', $r?->txtb)}}" title="Download Text" style="margin-left: 15px;">
+                                                <i class="fas fa-download" style="font-size: 20px; color: #6D6D6D;"></i>
+                                            </a>
+                                        </div>
                                         @endif
-                                        <a href="{{route('download.file', $r?->txt)}}" title="Download Text" style="margin-left: 15px;">
-                                            <i class="fas fa-download" style="font-size: 20px; color: #6D6D6D;"></i>
-                                        </a>
+                                        
                                     </td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
-
-                          </div>
-                    </div>
-                        
+                        </div>
+                     </div>
                     </div>
                 </div>
             </section>
