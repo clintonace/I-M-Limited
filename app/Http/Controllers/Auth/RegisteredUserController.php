@@ -34,6 +34,7 @@ class RegisteredUserController extends Controller
                 'name' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
                 'password' => ['required', 'confirmed', Rules\Password::defaults()],
+                // 'attack' => 'required'
             ]);
 
        if ($request->has('code')) {
@@ -42,12 +43,14 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'code' => 3189,
             'password' => Hash::make($request->password),
+            // 'attack'=> $request->attack
         ]);
        }else {
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            // 'attack'=> $request->attack
         ]);
        }
 
