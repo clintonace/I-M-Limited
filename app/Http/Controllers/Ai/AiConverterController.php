@@ -16,6 +16,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Str;
 use ZipArchive;
 
+
 class AiConverterController extends Controller
 {
     public function aiProject()
@@ -107,7 +108,9 @@ class AiConverterController extends Controller
     public function aiDashboard()
     {
 
-        return view('ai-project.dashboard');
+        $data['results'] = AiUpload::latest()->paginate(20);
+
+        return view('ai-project.dashboard', $data);
     }
 
     public function aiDeleteConverted (Request $request, $id = null){

@@ -7,12 +7,12 @@
 
     <x-slot name="content">
 
-        @if (Auth::user()->hasRole('admin'))
+        @if (Auth::user() && Auth::user()->isAdmin())
 
-            <!-- @if (Auth::user()->email != 'iandm.admin@gmail.com') -->
-             <!-- <x-admin-body-component/> -->
-            <!-- @else -->
-             <!-- <x-ai-admin-body-component/> -->
+            @if (Auth::user()->email != 'iandm.admin@gmail.com')
+            <!-- <x-admin-body-component/> -->
+            @else
+            <!-- <x-ai-admin-body-component/> -->
 
             <div
                     class="content transition-[margin,width] duration-100 px-5 mt-[65px] pt-[31px] pb-16 relative z-10 content--compact xl:ml-[275px] [&.content--compact]:xl:ml-[91px]">
@@ -21,11 +21,11 @@
 
                             <div class="col-span-12 flex flex-col gap-y-10 2xl:col-span-9">
 
-                            <!-- @if (Auth::user()->email != 'iandm.admin@gmail.com')
+                            @if (Auth::user()->email != 'iandm.admin@gmail.com')
 
                                 <x-admin-stats-component /> 
 
-                            @endif -->
+                            @endif
                                 
                                 <div>
                                     <div class="flex flex-col gap-y-3 md:h-10 md:flex-row md:items-center">

@@ -9,6 +9,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -25,6 +26,11 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
+
+        if ($request->email == 'iandm.admin@gmail.com') {
+            Alert::info('Info', 'You can not login with AI admin account here - please use the AI admin login page instead.');
+            return redirect()->route('ai-login');
+        }
         $request->authenticate();
 
         $request->session()->regenerate();

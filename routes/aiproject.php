@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Ai\AiConverterController;
+use App\Http\Controllers\Ai\AiUserManagementController;
 use App\Http\Controllers\AiProject\AiController;
 use App\Http\Controllers\AiProjectController;
 use App\Http\Controllers\CompanyController;
@@ -27,6 +28,11 @@ Route::middleware('tool')->group(function () {
 
     Route::get('/download-all-txt/{batch?}', [AiConverterController::class, 'downloadTxt'])->name('download.txt');
     Route::get('/download-all-pdf/{batch?}', [AiConverterController::class, 'downloadPdf'])->name('download.pdf');
+
+    Route::get('/ai-users-management', [AiUserManagementController::class, 'aiUsers'])->name('ai.users.management');
+    Route::get('/ai-create-view', [AiUserManagementController::class, 'aiCreateView'])->name('ai.create-view');
+    Route::post('/ai-create', [AiUserManagementController::class, 'aiCreate'])->name('ai.create.admin');
+
 
     
 });
