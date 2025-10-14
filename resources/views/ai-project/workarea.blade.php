@@ -63,7 +63,11 @@
                             </div>
                         </div> --}}
 
-                        <a href="{{route('ai-project')}}" class="button w-button">
+                       
+                       
+                       
+                    <div style="max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
+                         <a href="{{route('ai-project')}}" class="button w-button">
                             <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Go Back
                         </a>
                         <a href="{{route('download.txt', $results?->first()->batch)}}" class="button w-button">Download Txt Datei batch</a>
@@ -72,10 +76,9 @@
 
                         <h5 style="margin-top: 10px" data-w-id="2750b49e-f3a5-41af-730f-5a77f295728e" style="opacity:1"
                                 class="heading-title">Converted Result(s)</h5>
-                       
-                       
-                    <div style="max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+
+
+                        <div style="margin-top:90px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
 
 
                         <table style="width: 100%; border-collapse: collapse; font-size: 16px;">

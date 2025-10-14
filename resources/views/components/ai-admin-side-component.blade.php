@@ -1,4 +1,6 @@
- <li class="side-menu__divider">
+                @if(Auth::user()->email_verified_at != null)
+
+                 <li class="side-menu__divider">
                     DASHBOARDS
                 </li>
                 <li>
@@ -28,4 +30,5 @@
                     <!-- BEGIN: Second Child -->
                     <!-- END: Second Child -->
                 </li> 
+                @endif
                 

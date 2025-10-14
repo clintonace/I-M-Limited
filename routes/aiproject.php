@@ -40,4 +40,16 @@ Route::middleware('tool')->group(function () {
 Route::get('/ai-login', [AiConverterController::class, 'aiLogin'])->name('ai-login');
 Route::post('/ai-login-action', [AiConverterController::class, 'aiLoginAction'])->name('ai-login-action');
 Route::post('/ai-logout-action', [AiConverterController::class, 'aiLogout'])->name('ai-logout-action');
+// Route::get('/ai-change-password-view/{id?}', [AiUserManagementController::class, 'aiChangePasswordView'])->name('ai-change-password-view');
+
+// Route::get('/ai-change-password-view/{id?}/', [AiUserManagementController::class, 'aiChangePasswordView'])
+//     ->name('ai-change-password-view')
+//     ->middleware(['signed', 'throttle:1,1']);
+    Route::get('/ai-change-password-view/{id?}/', [AiUserManagementController::class, 'aiChangePasswordView'])
+    ->name('ai-change-password-view')
+    ->middleware(['signed']);
+
+Route::post('/ai-change-password', [AiUserManagementController::class, 'aiChangePassword'])->name('ai-change-password');
+
+
 
