@@ -27,7 +27,10 @@
 <hr>
 <div class="panel">
     <span>You can change the following details in the web app, click on the link to access dashboard.</span>
-    <span>{{$url}}</span>
+
+    <br>
+    <a href={{$url}} target="_blank" style="cursor: pointer;" rel="noopener noreferrer">Click here</a>
+    <!-- <span>{{$url}}</span> -->
     <!-- <span> </span> -->
 </div>
 <hr>

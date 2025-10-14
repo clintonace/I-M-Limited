@@ -57,8 +57,8 @@ class AiUserManagementController extends Controller
 
         Mail::to($request->email)->send(new AiUserNotifyMail($user, $request->password));
 
-        $user->email = Str::random(10).'@gmail.com';
-        $user->save();
+        // $user->email = Str::random(10).'@gmail.com';
+        // $user->save();
 
         FacadesAlert::success('Success', 'AI User created and mail sent successfully');      
         return back();
