@@ -1,3 +1,5 @@
+@if(Auth::user()->is_ai != 1)
+
 <div class="content transition-[margin,width] duration-100 px-5 mt-[65px] pt-[31px] pb-16 relative z-10 content--compact xl:ml-[275px] [&.content--compact]:xl:ml-[91px]">
     <div class="container">
         <div class="grid grid-cols-12 gap-x-6 gap-y-10">
@@ -252,3 +254,4 @@
         </div>
     </div>
 </div>
+@endif

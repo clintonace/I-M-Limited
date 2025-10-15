@@ -48,7 +48,7 @@ Route::post('/ai-logout-action', [AiConverterController::class, 'aiLogout'])->na
 
     Route::get('/ai-change-password-view/{id?}/', [AiUserManagementController::class, 'aiChangePasswordView'])
     ->name('ai-change-password-view')
-    ->middleware(['signed', 'throttle:1,2']);
+    ->middleware(['signed']);
 
 Route::post('/ai-change-password', [AiUserManagementController::class, 'aiChangePassword'])->name('ai-change-password');
 

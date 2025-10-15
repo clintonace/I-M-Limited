@@ -7,7 +7,7 @@
 
     <x-slot name="content">
 
-        @if (Auth::user()->hasRole('admin'))
+        @if (Auth::user()->is_ai == 1)
 
             <div
                     class="content transition-[margin,width] duration-100 px-5 mt-[65px] pt-[31px] pb-16 relative z-10 content--compact xl:ml-[275px] [&.content--compact]:xl:ml-[91px]">

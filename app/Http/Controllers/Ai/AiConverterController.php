@@ -110,6 +110,8 @@ class AiConverterController extends Controller
 
         $data['results'] = AiUpload::latest()->paginate(20);
 
+        // dd('here');
+
         return view('ai-project.dashboard', $data);
     }
 
