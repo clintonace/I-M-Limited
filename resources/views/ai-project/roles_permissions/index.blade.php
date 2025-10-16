@@ -42,6 +42,24 @@
                                                 <div class="mt-3 text-slate-500">Dashboard</div>
                                             </a>
 
+                                            <a class="flex flex-col items-center" target="blank" href="{{route('ai.all', 'permissions')}}">
+                                                <div
+                                                    class="flex h-12 w-12 items-center justify-center rounded-full border border-danger/10 bg-danger/10">
+                                                    <i data-tw-merge="" data-lucide="lock"
+                                                        class="stroke-[1] h-6 w-6 fill-danger/10 text-danger"></i>
+                                                </div>
+                                                <div class="mt-3 text-slate-500">All Permissions</div>
+                                            </a>
+
+                                            <a class="flex flex-col items-center" target="blank" href="{{route('ai.all', 'roles')}}">
+                                                <div
+                                                    class="flex h-12 w-12 items-center justify-center rounded-full border border-black/10 bg-primary/10">
+                                                    <i data-tw-merge="" data-lucide="shield"
+                                                        class="stroke-[1] h-6 w-6 fill-black/10 text-black"></i>
+                                                </div>
+                                                <div class="mt-3 text-slate-500">All Roles</div>
+                                            </a>
+
                                         </div>
                                     
                                     </div>

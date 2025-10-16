@@ -36,27 +36,27 @@ Route::middleware('tool')->group(function () {
 
     Route::get('/ai-randp-index', [AiRolesController::class, 'aiRolePermission'])->name('ai.randp');
     Route::post('/ai-assign-permissons-to-role', [AiRolesController::class, 'aiAssignPermissionsToRole'])->name('ai.assign-permission-to-role');
+    Route::get('/ai-all/{display}', [AiRolesController::class, 'aiAllDisplay'])->name('ai.all');
+
 
     Route::post('/ai-create-role', [AiRolesController::class, 'aiCreateRole'])->name('ai.create-role');
     Route::post('/ai-create-permisson', [AiRolesController::class, 'aiCreatePermission'])->name('ai.create-permission');
 
-
-
-    
 });
 
 Route::get('/ai-login', [AiConverterController::class, 'aiLogin'])->name('ai-login');
 Route::post('/ai-login-action', [AiConverterController::class, 'aiLoginAction'])->name('ai-login-action');
 Route::post('/ai-logout-action', [AiConverterController::class, 'aiLogout'])->name('ai-logout-action');
+
 // Route::get('/ai-change-password-view/{id?}', [AiUserManagementController::class, 'aiChangePasswordView'])->name('ai-change-password-view');
 
 // Route::get('/ai-change-password-view/{id?}/', [AiUserManagementController::class, 'aiChangePasswordView'])
 //     ->name('ai-change-password-view')
 //     ->middleware(['signed', 'throttle:1,1']);
 
-    Route::get('/ai-change-password-view/{id?}/', [AiUserManagementController::class, 'aiChangePasswordView'])
-    ->name('ai-change-password-view')
-    ->middleware(['signed']);
+Route::get('/ai-change-password-view/{id?}/', [AiUserManagementController::class, 'aiChangePasswordView'])
+->name('ai-change-password-view')
+->middleware(['signed']);
 
 Route::post('/ai-change-password', [AiUserManagementController::class, 'aiChangePassword'])->name('ai-change-password');
 

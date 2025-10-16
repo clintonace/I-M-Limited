@@ -87,7 +87,7 @@
                                             
                                         </div>
                                         <div class="overflow-x-auto">
-                                            <table data-tw-merge="" class="min-w-full text-center border-b border-slate-200/60">
+                                            <table data-tw-merge="" class="min-w-full w-full text-center border-b border-slate-200/60">
                                                 <thead>
                                                     <tr>
                                                         <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">

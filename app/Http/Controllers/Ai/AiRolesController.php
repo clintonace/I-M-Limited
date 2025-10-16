@@ -97,4 +97,24 @@ class AiRolesController extends Controller
         Alert::success('Success', 'Permission created.');
         return back();
     }
+
+    public function aiAllDisplay($display)
+    {
+
+
+        if($display == 'permissions'){
+            
+
+            $data['dets'] = Permission::paginate(2);
+            return view('ai-project.roles_permissions.display', $data);
+        }
+
+        if($display == 'roles'){
+            
+            $data['dets'] = Role::paginate(2);
+            return view('ai-project.roles_permissions.display', $data);
+        }
+        
+
+    }
 }
