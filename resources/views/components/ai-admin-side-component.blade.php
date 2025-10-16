@@ -22,7 +22,7 @@
                     <!-- END: Second Child -->
                 </li> 
                 <li>
-                    <a href="#" class="side-menu__link ">
+                    <a href="{{route('ai.randp')}}" class=" active side-menu__link ">
                         <i data-tw-merge="" data-lucide="key"
                             class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                         <div class="side-menu__link__title">Roles and Permissions</div>

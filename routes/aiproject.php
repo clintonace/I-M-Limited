@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Ai\AiConverterController;
+use App\Http\Controllers\Ai\AiRolesController;
 use App\Http\Controllers\Ai\AiUserManagementController;
 use App\Http\Controllers\AiProject\AiController;
 use App\Http\Controllers\AiProjectController;
@@ -32,6 +33,13 @@ Route::middleware('tool')->group(function () {
     Route::get('/ai-users-management', [AiUserManagementController::class, 'aiUsers'])->name('ai.users.management');
     Route::get('/ai-create-view', [AiUserManagementController::class, 'aiCreateView'])->name('ai.create-view');
     Route::post('/ai-create', [AiUserManagementController::class, 'aiCreate'])->name('ai.create.admin');
+
+    Route::get('/ai-randp-index', [AiRolesController::class, 'aiRolePermission'])->name('ai.randp');
+    Route::post('/ai-assign-permissons-to-role', [AiRolesController::class, 'aiAssignPermissionsToRole'])->name('ai.assign-permission-to-role');
+
+    Route::post('/ai-create-role', [AiRolesController::class, 'aiCreateRole'])->name('ai.create-role');
+    Route::post('/ai-create-permisson', [AiRolesController::class, 'aiCreatePermission'])->name('ai.create-permission');
+
 
 
     

@@ -1,33 +1,18 @@
 <x-app-layout>
 
     @section('title')
-    <h1>Dashboard</h1>
+    <h1>AI Admins</h1>
     @endsection
-
 
     <x-slot name="content">
 
-        @if (Auth::user() && Auth::user()->isAdmin())
-
-            @if (Auth::user()->email != 'iandm.admin@gmail.com')
-            <!-- <x-admin-body-component/> -->
-            @else
-            <!-- <x-ai-admin-body-component/> -->
-
-            <div
-                    class="content transition-[margin,width] duration-100 px-5 mt-[65px] pt-[31px] pb-16 relative z-10 content--compact xl:ml-[275px] [&.content--compact]:xl:ml-[91px]">
-                    <div class="container">
-                        <div class="grid grid-cols-12 gap-x-6 gap-y-10">
-
-                            <div class="col-span-12 flex flex-col gap-y-10 2xl:col-span-9">
-
-                            @if (Auth::user()->email != 'iandm.admin@gmail.com')
-
-                                <x-admin-stats-component /> 
-
-                            @endif
-                                
-                                <div>
+        <div
+            class="content transition-[margin,width] duration-100 xl:pl-3.5 pt-[54px] pb-16 relative z-10 group mode content--compact xl:ml-[275px] mode--light [&.content--compact]:xl:ml-[91px]">
+            <div class="mt-16 px-5">
+                <div class="container">
+                    <div class="grid grid-cols-12 gap-x-6 gap-y-10">
+                        <div class="col-span-12">
+                            <div>
                                     <div class="flex flex-col gap-y-3 md:h-10 md:flex-row md:items-center">
                                         <div class="text-base font-medium 2xl:group-[.mode--light]:text-white">
                                             Quick Links
@@ -62,186 +47,183 @@
                                     </div>
                                 </div>
 
-                                {{-- Latest Files--}}
 
-                                <div class="mt-3.5 flex flex-col gap-8">
+                            
+                            <div class="mt-3.5 flex flex-col gap-5 sm:flex-row">
 
-                                    <div class="box box--stacked flex flex-col">
-                                        <div class="flex flex-col gap-y-2 p-5 sm:flex-row sm:items-center">
-                                            <div>
-                                                <div class="relative">
-                                                    <i data-tw-merge="" data-lucide="search" class="absolute inset-y-0 left-0 z-10 my-auto ml-3 h-4 w-4 stroke-[1.3] text-slate-500"></i>
-                                                    <input data-tw-merge="" type="text" placeholder="Search files..." class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 [&[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 [&[type='file']]:border file:mr-4 file:py-2 file:px-4 file:rounded-l-md file:border-0 file:border-r-[1px] file:border-slate-100/10 file:text-sm file:font-semibold file:bg-slate-100 file:text-slate-500/70 hover:file:bg-200 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10 rounded-[0.5rem] pl-9 sm:w-64">
+                                <div class="w-full pb-10 overflow-hidden">
+                                    <div class="flex flex-col w-full box box--stacked">
+                                        <div class="flex flex-col p-5 gap-y-2 sm:flex-row sm:items-center">
+
+
+                                        </div>
+
+                                        
+                                        <div class="mt-0.5 px-5">
+
+
+                                        <div>
+
+                                                <div class="flex flex-col gap-y-3 md:h-10 md:flex-row md:items-center">
+                                                    <div class="text-base font-bold group-[.mode--light]:text-dark">
+                                                        <h1>Create new Role/Permissions</h1>
+                                                    </div>
+
                                                 </div>
 
-                                                
+                                                        @if ($errors->any())
+                                                            <div class="p-4 mb-4 bg-red-100 rounded-lg text-red-700">
+                                                                <ul>
+                                                                    @foreach ($errors->all() as $error)
+                                                                    <li>{{ $error }}</li>
+                                                                    @endforeach
+                                                                </ul>
+                                                            </div>
+                                                        @endif
+                                               
+
+                                                                <div class="grid grid-cols-2 gap-4">
+
+                                                                            
+                                                                                <form action="{{route('ai.create-role')}}" method="POST">
+                                                                                    @csrf
+                                                                                        <div class="mt-3">
+                                                                                            <label data-tw-merge for="regular-form-6"
+                                                                                                class="inline-block mb-2 group-[.form-inline]:mb-2 group-[.form-inline]:sm:mb-0 group-[.form-inline]:sm:mr-5 group-[.form-inline]:sm:text-right">
+                                                                                                Role
+                                                                                            </label>
+                                                                                            <input data-tw-merge id="regular-form-6" name="role" type="text" 
+                                                                                                placeholder="Enter Role name eg. 'Staff'"
+                                                                                                class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&amp;[readonly]]:bg-slate-100 [&amp;[readonly]]:cursor-not-allowed [&amp;[readonly]]:dark:bg-darkmode-800/50 [&amp;[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 [&amp;[type='file']]:border file:mr-4 file:py-2 file:px-4 file:rounded-l-md file:border-0 file:border-r-[1px] file:border-slate-100/10 file:text-sm file:font-semibold file:bg-slate-100 file:text-slate-500/70 hover:file:bg-200 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&amp;:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10">
+
+                                                                                                <div class="mt-3 flex flex-wrap gap-2">
+                                                                                                    <button data-tw-merge type="submit"
+                                                                                                        class="transition duration-200 border shadow-sm inline-flex items-center justify-center py-2 px-3 rounded-md font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed bg-primary border-primary text-white dark:border-primary w-24 w-24">Create</button>
+                                                                                                </div>
+                                                                                        </div>
+
+                                                                                </form>
+
+
+                                                                                <form action="{{route('ai.create-permission')}}" method="POST">
+                                                                                        @csrf
+                                                                                        <div class="mt-3">
+                                                                                            <label data-tw-merge for="regular-form-6"
+                                                                                                class="inline-block mb-2 group-[.form-inline]:mb-2 group-[.form-inline]:sm:mb-0 group-[.form-inline]:sm:mr-5 group-[.form-inline]:sm:text-right">
+                                                                                                Permission
+                                                                                            </label>
+                                                                                            <input data-tw-merge id="regular-form-6" name="permission" type="text" 
+                                                                                                placeholder="Enter Permission name eg. 'Can download files.'"
+                                                                                                class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&amp;[readonly]]:bg-slate-100 [&amp;[readonly]]:cursor-not-allowed [&amp;[readonly]]:dark:bg-darkmode-800/50 [&amp;[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 [&amp;[type='file']]:border file:mr-4 file:py-2 file:px-4 file:rounded-l-md file:border-0 file:border-r-[1px] file:border-slate-100/10 file:text-sm file:font-semibold file:bg-slate-100 file:text-slate-500/70 hover:file:bg-200 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&amp;:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10">
+
+                                                                                                <div class="mt-3 flex flex-wrap gap-2">
+                                                                                                    <button data-tw-merge type="submit"
+                                                                                                        class="transition duration-200 border shadow-sm inline-flex items-center justify-center py-2 px-3 rounded-md font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed bg-primary border-primary text-white dark:border-primary w-24 w-24">Create</button>
+                                                                                                </div>
+                                                                                        </div>
+
+                                                                                </form>
+                                                                        
+                                                                        
+
+                                                                </div>
+
+                                                    
+
+                                                <div class="pt-4">
+                                                    <div class="mt-2 sm:ml-auto sm:mt-0">
+                                                        Please create a role or a permission individually with the corresponding buttons.
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="flex flex-col gap-x-3 gap-y-2 sm:ml-auto sm:flex-row">
+
+                                            <div style="margin: 20px;">
+                                                <hr>
                                             </div>
-                                            <div class="flex flex-col gap-y-3 md:h-10 md:flex-row md:items-center">
-                                                <div class="text-base font-medium 2xl:group-[.mode--light]:text-white">
-                                                    Latest Converted Files
+
+                                            <div>
+
+                                                <div class="flex flex-col gap-y-3 md:h-10 md:flex-row md:items-center">
+                                                    <div class="text-base font-bold group-[.mode--light]:text-dark">
+                                                        <h1>Give permissions to a role.</h1>
+                                                    </div>
+
+                                                </div>
+
+                                             @if ($errors->any())
+                                                            <div class="p-4 mb-4 bg-red-100 rounded-lg text-red-700">
+                                                                <ul>
+                                                                    @foreach ($errors->all() as $error)
+                                                                    <li>{{ $error }}</li>
+                                                                    @endforeach
+                                                                </ul>
+                                                            </div>
+                                                        @endif
+                                                <form action="{{route('ai.assign-permission-to-role')}}" method="POST">
+                                                    @csrf
+
+                                                    <div class="grid grid-cols-2 gap-4">
+
+                                                            <div class="mt-3">
+                                                                <label data-tw-merge for="regular-form-6"
+                                                                    class="inline-block mb-2 group-[.form-inline]:mb-2 group-[.form-inline]:sm:mb-0 group-[.form-inline]:sm:mr-5 group-[.form-inline]:sm:text-right">
+                                                                     Role
+                                                                </label>
+
+                                                                <select name="role" 
+                                                                 class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&amp;[readonly]]:bg-slate-100 [&amp;[readonly]]:cursor-not-allowed [&amp;[readonly]]:dark:bg-darkmode-800/50 [&amp;[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 [&amp;[type='file']]:border file:mr-4 file:py-2 file:px-4 file:rounded-l-md file:border-0 file:border-r-[1px] file:border-slate-100/10 file:text-sm file:font-semibold file:bg-slate-100 file:text-slate-500/70 hover:file:bg-200 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&amp;:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10">
+
+                                                                <option selected disabled> Choose a Role</option>
+                                                                    @foreach($roles as $role)
+                                                                        <option value="{{$role?->name}}">{{$role?->name}}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                                
+                                                            </div>
+
+                                                            <div class="mt-3">
+                                                                <label data-tw-merge for="regular-form-6"
+                                                                    class="inline-block mb-2 group-[.form-inline]:mb-2 group-[.form-inline]:sm:mb-0 group-[.form-inline]:sm:mr-5 group-[.form-inline]:sm:text-right">
+                                                                    Assign Permission to role Choosen
+                                                                </label>
+
+                                                                <select name="perm" 
+                                                                 class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&amp;[readonly]]:bg-slate-100 [&amp;[readonly]]:cursor-not-allowed [&amp;[readonly]]:dark:bg-darkmode-800/50 [&amp;[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 [&amp;[type='file']]:border file:mr-4 file:py-2 file:px-4 file:rounded-l-md file:border-0 file:border-r-[1px] file:border-slate-100/10 file:text-sm file:font-semibold file:bg-slate-100 file:text-slate-500/70 hover:file:bg-200 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&amp;:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10">
+
+                                                                <option selected disabled> Choose Permissions</option>
+                                                                    @foreach($perm as $p)
+                                                                        <option value="{{$p?->name}}">{{$p?->name}}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                                
+                                                            </div>
+                                                        
+                                                    </div>
+
+                                                    <div class="mt-3 flex flex-wrap gap-2">
+                                                        <button data-tw-merge type="submit"
+                                                            class="transition duration-200 border shadow-sm inline-flex items-center justify-center py-2 px-3 rounded-md font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed bg-primary border-primary text-white dark:border-primary w-24 w-24">Connect</button>
+                                                    </div>
+                                                </form>
+
+                                                <div class="pt-4">
+                                                    <div class="mt-2 sm:ml-auto sm:mt-0">
+                                                       Choose a specific Role and choose a Permission to be assigned to this role. Eg, Role->sub-admin, Permission->can download files. 
+                                                    </div>
                                                 </div>
                                             </div>
                                             
-                                        </div>
-                                        <div class="overflow-x-auto">
-                                            <table data-tw-merge="" class="min-w-full text-center border-b border-slate-200/60">
-                                                <thead>
-                                                    <tr>
-                                                        <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
-                                                            No.
-                                                        </td>
-                                                    
-                                                        <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
-                                                            Original Name
-                                                        </td>
-                                                        <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
-                                                            Txt
-                                                        </td>
-                                                    
-                                                        <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
-                                                            Status
-                                                        </td>
-                                                        <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
-                                                            Deleting in 
-                                                        </td>
-                                                        <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500 w-28">
-                                                            Action
-                                                        </td>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    
-                                                    @foreach ($results as $r)
-                                                    @if ($r != null)
-
-                                                    <tr data-tw-merge="" class="[&_td]:last:border-b-0">
-                                                        <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
-
-                                                            {{$loop->index += 1}}
-                                                        </td>
-
-                                                    @php
-                                                            $path = 'public/uploads/' . $r->file_name;
-                                                            $url = asset('public/uploads/app/'.$r->file_name);
-                                                    @endphp 
-
-                                                    
-                                                        <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
-
-                                                        
-                                                            @if($r?->status == 'deleted')
-                                                                <span class="text-danger">File Deleted</span>
-                                                            @else
-
-                                                                <a class="whitespace-nowrap font-medium" target="_blank" href="{{route('ai.see.uploads', ['path' => $r?->file_name])}}">
-                                                                    {{$r?->original_name}}
-                                                                </a>
-                                                        
-                                                            @endif
-                                                                    <div class="mt-0.5 whitespace-nowrap text-xs text-slate-500">
-                                                                        {{$r?->file_name}}
-                                                                    </div>
-                                                        </td>
-
-                                                        <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
-
-                                                            @if($r?->status == 'deleted')
-                                                                <span class="text-danger">File Deleted</span>
-                                                            @else
-                                                            <a href="{{route('ai.see.converted', ['path' => $r?->txt])}}" target="_blank" class="cursor-pointer flex items-center p-2 transition duration-300 ease-in-out rounded-md hover:bg-slate-200/60 dark:bg-darkmode-600 dark:hover:bg-darkmode-400 dropdown-item text-success"><i data-tw-merge="" data-lucide="eye" class="stroke-[1] mr-2 h-4 w-4"></i>
-                                                                                View</a>
-                                                            @endif
-                                                        </td>
-
-                                                        
-                                                        <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
-                                                            @if ($r?->status == 'converted')
-
-                                                            <div class="flex items-center justify-center text-success">
-                                                                <i data-tw-merge="" data-lucide="database" class="h-3.5 w-3.5 stroke-[1.7]"></i>
-                                                                <div class="ml-1.5 whitespace-nowrap">
-                                                                    Converted
-                                                                </div>
-
-                                                            </div>
-
-
-                                                            @else
-                                                            <div class="flex items-center justify-center text-danger">
-                                                                <i data-tw-merge="" data-lucide="database" class="h-3.5 w-3.5 stroke-[1.7]"></i>
-                                                                <div class="ml-1.5 whitespace-nowrap">
-                                                                    Not Converted
-                                                                </div>
-
-                                                            </div>
-
-                                                            @endif
-                                                        </td>
-                                                        <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
-                                                            <div class="ml-3.5">
-                                                                <a class="whitespace-nowrap font-medium" href="#">
-                                                                    {{$r?->created_at}}
-                                                                </a>
-                                                                <div class="mt-0.5 whitespace-nowrap text-xs text-slate-500">
-                                                                    {{$r?->created_at->diffForHumans()}}
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 relative border-dashed py-4 dark:bg-darkmode-600">
-                                                            <div class="flex items-center justify-center">
-                                                                <div data-tw-merge="" data-tw-placement="bottom-end" class="dropdown relative h-5"><button data-tw-toggle="dropdown" aria-expanded="false" class="cursor-pointer h-5 w-5 text-slate-500"><i data-tw-merge="" data-lucide="more-vertical" class="stroke-[1] w-5 h-5 fill-slate-400/70 stroke-slate-400/70"></i>
-                                                                    </button>
-                                                                    <div data-transition="" data-selector=".show" data-enter="transition-all ease-linear duration-150" data-enter-from="absolute !mt-5 invisible opacity-0 translate-y-1" data-enter-to="!mt-1 visible opacity-100 translate-y-0" data-leave="transition-all ease-linear duration-150" data-leave-from="!mt-1 visible opacity-100 translate-y-0" data-leave-to="absolute !mt-5 invisible opacity-0 translate-y-1" class="dropdown-menu absolute z-[9999] hidden">
-                                                                        <div data-tw-merge="" class="dropdown-content rounded-md border-transparent bg-white p-2 shadow-[0px_3px_10px_#00000017] dark:border-transparent dark:bg-darkmode-600 w-40">
-                                                                        
-                                                                            <form action="{{route('ai.delete.converted')}}" method="post" onsubmit="return confirm('Are you sure you want to delete this file?');">
-                                                                                @csrf
-                                                                                <input type="hidden" name="id" value="{{$r?->id}}">
-                                                                                <button type="submit" class="cursor-pointer flex items-center p-2 transition duration-300 ease-in-out rounded-md hover:bg-slate-200/60 dark:bg-darkmode-600 dark:hover:bg-darkmode-400 dropdown-item text-danger w-full text-left">
-                                                                                    <i data-tw-merge="" data-lucide="trash" class="stroke-[1] mr-2 h-4 w-4"></i>
-                                                                                    Delete
-                                                                                </button> 
-                                                                            </form>
-                                                                        {{--<a href=" " class="cursor-pointer flex items-center p-2 transition duration-300 ease-in-out rounded-md hover:bg-slate-200/60 dark:bg-darkmode-600 dark:hover:bg-darkmode-400 dropdown-item text-success"><i data-tw-merge="" data-lucide="eye" class="stroke-[1] mr-2 h-4 w-4"></i>
-                                                                                View</a> --}}
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-
-                                                    @else
-
-                                                    <div>No Converted Files yet!</div>
-                                                    @endif
-
-                                                    @endforeach
-                                                </tbody>
-
-                                            </table>
-                                        </div>
-
-                                        <div class="mt-3.5 px-5 pb-5">
-                                                {{$results->links()}}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
-
-            @endif
-
-        @else
-
-        <x-body-header-component/>
-
-        @endif
-
+        </div>
     </x-slot>
+
+  
 
 </x-app-layout>
