@@ -37,7 +37,7 @@ class AiUserNotifyMail extends Mailable
     {
         return URL::temporarySignedRoute(
             'ai-change-password-view',
-            now()->addMinutes(5), // expires in 5 minutes
+            now()->addMinutes(20), // expires in 5 minutes
             ['id' => $this->user->id]
         );
     }
