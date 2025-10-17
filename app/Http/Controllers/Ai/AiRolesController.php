@@ -12,7 +12,12 @@ use Spatie\Permission\Models\Role;
 
 class AiRolesController extends Controller
 {
-    
+    // activity()
+    // ->causedBy(Auth::user())
+    // ->performedOn($role)
+    // ->withProperties(['permission' => $permission->name])
+    // ->log('Assigned permission to role');
+
 
     public function aiRolePermission()
     {

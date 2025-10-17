@@ -230,6 +230,82 @@
                                                     </div>
                                                 </div>
                                             </div>
+
+                                            <div style="margin: 20px;">
+                                                <hr>
+                                            </div>
+
+                                            <div>
+
+                                                <div class="flex flex-col gap-y-3 md:h-10 md:flex-row md:items-center">
+                                                    <div class="text-base font-bold group-[.mode--light]:text-dark">
+                                                        <h1>Give Role to a User.</h1>
+                                                    </div>
+
+                                                </div>
+
+                                             @if ($errors->any())
+                                                            <div class="p-4 mb-4 bg-red-100 rounded-lg text-red-700">
+                                                                <ul>
+                                                                    @foreach ($errors->all() as $error)
+                                                                    <li>{{ $error }}</li>
+                                                                    @endforeach
+                                                                </ul>
+                                                            </div>
+                                                        @endif
+                                                <form action="{{route('ai.assign-role-to-user')}}" method="POST">
+                                                    @csrf
+
+                                                    <div class="grid grid-cols-2 gap-4">
+
+                                                            <div class="mt-3">
+                                                                <label data-tw-merge for="regular-form-6"
+                                                                    class="inline-block mb-2 group-[.form-inline]:mb-2 group-[.form-inline]:sm:mb-0 group-[.form-inline]:sm:mr-5 group-[.form-inline]:sm:text-right">
+                                                                     Role
+                                                                </label>
+
+                                                                <select name="role" 
+                                                                 class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&amp;[readonly]]:bg-slate-100 [&amp;[readonly]]:cursor-not-allowed [&amp;[readonly]]:dark:bg-darkmode-800/50 [&amp;[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 [&amp;[type='file']]:border file:mr-4 file:py-2 file:px-4 file:rounded-l-md file:border-0 file:border-r-[1px] file:border-slate-100/10 file:text-sm file:font-semibold file:bg-slate-100 file:text-slate-500/70 hover:file:bg-200 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&amp;:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10">
+
+                                                                <option selected disabled> Choose a Role</option>
+                                                                    @foreach($roles as $role)
+                                                                        <option value="{{$role?->name}}">{{$role?->name}}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                                
+                                                            </div>
+
+                                                            <div class="mt-3">
+                                                                <label data-tw-merge for="regular-form-6"
+                                                                    class="inline-block mb-2 group-[.form-inline]:mb-2 group-[.form-inline]:sm:mb-0 group-[.form-inline]:sm:mr-5 group-[.form-inline]:sm:text-right">
+                                                                    Assign a user to role 
+                                                                </label>
+
+                                                                <select name="email" 
+                                                                 class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&amp;[readonly]]:bg-slate-100 [&amp;[readonly]]:cursor-not-allowed [&amp;[readonly]]:dark:bg-darkmode-800/50 [&amp;[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 [&amp;[type='file']]:border file:mr-4 file:py-2 file:px-4 file:rounded-l-md file:border-0 file:border-r-[1px] file:border-slate-100/10 file:text-sm file:font-semibold file:bg-slate-100 file:text-slate-500/70 hover:file:bg-200 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&amp;:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10">
+
+                                                                <option selected disabled> Choose User</option>
+                                                                    @foreach($users as $u)
+                                                                        <option value="{{$u?->email}}">{{$u?->email}}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                                
+                                                            </div>
+                                                        
+                                                    </div>
+
+                                                    <div class="mt-3 flex flex-wrap gap-2">
+                                                        <button data-tw-merge type="submit"
+                                                            class="transition duration-200 border shadow-sm inline-flex items-center justify-center py-2 px-3 rounded-md font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed bg-primary border-primary text-white dark:border-primary w-24 w-24">Connect</button>
+                                                    </div>
+                                                </form>
+
+                                                <div class="pt-4">
+                                                    <div class="mt-2 sm:ml-auto sm:mt-0">
+                                                       Choose a specific Role and choose a User to be assigned to this role. Eg, Role->sub-admin, User->clintonace09@gmail.com. 
+                                                    </div>
+                                                </div>
+                                            </div>
                                             
                                         </div>
                                     </div>
