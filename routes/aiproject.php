@@ -38,7 +38,7 @@ Route::middleware('tool')->group(function () {
     Route::post('/ai-assign-permissons-to-role', [AiRolesController::class, 'aiAssignPermissionsToRole'])->name('ai.assign-permission-to-role');
     Route::get('/ai-all/{display}', [AiRolesController::class, 'aiAllDisplay'])->name('ai.all');
 
-
+    Route::post('/ai-role-to-user', [AiRolesController::class, 'aiRoleToUser'])->name('ai.assign-role-to-user');
     Route::post('/ai-create-role', [AiRolesController::class, 'aiCreateRole'])->name('ai.create-role');
     Route::post('/ai-create-permisson', [AiRolesController::class, 'aiCreatePermission'])->name('ai.create-permission');
 

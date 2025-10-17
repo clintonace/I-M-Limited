@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Ai;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
+
 
 
 class AiRolesController extends Controller
@@ -23,9 +25,32 @@ class AiRolesController extends Controller
     {
 
         $data['roles'] = Role::all();  
-        $data['perm'] = Permission::all();  
+        $data['perm'] = Permission::all();
+        $data['users'] = User::all();    
 
         return view('ai-project.roles_permissions.index', $data);
+    }
+
+
+    public function aiRoleToUser(Request $request)
+    {
+
+        if (!Auth::user()->hasRole('admin')) {
+            Alert::error('Access Denied', 'You are not authorized to perform this action.');
+            return back();
+            }
+
+            $request->validate([
+
+                'email'=>'required|email|exists:users,email',
+                'role'=>'required'
+            ]);
+
+            $user = User::where('email', $request->email)->first();
+            $user->assignRole($request->role);   
+
+            Alert::success('Success', 'Assigned Successfully.');
+            return back();
     }
 
 
