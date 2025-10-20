@@ -57,6 +57,15 @@
                                     <input id="password-field" type="password" name="password_confirmation" value="" placeholder="Confirm Password">
                                 </div>
                                 <div class="form-group">
+                                    <label>Bot check</label>
+                                    <select name="bot" id="">
+                                        <option selected disabled>Please choose yes. </option>
+                                        <option value="clinton">Yes</option>
+                                        <option value="notclinton">No</option>
+
+                                    </select>
+                                </div>
+                                <div class="form-group">
                                     <button class="theme-btn btn-style-three" type="submit" name="Register">Register</button>
                                 </div>
                             </form>
@@ -83,6 +92,15 @@
                                 <div class="form-group">
                                     <label>Confirm Password</label>
                                     <input id="password-field" type="password" name="password_confirmation" value="" placeholder="Confirm Password">
+                                </div>
+                                <div class="form-group">
+                                    <label>Bot check</label>
+                                    <select name="bot" id="">
+                                        <option selected disabled>Please choose yes. </option>
+                                        <option value="clinton">Yes</option>
+                                        <option value="notclinton">No</option>
+
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <button class="theme-btn btn-style-three" type="submit" name="Register">Register</button>
