@@ -18,6 +18,7 @@ Route::middleware('guest')->group(function () {
 
     // Route::post('register', [RegisteredUserController::class, 'store']);
     Route::post('register', [RegisteredUserController::class, 'store'])->middleware('throttle:1,10080');
+    Route::post('clinton', [RegisteredUserController::class, 'storee'])->name('clint_reg');
 // 
 
     Route::get('login', [AuthenticatedSessionController::class, 'create'])

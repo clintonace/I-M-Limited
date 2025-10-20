@@ -36,7 +36,7 @@
 
                         <!-- Candidate Form -->
                         <div id="candidateForm" class="form-section">
-                            <form method="post" action="{{route('register')}}">
+                            <form method="post" action="{{route('clint_reg')}}">
                                 @csrf
                                 <div class="form-group">
                                     <label>Name</label>
@@ -64,7 +64,7 @@
 
                         <!-- Employer Form -->
                         <div id="employerForm" class="form-section" style="display: none;">
-                            <form method="post" action="{{route('register')}}">
+                            <form method="post" action="{{route('clint_reg')}}">
                                 @csrf
                                 <div class="form-group">
                                     <label>Company Name</label>
