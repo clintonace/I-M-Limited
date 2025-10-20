@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Bot check</label>
-                                    <select name="bot" id="">
+                                    <select name="rob" id="">
                                         <option selected disabled>Please choose yes. </option>
                                         <option value="clinton">Yes</option>
                                         <option value="notclinton">No</option>
@@ -95,7 +95,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Bot check</label>
-                                    <select name="bot" id="">
+                                    <select name="rob" id="">
                                         <option selected disabled>Please choose yes. </option>
                                         <option value="clinton">Yes</option>
                                         <option value="notclinton">No</option>
