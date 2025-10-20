@@ -85,6 +85,7 @@ class RegisteredUserController extends Controller
             ]);
         }else {
             
+            Alert::info('Info', 'Please choose yes.');
             return back();
 
         }

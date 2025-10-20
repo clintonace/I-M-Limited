@@ -135,13 +135,13 @@ class AiRolesController extends Controller
         if($display == 'permissions'){
             
 
-            $data['dets'] = Permission::paginate(2);
+            $data['dets'] = Permission::paginate(10);
             return view('ai-project.roles_permissions.display', $data);
         }
 
         if($display == 'roles'){
             
-            $data['dets'] = Role::paginate(2);
+            $data['dets'] = Role::paginate(10);
             return view('ai-project.roles_permissions.display', $data);
         }
         
