@@ -110,6 +110,34 @@ class AiUserManagementController extends Controller
         return back();
 
     }
+
+
+     public function aiChangeDets(Request $request){
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'password' => 'required|string|min:8',    
+        ]); 
+
+        $user = User::where('email', Auth::user()->email)->first();
+
+        if ($user) {
+
+            $user->email_verified_at = Carbon::now();
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = bcrypt($request->password);
+            $user->save();
+          
+            FacadesAlert::success('Success', 'Details changed.');
+            return back();
+        }
+
+        FacadesAlert::info('Info', 'Email error reach out to you up-line.');
+        return back();
+
+    }
     
     
     

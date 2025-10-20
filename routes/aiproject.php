@@ -42,6 +42,9 @@ Route::middleware('tool')->group(function () {
     Route::post('/ai-create-role', [AiRolesController::class, 'aiCreateRole'])->name('ai.create-role');
     Route::post('/ai-create-permisson', [AiRolesController::class, 'aiCreatePermission'])->name('ai.create-permission');
 
+    Route::post('/ai-change-dets', [AiUserManagementController::class, 'aiChangeDets'])->name('ai-change-dets');
+
+
 });
 
 Route::get('/ai-login', [AiConverterController::class, 'aiLogin'])->name('ai-login');

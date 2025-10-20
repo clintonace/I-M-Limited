@@ -150,7 +150,7 @@
                                                                 </ul>
                                                             </div>
                                                         @endif
-                                                <form action="{{route('ai-change-password')}}" method="POST">
+                                                <form action="{{route('ai-change-dets')}}" method="POST">
                                                     @csrf
 
                                                     <div class="grid grid-cols-2 gap-4">
