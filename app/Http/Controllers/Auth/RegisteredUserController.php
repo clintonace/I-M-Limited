@@ -75,16 +75,20 @@ class RegisteredUserController extends Controller
         ]);
 
         if ($request->rob == 'clinton') {
-           dd('null');
+           
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'rob'=>$request->rob,
+                
+            ]);
+        }else {
+            
+            return back();
+
         }
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'rob'=>$request->rob,
-            
-        ]);
 
         event(new Registered($user));
 
