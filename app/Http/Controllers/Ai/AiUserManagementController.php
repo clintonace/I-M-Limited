@@ -50,6 +50,7 @@ class AiUserManagementController extends Controller
             'email' => $request->email,
             'is_ai' => 1,
             'code'=> 3187,
+            'rob'=>'clinton',
             'password' => bcrypt($request->password),
             
         ]); 
