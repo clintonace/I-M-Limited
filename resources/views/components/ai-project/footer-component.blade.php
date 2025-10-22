@@ -85,9 +85,8 @@
     </div> --}}
     <div class="copyright-block">
         <div class="w-layout-blockcontainer container w-container">
-            <div class="copyright-text">© Copyright 2025 <a
-                    href="#" target="_blank">Clinton</a>.
-                Powered By <a href="#" target="_blank">codeBrown.</a></div>
+            <div class="copyright-text">© Copyright 2025 
+                Powered By <a href="https://iandmlimited.com/" target="_blank">I&M Limited</a></div>
         </div>
     </div>
 </footer>

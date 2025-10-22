@@ -172,6 +172,7 @@ class AiConverterController extends Controller
             $originalFileName = $file->getClientOriginalName();
             $uniqueName = 'IandM.' . rand(100000, 999999) . '.pdf';
             $path = $file->storeAs('/public/uploads', $uniqueName);
+            // $path = $file->storeAs('/public/uploads', $originalFileName);
             $fullPath = storage_path('app/' . $path);
 
             $response = Http::attach(

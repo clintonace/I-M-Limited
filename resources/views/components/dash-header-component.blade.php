@@ -299,8 +299,8 @@
             @if (Auth::user() && Auth::user()->isAdmin())
             <div
                 class="flex w-[200px] cursor-pointer items-center rounded-[0.5rem] border bg-slate-50 px-3.5 py-2 text-slate-400 transition-colors hover:bg-slate-100">
-                @if (Auth::user()->email == 'iandm.admin@gmail.com')
-                AI File Manager
+                @if (Auth::user()->is_ai == 1)
+                    PDF CONVERTER.
                 @else
                 Admin Dashboard 
                 @endif
@@ -327,7 +327,7 @@
         <div class="flex flex-1 items-center">
             <div class="ml-auto flex items-center gap-1">
 
-            @if (Auth::user()->email != 'iandm.admin@gmail.com')
+            @if (Auth::user()->is_ai != 1)
                 <a class="rounded-full p-2 hover:bg-slate-100" data-tw-toggle="modal" data-tw-target="#activities-panel"
                     href="javascript:;">
                     <i data-tw-merge="" data-lucide="layout-grid" class="stroke-[1] h-[18px] w-[18px]"></i>
@@ -366,7 +366,7 @@
                         class="dropdown-content rounded-md border-transparent bg-white p-2 shadow-[0px_3px_10px_#00000017] dark:border-transparent dark:bg-darkmode-600 mt-1 w-56">
 
 
-                        @if (Auth::user()->email != 'iandm.admin@gmail.com' && Auth::user()->isAdmin())
+                        @if (Auth::user()->is_ai != 1 && Auth::user()->isAdmin())
 
                         <div class="h-px my-2 -mx-2 bg-slate-200/60 dark:bg-darkmode-400">
                         </div>
@@ -403,7 +403,7 @@
 
                         
 
-                        @if (Auth::user()->email == 'iandm.admin@gmail.com')
+                        @if (Auth::user()->is_ai == 1)
 
                         <form action="{{route('ai-logout-action')}}" method="POST">@csrf
                             <button type="submit"
