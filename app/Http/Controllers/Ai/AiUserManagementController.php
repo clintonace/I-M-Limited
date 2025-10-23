@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use Illuminate\Console\View\Components\Alert;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use RealRashid\SweetAlert\Facades\Alert as FacadesAlert;
 use Spatie\Permission\Models\Role;
@@ -21,7 +22,9 @@ class AiUserManagementController extends Controller
     public function aiUsers()
     {
 
-        $data['admins'] = User::with('roles')->where('is_ai', 1)->paginate(10);
+        $data['admins'] = User::with('roles')
+            ->where('is_ai', 1)
+            ->paginate(10);
         return view('ai-project.users.index', $data);
     }    
     
@@ -29,7 +32,7 @@ class AiUserManagementController extends Controller
     public function aiCreateView()
     {
 
-        $data['roles'] = Role::all();     
+        $data['roles'] = Role::where('name', '!=' , 'admin')->get();     
         return view('ai-project.users.create', $data);
     }   
 
@@ -84,6 +87,29 @@ class AiUserManagementController extends Controller
         Auth::login($user);
 
         return view('ai-project.users.change-password', compact('user'));
+    }
+
+    public function aiDeleteUser($id= null)
+    {
+
+        $user = Auth::user();
+        if ($user->hasRole('admin')) {
+
+            $delete = User::find($id);
+            $delete->delete();
+
+            $rows = DB::table('model_has_roles')
+            ->where('model_id', $id)
+            ->delete();
+            
+            FacadesAlert::success('Success', 'User deleted');
+
+            return back();
+
+            // return response()->view('errors.link-expired', [], 403);
+        }
+
+        return back();
     }
 
     public function aiChangePassword(Request $request){

@@ -152,8 +152,13 @@
                                                                                 </button> 
                                                                             </form>
                                                                             --}}
+                                                                        @can('do all things')
+
                                                                         <a href=" {{route('ai.randp')}}" class="cursor-pointer flex items-center p-2 transition duration-300 ease-in-out rounded-md hover:bg-slate-200/60 dark:bg-darkmode-600 dark:hover:bg-darkmode-400 dropdown-item text-success"><i data-tw-merge="" data-lucide="key" class="stroke-[1] mr-2 h-4 w-4"></i>
                                                                                 Assign</a> 
+                                                                                <a href=" {{route('ai-delete-user', $admin?->id)}}" class="cursor-pointer flex items-center p-2 transition duration-300 ease-in-out rounded-md hover:bg-slate-200/60 dark:bg-darkmode-600 dark:hover:bg-darkmode-400 dropdown-item text-success"><i data-tw-merge="" data-lucide="trash" class="stroke-[1] mr-2 h-4 w-4"></i>
+                                                                                Delete</a> 
+                                                                        @endcan
                                                                         </div>
                                                                     </div>
                                                                 </div>

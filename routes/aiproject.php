@@ -51,6 +51,9 @@ Route::get('/ai-login', [AiConverterController::class, 'aiLogin'])->name('ai-log
 Route::post('/ai-login-action', [AiConverterController::class, 'aiLoginAction'])->name('ai-login-action');
 Route::post('/ai-logout-action', [AiConverterController::class, 'aiLogout'])->name('ai-logout-action');
 
+Route::get('/ai-delete-user/{id?}', [AiUserManagementController::class, 'aiDeleteUser'])->name('ai-delete-user');
+
+
 // Route::get('/ai-change-password-view/{id?}', [AiUserManagementController::class, 'aiChangePasswordView'])->name('ai-change-password-view');
 
 // Route::get('/ai-change-password-view/{id?}/', [AiUserManagementController::class, 'aiChangePasswordView'])
