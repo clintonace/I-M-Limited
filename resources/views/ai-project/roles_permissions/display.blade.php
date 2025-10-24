@@ -113,7 +113,12 @@
                                                         </td>
                                                     
                                                         <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
-                                                             Names for ({{$display}}) role
+                                                           @if(in_array($display, ['permissions', 'roles']))
+                                                                Name of {{$display}}
+
+                                                            @else
+                                                                Name of users assigned to  <span style="color: red;">{{$display}}</span> role
+                                                            @endif
                                                         </td>
 
                                                         @if($display== 'permissions')
