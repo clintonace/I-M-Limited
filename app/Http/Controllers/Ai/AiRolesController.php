@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
@@ -128,6 +129,59 @@ class AiRolesController extends Controller
         return back();
     }
 
+      public function aiDeletePerm(Request $request)
+    {
+        $request->validate([
+            'perm_id'=>'required',
+        ]);
+
+        $user = Auth::user();
+        if ($user->hasRole('admin')) {
+
+            $delete = DB::table('permissions')
+            ->where('id', $request->perm_id)
+            ->delete();
+            
+            Alert::success('Success', ' Permission deleted');
+
+            return back();
+
+            // return response()->view('errors.link-expired', [], 403);
+        }
+
+        return back();
+    }
+
+
+    public function aiDeleteRole(Request $request)
+    {
+        $request->validate([
+            'role_id'=>'required',
+        ]);
+
+        $user = Auth::user();
+        if ($user->hasRole('admin')) {
+
+            $delete = DB::table('roles')
+            ->where('id', $request->role_id)
+            ->delete();
+
+            $rows = DB::table('model_has_roles')
+            ->where('role_id', $request->role_id)
+            ->delete();
+
+            $rows = DB::table('role_has_permissions')
+            ->where('role_id', $request->role_id)
+            ->delete();
+            
+            Alert::success('Success', 'Role deleted and every connection to this role disconnected.');
+            return back();
+            // return response()->view('errors.link-expired', [], 403);
+        }
+
+        return back();
+    }
+
     public function aiAllDisplay($display)
     {
 
@@ -135,13 +189,15 @@ class AiRolesController extends Controller
         if($display == 'permissions'){
             
 
-            $data['dets'] = Permission::paginate(10);
+            $data['dets'] = Permission::with(['roles', 'users'])->paginate(10);
+            $data['display'] = $display;
             return view('ai-project.roles_permissions.display', $data);
         }
 
         if($display == 'roles'){
             
-            $data['dets'] = Role::paginate(10);
+            $data['dets'] = Role::with('users')->paginate(10);
+            $data['display'] = $display;
             return view('ai-project.roles_permissions.display', $data);
         }
         

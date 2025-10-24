@@ -34,7 +34,18 @@ class AiUserManagementController extends Controller
 
         $data['roles'] = Role::where('name', '!=' , 'admin')->get();     
         return view('ai-project.users.create', $data);
-    }   
+    }  
+    
+    
+    public function aiUsersFromRole($id = null)
+    {
+
+        $role = Role::findOrFail($id);
+        $data['dets'] = $role->users()->distinct()->paginate(20); 
+        $data['display'] = $role->name;   
+
+        return view('ai-project.roles_permissions.display', $data);
+    } 
 
 
     public function aiCreate(Request $request)

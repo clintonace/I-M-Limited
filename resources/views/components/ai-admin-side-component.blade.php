@@ -12,6 +12,8 @@
                     <!-- BEGIN: Second Child -->
                     <!-- END: Second Child -->
                 </li> 
+                @can('do all things')
+
                 <li>
                     <a href="{{route('ai.users.management')}}" class="side-menu__link ">
                         <i data-tw-merge="" data-lucide="users"
@@ -21,6 +23,7 @@
                     <!-- BEGIN: Second Child -->
                     <!-- END: Second Child -->
                 </li> 
+
                 <li>
                     <a href="{{route('ai.randp')}}" class=" active side-menu__link ">
                         <i data-tw-merge="" data-lucide="key"
@@ -29,6 +32,16 @@
                     </a>
                     <!-- BEGIN: Second Child -->
                     <!-- END: Second Child -->
-                </li> 
+                </li>                
+                @endcan
+                
                 @endif
+
+
+
+
+
+
+
+                
                 

@@ -43,7 +43,7 @@ Route::middleware('tool')->group(function () {
     Route::post('/ai-create-permisson', [AiRolesController::class, 'aiCreatePermission'])->name('ai.create-permission');
 
     Route::post('/ai-change-dets', [AiUserManagementController::class, 'aiChangeDets'])->name('ai-change-dets');
-
+    Route::get('/ai-view-users-from-role/{id?}', [AiUserManagementController::class, 'aiUsersFromRole'])->name('ai-users-form-role');
 
 });
 
@@ -52,6 +52,8 @@ Route::post('/ai-login-action', [AiConverterController::class, 'aiLoginAction'])
 Route::post('/ai-logout-action', [AiConverterController::class, 'aiLogout'])->name('ai-logout-action');
 
 Route::get('/ai-delete-user/{id?}', [AiUserManagementController::class, 'aiDeleteUser'])->name('ai-delete-user');
+Route::post('/ai-delete-perm', [AiRolesController::class, 'aiDeletePerm'])->name('ai-delete-perm');
+Route::post('/ai-delete-role', [AiRolesController::class, 'aiDeleteRole'])->name('ai-delete-role');
 
 
 // Route::get('/ai-change-password-view/{id?}', [AiUserManagementController::class, 'aiChangePasswordView'])->name('ai-change-password-view');

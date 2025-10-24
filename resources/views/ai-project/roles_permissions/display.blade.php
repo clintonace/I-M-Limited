@@ -76,6 +76,8 @@
                                 <div class="mt-3.5 flex flex-col gap-8">
 
                                     <div class="box box--stacked flex flex-col">
+
+                                   
                                         <div class="flex flex-col gap-y-2 p-5 sm:flex-row sm:items-center">
                                             <div>
                                                 <div class="relative">
@@ -86,6 +88,7 @@
                                                 
                                             </div>
                                             <div class="flex flex-col gap-x-3 gap-y-2 sm:ml-auto sm:flex-row">
+                                                
                                             </div>
                                             <div class="flex flex-col gap-y-3 md:h-10 md:flex-row md:items-center">
                                                 <div class="text-base font-medium 2xl:group-[.mode--light]:text-white">
@@ -110,8 +113,20 @@
                                                         </td>
                                                     
                                                         <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
-                                                             Name
+                                                             Names for ({{$display}}) role
                                                         </td>
+
+                                                        @if($display== 'permissions')
+                                                        <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
+                                                             Roles assigned
+                                                        </td>
+                                                        @endif
+
+                                                         @if($display== 'roles')
+                                                        <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
+                                                             Staffs assigned
+                                                        </td>
+                                                        @endif
                                                        
                                                         <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500 w-28">
                                                             Action
@@ -130,10 +145,22 @@
                                                         <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
                                                             {{$det?->name}}
                                                         </td>
-                                                        
+
+                                                        @if($display== 'permissions')
+                                                            <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
+                                                                @foreach ($det?->roles as $role)
+                                                                    <span>{{$role?->name}},</span>
+                                                                @endforeach
+                                                            </td>
+                                                        @endif
+
+                                                        @if($display== 'roles')
+                                                            <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
+                                                                    <span><a href="{{route('ai-users-form-role', $det?->id)}}">{{$det?->users?->count()}} Users, (View)</a></span>
+                                                            </td>
+                                                        @endif
                                                         
 
-                                                   
                                                         <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 relative border-dashed py-4 dark:bg-darkmode-600">
                                                             <div class="flex items-center justify-center">
                                                                 <div data-tw-merge="" data-tw-placement="bottom-end" class="dropdown relative h-5"><button data-tw-toggle="dropdown" aria-expanded="false" class="cursor-pointer h-5 w-5 text-slate-500"><i data-tw-merge="" data-lucide="more-vertical" class="stroke-[1] w-5 h-5 fill-slate-400/70 stroke-slate-400/70"></i>
@@ -144,6 +171,38 @@
                                                                             
                                                                         <a href=" {{route('ai.randp')}}" class="cursor-pointer flex items-center p-2 transition duration-300 ease-in-out rounded-md hover:bg-slate-200/60 dark:bg-darkmode-600 dark:hover:bg-darkmode-400 dropdown-item text-success"><i data-tw-merge="" data-lucide="key" class="stroke-[1] mr-2 h-4 w-4"></i>
                                                                                 Assign</a> 
+                                                                                
+
+                                                                                @if ($display == 'permissions')
+                                                                                <form action="{{route('ai-delete-perm')}}" method="post">
+                                                                                    @csrf
+
+                                                                                    <input type="hidden" name="perm_id" value="{{$det?->id}}">
+
+                                                                                    <button
+                                                                                        class="cursor-pointer flex items-center p-2 transition duration-300 ease-in-out rounded-md hover:bg-slate-200/60 dark:bg-darkmode-600 dark:hover:bg-darkmode-400 dropdown-item text-danger"
+                                                                                        type="submit">
+                                                                                        <i data-tw-merge="" data-lucide="trash" class="stroke-[1] mr-2 h-4 w-4"></i> Delete
+                                                                                    </button>
+                                                                                </form>
+                                                                                @endif 
+
+                                                                                @if ($display == 'roles')
+                                                                                <form action="{{route('ai-delete-role')}}" method="post">
+                                                                                    @csrf
+
+                                                                                    <input type="hidden" name="role_id" value="{{$det?->id}}">
+
+                                                                                    <button
+                                                                                        class="cursor-pointer flex items-center p-2 transition duration-300 ease-in-out rounded-md hover:bg-slate-200/60 dark:bg-darkmode-600 dark:hover:bg-darkmode-400 dropdown-item text-danger"
+                                                                                        type="submit">
+                                                                                        <i data-tw-merge="" data-lucide="trash" class="stroke-[1] mr-2 h-4 w-4"></i> Delete 
+                                                                                    </button>
+                                                                                </form>
+                                                                                @endif 
+                                                                                
+                                                                        <!-- <a href=" {{route('ai.randp')}}" >
+                                                                                Delete</a>  -->
                                                                         </div>
                                                                     </div>
                                                                 </div>
