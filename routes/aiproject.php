@@ -45,6 +45,9 @@ Route::middleware('tool')->group(function () {
     Route::post('/ai-change-dets', [AiUserManagementController::class, 'aiChangeDets'])->name('ai-change-dets');
     Route::get('/ai-view-users-from-role/{id?}', [AiUserManagementController::class, 'aiUsersFromRole'])->name('ai-users-form-role');
 
+    Route::get('/ai-search', [AiConverterController::class, 'aiSearch'])->name('ai.search.file');
+
+
 });
 
 Route::get('/ai-login', [AiConverterController::class, 'aiLogin'])->name('ai-login');

@@ -26,6 +26,23 @@ class AiConverterController extends Controller
 
     }
 
+    public function aiSearch(Request $request)
+    {
+
+        if ($request->type = 'ai_files') {
+            
+            // dd($request->all());
+            $data['results'] = AiUpload::where('file_name', 'like', '%' . $request->search . '%')
+                ->orWhere('original_name', 'like', '%' . $request->search . '%')
+                ->paginate(20);
+                return view('ai-project.dashboard', $data);
+        } else {
+            $data['results'] = AiUpload::latest()->paginate(20);
+            return view('ai-project.dashboard', $data);
+        }
+        
+    }
+
 //    public function aiSee()
 //     {
 //         $path = 'public/IandM.116917.pdf'; // inside storage/app/public
@@ -170,7 +187,7 @@ class AiConverterController extends Controller
 
             $file = $f;
             $originalFileName = $file->getClientOriginalName();
-            $uniqueName = 'IandM.' . rand(100000, 999999) . '.pdf';
+            $uniqueName = 'IandM_' . rand(100000, 999999) . '_';
             $path = $file->storeAs('/public/uploads', $uniqueName);
             // $path = $file->storeAs('/public/uploads', $originalFileName);
             $fullPath = storage_path('app/' . $path);
@@ -197,7 +214,7 @@ class AiConverterController extends Controller
 
                 // dd($data);
                 foreach ($data['output_files']as $output) {
-                    
+                    // dd($output);
                     $upload->txt = $output['txt'] ?? null;
                     $upload->txtb = $output['txtb'] ?? null;
                     $upload->excel = $output['excel'] ?? null;

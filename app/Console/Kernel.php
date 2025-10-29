@@ -21,7 +21,7 @@ class Kernel extends ConsoleKernel
 
         $schedule->call(function () {
             try {
-                $updated = AiUpload::where('created_at', '<', now()->subMinutes(2))
+                $updated = AiUpload::where('created_at', '<', now()->subMinutes(60))
                     ->where('status','converted')
                     ->update(['status' => 'deleted']);
 
