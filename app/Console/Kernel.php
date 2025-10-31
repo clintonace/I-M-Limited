@@ -43,10 +43,10 @@ class Kernel extends ConsoleKernel
                         $deleted->delete();
                     }
 
-                    // $delete->delete();
+                    $delete->delete();
 
-                \Log::info("Scheduler: Marked {$updated} uploads as failed.");
-                \Log::info("Scheduler: Marked {$deleted} uploads as failed.");
+                // \Log::info("Scheduler: Marked {$updated} uploads as failed.");
+                // \Log::info("Scheduler: Marked {$deleted} uploads as failed.");
 
             } catch (\Throwable $e) {
                 \Log::error("Scheduler failed: " . $e->getMessage(), [
