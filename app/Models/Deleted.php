@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Deleted extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'file_name',
+        'path',
+        'original_name',
+        'status',
+        'txt',
+        'batch',
+    ];
 }
