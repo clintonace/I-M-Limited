@@ -48,6 +48,10 @@ Route::middleware('tool')->group(function () {
     Route::get('/ai-search', [AiConverterController::class, 'aiSearch'])->name('ai.search.file');
 
 
+    Route::get('/ai-trash', [AiConverterController::class, 'aiTrash'])->name('ai.trash');
+
+
+
 });
 
 Route::get('/ai-login', [AiConverterController::class, 'aiLogin'])->name('ai-login');

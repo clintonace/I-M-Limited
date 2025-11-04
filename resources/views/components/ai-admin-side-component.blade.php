@@ -32,7 +32,16 @@
                     </a>
                     <!-- BEGIN: Second Child -->
                     <!-- END: Second Child -->
-                </li>                
+                </li>   
+                <li>
+                    <a href="{{route('ai.trash')}}" class=" active side-menu__link ">
+                        <i data-tw-merge="" data-lucide="trash"
+                            class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                        <div class="side-menu__link__title">Trash</div>
+                    </a>
+                    <!-- BEGIN: Second Child -->
+                    <!-- END: Second Child -->
+                </li>              
                 @endcan
                 
                 @endif

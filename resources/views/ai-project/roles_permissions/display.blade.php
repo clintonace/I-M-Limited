@@ -229,6 +229,12 @@
                                         <div class="mt-3.5 px-5 pb-5">
                                                 {{$dets->links()}}
                                         </div>
+
+                                        <div>
+
+                                        
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>

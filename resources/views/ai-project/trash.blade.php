@@ -8,13 +8,8 @@
     <x-slot name="content">
 
 
-  
-
 
         @if (Auth::user()->is_ai == 1)
-
-           
-             
 
             <div
                     class="content transition-[margin,width] duration-100 px-5 mt-[65px] pt-[31px] pb-16 relative z-10 content--compact xl:ml-[275px] [&.content--compact]:xl:ml-[91px]">
@@ -72,15 +67,20 @@
                                         <div class="flex flex-col gap-y-2 p-5 sm:flex-row sm:items-center">
                                             <div>
                                                 <div class="relative">
-                                                    <i data-tw-merge="" data-lucide="search" class="absolute inset-y-0 left-0 z-10 my-auto ml-3 h-4 w-4 stroke-[1.3] text-slate-500"></i>
 
-                                                    <form action="{{route('ai.search.file')}}" method="GET" >
+                                                    <form action="{{route('ai.search.file')}}" method="POST" >
                                                         @csrf
-
+<!-- 
                                                         <input type="hidden" name="type" value="ai_files">
                                                         
-                                                        <input data-tw-merge="" type="text" name="search" placeholder="Dateien suchen..." class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 [&[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 [&[type='file']]:border file:mr-4 file:py-2 file:px-4 file:rounded-l-md file:border-0 file:border-r-[1px] file:border-slate-100/10 file:text-sm file:font-semibold file:bg-slate-100 file:text-slate-500/70 hover:file:bg-200 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10 rounded-[0.5rem] pl-9 sm:w-64">
+                                                        <input data-tw-merge="" type="text" name="search" placeholder="Dateien suchen..." class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 [&[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 [&[type='file']]:border file:mr-4 file:py-2 file:px-4 file:rounded-l-md file:border-0 file:border-r-[1px] file:border-slate-100/10 file:text-sm file:font-semibold file:bg-slate-100 file:text-slate-500/70 hover:file:bg-200 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10 rounded-[0.5rem] pl-9 sm:w-64"> -->
 
+                                                        <button type="submit" class="cursor-pointer flex items-center p-2 transition duration-300 ease-in-out rounded-md hover:bg-slate-200/60 dark:bg-darkmode-600 dark:hover:bg-darkmode-400 dropdown-item text-success"
+                                                        >
+                                                        <i data-tw-merge="" data-lucide="trash"></i>
+                                                            Mass delete
+                                                        </button>
+                                                        
                                                     </form>
                                                 </div>
 
@@ -113,12 +113,10 @@
                                                         <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
                                                             Status
                                                         </td>
-                                                        <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
-                                                            Wird gelöscht in
-                                                        </td>
-                                                        <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500 w-28">
-                                                            Aktion
-                                                        </td>
+                                                        
+                                                            <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500 w-28">
+                                                                Aktion
+                                                            </td>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -189,16 +187,7 @@
 
                                                             @endif
                                                         </td>
-                                                        <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
-                                                            <div class="ml-3.5">
-                                                                <a class="whitespace-nowrap font-medium" href="#">
-                                                                    {{$r?->created_at}}
-                                                                </a>
-                                                                <div class="mt-0.5 whitespace-nowrap text-xs text-slate-500">
-                                                                    {{$r?->created_at->diffForHumans()}}
-                                                                </div>
-                                                            </div>
-                                                        </td>
+                                                        
                                                         <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 relative border-dashed py-4 dark:bg-darkmode-600">
                                                             <div class="flex items-center justify-center">
                                                                 <div data-tw-merge="" data-tw-placement="bottom-end" class="dropdown relative h-5"><button data-tw-toggle="dropdown" aria-expanded="false" class="cursor-pointer h-5 w-5 text-slate-500"><i data-tw-merge="" data-lucide="more-vertical" class="stroke-[1] w-5 h-5 fill-slate-400/70 stroke-slate-400/70"></i>

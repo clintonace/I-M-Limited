@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\AiUploaadedRequest;
 use App\Models\AiUpload;
 use App\Models\ConvertedId;
+use App\Models\Deleted;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -133,12 +134,17 @@ class AiConverterController extends Controller
         return view('ai-project.dashboard', $data);
     }
 
+    public function aiTrash()
+    {
+
+        $data['results'] = Deleted::latest()->paginate(20);
+        return view('ai-project.trash', $data);
+    }
+
     public function aiDeleteConverted (Request $request, $id = null){
 
     
         $file = AiUpload::find($request->id);
-
-       
 
         if($file != null){
 
@@ -154,7 +160,23 @@ class AiConverterController extends Controller
             return back();
 
 
-        }
+        }else{
+
+            $file = Deleted::find($request->id);
+
+            // $filePath = storage_path('app/public/converted/' . $file->pdf);
+
+            // if (file_exists($filePath)) {
+            //     unlink($filePath);
+            // }
+
+            $file->delete();
+
+            Alert::success('Erfolgreich', 'Datei erfolgreich gelöscht.');
+            return back();
+
+        }   
+        
         Alert::info('Info', 'Datei nicht gefunden.');
         return back();
     }
