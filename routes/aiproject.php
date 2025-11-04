@@ -49,6 +49,8 @@ Route::middleware('tool')->group(function () {
 
 
     Route::get('/ai-trash', [AiConverterController::class, 'aiTrash'])->name('ai.trash');
+    Route::post('/ai-mass-trash', [AiConverterController::class, 'aiMassTrash'])->name('ai.mass.trash');
+
 
 
 

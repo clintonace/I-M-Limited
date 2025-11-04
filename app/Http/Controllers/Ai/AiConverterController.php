@@ -141,6 +141,14 @@ class AiConverterController extends Controller
         return view('ai-project.trash', $data);
     }
 
+    public function aiMassTrash()
+    {
+
+        $data['results'] = Deleted::where('id', '!=', 0)->delete();
+        Alert::success('Erfolgreich', 'Datei erfolgreich gelöscht.');
+        return back();
+    }
+
     public function aiDeleteConverted (Request $request, $id = null){
 
     

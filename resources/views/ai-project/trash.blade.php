@@ -68,7 +68,7 @@
                                             <div>
                                                 <div class="relative">
 
-                                                    <form action="{{route('ai.search.file')}}" method="POST" >
+                                                    <form action="{{route('ai.mass.trash')}}" method="POST" >
                                                         @csrf
 <!-- 
                                                         <input type="hidden" name="type" value="ai_files">
