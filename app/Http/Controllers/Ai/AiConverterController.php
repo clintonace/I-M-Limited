@@ -296,7 +296,7 @@ class AiConverterController extends Controller
 
             }else{
 
-                Alert::info('Error', 'One or all of you files did not process successfully.');
+                Alert::info('Fehler', 'Eine oder alle Ihre Dateien wurden nicht erfolgreich verarbeitet.');
                 return back();
 
             }
@@ -315,10 +315,10 @@ class AiConverterController extends Controller
         $path = storage_path("app/public/converted/{$file}");
 
         if (!file_exists($path)) {
-            abort(404, 'File not found');
+            abort(404, 'Datei nicht gefunden');
         }
 
-        Alert::success('Success', 'File Downloaded');
+        Alert::success('Erfolg', 'Datei heruntergeladen');
         return response()->download($path);
     }
 
@@ -363,9 +363,9 @@ class AiConverterController extends Controller
             return redirect()->route('ai-project');
         }
 
-        Alert::info('Failed', 'User Not found');
+        Alert::info('Fehlgeschlagen', 'Benutzer nicht gefunden.');
         return back()->withErrors(new MessageBag([
-            'login' => 'Invalid credentials. Please try again.'
+            'login' => 'Ungültige Anmeldedaten. Bitte versuchen Sie es erneut.'
         ]))->withInput();
     }
 
@@ -382,7 +382,7 @@ class AiConverterController extends Controller
          $num = rand(0, 9999);
 
             if ($files->isEmpty()) {
-                Alert::info('Info', 'No files found for this batch.');
+                Alert::info('Info', 'Keine Dateien für diesen Stapel gefunden.');
             }
 
             // Define zip filename + path
@@ -400,11 +400,11 @@ class AiConverterController extends Controller
                 }
                 $zip->close();
             } else {
-                Alert::info('Error', 'Could not create zip file.');
+                Alert::info('Fehler', 'ZIP-Datei konnte nicht erstellt werden.');
             }
 
             // Return the zip for download and delete it afterwards
-            Alert::success('Success', 'All files downloaded');
+            Alert::success('Erfolg', 'Alle Dateien wurden heruntergeladen.');
             return response()->download($zipPath)->deleteFileAfterSend(true);
 
     }
