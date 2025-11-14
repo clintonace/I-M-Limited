@@ -19,7 +19,6 @@ Route::middleware('tool')->group(function () {
     Route::get('/ai-converter', [AiConverterController::class, 'aiProject'])->name('ai-project');
     Route::get('/ai-converter/work-area/{id?}', [AiConverterController::class, 'aiWorkArea'])->name('ai-workarea');
     Route::post('/ai-converter/upload-file', [AiConverterController::class, 'aiUploadFile'])->name('ai.upload.file');
-    Route::get('/download/{file?}', [AiConverterController::class, 'downloadFile'])->name('download.file');
     Route::get('/ai-dashboard', [AiConverterController::class, 'aiDashboard'])->name('ai.dashboard');
 
 
@@ -29,6 +28,7 @@ Route::middleware('tool')->group(function () {
 
     Route::get('/download-all-txt/{batch?}', [AiConverterController::class, 'downloadTxt'])->name('download.txt');
     Route::get('/download-all-pdf/{batch?}', [AiConverterController::class, 'downloadPdf'])->name('download.pdf');
+    Route::get('/download/{file?}', [AiConverterController::class, 'downloadFile'])->name('download.file');
 
     Route::get('/ai-users-management', [AiUserManagementController::class, 'aiUsers'])->name('ai.users.management');
     Route::get('/ai-create-view', [AiUserManagementController::class, 'aiCreateView'])->name('ai.create-view');

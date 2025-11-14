@@ -379,6 +379,9 @@ class AiConverterController extends Controller
 
 
          $files = AiUpload::where('batch', $batch)->pluck($type);
+
+         $txtb = AiUpload::where('batch', $batch)->pluck('txtb');
+
          $num = rand(0, 9999);
 
             if ($files->isEmpty()) {
@@ -398,7 +401,27 @@ class AiConverterController extends Controller
                         $zip->addFile($filePath, basename($filePath));
                     }
                 }
+
+                
+                if ($type != 'pdf') {
+                        foreach ($txtb as $file) {
+
+                        if ($file === null) {
+                            continue;
+                        }
+
+                        $filePath = storage_path("app/public/converted/{$file}");
+                        if (file_exists($filePath)) {
+                            $zip->addFile($filePath, basename($filePath));
+                        }
+                    }
+                }
+
+                // dd($type);
+
+
                 $zip->close();
+
             } else {
                 Alert::info('Fehler', 'ZIP-Datei konnte nicht erstellt werden.');
             }

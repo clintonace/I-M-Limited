@@ -72,7 +72,7 @@
                             <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Go Back
                         </a>
                         <a href="{{route('download.txt', $results?->first()->batch)}}" class="button w-button">Download Txt Datei batch</a>
-                        <a href="{{route('download.pdf', $results?->first()->batch)}}" class="button w-button">Download Pdf Datei Batch</a>
+                        <!-- <a href="{{route('download.pdf', $results?->first()->batch)}}" class="button w-button">Download Pdf Datei Batch</a> -->
 
 
                         <h5 style="margin-top: 50px" data-w-id="2750b49e-f3a5-41af-730f-5a77f295728e" style="opacity:1"

@@ -75,8 +75,32 @@ class AiRolesController extends Controller
 
             Alert::success('Success', 'You have assigned permissions to this role');
             return back();
-       
+        
     }
+
+
+    // public function aiRevokePermissionsFromRole(Request $request)
+    // {
+
+    //         if (!Auth::user()->hasRole('admin')) {
+    //         Alert::error('Access Denied', 'You are not authorized to perform this action.');
+    //         return back();
+    //         }
+
+    //         $request->validate([
+    //                 'role' => 'required|exists:roles,name',
+    //                 'perm' => 'required|exists:permissions,name',*
+    //         ]);
+
+    //         $role =  Role::where('name', $request->role)->firstOrFail();
+    //         $permission = Permission::where('name', $request->perm)->firstOrFail();
+
+    //         $role->revokePermissionTo($permission);
+
+    //         Alert::success('Success', 'You have revoked permissions from this role');
+    //         return back();
+        
+    // }
 
 
     public function aiCreateRole(Request $request)

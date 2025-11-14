@@ -46,6 +46,9 @@ class Kernel extends ConsoleKernel
                     AiUpload::where('created_at', '<', now()->subDay())
                     ->where('status', 'deleted')->delete();
 
+                    Deleted::where('created_at', '<', now()->subDay(5))
+                    ->delete();
+
                 // \Log::info("Scheduler: Marked {$updated} uploads as failed.");
                 // \Log::info("Scheduler: Marked {$deleted} uploads as failed.");
 
