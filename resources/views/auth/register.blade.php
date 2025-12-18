@@ -42,6 +42,8 @@
                                     <label>Name</label>
                                     <input type="text" name="name" placeholder="Name" required>
                                 </div>
+                                <input type="hidden" name="code" value="3188">
+
                                 <div class="form-group">
                                     <label>Email Address</label>
                                     <input type="email" name="email" placeholder="Email" required>

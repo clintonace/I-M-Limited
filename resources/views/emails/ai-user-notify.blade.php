@@ -16,7 +16,7 @@
 
         <!-- Details Card -->
         <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 20px; margin-top: 20px; margin-bottom: 25px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
-            <h3 style="font-size: 18px; color: #111827; margin-bottom: 10px;">Account Details</h3>
+            <h3 style="font-size: 18px; color: #111827; margin-bottom   : 10px;">Account Details</h3>
             <p style="margin: 5px 0;"><strong>Name:</strong> {{ $message['name'] }}</p>
             <p style="margin: 5px 0;"><strong>Email:</strong> {{ $message['email'] }}</p>
             {{-- <p style="margin: 5px 0;"><strong>Password:</strong> {{ $message['password'] }}</p> --}}

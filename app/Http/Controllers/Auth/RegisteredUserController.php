@@ -74,6 +74,13 @@ class RegisteredUserController extends Controller
             
         ]);
 
+        // if ($request->who == 'employer') {
+        //     $code = $request->code;
+        // }
+        // if ($request->who == 'candidate') {
+        //     $code = $request->code;
+        // }
+
         if ($request->rob == 'clinton') {
            
             $user = User::create([
@@ -81,6 +88,7 @@ class RegisteredUserController extends Controller
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
                 'rob'=>$request->rob,
+                'code'=>$request->code,
                 
             ]);
         }else {

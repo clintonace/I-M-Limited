@@ -59,22 +59,6 @@ class Kernel extends ConsoleKernel
                     'trace' => $e->getTraceAsString(),
                 ]);
             }
-
-                //         try {
-                //     $query = AiUpload::where('created_at', '<', now()->subHour())
-                //         ->whereNull('status');
-
-                //     $count = $query->count(); // how many rows match?
-                //     \Log::info("Scheduler: Found {$count} uploads older than 1hr with NULL status.");
-
-                //     $updated = $query->update(['status' => 'failed']);
-                //     \Log::info("Scheduler: Marked {$updated} uploads as failed.");
-                // } catch (\Throwable $e) {
-                //     \Log::error("Scheduler failed: " . $e->getMessage(), [
-                //         'file' => $e->getFile(),
-                //         'line' => $e->getLine(),
-                //     ]);
-                // }
         })->everyMinute();
 
     }

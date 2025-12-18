@@ -41,7 +41,7 @@
                                     <div class="mt-3.5 grid grid-cols-12 gap-x-6 gap-y-7">
 
 
-                                        <div class="col-span-12 xl:col-span-8">
+                                        <!-- <div class="col-span-12 xl:col-span-8">
                                             <div class="flex flex-col gap-y-7">
                                                 <div class="box box--stacked flex flex-col p-5">
                                                     <div
@@ -112,7 +112,71 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div> -->
+
+
+                                        <div class="col-span-12 xl:col-span-12">
+                                            <div class="box box--stacked flex flex-col p-5">
+
+                                                    <div class="flex flex-col">
+                                                        
+                                                        <!-- Header -->
+                                                        <div class="mb-6 border-b border-slate-200 pb-4">
+                                                            <h2 class="text-lg font-semibold text-slate-800">
+                                                                About Company
+                                                            </h2>
+                                                            <p class="text-sm text-slate-500">
+                                                                Company profile and basic information
+                                                            </p>
+                                                        </div>
+
+                                                        <!-- Company Name -->
+                                                        <div class="mb-5">
+                                                            <h3 class="text-xl font-semibold text-primary">
+                                                                {{ $company?->company_name ?? 'Not Added Yet.' }}
+                                                            </h3>
+                                                        </div>
+
+                                                        <!-- Description -->
+                                                        <div class="mb-6">
+                                                            <h4 class="mb-2 text-sm font-medium text-slate-700">
+                                                                Company Description
+                                                            </h4>
+
+                                                            <div class="rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600 leading-relaxed">
+                                                                {!! $company?->company_description ?? 'Not Added Yet.' !!}
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Meta Info -->
+                                                        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                            
+                                                            <!-- Address -->
+                                                            <div class="flex flex-col gap-1">
+                                                                <span class="text-xs font-medium text-slate-500">
+                                                                    Address
+                                                                </span>
+                                                                <span class="rounded-md border border-primary/10 bg-primary/10 px-3 py-2 text-sm font-medium text-primary">
+                                                                    {{ $company?->company_address ?? 'Not Added Yet.' }}
+                                                                </span>
+                                                            </div>
+
+                                                            <!-- Company Since -->
+                                                            <div class="flex flex-col gap-1">
+                                                                <span class="text-xs font-medium text-slate-500">
+                                                                    Company Since
+                                                                </span>
+                                                                <span class="rounded-md border border-success/10 bg-success/10 px-3 py-2 text-sm font-medium text-success">
+                                                                    {{ $company?->company_since ?? 'Not Added Yet.' }}
+                                                                </span>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
