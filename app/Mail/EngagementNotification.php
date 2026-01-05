@@ -47,9 +47,6 @@ class EngagementNotification extends Mailable
             'information' => $this->information,
             'user' => $this->user,
             'req' => $this->req,
-        ]) ->attach(storage_path('app/public/IandM-no-white-bg-logo-.png'), [
-            'as' => 'IandM-no-white-bg-logo.png',
-            'mime' => 'image/png',
-        ]);
+        ]) ;
     }
 }

@@ -118,33 +118,42 @@
 
                         <li>
                             <a href="{{route('candidates.list')}}">
-                                <span>Candidate List</span>
+                                <span>Talents</span>
                             </a>
 
 
                         </li>
-                        {{-- <li>
+                        <li>
                             <a href="{{route('employer.list')}}">
-                                <span>Company List</span>
+                                <span>Companies</span>
                             </a>
 
 
-                        </li> --}}
-
-                        {{-- <li>
-                            <a href="{{route('contact.us')}}">
-                                <span>Sustainability</span>
-                            </a>
-
-                        </li> --}}
-
-                        {{-- <li>
+                        </li> 
+                        <li>
                             <a href="{{route('about.us')}}">
                                 <span>About us</span>
                             </a>
 
 
-                        </li> --}}
+                        </li>
+
+                        
+                        <li>
+                            <a href="{{route('contact.us')}}">
+                                <span>Contact us</span>
+                            </a>
+
+
+                        </li>
+                        <li>
+                            <a href="{{route('testimony')}}">
+                                <span>Testimonials</span>
+                            </a>
+
+
+                        </li>
+
 
                         <!-- Only for Mobile View -->
                         <li class="mm-add-listing">

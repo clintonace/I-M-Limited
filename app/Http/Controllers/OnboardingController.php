@@ -21,6 +21,15 @@ class OnboardingController extends Controller
 
         return view('onboarding.contact-us');
     }
+
+    public function testimony()
+    {
+
+        $testimonies = \App\Models\Testimony::all();
+
+        return view('onboarding.testimonies', compact('testimonies'));
+    }
+
     public function privacy()
     {
 
@@ -136,12 +145,13 @@ class OnboardingController extends Controller
     public function companySearch(Request $request)
     {
 
+
         $data['companies']= Company::where('company_name', 'LIKE', '%' . $request->company_name . '%')
                                     ->where('company_sector', 'LIKE', '%' . $request->department . '%')
-                                    ->latest()->get();
+                                    ->latest()->get();  
+
 
         $data['depts'] = Department::all();
-        // dd('here');
 
         return view('onboarding.employer-list', $data);
 

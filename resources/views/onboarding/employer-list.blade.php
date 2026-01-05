@@ -136,18 +136,22 @@
 
                                 <div class="company-block-four col-xl-3 col-lg-4 col-md-6 col-sm-12">
                                     <div class="inner-box">
-                                        <button class="bookmark-btn"><span class="flaticon-bookmark"></span></button>
+                                        <!-- <button class="bookmark-btn"><span class="flaticon-bookmark"></span></button> -->
                                         <span class="featured">Featured</span>
                                         <span class="company-logo"><img style="height: 100px; width: 100px;" src="{{$company?->company_logo}}" alt=""></span>
                                         <h4><a href="#">{{$company?->company_name}}</a></h4>
                                         <ul class="job-info">
+
+                                        
+                                        <br>
                                             <li><span class="icon flaticon-briefcase"></span> {{$company?->company_sector}} sector</li>
                                             <br>
                                             <li><span class="icon flaticon-map-locator"></span> Country: {{$company?->country}}</li>
                                             <li><span class="icon flaticon-clock-3"></span>Joined: {{$company?->created_at->diffForHumans()}}</li>
 
                                         </ul>
-                                        {{-- <div class="job-type">Open Jobs – 2</div> --}}
+                                        <div class="job-type">Open Jobs – _ _ _</div>
+                                        <div class="job-type">Company size – {{$company?->company_size}}</div>
                                     </div>
                                 </div>
                                 @endforeach

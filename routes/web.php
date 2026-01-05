@@ -59,6 +59,7 @@ Route::prefix('web/')->group(function () {
     Route::get('/search-candidate', [OnboardingController::class, 'candidateSearch'])->name('onboarding.search.candidates');
     Route::get('/search-company', [OnboardingController::class, 'companySearch'])->name('onboarding.search.company');
 
+    Route::get('/testimonies', [OnboardingController::class, 'testimony'])->name('testimony');
 
     Route::get('/portfolio', [OnboardingController::class, 'portfolio_colors'])->name('portfolio.colors');
 
@@ -169,6 +170,8 @@ Route::prefix('company')->middleware('company')->group(function () {
 
     Route::get('events-display', [CompanyController::class, 'eventsDisplay'])->name('company.events.display');
     Route::get('requests-display', [CompanyController::class, 'requestsDisplay'])->name('company.requests.display');
+
+    Route::get('talents-display/{query?}', [CompanyController::class, 'talentsDisplay'])->name('company.talents.display');
 
 });
 

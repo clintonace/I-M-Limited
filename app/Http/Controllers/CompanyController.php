@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Booking;
 use App\Models\Company;
 use App\Models\Department;
+use App\Models\Information;
 use App\Models\Request as ModelsRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -84,7 +85,29 @@ class CompanyController extends Controller
         return view('company.request', $data);
     }
 
+    public function talentsDisplay(Request $request){
 
+
+        if($request->has('query')){
+
+            $query = $request->input('query');  
+            $data['talents']= Information::where('is_active', true)
+            ->where(function($q) use ($query) {
+                $q->where('department', 'like', '%'.$query.'%')
+                  ->orWhere('professional_skills', 'like', '%'.$query.'%')
+                  ->orWhere('hobbies', 'like', '%'.$query.'%');
+            })
+            ->latest()
+            ->get();
+
+        } else {
+            $data['talents']= Information::where('is_active', true)->latest()->get();
+        }   
+        // $data['talents']= Information::where('is_active', true)->latest()->get();
+        $data['depts'] = Department::all();
+
+        return view('company.talents', $data);
+    }
 
 
 
