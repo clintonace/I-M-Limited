@@ -22,4 +22,21 @@ class Company extends Model
         'company_description',
         'company_sector',
     ];
+
+
+
+
+    /**
+     * Get the company associated with the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function opening(): HasMany
+    {
+        return $this->hasMany(Opening::class, 'company_id', 'id');
+
+    }
+
+
+    
 }

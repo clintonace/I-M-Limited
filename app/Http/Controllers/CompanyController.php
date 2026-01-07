@@ -6,6 +6,7 @@ use App\Models\Booking;
 use App\Models\Company;
 use App\Models\Department;
 use App\Models\Information;
+use App\Models\Opening;
 use App\Models\Request as ModelsRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,6 +19,44 @@ class CompanyController extends Controller
 
         $data['depts'] = Department::latest()->get();
         return view('company.update-profile', $data);
+    }
+
+    public function createOpeningView()
+    {
+
+        $data['depts'] = Department::latest()->get();
+        return view('company.create-opening', $data);
+    }
+
+    public function createOpening(Request $request)
+    {
+
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'location' => 'required|string',
+            'type' => 'required|in:full-time,part-time,contract,internship',
+            'salary' => 'nullable|numeric',
+            'currency' => 'required|string|max:10', 
+            'application_deadline' => 'required',
+            'open_date'=> 'required'
+        ]);
+
+        $opening = new Opening();
+        $opening->title = $request->title;
+        $opening->description = $request->description;
+        $opening->location = $request->location;
+        $opening->type = $request->type;
+        $opening->salary = $request->salary;
+        $opening->currency = $request->currency;
+        $opening->application_deadline = $request->application_deadline;
+        $opening->open_date = $request->open_date;
+        $opening->company_id = $request->company_id;
+        $opening->status = $request->status;
+        $opening->save();
+
+        Alert::success('Success', 'Job opening created successfully.');
+        return view('company.create-opening');
     }
 
     public function profile()

@@ -12,4 +12,10 @@ class Department extends Model
     protected $fillable = [
         'name',
     ];
+
+
+    public function opening(): HasOne
+    {
+        return $this->hasOne(Opening::class, 'department_id', 'id');
+    }
 }

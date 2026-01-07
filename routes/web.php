@@ -155,9 +155,20 @@ Route::prefix('candidate')->group(function () {
 });
 
 
+// Route::prefix('engage')->middleware('company')->group(function () {
+
+//     Route::post('/notify-candidate-admin/{user_id}', [OnboardingController::class, 'candidateEngage'])->name('candidate.engagement.notification');
+
+// });
+
 Route::prefix('engage')->middleware('company')->group(function () {
 
-    Route::post('/notify-candidate-admin/{user_id}', [OnboardingController::class, 'candidateEngage'])->name('candidate.engagement.notification');
+    Route::post(
+        '/notify-candidate-admin/{user_id}',
+        [OnboardingController::class, 'candidateEngage']
+    )
+    ->middleware('throttle:5,1')
+    ->name('candidate.engagement.notification');
 
 });
 
@@ -172,6 +183,11 @@ Route::prefix('company')->middleware('company')->group(function () {
     Route::get('requests-display', [CompanyController::class, 'requestsDisplay'])->name('company.requests.display');
 
     Route::get('talents-display/{query?}', [CompanyController::class, 'talentsDisplay'])->name('company.talents.display');
+
+    Route::get('create-opening-view', [CompanyController::class, 'createOpeningView'])->name('company.create.opening.view');
+    Route::post('create-opening', [CompanyController::class, 'createOpening'])->name('company.create.opening');
+
+
 
 });
 

@@ -111,6 +111,8 @@ class OnboardingController extends Controller
     {
 
 
+        dd($request->all());
+
             $user = User::findOrFail($user_id);
             $information = Information::where('user_id', $user->id)->first();
 
