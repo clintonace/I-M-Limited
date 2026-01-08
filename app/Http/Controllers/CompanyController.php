@@ -28,6 +28,29 @@ class CompanyController extends Controller
         return view('company.create-opening', $data);
     }
 
+    public function openingDisplay(Request $request)
+    {
+
+        if($request->has('query')){
+
+            $query = $request->input('query');  
+            $data['openings']= Opening::where('company_id', Auth::user()->company->id)
+            ->where(function($q) use ($query) {
+                $q->where('title', 'like', '%'.$query.'%')
+                  ->orWhere('type', 'like', '%'.$query.'%')
+                  ->orWhere('location', 'like', '%'.$query.'%');
+            })
+            ->latest()
+            ->get();
+
+        } else {
+            $data['openings']= Opening::where('company_id', Auth::user()->company->id)->latest()->get();
+        }
+
+        $data['depts'] = Department::latest()->get();
+        return view('company.all-opening', $data);
+    }
+
     public function createOpening(Request $request)
     {
 
@@ -58,6 +81,48 @@ class CompanyController extends Controller
         Alert::success('Success', 'Job opening created successfully.');
         return view('company.create-opening');
     }
+
+     public function editOpening(Request $request, $opening_id)
+    {
+
+        // dd($request->all());
+
+        // $request->validate([
+        //     'title' => 'required|string|max:255',
+        //     'description' => 'required|string',
+        //     'location' => 'required|string',
+        //     'type' => 'required|in:full-time,part-time,contract,internship',
+        //     'salary' => 'nullable|numeric',
+        //     'currency' => 'required|string|max:10', 
+        //     'application_deadline' => 'required',
+        //     'open_date'=> 'required'
+        // ]);
+
+        $opening = Opening::find($opening_id);
+        $opening->title = $request->title;
+        $opening->description = $request->description;
+        $opening->location = $request->location;
+        $opening->type = $request->type;
+        $opening->salary = $request->salary;
+        $opening->currency = $request->currency;
+        $opening->application_deadline = $request->application_deadline;
+        $opening->open_date = $request->open_date;
+        $opening->company_id = $request->company_id;
+        $opening->status = $request->status;
+        $opening->save();
+
+        Alert::success('Success', 'Job opening edited successfully.');
+        return back();
+    }
+
+    public function editOpeningView($id= null)
+    {
+
+        $data['depts'] = Department::latest()->get();
+        $data['opening'] = Opening::find($id);
+        return view('company.edit-opening', $data);
+    }
+
 
     public function profile()
     {

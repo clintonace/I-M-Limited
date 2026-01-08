@@ -73,7 +73,7 @@
                                     class="flex items-center gap-2 w-full sm:w-auto">
 
                                     <input type="search" name="query" value="{{ request('query') }}"
-                                        placeholder="Search talents..."
+                                        placeholder="Search Openings..."
                                         class="h-10 w-full sm:w-64 px-3 rounded border border-slate-200
                                                 text-sm focus:ring-2 focus:ring-primary focus:outline-none" />
 
@@ -106,88 +106,91 @@
 
                                         @if ($openings != null)
 
-                                        @foreach ($openings as $o)
-                                        <div
-                                            class="box box--stacked col-span-12 flex flex-col p-5 md:col-span-6 xl:col-span-4 transition-transform duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
-                                            <a class="text-[0.94rem] font-medium text-primary" href="#">
-                                                 Openings Posted - {{$o?->created_at->format('d M, Y')}}
-                                            </a>
-                                            <div class="mb-5 mt-1 leading-relaxed text-slate-500">
-                                                Opening Title - {{$o?->title}}
-                                            </div>
-                                            <div data-tw-merge="" data-tw-placement="bottom-end"
-                                                class="dropdown absolute right-0 top-0 mr-5 mt-5">
-                                                <button class="dropdown-toggle w-10 h-10 rounded-full bg-slate-200 dark:bg-darkmode-400 flex items-center justify-center overflow-hidden">
-                                                    <img src="https://via.placeholder.com/50" alt="Profile" class="w-full h-full object-cover rounded-full" />
-                                                </button>
-                                               
-                                            </div>
-                                            <div
-                                                class="mt-auto flex flex-col gap-3 border-t border-dashed border-slate-300/70 pt-5">
+                                            @foreach ($openings as $o)
+                                            <div class="box box--stacked col-span-12 flex flex-col p-5 md:col-span-6 xl:col-span-4 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
 
-                                                <div class="flex items-center">
-                                                    <div class="text-slate-500"> Status:</div>
-                                                    <div class="ml-auto text-slate-500">
-                                                        {{$o?->status}} 
-                                                    </div>
+                                                <!-- Card Content -->
+                                                <a class="text-[0.94rem] font-medium text-primary" href="#">
+                                                    Openings Posted - {{$o?->created_at->format('d M, Y')}}
+                                                </a>
+                                                <div class="mb-5 mt-1 leading-relaxed text-slate-500">
+                                                    Opening Title - {{$o?->title}}
                                                 </div>
-                                                <div class="flex items-center">
-                                                    <div class="text-slate-500">Salary:</div>
-                                                    <div class="ml-auto text-slate-500">
-                                                         {{$o?->currency}}, {{$o?->salary}}
-                                                    </div>
-                                                </div>
-                                                <div class="flex items-center">
-                                                    <div class="text-slate-500">Open date:</div>
-                                                    <div class="ml-auto text-slate-500">
-                                                        {{$o?->open_date}}
-                                                    </div>
-                                                </div>
-                                                <div class="flex items-center">
-                                                    <div class="text-slate-500">Application Deadline:</div>
-                                                    <div class="ml-auto text-slate-500">
-                                                        {{$o?->application_deadline}}
-                                                    </div>
-                                                </div>
-                                                <div class="flex items-center">
-                                                    <div class="text-slate-500">Applicants:</div>
-                                                    <div class="ml-auto text-slate-500">
-                                                        {{$o?->applicants}}
-                                                    </div>
-                                                </div>
-                                                
 
-                                               
+                                                <div class="mt-auto flex flex-col gap-3 border-t border-dashed border-slate-300/70 pt-5">
 
-                                                <form action="#" method="post">
-
-                                                  @csrf
-                                                    <div class="w-full flex justify-center pt-4">
-                                                        
-
-                                                        <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded hover:opacity-90"
-                                                        role="button" aria-label="Make request">
-
-                                                            <button type="submit" class="inline-flex items-center justify-center gap-2">
-                                                                <i data-lucide="send" class="w-4 h-4"></i>
-                                                                Edit Opening
-                                                            </button>
-                                                         
+                                                    <div class="flex items-center">
+                                                        <div class="text-slate-500"> Status:</div>
+                                                        <div class="ml-auto text-slate-500">
+                                                            {{$o?->status}} 
                                                         </div>
                                                     </div>
-                                                </form>
+                                                    <div class="flex items-center">
+                                                        <div class="text-slate-500">Salary:</div>
+                                                        <div class="ml-auto text-slate-500">
+                                                            {{$o?->currency}}, {{$o?->salary}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex items-center">
+                                                        <div class="text-slate-500">Open date:</div>
+                                                        <div class="ml-auto text-slate-500">
+                                                            {{$o?->open_date}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex items-center">
+                                                        <div class="text-slate-500">Application Deadline:</div>
+                                                        <div class="ml-auto text-slate-500">
+                                                            {{$o?->application_deadline}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex items-center">
+                                                        <div class="text-slate-500">Applicants:</div>
+                                                        <div class="ml-auto text-slate-500">
+                                                            {{$o?->applicants}}
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Button to open modal -->
+                                                    <div class="flex justify-center mt-3">
+                                                        <button data-tw-toggle="modal"
+                                                                data-tw-target="#opening-modal-{{$o?->id}}"
+                                                                class="transition duration-200 border shadow-sm inline-flex items-center justify-center py-2 px-4 rounded-md font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 text-white bg-primary hover:opacity-90">
+                                                            <i data-lucide="eye" class="mr-2 h-4 w-4 stroke-[1.3]"></i>
+                                                            View Details
+                                                        </button>
+                                                        <a class="transition duration-200 border shadow-sm inline-flex items-center justify-center py-2 px-4 rounded-md font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 text-white bg-primary hover:opacity-90"
+                                                         href="{{route('company.edit.opening.view', $o->id)}}" target="_blank" rel="noopener noreferrer">Edit Details</a>
+                                                        
+                                                    </div>
+
+                                                </div>
                                             </div>
-                                        </div>
-                                        @endforeach
+
+                                            <!-- Modal -->
+                                            <div data-tw-backdrop="" aria-hidden="true" tabindex="-1" id="opening-modal-{{$o?->id}}"
+                                                class="modal group bg-gradient-to-b from-theme-1/50 via-theme-2/50 to-black/50 transition-[visibility,opacity] w-screen h-screen fixed left-0 top-0 [&:not(.show)]:duration-[0s,0.2s] [&:not(.show)]:delay-[0.2s,0s] [&:not(.show)]:invisible [&:not(.show)]:opacity-0 [&.show]:visible [&.show]:opacity-100 [&.show]:duration-[0s,0.4s]">
+
+                                                <div class="w-[90%] mx-auto bg-white relative rounded-md shadow-md transition-[margin-top,transform] duration-[0.4s,0.3s] -mt-16 group-[.show]:mt-16 sm:w-[460px] p-6 text-center">
+
+                                                    <h4 class="text-lg font-semibold text-slate-800 mb-4">{{$o?->title}}</h4>
+
+                                                    <span>Description: </span>
+                                                    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                                        {!! $o?->description ?? 'No description available' !!}
+                                                    </p>
+
+                                            @endforeach
+
                                         @else
-                                        <div
-                                            class="box box--stacked col-span-12 flex flex-col p-5 md:col-span-6 xl:col-span-4">
-                                            <a class="text-[0.94rem] font-medium text-primary" href="#">
-                                                No Openings Posted yet
-                                            </a>
-                                        </div>
+                                            <div class="box box--stacked col-span-12 flex flex-col p-5 md:col-span-6 xl:col-span-4">
+                                                <a class="text-[0.94rem] font-medium text-primary" href="#">
+                                                    No Openings Posted yet
+                                                </a>
+                                            </div>
                                         @endif
+
                                     </div>
+
                                 </div>
                             </div>
                         </div>

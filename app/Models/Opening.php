@@ -24,5 +24,5 @@ class Opening extends Model
         'status',
     ];
 
-   belong
+
 }

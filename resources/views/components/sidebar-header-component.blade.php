@@ -375,8 +375,8 @@
                             <!-- END: Second Child -->
                         </li>
                         <li>
-                            <a href="{{route('company.talents.display')}}"
-                                class="side-menu__link {{Route::currentRouteName()== 'company.talents.display' ? 'side-menu__link--active': ''}}">
+                            <a href="{{route('company.openings.display')}}"
+                                class="side-menu__link {{Route::currentRouteName()== 'company.openings.display' ? 'side-menu__link--active': ''}}">
                                 <i data-tw-merge="" data-lucide="users" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                                 <div class="side-menu__link__title">Open Roles</div>
 

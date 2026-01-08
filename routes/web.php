@@ -185,7 +185,12 @@ Route::prefix('company')->middleware('company')->group(function () {
     Route::get('talents-display/{query?}', [CompanyController::class, 'talentsDisplay'])->name('company.talents.display');
 
     Route::get('create-opening-view', [CompanyController::class, 'createOpeningView'])->name('company.create.opening.view');
+    Route::get('edit-opening-view/{id?}', [CompanyController::class, 'editOpeningView'])->name('company.edit.opening.view');
+
+    Route::get('opening-display/{query?}', [CompanyController::class, 'openingDisplay'])->name('company.openings.display');
+
     Route::post('create-opening', [CompanyController::class, 'createOpening'])->name('company.create.opening');
+    Route::post('edit-opening/{id?}', [CompanyController::class, 'editOpening'])->name('company.edit.opening');
 
 
 
