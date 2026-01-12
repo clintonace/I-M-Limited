@@ -90,6 +90,10 @@ public function sendEmailVerificationNotification()
     {
         return $this->hasMany(Media::class, 'user_id', 'id');
     }
+    public function suggestions(): HasMany
+    {
+        return $this->hasMany(Suggestion::class, 'user_id', 'id');
+    }
 
     /**
      * Get the company associated with the User

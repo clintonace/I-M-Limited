@@ -24,5 +24,9 @@ class Opening extends Model
         'status',
     ];
 
-
+    public function suggestions()
+    {
+        return $this->hasMany(Suggestion::class, 'opening_id', 'id');
+    }
+    
 }

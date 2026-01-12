@@ -12,6 +12,7 @@ use App\Models\Department;
 use App\Models\Education;
 use App\Models\Information;
 use App\Models\Media;
+use App\Models\Suggestion;
 use App\Models\Request as ModelsRequest;
 use App\Models\User;
 use App\Models\Work;
@@ -26,6 +27,7 @@ class AdminController extends Controller
     public function suggestTalentsToCompany(Request $request)
     {
 
+    // dd($request->all());
             $request->validate([
                 'opening_id' => 'required|exists:openings,id',
                 'users' => 'required|array',
@@ -34,28 +36,54 @@ class AdminController extends Controller
 
             $opening = Opening::findOrFail($request->opening_id);
 
-            $alreadySuggestedUserIds = Suggestion::where('company_id', $opening->company_id)
+            $alreadySuggestedUserIds = $opening->suggestions()
                 ->where('opening_id', $opening->id)
                 ->pluck('user_id')
+                ->unique()
+                ->values()
                 ->toArray();
 
-            $userIds = array_diff($request->users, $alreadySuggestedUserIds);                           
+                
+
+
+
+                $userIds = array_diff(
+                                array_map('intval', $request->users ?? []),
+                                $alreadySuggestedUserIds
+                            );
+
+// dd( $alreadySuggestedUserIds);
+            // $userIds = array_diff($request->users, $alreadySuggestedUserIds);     
+            // dd($userIds); 
+            
+//             dd(
+//     $request->users,
+//     $alreadySuggestedUserIds
+// );
 
             foreach ($request->users as $userId) {
+
                 $suggestion = new Suggestion();
                 $suggestion->company_id = $opening->company_id; 
                 $suggestion->user_id = $userId;
                 $suggestion->opening_id = $request->opening_id;
                 $suggestion->save();
+
             }   
-            dd($request->all());
+
+            Alert::success('Success', 'Talents suggested successfully.');
+            return back();         
 
     }
 
     public function suggestTalents($opening= null)
     {
-        $data['users'] = User::with('info')->where('code',3188)->get();
+        $data['users'] = User::with('info', 'suggestions')->where('code',3188)->get();
         $data['opening'] = Opening::findOrFail($opening);
+
+        $data['suggestedUserIds'] = $data['opening']->suggestions()
+        ->pluck('user_id')
+        ->toArray();
         return view('admin.openings.suggest-talent', $data);
     }
 

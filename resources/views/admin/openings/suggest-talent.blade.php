@@ -15,11 +15,9 @@
 
                         <div class="mt-3.5 flex flex-col gap-8">
 
-                        <form method="POST" action="{{route('admin.suggest.talents.to.company')}}" >
-                            @csrf
+                        
 
-                            <!-- hidden opening id -->
-                            <input type="hidden" name="opening_id" value="{{ $opening->id }}">
+                           
 
                             <div class="box box--stacked flex flex-col">
                                 <div class="flex flex-col gap-y-2 p-5 sm:flex-row sm:items-center">
@@ -39,6 +37,11 @@
                                         Click "Suggest Selected Talents" to proceed.        
                                         </div>
                                     </div>
+                                <form method="POST" action="{{route('admin.suggest.talents.to.company')}}" >
+
+                                 <!-- hidden opening id -->
+                                 <input type="hidden" name="opening_id" value="{{ $opening->id }}">
+
                                     <div class="flex flex-col gap-x-3 gap-y-2 sm:ml-auto sm:flex-row">
                                         <button type="submit"
                                             class="transition duration-200 border shadow-sm inline-flex items-center justify-center py-2 px-3 rounded-md font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 border-secondary text-slate-500 hover:bg-secondary/20 w-full sm:w-auto">
@@ -48,182 +51,174 @@
 
                                     </div>
                                 </div>
-                                <div class="overflow-auto xl:overflow-visible">
-                                    <table data-tw-merge="" class="w-full text-left border-b border-slate-200/60">
-                                        <thead data-tw-merge="" class="">
-                                            <tr data-tw-merge="" class="">
+                                 @csrf
+                                    <div class="overflow-auto xl:overflow-visible">
+                                        <table data-tw-merge="" class="w-full text-left border-b border-slate-200/60">
+                                            <thead data-tw-merge="" class="">
+                                                <tr data-tw-merge="" class="">
 
-                                                <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 text-center font-medium text-slate-500">
-                                                    Tick
-                                                </td>
-                                                <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 font-medium text-slate-500">
-                                                    Name
-                                                </td>
-                                                <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 font-medium text-slate-500">
-                                                    Position
-                                                </td>
-                                                <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 w-52 border-t border-slate-200/60 bg-slate-50 py-4 font-medium text-slate-500">
-                                                    Profile Completeness
-                                                </td>
-                                                <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 text-center font-medium text-slate-500">
-                                                    Status
-                                                </td>
-                                                
-                                                <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 font-medium text-slate-500">
-                                                    Joined Date
-                                                </td>
-                                                <!-- <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 w-20 border-t border-slate-200/60 bg-slate-50 py-4 text-center font-medium text-slate-500">
-                                                    Action
-                                                </td> -->
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($users as $user)
-                                            <tr data-tw-merge="" class="[&_td]:last:border-b-0">
-                                                <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
+                                                    <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 text-center font-medium text-slate-500">
+                                                        Tick
+                                                    </td>
+                                                    <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 font-medium text-slate-500">
+                                                        Name
+                                                    </td>
+                                                    <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 font-medium text-slate-500">
+                                                        Position
+                                                    </td>
+                                                    <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 w-52 border-t border-slate-200/60 bg-slate-50 py-4 font-medium text-slate-500">
+                                                        Profile Completeness
+                                                    </td>
+                                                    <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 text-center font-medium text-slate-500">
+                                                        Status
+                                                    </td>
+                                                    
+                                                    <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 font-medium text-slate-500">
+                                                        Joined Date
+                                                    </td>
+                                                    <!-- <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 w-20 border-t border-slate-200/60 bg-slate-50 py-4 text-center font-medium text-slate-500">
+                                                        Action
+                                                    </td> -->
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($users as $user)
 
-                                                    <div class="flex items-center justify-center text-danger">
-                                                        <i data-tw-merge="" data-lucide="database" class="h-3.5 w-3.5 stroke-[1.7]"></i>
-                                                        <div class="ml-1.5 whitespace-nowrap">
-                                                            <span class="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 dark:bg-darkmode-600 text-xs text-slate-700 dark:text-slate-300">
-                                                                Select
-                                                            </span>
+                                                @php
+                                                    $isSuggested = in_array($user->id, $suggestedUserIds);
+                                                @endphp
+                                                <tr data-tw-merge="" class="[&_td]:last:border-b-0">
+                                                    <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
+
+                                                        <div class="flex items-center justify-center text-danger">
+                                                            <i data-tw-merge="" data-lucide="database" class="h-3.5 w-3.5 stroke-[1.7]"></i>
+                                                            <div class="ml-1.5 whitespace-nowrap">
+                                                                <span
+                                                                    class="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 dark:bg-darkmode-600 text-xs text-slate-700 dark:text-slate-300 select-label">
+                                                                    {{ $isSuggested ? 'Deselect' : 'Select' }}
+                                                                </span>
+                                                            </div>
+                                                            <label class="toggle-switch">
+                                                                <input
+                                                                        type="checkbox"
+                                                                        name="users[]"
+                                                                        value="{{ $user->id }}"
+                                                                        {{ $isSuggested ? 'checked' : '' }}
+                                                                        onchange="toggleLabel(this)"
+                                                                    >
+                                                                <span class="slider"></span>
+                                                            </label> 
                                                         </div>
-                                                        <label class="toggle-switch">
-                                                            <input type="checkbox"
-                                                                name="users[]"
-                                                                value="{{ $user->id }}">
-                                                            <span class="slider"></span>
-                                                        </label> 
-                                                    </div>
-                                                </td>
-                                                <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 w-80 border-dashed py-4 dark:bg-darkmode-600">
-                                                    <div class="flex items-center">
-                                                        <div class="image-fit zoom-in h-9 w-9">
-                                                            <img data-placement="top" title="{{$user?->name}}" src="{{$user?->info?->image}}" alt="codeBrowns" class="tooltip cursor-pointer rounded-full shadow-[0px_0px_0px_2px_#fff,_1px_1px_5px_rgba(0,0,0,0.32)] dark:shadow-[0px_0px_0px_2px_#3f4865,_1px_1px_5px_rgba(0,0,0,0.32)]">
-                                                        </div>
-                                                        <div class="ml-3.5">
-                                                            <a class="whitespace-nowrap font-medium" href="#">
-                                                                {{$user?->name}}
-                                                            </a>
-                                                            <div class="mt-0.5 whitespace-nowrap text-xs text-slate-500">
-                                                                {{$user?->email}}
+                                                    </td>
+                                                    <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 w-80 border-dashed py-4 dark:bg-darkmode-600">
+                                                        <div class="flex items-center">
+                                                            <div class="image-fit zoom-in h-9 w-9">
+                                                                <img data-placement="top" title="{{$user?->name}}" src="{{$user?->info?->image}}" alt="codeBrowns" class="tooltip cursor-pointer rounded-full shadow-[0px_0px_0px_2px_#fff,_1px_1px_5px_rgba(0,0,0,0.32)] dark:shadow-[0px_0px_0px_2px_#3f4865,_1px_1px_5px_rgba(0,0,0,0.32)]">
+                                                            </div>
+                                                            <div class="ml-3.5">
+                                                                <a class="whitespace-nowrap font-medium" href="#">
+                                                                    {{$user?->name}}
+                                                                </a>
+                                                                <div class="mt-0.5 whitespace-nowrap text-xs text-slate-500">
+                                                                    {{$user?->email}}
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </td>
-                                                <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
-                                                    <a class="whitespace-nowrap font-medium" href="#">
-                                                        {{$user?->info?->department ? $user?->info?->department : "Not added yet" }}
-                                                    </a>
-                                                    <div class="mt-0.5 whitespace-nowrap text-xs text-slate-500">
-                                                        {{$user?->info?->department ? $user?->info?->department : "Not added yet" }}
-                                                    </div>
-                                                </td>
-                                                <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
-                                                    <div class="w-40">
-                                                        <div class="text-xs text-slate-500">
-                                                            {{$user?->info?->profile_completion_percentage ? $user?->info?->profile_completion_percentage : 0}}%
-                                                        </div>
-                                                        <div class="mt-1.5 flex h-1 rounded-sm border bg-slate-50">
-                                                            <div class="first:rounded-l-sm last:rounded-r-sm border border-primary/20 -m-px bg-primary/90 w-[{{$user?->info?->profile_completion_percentage}}%]"></div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
-                                                    @if ($user?->info?->is_active == 1)
-
-                                                    <div class="flex items-center justify-center text-success">
-                                                        <i data-tw-merge="" data-lucide="database" class="h-3.5 w-3.5 stroke-[1.7]"></i>
-                                                        <div class="ml-1.5 whitespace-nowrap">
-                                                            Active
-                                                        </div>
-                                                        {{-- <label class="toggle-switch">
-                                                            <input type="checkbox">
-                                                            <span class="slider"></span>
-                                                        </label> --}}
-                                                    </div>
-
-
-                                                    @else
-                                                    <div class="flex items-center justify-center text-danger">
-                                                        <i data-tw-merge="" data-lucide="database" class="h-3.5 w-3.5 stroke-[1.7]"></i>
-                                                        <div class="ml-1.5 whitespace-nowrap">
-                                                            Inactive
-                                                        </div>
-                                                        {{-- <label class="toggle-switch">
-                                                            <input type="checkbox">
-                                                            <span class="slider"></span>
-                                                        </label> --}}
-                                                    </div>
-
-                                                    @endif
-                                                </td>
-                                                <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
-                                                    <div class="ml-3.5">
+                                                    </td>
+                                                    <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
                                                         <a class="whitespace-nowrap font-medium" href="#">
-                                                            {{$user?->created_at}}
+                                                            {{$user?->info?->department ? $user?->info?->department : "Not added yet" }}
                                                         </a>
                                                         <div class="mt-0.5 whitespace-nowrap text-xs text-slate-500">
-                                                            {{$user?->created_at->diffForHumans()}}
+                                                            {{$user?->info?->department ? $user?->info?->department : "Not added yet" }}
                                                         </div>
-                                                    </div>
-                                                </td>
-                                                
-                                            </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
+                                                    </td>
+                                                    <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
+                                                        <div class="w-40">
+                                                            <div class="text-xs text-slate-500">
+                                                                {{$user?->info?->profile_completion_percentage ? $user?->info?->profile_completion_percentage : 0}}%
+                                                            </div>
+                                                            <div class="mt-1.5 flex h-1 rounded-sm border bg-slate-50">
+                                                                <div class="first:rounded-l-sm last:rounded-r-sm border border-primary/20 -m-px bg-primary/90 w-[{{$user?->info?->profile_completion_percentage}}%]"></div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
+                                                        @if ($user?->info?->is_active == 1)
+
+                                                        <div class="flex items-center justify-center text-success">
+                                                            <i data-tw-merge="" data-lucide="database" class="h-3.5 w-3.5 stroke-[1.7]"></i>
+                                                            <div class="ml-1.5 whitespace-nowrap">
+                                                                Active
+                                                            </div>
+                                                            {{-- <label class="toggle-switch">
+                                                                <input type="checkbox">
+                                                                <span class="slider"></span>
+                                                            </label> --}}
+                                                        </div>
+
+
+                                                        @else
+                                                        <div class="flex items-center justify-center text-danger">
+                                                            <i data-tw-merge="" data-lucide="database" class="h-3.5 w-3.5 stroke-[1.7]"></i>
+                                                            <div class="ml-1.5 whitespace-nowrap">
+                                                                Inactive
+                                                            </div>
+                                                            {{-- <label class="toggle-switch">
+                                                                <input type="checkbox">
+                                                                <span class="slider"></span>
+                                                            </label> --}}
+                                                        </div>
+
+                                                        @endif
+                                                    </td>
+                                                    <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
+                                                        <div class="ml-3.5">
+                                                            <a class="whitespace-nowrap font-medium" href="#">
+                                                                {{$user?->created_at}}
+                                                            </a>
+                                                            <div class="mt-0.5 whitespace-nowrap text-xs text-slate-500">
+                                                                {{$user?->created_at->diffForHumans()}}
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </form>
+
+
                                 <div class="flex-reverse flex flex-col-reverse flex-wrap items-center gap-y-2 p-5 sm:flex-row">
-                                    <nav class="mr-auto w-full flex-1 sm:w-auto">
-                                        <ul class="flex w-full mr-0 sm:mr-auto sm:w-auto">
-                                            <li class="flex-1 sm:flex-initial">
-                                                <a data-tw-merge="" class="transition duration-200 border items-center justify-center py-2 rounded-md cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed min-w-0 sm:min-w-[40px] shadow-none font-normal flex border-transparent text-slate-800 sm:mr-2 dark:text-slate-300 px-1 sm:px-3"><i data-tw-merge="" data-lucide="chevrons-left" class="stroke-[1] h-4 w-4"></i></a>
-                                            </li>
-                                            <li class="flex-1 sm:flex-initial">
-                                                <a data-tw-merge="" class="transition duration-200 border items-center justify-center py-2 rounded-md cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed min-w-0 sm:min-w-[40px] shadow-none font-normal flex border-transparent text-slate-800 sm:mr-2 dark:text-slate-300 px-1 sm:px-3"><i data-tw-merge="" data-lucide="chevron-left" class="stroke-[1] h-4 w-4"></i></a>
-                                            </li>
-                                            <li class="flex-1 sm:flex-initial">
-                                                <a data-tw-merge="" class="transition duration-200 border items-center justify-center py-2 rounded-md cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed min-w-0 sm:min-w-[40px] shadow-none font-normal flex border-transparent text-slate-800 sm:mr-2 dark:text-slate-300 px-1 sm:px-3">...</a>
-                                            </li>
-                                            <li class="flex-1 sm:flex-initial">
-                                                <a data-tw-merge="" class="transition duration-200 border items-center justify-center py-2 rounded-md cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed min-w-0 sm:min-w-[40px] shadow-none font-normal flex border-transparent text-slate-800 sm:mr-2 dark:text-slate-300 px-1 sm:px-3">1</a>
-                                            </li>
-                                            <li class="flex-1 sm:flex-initial">
-                                                <a data-tw-merge="" class="transition duration-200 border items-center justify-center py-2 rounded-md cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed min-w-0 sm:min-w-[40px] shadow-none font-normal flex border-transparent text-slate-800 sm:mr-2 dark:text-slate-300 px-1 sm:px-3 !box dark:bg-darkmode-400">2</a>
-                                            </li>
-                                            <li class="flex-1 sm:flex-initial">
-                                                <a data-tw-merge="" class="transition duration-200 border items-center justify-center py-2 rounded-md cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed min-w-0 sm:min-w-[40px] shadow-none font-normal flex border-transparent text-slate-800 sm:mr-2 dark:text-slate-300 px-1 sm:px-3">3</a>
-                                            </li>
-                                            <li class="flex-1 sm:flex-initial">
-                                                <a data-tw-merge="" class="transition duration-200 border items-center justify-center py-2 rounded-md cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed min-w-0 sm:min-w-[40px] shadow-none font-normal flex border-transparent text-slate-800 sm:mr-2 dark:text-slate-300 px-1 sm:px-3">...</a>
-                                            </li>
-                                            <li class="flex-1 sm:flex-initial">
-                                                <a data-tw-merge="" class="transition duration-200 border items-center justify-center py-2 rounded-md cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed min-w-0 sm:min-w-[40px] shadow-none font-normal flex border-transparent text-slate-800 sm:mr-2 dark:text-slate-300 px-1 sm:px-3"><i data-tw-merge="" data-lucide="chevron-right" class="stroke-[1] h-4 w-4"></i></a>
-                                            </li>
-                                            <li class="flex-1 sm:flex-initial">
-                                                <a data-tw-merge="" class="transition duration-200 border items-center justify-center py-2 rounded-md cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed min-w-0 sm:min-w-[40px] shadow-none font-normal flex border-transparent text-slate-800 sm:mr-2 dark:text-slate-300 px-1 sm:px-3"><i data-tw-merge="" data-lucide="chevrons-right" class="stroke-[1] h-4 w-4"></i></a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                    <select data-tw-merge="" class="disabled:bg-slate-100 disabled:cursor-not-allowed disabled:dark:bg-darkmode-800/50 [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm py-2 px-3 pr-8 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 group-[.form-inline]:flex-1 rounded-[0.5rem] sm:w-20">
-                                        <option>10</option>
-                                        <option>25</option>
-                                        <option>35</option>
-                                        <option>50</option>
-                                    </select>
+                                    <form action="{{route('admin.suggest.talents.to.company')}}" method="get">
+                                        @csrf
+
+                                        <button type="submit"
+                                            class="transition duration-200 border shadow-sm inline-flex items-center justify-center py-2 px-3 rounded-md font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 border-secondary text-slate-500 hover:bg-secondary/20 w-full sm:w-auto">
+                                            <i data-lucide="check" class="mr-2 h-4 w-4 stroke-[1.3]"></i>
+                                            Confirm
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
-
-
-                            </form>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <script>
+    function toggleLabel(checkbox) {
+        const label = checkbox
+            .closest('div')
+            .querySelector('.select-label');
+
+        label.textContent = checkbox.checked ? 'Deselect' : 'Select';
+    }
+</script>
+
     </x-slot>
 
 </x-app-layout>
