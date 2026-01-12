@@ -203,6 +203,32 @@
                         </li>
 
                         <li class="side-menu__divider">
+                            Openings
+                        </li>
+
+                        <li>
+                            <a href="{{route('admin.create.opening.view')}}"
+                                class="side-menu__link  {{Route::currentRouteName()== 'admin.create.opening.view' ? 'side-menu__link--active': ''}}">
+                                <i data-tw-merge="" data-lucide="pen-tool"
+                                    class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                                <div class="side-menu__link__title">Open a roles</div>
+                            </a>
+                            <!-- BEGIN: Second Child -->
+                            <!-- END: Second Child -->
+                        </li>
+
+                        <li>
+                            <a href="{{route('admin.openings.view')}}"
+                                class="side-menu__link  {{Route::currentRouteName()== 'admin.openings.view' ? 'side-menu__link--active': ''}}">
+                                <i data-tw-merge="" data-lucide="briefcase"
+                                    class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                                <div class="side-menu__link__title">Open roles</div>
+                            </a>
+                            <!-- BEGIN: Second Child -->
+                            <!-- END: Second Child -->
+                        </li>
+
+                        <li class="side-menu__divider">
                             Site Builder
                         </li>
 
@@ -366,8 +392,8 @@
 
                         <li>
                             <a href="{{route('company.create.opening.view')}}"
-                                class="side-menu__link {{Route::currentRouteName()== 'company.talents.display' ? 'side-menu__link--active': ''}}">
-                                <i data-tw-merge="" data-lucide="pen" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                                class="side-menu__link {{Route::currentRouteName()== 'company.create.opening.view' ? 'side-menu__link--active': ''}}">
+                                <i data-tw-merge="" data-lucide="plus-square" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                                 <div class="side-menu__link__title">Open a Role</div>
 
                             </a>
@@ -377,7 +403,7 @@
                         <li>
                             <a href="{{route('company.openings.display')}}"
                                 class="side-menu__link {{Route::currentRouteName()== 'company.openings.display' ? 'side-menu__link--active': ''}}">
-                                <i data-tw-merge="" data-lucide="users" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                                <i data-tw-merge="" data-lucide="clipboard-list" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                                 <div class="side-menu__link__title">Open Roles</div>
 
                             </a>

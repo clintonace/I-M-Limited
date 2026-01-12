@@ -7,6 +7,7 @@ use App\Mail\BookingNotification;
 use App\Mail\RequestResponseNotification;
 use App\Models\Booking;
 use App\Models\Company;
+use App\Models\Opening;
 use App\Models\Department;
 use App\Models\Education;
 use App\Models\Information;
@@ -21,6 +22,96 @@ use RealRashid\SweetAlert\Facades\Alert;
 class AdminController extends Controller
 {
 
+
+    public function suggestTalentsToCompany(Request $request)
+    {
+
+            $request->validate([
+                'opening_id' => 'required|exists:openings,id',
+                'users' => 'required|array',
+                'users.*' => 'exists:users,id',
+            ]);
+
+            $opening = Opening::findOrFail($request->opening_id);
+
+            $alreadySuggestedUserIds = Suggestion::where('company_id', $opening->company_id)
+                ->where('opening_id', $opening->id)
+                ->pluck('user_id')
+                ->toArray();
+
+            $userIds = array_diff($request->users, $alreadySuggestedUserIds);                           
+
+            foreach ($request->users as $userId) {
+                $suggestion = new Suggestion();
+                $suggestion->company_id = $opening->company_id; 
+                $suggestion->user_id = $userId;
+                $suggestion->opening_id = $request->opening_id;
+                $suggestion->save();
+            }   
+            dd($request->all());
+
+    }
+
+    public function suggestTalents($opening= null)
+    {
+        $data['users'] = User::with('info')->where('code',3188)->get();
+        $data['opening'] = Opening::findOrFail($opening);
+        return view('admin.openings.suggest-talent', $data);
+    }
+
+    public function openingView()
+    {
+        $data['depts'] = Department::latest()->get();
+        $data['openings'] = Opening::latest()->get();
+        return view('admin.openings.index', $data);
+    }
+
+    public function createOpeningView()
+    {
+        $data['depts'] = Department::latest()->get();
+        $data['openings'] = Opening::latest()->get();
+        $data['companies'] = Company::all();
+        return view('admin.openings.create', $data);
+    }
+
+    public function createOpening(Request $request)
+    {
+
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'location' => 'required|string',
+            'type' => 'required|in:full-time,part-time,contract,internship',
+            'salary' => 'nullable|numeric',
+            'currency' => 'required|string|max:10', 
+            'application_deadline' => 'required',
+            'open_date'=> 'required'
+        ]);
+
+        $opening = new Opening();
+        $opening->title = $request->title;
+        $opening->description = $request->description;
+        $opening->location = $request->location;
+        $opening->type = $request->type;
+        $opening->salary = $request->salary;
+        $opening->currency = $request->currency;
+        $opening->application_deadline = $request->application_deadline;
+        $opening->open_date = $request->open_date;
+        $opening->company_id = $request->company_id;
+        $opening->status = $request->status;
+        $opening->save();
+
+        Alert::success('Success', 'Job opening created successfully.');
+        return back();
+    }
+
+    public function editOpeningView($opening = null)
+    {
+        $data['depts'] = Department::latest()->get();
+        $data['opening'] = Opening::findOrFail($opening);
+        $data['companies'] = Company::all();
+        return view('admin.openings.edit', $data);
+    }   
 
     public function deactivateCompany($company)
     {

@@ -1,6 +1,7 @@
 <div
     class="content transition-[margin,width] duration-100 px-5 mt-[65px] pt-[31px] pb-16 relative z-10 content--compact xl:ml-[275px] [&.content--compact]:xl:ml-[91px]">
-    <div class="container">
+    
+    <div class="w-full ">
         <div class="grid grid-cols-12 gap-x-6 gap-y-10">
 
             <div class="col-span-12 flex flex-col gap-y-10 2xl:col-span-9">
@@ -282,7 +283,7 @@
                         </div>
 
 
-                        <div class="overflow-auto xl:overflow-visible">
+                        <div class="overflow-auto">
                             <table data-tw-merge="" class="w-full text-left border-b border-slate-200/60">
                                 <thead data-tw-merge="" class="">
                                     <tr data-tw-merge="" class="">

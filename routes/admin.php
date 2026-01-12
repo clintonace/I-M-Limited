@@ -65,6 +65,20 @@ Route::prefix('admin')->middleware('admin')->group(function () {
      Route::post('/hobby-edit', [ToolController::class, 'hobbyEdit'])->name('admin.hobby.edit');
     });
 
+     Route::prefix('openings')->middleware('admin')->group(function () {
+
+      Route::get('/opening-view', [AdminController::class, 'openingView'])->name('admin.openings.view');
+      Route::get('/create-opening-view', [AdminController::class, 'createOpeningView'])->name('admin.create.opening.view');
+      Route::get('/edit-opening-view/{opening?}', [AdminController::class, 'editOpeningView'])->name('admin.edit.opening.view');
+
+      Route::post('/create-opening', [AdminController::class, 'createOpening'])->name('admin.create.opening');
+      Route::post('/edit-opening/{opening?}', [AdminController::class, 'editOpening'])->name('admin.edit.opening');
+
+      Route::get('/suggest-talents/{opening?}', [AdminController::class, 'suggestTalents'])->name('admin.suggest.talents');
+      Route::post('/suggest-talents-to-company', [AdminController::class, 'suggestTalentsToCompany'])->name('admin.suggest.talents.to.company');
+
+    });
+
     Route::prefix('broadcast')->middleware('admin')->group(function () {
 
       Route::post('/broadcast-create', [BroadcastController::class, 'broadcastCreate'])->name('admin.broadcast');
