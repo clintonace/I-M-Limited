@@ -46,7 +46,26 @@
 
     <style>
 
-      
+      .help-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 16px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .help-option:hover {
+            border-color: #fe681c;
+            background: rgba(254,104,28,0.05);
+        }
+
+        .help-option input {
+            accent-color: #fe681c;
+        }
+
         .wave-divider {
                 width: 100%;
                 height: 50px; /* thin */

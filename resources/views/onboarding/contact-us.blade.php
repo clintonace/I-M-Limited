@@ -13,31 +13,101 @@
 
 
       <!-- Banner Section-->
-    <section class="banner-section -type-15" style="background-image: url(/onboarding/images/index-15/header/bg.png);">
+    <section class="banner-section -type-15"
+    
+    style="
+        background-image:
+            linear-gradient(
+                to bottom,
+                rgba(0,0,0,0.75),
+                rgba(0,0,0,0.35),
+                rgba(0,0,0,0.05)
+            ),
+            url(/onboarding/images/index-15/header/bg.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    "
+
+    style="background-image: url(/onboarding/images/index-15/header/bg.png);">
         <div class="auto-container">
-          <div class="cotnent-box">
-            <div style="margin: 100px" class="title-box wow fadeInUp" data-wow-delay='300ms'>
-              <h3>Contact us </h3>
-              <div class="text">We are visible and accessible</div>
+            <div class="cotnent-box">
+                <div style="margin: 100px" class="title-box wow fadeInUp" data-wow-delay="300ms">
+                    <h2>Let’s Work Together</h2>
+                    <div class="text">
+                        Whether you’re building a team, exploring outsourcing,
+                        or joining our talent network — we’re here to help you take the next step.
+                    </div>
+                    <div class="text mt-2">
+                        <strong>Made in Africa. Serving the World.</strong>
+                    </div>
+                </div>
             </div>
-
-
-          </div>
         </div>
-      </section>
+    </section>
+
       <!-- End Banner Section-->
 
       <!-- Contact Section -->
       <section class="contact-section">
         <div class="auto-container">
           <div class="upper-box">
-            <div class="row">
+
+
+          <div class="contact-helper mb-5">
+              <h3 class="mb-3">How can we help?</h3>
+              <p class="mb-4">Choose what best applies to you.</p>
+
+              <div class="row">
+
+                  <div class="col-lg-4 col-md-6 mb-3">
+                      <label class="help-option">
+                          <input type="radio" name="inquiry_type" value="Hiring Talent">
+                          <span>I’m a company looking to hire talent</span>
+                      </label>
+                  </div>
+
+                  <div class="col-lg-4 col-md-6 mb-3">
+                      <label class="help-option">
+                          <input type="radio" name="inquiry_type" value="Outsourcing / Managed Teams">
+                          <span>I’m exploring outsourcing or managed teams</span>
+                      </label>
+                  </div>
+
+                  <div class="col-lg-4 col-md-6 mb-3">
+                      <label class="help-option">
+                          <input type="radio" name="inquiry_type" value="Market Expansion">
+                          <span>I want to expand into the African region</span>
+                      </label>
+                  </div>
+
+                  <div class="col-lg-4 col-md-6 mb-3">
+                      <label class="help-option">
+                          <input type="radio" name="inquiry_type" value="Join Talent Network">
+                          <span>I’m a professional joining the I&amp;M talent network</span>
+                      </label>
+                  </div>
+
+                  <div class="col-lg-4 col-md-6 mb-3">
+                      <label class="help-option">
+                          <input type="radio" name="inquiry_type" value="General Inquiry">
+                          <span>I have a general inquiry</span>
+                      </label>
+                  </div>
+
+              </div>
+          </div>
+
+          <div class="row">
               <div class="contact-block col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box">
                   <span class="icon"><i class="fa fa-map-marker-alt text-warning"></i></span>
                   <h4>Address</h4>
-                  <p>33 Windsor Groove, <br>Estate, Lekki Conversation,
-                    Oluesesi Road, Eti-Osa LGA, Lagos State Nigeria</p>
+                  <p>
+                      33, Windsor Estate,<br>
+                      Conservation Road,<br>
+                      Lekki, Lagos, Nigeria.
+                  </p>
                 </div>
               </div>
               <div class="contact-block col-lg-4 col-md-6 col-sm-12">
@@ -53,7 +123,7 @@
                     <span class="icon"><i class="fa fa-message text-warning"></i></span>
 
                   <h4>Email</h4>
-                  <p><a href="info@imengin.com">info@imengin.com</a></p>
+                  <p><a href="info@iandmlimited.com">info@iandmlimited.com</a></p>
                 </div>
               </div>
             </div>
@@ -66,6 +136,8 @@
             <!--Contact Form-->
             <form method="post" action="{{ route('contact.mail') }}">
                 @csrf
+
+                
                 <div class="row">
                     <div class="form-group col-lg-12 col-md-12 col-sm-12">
                         <div class="response"></div>
@@ -95,6 +167,17 @@
                         @endif
                     </div>
 
+                    <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+                        <label>Company Name (Optional)</label>
+                        <input type="text" name="company" placeholder="Company name">
+                    </div>
+
+                    <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+                        <label>Role / Title (Optional)</label>
+                        <input type="text" name="role" placeholder="Your role">
+                    </div>
+
+
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                         <label>Your Message</label>
                         <textarea name="message" placeholder="Write your message..." required></textarea>
@@ -113,28 +196,7 @@
         </div>
       </section>
       <!-- Contact Section -->
-
-      <!-- Call To Action -->
-      <section class="call-to-action-two style-two">
-        <div class="auto-container">
-          <div class="outer-box">
-            <div class="content-column">
-              <div class="sec-title">
-                <h2>Recruiting?</h2>
-                <div class="text">Advertise your jobs to millions of monthly users and search 15.8 million<br> CVs in our database.</div>
-                <a href="#" class="theme-btn btn-style-one bg-black"><span class="btn-title">Start Recruiting Now</span></a>
-              </div>
-            </div>
-
-            <div class="image-column" style="background-image: url(/onboarding/images/resource/image-1.png);">
-              <figure class="image"><img src="/onboarding/images/resource/image-1.png" alt=""></figure>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End Call To Action -->
-
-
+       
     </x-slot>
 
 </x-guest-layout>
