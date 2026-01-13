@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     var i = 0;
     var txt = "Find Your Perfect Employee Match";
-    var txt = "Your global remote talent partners.";
+    var txt = "Africa’s Brightest Talent.";
     var speed = 100;
 
     function typeWriter1() {
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 document.addEventListener("DOMContentLoaded", function () {
     var i = 0;
-    var txt2 = "Your global remote talent partners.";
+    var txt2 = "Africa’s Brightest Talent.";
     var speed = 100;
 
     function typeWriter2() {

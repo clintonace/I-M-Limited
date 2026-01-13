@@ -100,7 +100,8 @@ Global Settings
 ***/
 
 :root{
-    --bs-yellow: #f6ad3e;
+    /* --bs-yellow: #f6ad3e; */
+    --bs-yellow: #fe681c;
     --bs-black: #000000;
     --bs-white: #ffffff;
 }

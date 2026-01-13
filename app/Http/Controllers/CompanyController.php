@@ -234,11 +234,7 @@ class CompanyController extends Controller
         } else {
 
         $data['talents'] = Suggestion::with(['opening', 'user'])
-                            ->where('company_id', Auth::user()->company->id)->latest()->get();
-
-
-                            // dd($data);
-
+                            ->where('company_id', Auth::user()->company?->id)->latest()->get();
 
         }   
         // $data['talents']= Information::where('is_active', true)->latest()->get();

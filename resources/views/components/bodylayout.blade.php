@@ -1,72 +1,228 @@
 <!-- Banner Section-->
-<section class="banner-section-two">
+<section class="banner-section-two hero-video-section">
+
+    <!-- Background Video -->
+    <video
+        class="hero-bg-video"
+        autoplay
+        muted
+        loop
+        playsinline
+    >
+        <source src="/onboarding/video/vid2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Overlay -->
+    <div class="hero-video-overlay"></div>
+
+    <!-- CONTENT -->
     <div class="auto-container">
-        <div class="row">
+        <div class="row items-center">
+
+            <!-- Content Column -->
             <div class="content-column col-lg-8 col-md-12 col-sm-12">
                 <div class="inner-column wow fadeInUp">
+
                     <div class="title-box">
-                        <h6 id="typingText"></h6>
-                        <div class="text text-white">Find Candidates, Employment & Career Opportunities</div>
+                        <h1 class="text-white font-bold leading-tight">
+                            Building the Future with <br>
+                            <span id="typingText" style="color: #fe681c;"></span>
+                        </h1>
+
+                        <p class="text-white mt-3 text-lg">
+                            Managed locally. Impacting globally.
+                        </p>
+
+                        <p class="text-white mt-4 opacity-90 max-w-xl">
+                            Your global team, built and supported from Africa.
+                            <strong>Made in Africa. Serving the World.</strong>
+                        </p>
                     </div>
 
-                    <!-- Job Search Form -->
-                    <div class="job-search-form">
-                        <form action="{{route('onboarding.search.candidates')}}" method="GET">
+                     <div style="padding-top: 5px; padding-bottom: 50px;">
+                       
+
+                        <div class="row">
+                        <!--Column-->
+                        <div class="counter-column col-lg-4 col-md-4 col-sm-12 wow fadeInUp">
+                            <div style="color: #fe681c; font-size: 50px; font-weight: bold" class="count-box"><span class="count-text" data-speed="10000" data-stop="150">0</span>+</div>
+                            <h6 class="counter-title text-white pt-5">European Clients Served.</h6>
+                        </div>
+
+                        <!--Column-->
+                        <div class="counter-column col-lg-4 col-md-4 col-sm-12 wow fadeInUp" data-wow-delay="400ms">
+                            <div style="color: #fe681c; font-size: 50px; font-weight: bold" class="count-box"><span class="count-text" data-speed="10000" data-stop="80">0</span>%</div>
+                            <h6 class="counter-title text-white pt-5">Satisfactory ratings, 80% upwards.</h6>
+                        </div>
+
+                        <!--Column-->
+                        <div class="counter-column col-lg-4 col-md-4 col-sm-12 wow fadeInUp" data-wow-delay="800ms">
+                            <div style="color: #fe681c; font-size: 50px; font-weight: bold" class="count-box"><span class="count-text" data-speed="3000" data-stop="2">0</span>+</div>
+                            <h6 class="counter-title text-white pt-5">Years Client Engagement</h6>
+                        </div>
+                        </div>
+
+                    </div>
+
+                    <div class="job-search-form mt-6">
+                        <form action="{{ route('onboarding.search.candidates') }}" method="GET">
                             @csrf
                             <div class="row">
-                                <div class="form-group col-lg-7 col-md-12 col-sm-12">
+                                <div class="form-group col-lg-7 col-md-12">
                                     <span class="icon flaticon-search-1"></span>
-                                    <input type="text" name="department" placeholder="Department of candidate">
+                                    <input
+                                        type="text"
+                                        name="department"
+                                        placeholder="Search talent by role or department">
                                 </div>
-                                <!-- Form Group -->
 
-                                <!-- Form Group -->
-                                <div class="form-group col-lg-4 col-md-12 col-sm-12 text-left">
-                                    <button type="submit" class="theme-btn btn-style-two"><span class="text-white">Find
-                                            Candidates by department</span></button>
+                                <div class="form-group col-lg-5 col-md-12">
+                                    <button type="submit" class="theme-btn btn-style-two w-full">
+                                        <span class="text-white">Find World-Class Talent</span>
+                                    </button>
                                 </div>
                             </div>
                         </form>
                     </div>
-                    <!-- Job Search Form -->
 
-                    {{-- <input type="color"> --}}
-                    <!-- Popular Search -->
-                    <div class="popular-searches">
-                        <span class="title">Popular Searches : </span>
-                        <a href="#">Designer</a>,
-                        <a href="#">Developer</a>,
-                        <a href="#">Web</a>,
-                        <a href="#">IOS</a>,
-                        <a href="#">PHP</a>,
-                        <a href="#">Senior</a>,
-                        <a href="#">Engineer</a>,
+                    <div class="flex gap-4 mt-6 flex-wrap">
+                        <a href="#hire-talent" class="theme-btn btn-style-three">
+                            → Work with World-Class Talent
+                        </a>
+                        <a href="#join-network" class="theme-btn btn-style-three">
+                            → Join the I&amp;M Talent Network
+                        </a>
                     </div>
-                    <!-- End Popular Search -->
 
-                    <div class="bottom-box">
-                        <div class="count-employers">
-                            <span class="title">10k+ Candidates</span>
-                            <img src="/onboarding/images/resource/multi-peoples.png" alt="">
-                        </div>
-                        <a href="#" class="upload-cv"><span class="icon flaticon-file"></span> Upload your CV</a>
+                    <div class="popular-searches mt-5">
+                        <span class="title text-white">Popular Roles:</span>
+                        <a href="#">Software Engineer</a>,
+                        <a href="#">Product Designer</a>,
+                        <a href="#">Frontend Developer</a>,
+                        <a href="#">Backend Engineer</a>,
+                        <a href="#">DevOps</a>,
+                        <a href="#">Mobile Developer</a>
                     </div>
-                </div>
-            </div>
 
-            <div class="image-column col-lg-4 col-md-12">
-                <div class="image-box">
-                    <figure class="main-image anm" data-wow-delay="1000ms" data-speed-x="2" data-speed-y="2"><img
-                            src="/onboarding/images/index-14/images/2.png" alt=""></figure>
-                </div>
+
+                   
+
+                    
+                </div> 
             </div>
         </div>
     </div>
 </section>
+
+
 <!-- End Banner Section-->
 
+
+<!-- What we do Section -->
+<section class="layout-pt-120 layout-pb-100">
+    <div class="auto-container">
+        <div class="sec-title text-center">
+            <h2>What We Do.</h2>
+            <div class="text"> We Connect, Build, and Manage Global Teams from Africa. </div>
+
+            <div class="text">
+                <p>
+                        I&amp;M Limited helps international organizations access exceptional African
+                        professionals while we provide the local structures that support
+                        performance, compliance, and long-term success.
+                    </p> 
+            </div>
+
+        </div>
+
+        <div class="row grid-base pt-10 wow fadeInUp">
+
+           <!-- SERVICES LIST -->
+            <div class="row mt-5">
+
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="feature-block-two work-block -type-4">
+                            <div class="inner-box ">
+                                <h5>Talent Acquisition</h5>
+                                <p>
+                                    We identify, vet, and place high-performing African professionals
+                                    tailored to your business needs.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="feature-block-two work-block -type-4">
+                            <div class="inner-box">
+                                <h5>Workforce Deployment</h5>
+                                <p>
+                                    From onboarding to payroll and HR operations, we deploy teams
+                                    seamlessly across borders.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="feature-block-two work-block -type-4">
+                            <div class="inner-box">
+                                <h5>Outsourced Project Teams</h5>
+                                <p>
+                                    Dedicated, managed teams for product development, operations,
+                                    and specialized projects.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="feature-block-two work-block -type-4">
+                            <div class="inner-box">
+                                <h5>On-Ground Management</h5>
+                                <p>
+                                    Local leadership ensures productivity, engagement,
+                                    accountability, and performance excellence.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="feature-block-two work-block -type-4">
+                            <div class="inner-box">
+                                <h5>Secure &amp; Compliant Operations</h5>
+                                <p>
+                                    Fully compliant employment, legal, and operational structures
+                                    that protect your business.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="feature-block-two work-block -type-4">
+                            <div class="inner-box text-center">
+                                <h5>All in One Ecosystem</h5>
+                                <p>
+                                    Talent, operations, management, and compliance —
+                                    unified under one trusted partner.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- End Work Section -->
+
+
 <!-- Work Section -->
-<section class="layout-pt-120 layout-pb-120">
+<section class="">
     <div class="auto-container">
         <div class="sec-title text-center">
             <h2>How It Works</h2>
@@ -127,6 +283,8 @@
     </div>
 </section>
 <!-- End Work Section -->
+
+
 
 <!-- Job Categories -->
 <section class="job-categories border-bottom-0 pt-0">

@@ -43,6 +43,51 @@
             var csrf = "{{ csrf_token() }}";
         </script>
     <style>
+
+        /* Video hero container */
+.hero-video-section {
+    position: relative;
+    overflow: hidden;
+    min-height: 90vh;
+}
+
+/* Fullscreen background video */
+.hero-bg-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Dark overlay for readability */
+.hero-video-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 2;
+}
+
+/* Ensure content stays on top */
+.hero-video-section .auto-container {
+    position: relative;
+    z-index: 3;
+}
+
+.hero-bg-video {
+    filter: brightness(0.9) contrast(1.05);
+}
+
+@media (max-width: 768px) {
+    .hero-video-section {
+        min-height: 75vh;
+    }
+}
+
+
+
+
         .theme-btn.active {
             background-color: #f6ad3e;
             color: white;
