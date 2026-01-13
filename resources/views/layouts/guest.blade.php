@@ -41,49 +41,122 @@
 
     <script>
             var csrf = "{{ csrf_token() }}";
-        </script>
+    </script>
+
+
     <style>
 
+        /* Floating CTA container */
+        .floating-cta {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 320px;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 24px 22px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            z-index: 9999;
+            transition: all 0.35s ease;
+        }
+
+        /* CTA content */
+        .floating-cta h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .floating-cta p {
+            font-size: 15px;
+            margin-bottom: 18px;
+            color: #555;
+        }
+
+        /* Close button */
+        .cta-close {
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            background: transparent;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Minified CTA */
+        .cta-minified {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 54px;
+            height: 54px;
+            background: var(--theme-color);
+            color: #fff;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            z-index: 9999;
+        }
+
+        /* Hidden state */
+        .floating-cta.closed {
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
+
+
         /* Video hero container */
-.hero-video-section {
-    position: relative;
-    overflow: hidden;
-    min-height: 90vh;
-}
+        .hero-video-section {
+            position: relative;
+            overflow: hidden;
+            min-height: 90vh;
+        }
 
-/* Fullscreen background video */
-.hero-bg-video {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-}
+        /* Fullscreen background video */
+        .hero-bg-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
 
-/* Dark overlay for readability */
-.hero-video-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.55);
-    z-index: 2;
-}
+        /* Dark overlay for readability */
+        .hero-video-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 2;
+        }
 
-/* Ensure content stays on top */
-.hero-video-section .auto-container {
-    position: relative;
-    z-index: 3;
-}
+        /* Ensure content stays on top */
+        .hero-video-section .auto-container {
+            position: relative;
+            z-index: 3;
+        }
 
-.hero-bg-video {
-    filter: brightness(0.9) contrast(1.05);
-}
+        .hero-bg-video {
+            filter: brightness(0.9) contrast(1.05);
+        }
 
-@media (max-width: 768px) {
-    .hero-video-section {
-        min-height: 75vh;
-    }
-}
+        @media (max-width: 768px) {
+            .hero-video-section {
+                min-height: 75vh;
+            }
+        }
+
+
+        .icon-box {
+            font-size: 42px;
+            margin-bottom: 15px;
+            color: #fe681c;
+        }
 
 
 
@@ -277,7 +350,54 @@
                 candidateBtn.classList.remove('active');
             });
         });
+
+        
     </script>
+
+
+    <script>
+        function toggleCta(open) {
+            const cta = document.getElementById('floatingCta');
+            const minified = document.getElementById('ctaMinified');
+
+            if (open) {
+                cta.classList.remove('closed');
+                minified.style.display = 'none';
+            } else {
+                cta.classList.add('closed');
+                minified.style.display = 'flex';
+            }
+        }
+    </script>
+
+
+
+
+    <!-- Floating CTA -->
+    <div id="floatingCta" class="floating-cta open">
+
+        <!-- Close Button -->
+        <button class="cta-close" onclick="toggleCta(false)">
+            ✕
+        </button>
+
+        <h4>Ready to Build with Us?</h4>
+        <p>
+            Let’s create work that transforms<br>
+            people and businesses.
+        </p>
+
+        <a href="#get-started" class="theme-btn btn-style-two text-white">
+            → Get Started Asap
+        </a>
+    </div>
+
+    <!-- Minified CTA Icon -->
+    <div id="ctaMinified" class="cta-minified" onclick="toggleCta(true)">
+        🚀
+    </div>
+
+
 
 
 </body>

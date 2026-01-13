@@ -114,10 +114,7 @@
         </div>
     </div>
 </section>
-
-
 <!-- End Banner Section-->
-
 
 <!-- What we do Section -->
 <section class="layout-pt-120 layout-pb-100">
@@ -220,9 +217,8 @@
 </section>
 <!-- End Work Section -->
 
-
 <!-- Work Section -->
-<section class="">
+<section class="layout-pb-100">
     <div class="auto-container">
         <div class="sec-title text-center">
             <h2>How It Works</h2>
@@ -283,6 +279,121 @@
     </div>
 </section>
 <!-- End Work Section -->
+
+<section class="layout-pb-100">
+    <div class="auto-container">
+
+        <!-- SECTION TITLE -->
+        <div class="sec-title text-center">
+
+         <h2>Why I&amp;M <span style="color: #fe681c; font-weight: bold; font-size: 1.2em;">?</span></h2>
+            <div class="text"> Reliable Talent. Reliable Systems.</div>
+
+            <div class="text mt-3">
+                <p>
+                    Great teams don’t run on talent alone.
+                    They run on structure, support, and systems that actually work.
+                </p>
+            </div>
+        </div>
+
+        <!-- WHY US GRID -->
+        <div class="row mt-5 wow fadeInUp">
+
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="feature-block-two work-block -type-4">
+                    <div class="inner-box">
+                        <div class="icon-box">
+                            <span class="icon flaticon-user"></span>
+                        </div>
+                        <h5>Pre-Vetted Professionals</h5>
+                        <p>
+                            No guesswork. We handpick and vet high-performing African
+                            professionals who are ready to deliver from day one.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="feature-block-two work-block -type-4">
+                    <div class="inner-box">
+                        <div class="icon-box">
+                            <span class="icon flaticon-briefcase"></span>
+                        </div>
+                        <h5>Fully Managed Teams</h5>
+                        <p>
+                            Need a full project team? We assemble, manage, and support
+                            teams so you can focus on results — not admin.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="feature-block-two work-block -type-4">
+                    <div class="inner-box">
+                        <div class="icon-box">
+                            <span class="icon flaticon-settings"></span>
+                        </div>
+                        <h5>Structured Onboarding</h5>
+                        <p>
+                            Clear processes, defined expectations, and active supervision
+                            ensure every hire hits the ground running.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="feature-block-two work-block -type-4">
+                    <div class="inner-box">
+                        <div class="icon-box">
+                            <span class="icon flaticon-shield"></span>
+                        </div>
+                        <h5>Secure Physical Workspaces</h5>
+                        <p>
+                            Sensitive tools and workflows stay protected with our
+                            secure, on-ground operational environments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="feature-block-two work-block -type-4">
+                    <div class="inner-box">
+                        <div class="icon-box">
+                            <span class="icon flaticon-tick"></span>
+                        </div>
+                        <h5>Compliance &amp; Transparency</h5>
+                        <p>
+                            Employment, payroll, and operations handled correctly —
+                            with full visibility and peace of mind.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="feature-block-two work-block -type-4 bg-white">
+                    <div class="inner-box text-center">
+                        <div class="icon-box">
+                            <span class="icon flaticon-layers"></span>
+                        </div>
+                        <h5>One Ecosystem. Zero Headaches.</h5>
+                        <p>
+                            Whether you’re hiring long-term talent or outsourcing projects,
+                            we manage the teams behind your success — end to end.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
 
 
 
@@ -388,43 +499,79 @@
 </section>
 <!-- End Job Section -->
 
-<!-- Registeration Banners -->
-<section class="layout-pt-60 layout-pb-60">
+<!-- HOW IT WORKS -->
+<section class="layout-pt-120 layout-pb-60">
     <div class="auto-container">
+
+    <div class="sec-title text-center">
+            <h2>We handle both</h2>
+            <div class="text-white">Built for Companies. Empowering for Talent.</div>
+        </div>
+
+        
+
         <div class="row wow fadeInUp">
-            <!-- Banner Style One -->
+
+            <!-- FOR COMPANIES -->
             <div class="banner-style-home22 at-home22 mb30 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <div class="content">
-                        <h3 class="title">Employers</h3>
-                        <p class="text">Discover top-tier talent tailored <br class="d-none d-lg-block"> to your business needs. <br class="d-none d-lg-block"> Post your job for free and connect with skilled <br class="d-none d-lg-block"> professionals ready to drive your success. </p>
-                        <a href="{{route('register')}}" class="theme-btn btn-style-three bdrs12">Post Your Job For Free <i
-                                class="fal fa-long-arrow-right ms-3"></i></a>
+                        <h3 class="title">For Companies</h3>
+
+                        <p class="text">
+                            <strong>Build with confidence.</strong><br class="d-none d-lg-block">
+                            Access exceptional African professionals supported by
+                            clear processes, on-ground monitoring, and seamless delivery.
+                        </p>
+
+                        <div class="mt-4 d-flex flex-wrap gap-3">
+                            <a href="#explore-talent" class="theme-btn btn-style-three bdrs12 me-3">
+                                Explore Talent
+                                <i class="fal fa-long-arrow-right ms-2"></i>
+                            </a>
+
+                            <a href="#request-team" class="theme-btn btn-style-three bdrs12">
+                                Request a Project Team
+                                <i class="fal fa-long-arrow-right ms-2"></i>
+                            </a>
+                        </div>
                     </div>
-                    <figure class="image d-none d-xl-block"><img src="/onboarding/images/index-22/home22-banner-1.png"
-                            alt="">
+
+                    <figure class="image d-none d-xl-block">
+                        <img src="/onboarding/images/index-22/home22-banner-1.png" alt="For Companies">
                     </figure>
                 </div>
             </div>
 
-            <!-- Banner Style Two -->
+            <!-- FOR TALENTS -->
             <div class="banner-style-home22 at-home22 mb30 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <div class="content">
-                        <h3 class="title">Candidate</h3>
-                        <p class="text">Make the next step in your career.<br class="d-none d-lg-block">  Upload your CV and get matched with exciting <br class="d-none d-lg-block"> opportunities at leading companies worldwide.</p>
-                        <a href="{{route('register')}}" class="theme-btn btn-style-three bdrs12">Upload Your CV <i
-                                class="fal fa-long-arrow-right ms-3"></i></a>
+                        <h3 class="title">For Talent</h3>
+
+                        <p class="text">
+                            <strong>Your career, elevated.</strong><br class="d-none d-lg-block">
+                            Work with global companies from your home country —
+                            with structure, support, and long-term growth.
+                        </p>
+
+                        <a href="#join-network" class="theme-btn btn-style-three bdrs12 mt-3">
+                            Join the Talent Network
+                            <i class="fal fa-long-arrow-right ms-3"></i>
+                        </a>
                     </div>
-                    <figure class="image d-none d-xl-block"><img src="/onboarding/images/index-22/home22-banner-2.png"
-                            alt="">
+
+                    <figure class="image d-none d-xl-block">
+                        <img src="/onboarding/images/index-22/home22-banner-2.png" alt="For Talent">
                     </figure>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
-<!-- End Registeration Banners -->
+<!-- END HOW IT WORKS -->
+
 
 <!-- Candidates Section -->
 <section class="candidates-section">
