@@ -9718,18 +9718,49 @@ Page Title
   background: #F5F7FC;
 }
 
-.page-title:before {
+/* .page-title:before {
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
   width: 100%;
-  background-image: url(../images/icons/bg-4.png);
+  background-image: url(../images/background/4.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   content: "";
+} */
+
+
+/* .page-title {
+    position: relative;
+} */
+
+.page-title:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    content: "";
+    
+    /* Black fade + image */
+    background-image:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.05)
+        ),
+        url(../images/background/4.jpg);
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    z-index: 1;
 }
+
 
 .page-title h1 {
   position: relative;

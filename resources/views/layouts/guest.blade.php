@@ -46,6 +46,59 @@
 
     <style>
 
+      
+        .wave-divider {
+                width: 100%;
+                height: 50px; /* thin */
+                margin: 80px 0;
+                overflow: hidden;
+                opacity: 0;
+                transform: translateY(20px);
+                animation: waveFadeIn 1.2s ease forwards;
+            }
+
+            .wave-divider svg {
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+
+            @keyframes waveFadeIn {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+
+
+
+        .about-section-three .image img,
+        .banner-style-home22 .image img,
+        .testimonial-block-two .thumb img {
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .about-section-three .image:hover img {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+
+        /* Feature cards motion */
+        .feature-block-two,
+        .work-block.-type-4 {
+            transition: all 0.35s ease;
+            position: relative;
+        }
+
+        .feature-block-two:hover,
+        .work-block.-type-4:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+        }
+
+
         /* Floating CTA container */
         .floating-cta {
             position: fixed;
@@ -369,6 +422,21 @@
             }
         }
     </script>
+
+
+<script>
+          $('.values-carousel').owlCarousel({
+              loop: true,
+              margin: 20,
+              autoplay: true,
+              autoplayTimeout: 4000,
+              responsive:{
+                  0:{ items:1 },
+                  768:{ items:2 },
+                  1024:{ items:3 }
+              }
+          });
+          </script>
 
 
 
