@@ -7,6 +7,7 @@ use App\Models\Company;
 use App\Models\Department;
 use App\Models\Information;
 use App\Models\Opening;
+use App\Models\Suggestion;
 use App\Models\Request as ModelsRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -44,7 +45,7 @@ class CompanyController extends Controller
             ->get();
 
         } else {
-            $data['openings']= Opening::where('company_id', Auth::user()->company->id)->latest()->get();
+            $data['openings']= Opening::where('company_id', Auth::user()->company?->id)->latest()->get();
         }
 
         $data['depts'] = Department::latest()->get();
@@ -192,8 +193,6 @@ class CompanyController extends Controller
     public function talentsDisplay(Request $request){
 
 
-    // dd($request->all());
-
         if($request->has('query')){
 
             $query = $request->input('query');  
@@ -212,12 +211,12 @@ class CompanyController extends Controller
         // $data['talents']= Information::where('is_active', true)->latest()->get();
         $data['depts'] = Department::all();
 
-        dd($data);
+        // dd($data);
 
         return view('company.talents', $data);
     }
 
-    public function suggestedTalentsDisplay(Request $request){
+    public function suggestedTalentDisplay(Request $request){
 
 
         if($request->has('query')){
@@ -234,14 +233,18 @@ class CompanyController extends Controller
 
         } else {
 
-        $data['talents'] = Suggestion::with(['opening', 'user'])->where('company_id', Auth::user()->company()->id)->latest()->get();
+        $data['talents'] = Suggestion::with(['opening', 'user'])
+                            ->where('company_id', Auth::user()->company->id)->latest()->get();
+
+
+                            // dd($data);
 
 
         }   
         // $data['talents']= Information::where('is_active', true)->latest()->get();
         $data['depts'] = Department::all();
 
-        return view('company.talents', $data);
+        return view('company.suggested-talent', $data);
     }
 
 
