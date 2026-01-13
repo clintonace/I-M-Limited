@@ -24,10 +24,9 @@ class AdminController extends Controller
 {
 
 
-    public function suggestTalentsToCompany(Request $request)
+   public function suggestTalentsToCompany(Request $request)
     {
 
-    // dd($request->all());
             $request->validate([
                 'opening_id' => 'required|exists:openings,id',
                 'users' => 'required|array',
@@ -35,46 +34,84 @@ class AdminController extends Controller
             ]);
 
             $opening = Opening::findOrFail($request->opening_id);
+            $userIds = collect($request->users);
 
-            $alreadySuggestedUserIds = $opening->suggestions()
-                ->where('opening_id', $opening->id)
-                ->pluck('user_id')
-                ->unique()
-                ->values()
-                ->toArray();
+            $existing = $opening->suggestions()
+                ->whereIn('user_id', $userIds)
+                ->pluck('user_id');
 
-                
+            $newUserIds = $userIds->diff($existing);
 
+            foreach ($newUserIds as $userId) {
 
-
-                $userIds = array_diff(
-                                array_map('intval', $request->users ?? []),
-                                $alreadySuggestedUserIds
-                            );
-
-// dd( $alreadySuggestedUserIds);
-            // $userIds = array_diff($request->users, $alreadySuggestedUserIds);     
-            // dd($userIds); 
+            $opening->applicants = $opening->applicants + 1;
+            $opening->save();
             
-//             dd(
-//     $request->users,
-//     $alreadySuggestedUserIds
-// );
-
-            foreach ($request->users as $userId) {
-
-                $suggestion = new Suggestion();
-                $suggestion->company_id = $opening->company_id; 
-                $suggestion->user_id = $userId;
-                $suggestion->opening_id = $request->opening_id;
-                $suggestion->save();
-
-            }   
+                $opening->suggestions()->create([
+                    'user_id' => $userId,
+                    'company_id' => $opening->company_id,
+                ]);
+            }
 
             Alert::success('Success', 'Talents suggested successfully.');
-            return back();         
+            return back(); 
 
     }
+
+    // public function suggestTalentsToCompany(Request $request)
+    // {
+
+    //         $request->validate([
+    //             'opening_id' => 'required|exists:openings,id',
+    //             'users' => 'required|array',
+    //             'users.*' => 'exists:users,id',
+    //         ]);
+
+    //         $opening = Opening::findOrFail($request->opening_id);
+
+    //         $userDetSuggested = [];
+
+    //         $alreadySuggestedUserIds = $opening->suggestions()
+    //             ->where('opening_id', $opening->id)
+    //             ->pluck('user_id')
+    //             ->unique()
+    //             ->values()
+    //             ->toArray();
+
+    //             // dd($alreadySuggestedUserIds);
+
+    //             $suggestionList = Suggestion::where('opening_id', $opening->id)
+    //                                 ->whereIn('user_id', $alreadySuggestedUserIds)
+    //                                 ->get();
+                
+    //             // dd($suggestionList);
+
+    //             if($suggestionList != null) {
+
+    //              $userDetSuggested[]= $suggestionList; 
+    //              dd($userDetSuggested);
+    //             }else{
+    //                 dd('nothere');
+    //             }
+
+
+
+    //         foreach ($request->users as $userId) {
+
+    //             $suggestion = new Suggestion();
+    //             $suggestion->company_id = $opening->company_id; 
+    //             $suggestion->user_id = $userId;
+    //             $suggestion->opening_id = $request->opening_id;
+    //             $suggestion->save();
+
+    //         }   
+
+    //         Alert::success('Success', 'Talents suggested successfully.');
+    //         return back();         
+
+    // }
+
+
 
     public function suggestTalents($opening= null)
     {

@@ -386,6 +386,17 @@
                             <!-- END: Second Child -->
                         </li>
 
+                        <li>
+                            <a href="{{route('company.suggested.talents.display')}}"
+                                class="side-menu__link {{Route::currentRouteName()== 'company.suggested.talents.display' ? 'side-menu__link--active': ''}}">
+                                <i data-tw-merge="" data-lucide="users" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                                <div class="side-menu__link__title">Suggested Talents</div>
+
+                            </a>
+                            <!-- BEGIN: Second Child -->
+                            <!-- END: Second Child -->
+                        </li>
+
                         <li class="side-menu__divider">
                             Manage Open Roles
                         </li>
@@ -410,6 +421,8 @@
                             <!-- BEGIN: Second Child -->
                             <!-- END: Second Child -->
                         </li>
+
+                        
 
                         <li class="side-menu__divider">
                             Shutdown

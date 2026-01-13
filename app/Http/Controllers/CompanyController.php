@@ -192,6 +192,8 @@ class CompanyController extends Controller
     public function talentsDisplay(Request $request){
 
 
+    // dd($request->all());
+
         if($request->has('query')){
 
             $query = $request->input('query');  
@@ -206,6 +208,35 @@ class CompanyController extends Controller
 
         } else {
             $data['talents']= Information::where('is_active', true)->latest()->get();
+        }   
+        // $data['talents']= Information::where('is_active', true)->latest()->get();
+        $data['depts'] = Department::all();
+
+        dd($data);
+
+        return view('company.talents', $data);
+    }
+
+    public function suggestedTalentsDisplay(Request $request){
+
+
+        if($request->has('query')){
+
+            $query = $request->input('query');  
+            $data['talents']= Information::where('is_active', true)
+            ->where(function($q) use ($query) {
+                $q->where('department', 'like', '%'.$query.'%')
+                  ->orWhere('professional_skills', 'like', '%'.$query.'%')
+                  ->orWhere('hobbies', 'like', '%'.$query.'%');
+            })
+            ->latest()
+            ->get();
+
+        } else {
+
+        $data['talents'] = Suggestion::with(['opening', 'user'])->where('company_id', Auth::user()->company()->id)->latest()->get();
+
+
         }   
         // $data['talents']= Information::where('is_active', true)->latest()->get();
         $data['depts'] = Department::all();

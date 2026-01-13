@@ -91,7 +91,6 @@
                                                     <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
 
                                                         <div class="flex items-center justify-center text-danger">
-                                                            <i data-tw-merge="" data-lucide="database" class="h-3.5 w-3.5 stroke-[1.7]"></i>
                                                             <div class="ml-1.5 whitespace-nowrap">
                                                                 <span
                                                                     class="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 dark:bg-darkmode-600 text-xs text-slate-700 dark:text-slate-300 select-label">
