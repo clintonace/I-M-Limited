@@ -43,6 +43,8 @@ class="main-header header-style-two">
 
                         </li>
 
+                    {{-- 
+
                         <li>
                             <span>
                                 <a style="color: white" href="{{route('portfolio.colors')}}">
@@ -52,7 +54,7 @@ class="main-header header-style-two">
 
                         </li>
 
-                {{--    
+                
                 
                         <li class="dropdown has-mega-menu" id="has-mega-menu">
                             <span>Find Jobs</span>
@@ -134,44 +136,46 @@ class="main-header header-style-two">
 
                         {{-- <li><a href="{{route('candidates.list')}}">Candidates List</a></li> --}}
 
-
-                        <li>
-                            <a href="{{route('candidates.list')}}">
-                                <span>Talents</span>
-                            </a>
-
-
-                        </li>
-                        <li>
-                            <a href="{{route('employer.list')}}">
-                                <span>Companies</span>
-                            </a>
-
-
-                        </li> 
                         <li>
                             <a href="{{route('about.us')}}">
                                 <span>About us</span>
                             </a>
-
-
                         </li>
 
+                        <li>
+                            <a href="{{route('for.company')}}">
+                                <span>For Companies</span>
+                            </a>
+                        </li> 
+
+                        <li>
+                            <a href="{{route('for.talent')}}">
+                                <span>For Talents</span>
+                            </a>
+                        </li>
+                            
+                        <li>
+                            <a href="#">
+                                <span>Case Studies / Success Stories </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <span>Blog</span>
+                            </a>
+                        </li>
                         
                         <li>
                             <a href="{{route('contact.us')}}">
                                 <span>Contact us</span>
                             </a>
-
-
                         </li>
-                        <li>
+                        {{--<li>
                             <a href="{{route('testimony')}}">
                                 <span>Testimonials</span>
                             </a>
-
-
-                        </li>
+                        </li>--}}
 
 
                         <!-- Only for Mobile View -->

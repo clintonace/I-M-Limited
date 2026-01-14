@@ -63,6 +63,11 @@ Route::prefix('web/')->group(function () {
 
     Route::get('/portfolio', [OnboardingController::class, 'portfolio_colors'])->name('portfolio.colors');
 
+
+    Route::get('/for-talent', [OnboardingController::class, 'for_talent'])->name('for.talent');
+    Route::get('/for-company', [OnboardingController::class, 'for_company'])->name('for.company');
+
+
 });
 
 

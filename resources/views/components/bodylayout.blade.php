@@ -395,10 +395,8 @@
     </div>
 </section>
 
-
-
 <!-- Job Categories -->
-<section class="job-categories border-bottom-0 pt-0">
+<!-- <section class="job-categories border-bottom-0 pt-0">
     <div class="auto-container">
         <div class="d-flex align-items-center justify-content-between wow fadeInUp">
             <div class="sec-title">
@@ -410,7 +408,7 @@
         <div class="row wow fadeInUp">
             @if ($department->isEmpty())
 
-            <!-- Category Block -->
+            
             <div class="category-block-two at-home22 col-xl-3 col-sm-6">
                 <div class="inner-box text-start">
                     <div class="content justify-content-start d-block">
@@ -423,7 +421,7 @@
 
             @foreach ($department->take(4) as $d)
 
-            <!-- Category Block -->
+            
             <div class="category-block-two at-home22 col-xl-3 col-sm-6">
                 <div class="inner-box text-start">
                     <div class="content justify-content-start d-block">
@@ -440,67 +438,11 @@
 
         </div>
     </div>
-</section>
+</section> -->
 <!-- End Job Categories -->
 
-<!-- Job Section -->
-<section class="job-section-two">
-    <div class="auto-container">
-        <div class="sec-title text-center">
-            <h2>Featured Companies</h2>
-            <div class="text-white">Know your worth and find the candidates that qualify to work for you.</div>
-        </div>
-
-        <div class="row wow fadeInUp">
-            <!-- Job Block-two -->
-
-            @if ($companies->isEmpty())
-
-
-            <div class="job-block-two col-lg-12">
-                <div class="inner-box">
-                    <div class="content">
-
-                        <h4><a href="#">No Company Yet !</a></h4>
-
-                    </div>
-
-                </div>
-            </div>
-
-            @else
-
-            @foreach ($companies as $c)
-
-            <div class="job-block-two col-lg-12">
-                <div class="inner-box">
-                    <div class="content">
-                        <span class="company-logo"><img style="height: 20px; width: 20px;" src="{{$c?->company_logo}}"
-                                alt=""></span>
-                        <h4><a href="#">{{$c?->company_name}}</a></h4>
-                        <ul class="job-info">
-                            <li><span class="icon flaticon-briefcase"></span> {{$c?->company_sector}}</li>
-                            <li><span class="icon flaticon-map-locator"></span> Country: {{$c?->country}}</li>
-                            <li><span class="icon flaticon-clock-3"></span>Joined: {{$c?->created_at->diffForHumans()}}</li>
-
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-            @endforeach
-            @endif
-
-        </div>
-        <div class="btn-box">
-            <a href="{{route('employer.list')}}" class="theme-btn btn-style-three bg-blue"><span class="btn-title">Load More Listing</span></a>
-        </div>
-    </div>
-</section>
-<!-- End Job Section -->
-
 <!-- HOW IT WORKS -->
-<section class="layout-pt-120 layout-pb-60">
+<section class=" layout-pb-60">
     <div class="auto-container">
 
     <div class="sec-title text-center">
@@ -572,7 +514,6 @@
 </section>
 <!-- END HOW IT WORKS -->
 
-
 <!-- Candidates Section -->
 <section class="candidates-section">
     <div class="auto-container">
@@ -580,8 +521,6 @@
             <h2>Featured Candidates</h2>
             <div class="text">Meet top-tier professionals actively seeking new opportunities. Handpicked candidates with proven field expertise, ready to drive your business forward.</div>
         </div>
-
-
 
         <div class="carousel-outer wow fadeInUp">
             <div class="candidates-carousel owl-carousel owl-theme default-dots">
@@ -601,8 +540,6 @@
                 @endforeach
             </div>
         </div>
-
-
     </div>
 </section>
 <!-- End Candidates Section -->
@@ -662,7 +599,7 @@
 
 
 <!-- Call To Action Two -->
-<section class="call-to-action-two" style="background-color:black;">
+<!-- <section class="call-to-action-two" style="background-color:black;">
     <div class="auto-container wow fadeInUp">
         <div class="sec-title light text-center">
             <h2>Your Dream Jobs Are Waiting</h2>
@@ -674,11 +611,11 @@
             <a href="{{route('candidates.list')}}" class="theme-btn btn-style-three">Request For a Candidate</a>
         </div>
     </div>
-</section>
+</section> -->
 <!-- End Call To Action -->
 
 <!-- Call To Action Three -->
-<section class="call-to-action-three">
+<!-- <section class="call-to-action-three">
     <div class="auto-container">
         <div class="outer-box">
             <div class="sec-title">
@@ -692,5 +629,5 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- End Call To Action -->

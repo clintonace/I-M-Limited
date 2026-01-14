@@ -234,7 +234,7 @@
 
 
         .theme-btn.active {
-            background-color: #f6ad3e;
+            background-color: #fe681c;
             color: white;
         }
 
@@ -291,7 +291,7 @@
         .woww {
             display: flex;
             align-items: center;
-            background: #f6ad3e;
+            background: #fe681c;
             padding: 20px;
             border-radius: 10px;
             overflow: hidden;

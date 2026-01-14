@@ -56,7 +56,7 @@
 
                 <!-- Form Group -->
                 <div class="form-group col-lg-2 text-right">
-                  <button type="submit" class="theme-btn btn-style-three">Search</button>
+                  <button type="submit" class="theme-btn btn-style-two w-full fade-top text-white">Search</button>
                 </div>
               </div>
             </form>

@@ -22,6 +22,18 @@ class OnboardingController extends Controller
         return view('onboarding.contact-us');
     }
 
+    public function for_talent()
+    {
+
+        return view('onboarding.talent-for');
+    }
+
+    public function for_company()
+    {
+
+        return view('onboarding.company-for');
+    }
+
     public function testimony()
     {
 
