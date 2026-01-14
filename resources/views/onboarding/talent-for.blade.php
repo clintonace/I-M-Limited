@@ -28,77 +28,77 @@
 
       </style>
 
-      <!-- Banner Section-->
-    <section class="banner-section -type-15 fade-top"
-            style="
-                position: relative;
-                overflow: hidden;
-            "
-        >
+            <!-- Banner Section-->
+            <section class="banner-section -type-15 fade-top"
+                    style="
+                        position: relative;
+                        overflow: hidden;
+                    "
+                >
 
-            <!-- Background Video -->
-            <video
-                autoplay
-                muted
-                loop
-                playsinline
-                style="
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    min-width: 100%;
-                    min-height: 100%;
-                    width: auto;
-                    height: auto;
-                    transform: translate(-50%, -50%);
-                    object-fit: cover;
-                    z-index: 0;
-                "
-            >
-                <source src="/onboarding/video/vid5.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+                    <!-- Background Video -->
+                    <video
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        style="
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            min-width: 100%;
+                            min-height: 100%;
+                            width: auto;
+                            height: auto;
+                            transform: translate(-50%, -50%);
+                            object-fit: cover;
+                            z-index: 0;
+                        "
+                    >
+                        <source src="/onboarding/video/vid5.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
 
-            <!-- Black Fade Overlay -->
-            <div
-                style="
-                    position: absolute;
-                    inset: 0;
-                    background: linear-gradient(
-                        to bottom,
-                        rgba(0,0,0,0.8) 0%,
-                        rgba(0,0,0,0.4) 40%,
-                        rgba(0,0,0,0.05) 80%
-                    );
-                    z-index: 1;
-                "
-            ></div>
+                    <!-- Black Fade Overlay -->
+                    <div
+                        style="
+                            position: absolute;
+                            inset: 0;
+                            background: linear-gradient(
+                                to bottom,
+                                rgba(0,0,0,0.8) 0%,
+                                rgba(0,0,0,0.4) 40%,
+                                rgba(0,0,0,0.05) 80%
+                            );
+                            z-index: 1;
+                        "
+                    ></div>
 
-            <!-- Content -->
-            <div style="" class="auto-container" style="position: relative; z-index: 2;">
-                <div class="cotnent-box">
-                    <div style="margin:100px; color: white" class="title-box wow fadeInUp">
-                        <h2>Your Career, Elevated.</h2>
+                    <!-- Content -->
+                    <div style="" class="auto-container" style="position: relative; z-index: 2;">
+                        <div class="cotnent-box">
+                            <div style="margin:100px; color: white" class="title-box wow fadeInUp">
+                                <h1 class="font-size: 24;">Your Career, Elevated.</h1>
 
-                        <div class="text-white">
-                            Work with global companies from the comfort of your home country —
-                            with structure, support, and opportunities to help you grow.
+                                <div style="font-size: 18px;" class="text-white">
+                                    Work with global companies from the comfort of your home country —
+                                    with structure, support, and opportunities to help you grow.
+                                </div>
+
+                                <div class="text-white mt-2">
+                                    <strong>Made in Africa. Serving the World.</strong>
+                                </div>
+
+                                <a style="color: white" href="#join-network"
+                                class="btn btn-style-two mt-4 wow fadeInUp fade-top"
+                                data-wow-delay="300ms">
+                                    → Join the Talent Network
+                                </a>
+                            </div>
                         </div>
-
-                        <div class="text-white mt-2">
-                            <strong>Made in Africa. Serving the World.</strong>
-                        </div>
-
-                        <a style="color: white" href="#join-network"
-                        class="btn btn-style-two mt-4 wow fadeInUp fade-top"
-                        data-wow-delay="300ms">
-                            → Join the Talent Network
-                        </a>
                     </div>
-                </div>
-            </div>
 
-    </section>
+            </section>
 
 
             <section class="layout-pt-120 layout-pb-100">

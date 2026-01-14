@@ -21,10 +21,13 @@ class="main-header header-style-two">
             <!--Nav Outer -->
             <div class="nav-outer">
                 <div class="logo-box">
-                    <div class="logo"><a href="#"><img alt="" title="Our Logo"></a></div>
+                    <div class="logo"><a href="{{route('welcome')}}"><img alt="" title="Our Logo"></a></div>
                     <div class="round-logo-container">
 
+                    <a href="{{route('welcome')}}">
                         <img height="20px;" width="20px" src="/onboarding/IandM-white-logo.png" alt="">
+                    </a>
+                        
                     </div>
                 </div>
 
@@ -156,7 +159,7 @@ class="main-header header-style-two">
                             
                         <li>
                             <a href="#">
-                                <span>Case Studies / Success Stories </span>
+                                <span>Resources</span>
                             </a>
                         </li>
 

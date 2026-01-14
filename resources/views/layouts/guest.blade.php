@@ -505,8 +505,8 @@
             people and businesses.
         </p>
 
-        <a href="#get-started" class="theme-btn btn-style-two text-white">
-            → Get Started Asap
+        <a href="{{route('register')}}" class="theme-btn btn-style-two text-white fade-top">
+            → Get Started !
         </a>
     </div>
 
