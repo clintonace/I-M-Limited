@@ -78,7 +78,7 @@
                                 </div>
 
                                 <div class="form-group col-lg-5 col-md-12">
-                                    <button type="submit" class="theme-btn btn-style-two w-full">
+                                    <button type="submit" class="theme-btn btn-style-two w-full fade-top">
                                         <span class="text-white">Find World-Class Talent</span>
                                     </button>
                                 </div>

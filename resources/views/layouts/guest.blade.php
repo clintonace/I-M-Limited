@@ -353,6 +353,37 @@
             padding: 50px;
             font-size: 1.2em;
         }
+
+
+        /* Universal top fade overlay */
+        .fade-top {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fade-top::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+
+            background: linear-gradient(
+                to bottom,
+                rgba(0,0,0,0.75) 0%,
+                rgba(0,0,0,0.45) 35%,
+                rgba(0,0,0,0.15) 65%,
+                rgba(0,0,0,0.00) 85%
+            );
+
+            z-index: 1;
+        }
+
+        /* Ensure content stays above fade */
+        .fade-top > * {
+            position: relative;
+            z-index: 2;
+        }
+
     </style>
 </head>
 
