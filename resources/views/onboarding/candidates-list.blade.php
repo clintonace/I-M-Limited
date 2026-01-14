@@ -3,7 +3,19 @@
     <x-slot name="body">
 
          <!--Page Title-->
-    <section style="background-color: #f6ad3e" class="page-title style-two at-slv7">
+    <section style="
+                background-image:
+                    linear-gradient(
+                        to bottom,
+                        rgba(0,0,0,0.75),
+                        rgba(0,0,0,0.35),
+                        rgba(0,0,0,0.05)
+                    );
+                background-color: #fe681c;
+                background-repeat: no-repeat;
+                background-size: cover;
+            " 
+            class="page-title style-two at-slv7">
         <div class="auto-container">
 
           <!-- Job Search Form -->
@@ -104,7 +116,7 @@
             </div>
           </div> --}}
         </div>
-      </section>
+    </section>
       <!--End Page Title-->
 
       <!-- Listing Section -->
@@ -159,7 +171,7 @@
                       </ul>
                       <div class="d-grid">
                         <div class="d-grid">
-                        <a href="{{route('onboarding.candidate.details', $info?->email)}}" class="ud-btn-border-theme text-warning">View Profile <i class="fal fa-long-arrow-right"></i></a>
+                        <a href="{{route('onboarding.candidate.details', $info?->email)}}" class="ud-btn-border-theme text-black">View Profile <i class="fal fa-long-arrow-right"></i></a>
                       </div>
                       </div>
                     </div>
