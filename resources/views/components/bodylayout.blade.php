@@ -87,10 +87,10 @@
                     </div>
 
                     <div class="flex gap-4 mt-6 flex-wrap">
-                        <a href="#hire-talent" class="theme-btn btn-style-three">
+                        <a href="{{route('login')}}" class="theme-btn btn-style-three">
                             → Work with World-Class Talent
                         </a>
-                        <a href="#join-network" class="theme-btn btn-style-three">
+                        <a href="{{route('register')}}" class="theme-btn btn-style-three">
                             → Join the I&amp;M Talent Network
                         </a>
                     </div>
@@ -229,7 +229,7 @@
 
             <!-- Work Block -->
             <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="work-block -type-4">
+                <div class="work-block -type-4 p-5">
                     <div class="icon-wrap">
                         <span class="icon icon-drawing"></span>
                     </div>
@@ -241,7 +241,7 @@
 
             <!-- Work Block -->
             <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="work-block -type-4">
+                <div class="work-block -type-4 p-5">
                     <div class="icon-wrap">
                         <span class="icon icon-process"></span>
                     </div>
@@ -253,7 +253,7 @@
 
             <!-- Work Block -->
             <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="work-block -type-4">
+                <div class="work-block -type-4 p-5">
                     <div class="icon-wrap">
                         <span class="icon icon-task"></span>
                     </div>
@@ -265,7 +265,7 @@
 
             <!-- Work Block -->
             <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="work-block -type-4">
+                <div class="work-block -type-4 p-5">
                     <div class="icon-wrap">
                         <span class="icon icon-one-finger-click"></span>
                     </div>
@@ -467,12 +467,12 @@
                         </p>
 
                         <div class="mt-4 d-flex flex-wrap gap-3">
-                            <a href="#explore-talent" class="theme-btn btn-style-three bdrs12 me-3">
+                            <a href="{{route('for.talent')}}" class="theme-btn btn-style-two bdrs12 me-3 fade-top text-white">
                                 Explore Talent
                                 <i class="fal fa-long-arrow-right ms-2"></i>
                             </a>
 
-                            <a href="#request-team" class="theme-btn btn-style-three bdrs12">
+                            <a href="{{route('login')}}" class="theme-btn btn-style-two bdrs12 fade-top text-white">
                                 Request a Project Team
                                 <i class="fal fa-long-arrow-right ms-2"></i>
                             </a>
@@ -497,7 +497,7 @@
                             with structure, support, and long-term growth.
                         </p>
 
-                        <a href="#join-network" class="theme-btn btn-style-three bdrs12 mt-3">
+                        <a href="{{route('register')}}" class="theme-btn btn-style-two bdrs12 mt-3 fade-top text-white">
                             Join the Talent Network
                             <i class="fal fa-long-arrow-right ms-3"></i>
                         </a>
@@ -534,7 +534,7 @@
                         <span class="designation">{{$info?->department}}</span>
                         <div class="location"><i class="flaticon-map-locator"></i> {{$info?->country}}</div>
                         <a href="{{route('onboarding.candidate.details', $info?->email)}}"
-                            class="theme-btn btn-style-three"><span class="btn-title">View Profile</span></a>
+                            class="theme-btn btn-style-two fade-top text-white"><span class="btn-title">View Profile</span></a>
                     </div>
                 </div>
                 @endforeach
