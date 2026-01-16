@@ -36,28 +36,36 @@
                         <br>
                         <br>
 
-                        <form method="POST" action="{{ route('verification.send') }}">
-                            @csrf
-
-                            <div>
-                                <button>
-                                    {{ __('Resend Verification Email') }}
-                                </button>
-                            </div>
-                        </form>
-
-
-                            <div class="form-group">
+                        <div class="form-group">
                                 <div class="field-outer">
 
                                     <form action="{{route('logout')}}" method="POST">
                                         @csrf
 
-                                         <button>Logout</button>
+                                         <button style="color: white;" class="theme-btn btn-style-two w-full fade-top">Logout</button>
                                     </form>
                                 </div>
-                            </div>
+                        </div>
 
+                        <form method="POST" action="{{ route('verification.send') }}">
+                            @csrf
+
+                            <div>
+                                <button style="color: white;" class="theme-btn btn-style-two w-full fade-top">
+                                    {{ __('Resend Verification Email') }}
+                                </button>
+                            </div>
+                        </form>
+
+                        <div class="form-group">
+                            <div class="field-outer">
+
+                                <a href="{{ route('login') }}" style="color: white;" class="theme-btn btn-style-two w-full fade-top">Login</a>
+                                 <p class="p-3 text-center text-sm text-gray-600">
+                                    Please login after verification to access your dashboard.
+                                </p>
+                            </div>                          
+                        </div>
                     </div>
                 </div>
                 <!--End Login Form -->

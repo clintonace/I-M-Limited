@@ -216,7 +216,7 @@
               <div class="row mt-5">
 
                   <div class="col-lg-6 col-md-12">
-                      <div class="feature-block-two">
+                      <div class="feature-block-two p-5">
                           <div class="inner-box">
                               <h4>Our Mission</h4>
                               <p>
@@ -229,7 +229,7 @@
                   </div>
 
                   <div class="col-lg-6 col-md-12">
-                      <div class="feature-block-two">
+                      <div class="feature-block-two p-5">
                           <div class="inner-box">
                               <h4>Our Vision</h4>
                               <p>
@@ -472,7 +472,7 @@
             <div class="row mt-5">
 
                 <div class="col-lg-4 col-md-6">
-                    <div class="feature-block-two">
+                    <div class="feature-block-two p-5">
                         <div class="inner-box">
                             <h5>Secure Systems</h5>
                             <p>Controlled installations for sensitive tools and platforms.</p>
@@ -481,7 +481,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6">
-                    <div class="feature-block-two">
+                    <div class="feature-block-two p-5">
                         <div class="inner-box">
                             <h5>Monitored Environments</h5>
                             <p>Structured, supervised workspaces that ensure performance.</p>
@@ -490,7 +490,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6">
-                    <div class="feature-block-two">
+                    <div class="feature-block-two p-5">
                         <div class="inner-box">
                             <h5>Compliance & Oversight</h5>
                             <p>Reliable governance, reporting, and operational control.</p>
@@ -503,20 +503,6 @@
         </div>
     </section>
 
-
-      <!-- Work Section -->
-      
-      <!-- End Work Section -->
-
-      <!--Clients Section-->
-     
-      <!-- End Clients Section-->
-
-      
-
-
     </x-slot>
-
-    
 
 </x-guest-layout>

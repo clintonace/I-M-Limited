@@ -89,7 +89,7 @@
                                     <strong>Made in Africa. Serving the World.</strong>
                                 </div>
 
-                                <a style="color: white" href="#join-network"
+                                <a style="color: white" href="{{route('register', ['type' => 'employer'])}}"
                                 class="btn btn-style-two mt-4 wow fadeInUp fade-top"
                                 data-wow-delay="300ms">
                                     → Build With I&M

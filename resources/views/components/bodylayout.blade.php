@@ -87,10 +87,10 @@
                     </div>
 
                     <div class="flex gap-4 mt-6 flex-wrap">
-                        <a href="{{route('login')}}" class="theme-btn btn-style-three">
+                        <a href="{{route('register', ['type' => 'employer'])}}" class="theme-btn btn-style-three">
                             → Work with World-Class Talent
                         </a>
-                        <a href="{{route('register')}}" class="theme-btn btn-style-three">
+                        <a href="{{route('register', ['type' => 'candidate'])}}" class="theme-btn btn-style-three">
                             → Join the I&amp;M Talent Network
                         </a>
                     </div>
@@ -104,11 +104,6 @@
                         <a href="#">DevOps</a>,
                         <a href="#">Mobile Developer</a>
                     </div>
-
-
-                   
-
-                    
                 </div> 
             </div>
         </div>

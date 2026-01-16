@@ -409,8 +409,6 @@
         {{$body}}
 
         <x-footerlayout />
-
-
     </div><!-- End Page Wrapper -->
 
 
@@ -432,49 +430,47 @@
     <script defer src="/onboarding/js/basics.js"></script>
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyDaaCBm4FEmgKs5cfVrh3JYue3Chj1kJMw&amp;ver=5.2.4"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const candidateBtn = document.getElementById('candidateBtn');
-            const employerBtn = document.getElementById('employerBtn');
-            const candidateForm = document.getElementById('candidateForm');
-            const employerForm = document.getElementById('employerForm');
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const candidateBtn = document.getElementById('candidateBtn');
+                const employerBtn = document.getElementById('employerBtn');
+                const candidateForm = document.getElementById('candidateForm');
+                const employerForm = document.getElementById('employerForm');
 
-            candidateBtn.addEventListener('click', function () {
-                candidateForm.style.display = 'block';
-                employerForm.style.display = 'none';
-                candidateBtn.classList.add('active');
-                employerBtn.classList.remove('active');
+                candidateBtn.addEventListener('click', function () {
+                    candidateForm.style.display = 'block';
+                    employerForm.style.display = 'none';
+                    candidateBtn.classList.add('active');
+                    employerBtn.classList.remove('active');
+                });
+
+                employerBtn.addEventListener('click', function () {
+                    employerForm.style.display = 'block';
+                    candidateForm.style.display = 'none';
+                    employerBtn.classList.add('active');
+                    candidateBtn.classList.remove('active');
+                });
             });
-
-            employerBtn.addEventListener('click', function () {
-                employerForm.style.display = 'block';
-                candidateForm.style.display = 'none';
-                employerBtn.classList.add('active');
-                candidateBtn.classList.remove('active');
-            });
-        });
-
-        
-    </script>
+        </script>
 
 
-    <script>
-        function toggleCta(open) {
-            const cta = document.getElementById('floatingCta');
-            const minified = document.getElementById('ctaMinified');
+        <script>
+            function toggleCta(open) {
+                const cta = document.getElementById('floatingCta');
+                const minified = document.getElementById('ctaMinified');
 
-            if (open) {
-                cta.classList.remove('closed');
-                minified.style.display = 'none';
-            } else {
-                cta.classList.add('closed');
-                minified.style.display = 'flex';
+                if (open) {
+                    cta.classList.remove('closed');
+                    minified.style.display = 'none';
+                } else {
+                    cta.classList.add('closed');
+                    minified.style.display = 'flex';
+                }
             }
-        }
-    </script>
+        </script>
 
 
-<script>
+        <script>
           $('.values-carousel').owlCarousel({
               loop: true,
               margin: 20,
@@ -486,7 +482,72 @@
                   1024:{ items:3 }
               }
           });
-          </script>
+        </script>
+
+
+        <!-- <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const params = new URLSearchParams(window.location.search);
+                const type = params.get("type");
+
+                const candidateBtn = document.getElementById("candidateBtn");
+                const employerBtn = document.getElementById("employerBtn");
+
+                if (type === "employer") {
+                    candidateBtn.classList.remove("active");
+                    employerBtn.classList.add("active");
+                }
+            });
+        </script> -->
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const params = new URLSearchParams(window.location.search);
+                const type = params.get("type");
+
+                const candidateBtn = document.getElementById("candidateBtn");
+                const employerBtn = document.getElementById("employerBtn");
+
+                const candidateForm = document.getElementById("candidateForm");
+                const employerForm = document.getElementById("employerForm");
+
+                // Default state
+                function showCandidate() {
+                    candidateForm.style.display = "block";
+                    employerForm.style.display = "none";
+                    candidateBtn.classList.add("active");
+                    employerBtn.classList.remove("active");
+                }
+
+                function showEmployer() {
+                    candidateForm.style.display = "none";
+                    employerForm.style.display = "block";
+                    employerBtn.classList.add("active");
+                    candidateBtn.classList.remove("active");
+                }
+
+                // Auto-open based on route
+                if (type === "employer") {
+                    showEmployer();
+                } else {
+                    showCandidate();
+                }
+
+                // Button click handlers
+                candidateBtn.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    showCandidate();
+                });
+
+                employerBtn.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    showEmployer();
+                });
+            });
+        </script>
+
+
 
 
 
@@ -514,11 +575,5 @@
     <div id="ctaMinified" class="cta-minified" onclick="toggleCta(true)">
         🚀
     </div>
-
-
-
-
 </body>
-
-
 </html>
