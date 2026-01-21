@@ -125,6 +125,7 @@
             right: 30px;
             width: 320px;
             background: #ffffff;
+            /* border: 1px solid #fe681c; */
             border-radius: 16px;
             padding: 24px 22px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
@@ -163,7 +164,7 @@
             width: 54px;
             height: 54px;
             background: var(--theme-color);
-            color: #fff;
+            color:  #fe681c;
             border-radius: 50%;
             display: none;
             align-items: center;
@@ -574,7 +575,7 @@
 
     <!-- Minified CTA Icon -->
     <div id="ctaMinified" class="cta-minified" onclick="toggleCta(true)">
-        <i class="fal fa-comments ms-2" style="position: relative; z-index: 10;"></i>
+        <i  class="fal fa-comments ms-2" style="position: relative; z-index: 10;"></i>
     </div>
 </body>
 </html>

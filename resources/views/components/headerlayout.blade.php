@@ -163,11 +163,7 @@ class="main-header header-style-two">
                             </a>
                         </li>
 
-                        <li>
-                            <a href="#">
-                                <span>Blog</span>
-                            </a>
-                        </li>
+                       
                         
                         <li>
                             <a href="{{route('contact.us')}}">
