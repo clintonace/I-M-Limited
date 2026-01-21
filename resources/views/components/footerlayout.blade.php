@@ -64,7 +64,7 @@
     <div class="footer-bottom">
       <div class="auto-container">
         <div class="outer-box">
-          <div class="copyright-text">© 2024 <a href="#">codeBrown</a>. All Right Reserved.</div>
+          <div class="copyright-text">© 2026 <a href="#">iandmlimited.com</a>. All Right Reserved.</div>
           {{-- <div class="social-links">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -74,6 +74,12 @@
         </div>
       </div>
     </div>
-    <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+    <!-- <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div> -->
+        <!-- <div style="background: #fe681c;" class="scroll-to-top m-5 scroll-to-target"
+        data-target="html"
+        style="right:auto; left:20px; bottom:30px; color:white">
+        
+        <i class="fal fa-up ms-2" ></i>
+      </div> -->
   </footer>
   <!-- End Main Footer -->

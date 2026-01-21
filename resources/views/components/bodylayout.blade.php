@@ -30,30 +30,30 @@
                             <span id="typingText" style="color: #fe681c;"></span>
                         </h1>
 
-                        <p class="text-white mt-3 text-lg">
+                        <p style="font-size: 1.2rem;" class="text-white mt-3 ">
                             Managed locally. Impacting globally.
                         </p>
 
-                        <p class="text-white mt-4 opacity-90 max-w-xl">
+                        <p style="font-size: 1.2rem;"  class="text-white mt-2 opacity-90 max-w-xl">
                             Your global team, built and supported from Africa.
                             <strong>Made in Africa. Serving the World.</strong>
                         </p>
                     </div>
 
-                     <div style="padding-top: 5px; padding-bottom: 50px;">
+                     <div style="padding-top: 5px; padding-bottom: 10px;">
                        
 
                         <div class="row">
                         <!--Column-->
                         <div class="counter-column col-lg-4 col-md-4 col-sm-12 wow fadeInUp">
                             <div style="color: #fe681c; font-size: 50px; font-weight: bold" class="count-box"><span class="count-text" data-speed="10000" data-stop="150">0</span>+</div>
-                            <h6 class="counter-title text-white pt-5">European Clients Served.</h6>
+                            <h6 class="counter-title text-white pt-5 pb-5">European Clients Served.</h6>
                         </div>
 
                         <!--Column-->
                         <div class="counter-column col-lg-4 col-md-4 col-sm-12 wow fadeInUp" data-wow-delay="400ms">
                             <div style="color: #fe681c; font-size: 50px; font-weight: bold" class="count-box"><span class="count-text" data-speed="10000" data-stop="80">0</span>%</div>
-                            <h6 class="counter-title text-white pt-5">Satisfactory ratings, 80% upwards.</h6>
+                            <h6 class="counter-title text-white pt-5 pb-5">Satisfactory ratings, 80% upwards.</h6>
                         </div>
 
                         <!--Column-->
@@ -65,7 +65,7 @@
 
                     </div>
 
-                    <div class="job-search-form mt-6">
+                    <div class="job-search-form ">
                         <form action="{{ route('onboarding.search.candidates') }}" method="GET">
                             @csrf
                             <div class="row">
@@ -79,7 +79,7 @@
 
                                 <div class="form-group col-lg-5 col-md-12">
                                     <button type="submit" class="theme-btn btn-style-two w-full fade-top">
-                                        <span class="text-white">Find World-Class Talent</span>
+                                        <span style="position: relative; z-index: 10; font-weight: 700;" class="text-white">Find World-Class Talent</span>
                                     </button>
                                 </div>
                             </div>
@@ -87,7 +87,7 @@
                     </div>
 
                     <div class="flex gap-4 mt-6 flex-wrap">
-                        <a href="{{route('register', ['type' => 'employer'])}}" class="theme-btn btn-style-three">
+                        <a href="{{route('register', ['type' => 'employer'])}}" class="theme-btn btn-style-three mb-2">
                             → Work with World-Class Talent
                         </a>
                         <a href="{{route('register', ['type' => 'candidate'])}}" class="theme-btn btn-style-three">
@@ -451,7 +451,7 @@
 
             <!-- FOR COMPANIES -->
             <div class="banner-style-home22 at-home22 mb30 col-md-6 col-sm-12">
-                <div class="inner-box">
+                <div class="">
                     <div class="content">
                         <h3 class="title">For Companies</h3>
 
@@ -462,14 +462,22 @@
                         </p>
 
                         <div class="mt-4 d-flex flex-wrap gap-3">
-                            <a href="{{route('for.talent')}}" class="theme-btn btn-style-two bdrs12 me-3 fade-top text-white">
-                                Explore Talent
-                                <i class="fal fa-long-arrow-right ms-2"></i>
+                           <a href="{{ route('for.talent') }}"
+                            class="theme-btn btn-style-two bdrs12 me-3 fade-top text-white"
+                            style="position: relative;">
+                                
+                                <span style="position: relative; z-index: 10; font-weight: 700;">
+                                    Explore Talent
+                                    <i class="fal fa-long-arrow-right ms-2" style="position: relative; z-index: 10;"></i>
+                                </span>
+
                             </a>
 
                             <a href="{{route('login')}}" class="theme-btn btn-style-two bdrs12 fade-top text-white">
-                                Request a Project Team
-                                <i class="fal fa-long-arrow-right ms-2"></i>
+                                <span style="position: relative; z-index: 10; font-weight: 700;">
+                                    Request a Project Team
+                                    <i class="fal fa-long-arrow-right ms-2" style="position: relative; z-index: 10;"></i>
+                                </span>
                             </a>
                         </div>
                     </div>
@@ -482,7 +490,7 @@
 
             <!-- FOR TALENTS -->
             <div class="banner-style-home22 at-home22 mb30 col-md-6 col-sm-12">
-                <div class="inner-box">
+                <div class="">
                     <div class="content">
                         <h3 class="title">For Talent</h3>
 
@@ -493,8 +501,10 @@
                         </p>
 
                         <a href="{{route('register')}}" class="theme-btn btn-style-two bdrs12 mt-3 fade-top text-white">
-                            Join the Talent Network
-                            <i class="fal fa-long-arrow-right ms-3"></i>
+                            <span style="position: relative; z-index: 10; font-weight: 700;">
+                                   Join the Talent Network
+                                <i class="fal fa-long-arrow-right ms-2" style="position: relative; z-index: 10;"></i>
+                            </span>
                         </a>
                     </div>
 
@@ -529,7 +539,9 @@
                         <span class="designation">{{$info?->department}}</span>
                         <div class="location"><i class="flaticon-map-locator"></i> {{$info?->country}}</div>
                         <a href="{{route('onboarding.candidate.details', $info?->email)}}"
-                            class="theme-btn btn-style-two fade-top text-white"><span class="btn-title">View Profile</span></a>
+                            class="theme-btn btn-style-two fade-top text-white">
+                            <span style="position: relative; z-index: 10; font-weight: 700;" class="btn-title">View Profile</span>
+                        </a>
                     </div>
                 </div>
                 @endforeach

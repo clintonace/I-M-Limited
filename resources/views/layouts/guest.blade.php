@@ -557,7 +557,8 @@
 
         <!-- Close Button -->
         <button class="cta-close" onclick="toggleCta(false)">
-            ✕
+            
+            <i class="fal fa-close ms-2" style="position: relative; z-index: 10;"></i>
         </button>
 
         <h4>Ready to Build with Us?</h4>
@@ -566,14 +567,14 @@
             people and businesses.
         </p>
 
-        <a href="{{route('register')}}" class="theme-btn btn-style-two text-white fade-top">
+        <a style="position: relative; z-index: 10; font-weight: 700;" href="{{route('register')}}" class="theme-btn btn-style-two text-white fade-top">
             → Get Started !
         </a>
     </div>
 
     <!-- Minified CTA Icon -->
     <div id="ctaMinified" class="cta-minified" onclick="toggleCta(true)">
-        🚀
+        <i class="fal fa-comments ms-2" style="position: relative; z-index: 10;"></i>
     </div>
 </body>
 </html>
