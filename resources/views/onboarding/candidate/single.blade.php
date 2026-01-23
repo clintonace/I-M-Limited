@@ -6,46 +6,142 @@
         <!-- Candidate Detail Section -->
         <section class="candidate-detail-section">
             <!-- Upper Box -->
-            <div class="upper-box ub1-v4">
-                <div class="auto-container">
-                    <!-- Candidate block Five -->
-                    <div class="candidate-block-five at-v5">
-                        <div class="inner-box d-block d-lg-flex">
-                            <div class="content mb-3 mb-xl-0">
-                                <figure><img style="border-radius: 80px; height: 300px; width: 300px" src="{{$information?->image}}" alt=""></figure>
-                                <h4 class="name"><a href="#">{{$information?->first_name}}
-                                        {{$information?->last_name}}</a></h4>
-                                <ul class="candidate-info at-sv5">
-                                    <li class="designation">{{$information?->department}}</li>
-                                    <li>Location: {{$information?->country}}</li>
-                                    {{-- <li><span class="icon dark-color fal fa-circle-dollar"></span> $294 / hour</li>
-                                    --}}
-                                    {{-- <li><span class="fas fa-star review-color"></span> 4.5 (8 Reviews)</li> --}}
-                                </ul>
+     <div class="upper-box ub1-v4"
+    style="
+        position: relative;
+        overflow: hidden;
+        padding: 120px 0 80px;
+    "
+>
 
-                                @php
-                                $professionalSkillsArray = explode(', ', $information?->professional_skills);
-                                @endphp
-                                <ul class="post-tags at-sv5">
+    <!-- Background Video -->
+    <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        style="
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        "
+    >
+        <source src="/onboarding/video/vid3.mp4" type="video/mp4">
+    </video>
 
-                                    @foreach ($professionalSkillsArray as $skills)
-                                    <li class="mb-2 mb-xl-0"><a href="#"> {{$skills}}</a></li>
-                                    @endforeach
-                                </ul>
+    <!-- Overlay -->
+    <div
+        style="
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(0,0,0,0.7),
+                rgba(0,0,0,0.45),
+                rgba(0,0,0,0.7)
+            );
+            z-index: 1;
+        "
+    ></div>
 
-                                {{-- <div class=" mt-3 btn-box d-block d-sm-flex">
+    <!-- Content Wrapper -->
+    <div class="auto-container" style="position: relative; z-index: 2;">
 
-                                    <a href="{{$information?->medias?->first()?->cv_upload}}"
-                                        class="theme-btn btn-style-three">Download CV <i
-                                            class="fal fa-long-arrow-right text-white d-block ml15"></i></a>
-                                </div> --}}
-                            </div>
+        <!-- Glass Card -->
+        <div
+            style="
+                background: rgba(0,0,0,0.35);
+                backdrop-filter: blur(6px);
+                border-radius: 28px;
+                padding: 48px;
+                box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+            "
+        >
 
-                        </div>
+            <div class="candidate-block-five at-v5">
+
+                <!-- SIDE-BY-SIDE LAYOUT -->
+                <div class="inner-box d-flex flex-column flex-lg-row align-items-center gap-5">
+
+                    <!-- Avatar -->
+                    <div style="flex-shrink:0; text-align:center;">
+                        <figure>
+                            <img
+                                style="
+                                    border-radius: 80px;
+                                    height: 300px;
+                                    width: 300px;
+                                    object-fit: cover;
+                                "
+                                src="{{ $information?->image }}"
+                                alt=""
+                                onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name={{ urlencode($information?->first_name.' '.$information?->last_name) }}&background=fe681c&color=fff&size=300';"
+                            >
+                        </figure>
                     </div>
+
+                    <!-- CONTENT (MORE VISIBLE) -->
+                    <div class="content mb-3 mb-xl-0" style="color:#fff; max-width:520px;">
+
+                        <h4 class="name" style="font-size:28px; font-weight:700; margin-bottom:8px;">
+                            <a href="#" style="color:#fff;">
+                                {{ $information?->first_name }} {{ $information?->last_name }}
+                            </a>
+                        </h4>
+
+                        <div style="font-size:18px; font-weight:600; color:#fe681c; margin-bottom:8px;">
+                            {{ $information?->department }}
+                        </div>
+
+                        <!-- Location with icon -->
+                        <div style="font-size:15px; color:rgba(255,255,255,0.9); margin-bottom:18px;">
+                            <i class="fas fa-map-marker-alt" style="color:#fe681c; margin-right:6px;"></i>
+                            {{ $information?->country }}
+                        </div>
+
+                        @php
+                            $professionalSkillsArray = explode(', ', $information?->professional_skills);
+                        @endphp
+
+                        <!-- Skills -->
+                        <ul class="post-tags at-sv5" style="margin-top:10px;">
+                            @foreach ($professionalSkillsArray as $skills)
+                                <li class="mb-2 mb-xl-0">
+                                    <a
+                                        href="#"
+                                        style="
+                                            background: rgba(255,255,255,0.18);
+                                            color:#000;
+                                            border-radius:999px;
+                                            padding:6px 14px;
+                                        "
+                                    >
+                                        {{ $skills }}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+
+                    </div>
+                    <!-- END content -->
+
                 </div>
+
             </div>
 
+        </div>
+
+    </div>
+
+</div>
+
+
+
+           <!-- Lower Content -->
             <div class="candidate-detail-outer">
                 <div class="auto-container">
                     <div class="row">
@@ -298,6 +394,8 @@
                     </div>
                 </div>
             </div>
+           <!-- End Lower Content -->
+        
         </section>
         <!-- End candidate Detail Section -->
 
