@@ -4,30 +4,41 @@
 
 @section('content')
 
-<!-- <div style="text-align: center; margin-bottom: 20px;">
-    <img src="cid:IandM-no-white-bg-logo.png" alt="IandM Logo" style="max-width: 100%; height: auto;">
-</div> -->
-
 <hr>
 
 <!-- Verification Email Content -->
 <h3>Hello, {{ $user->name }}</h3>
 
 <p>
-    Please verify your email address to complete your registration and access all features. Click the button below to verify your email:
+    Please verify your email address to complete your registration and access all features.
 </p>
 
 <p>
-    Please enter your email and password through this link to complete the verification process, note this link will expire in 5 minutes.:
+    Use the 5-digit verification code below to complete the verification process.
+    This code will expire in <strong>5 minutes</strong>.
 </p>
 
-<!-- Verification Button -->
-<div style="text-align: center; margin: 20px 0;">
-    <a href="{{ $url }}"
-       style="display: inline-block; padding: 10px 20px; font-size: 16px; font-weight: bold; color: #ffffff; background-color: #007bff; border-radius: 5px; text-decoration: none;">
-        Verify Email Address
-    </a>
+<!-- Verification Code Box -->
+<div style="text-align: center; margin: 30px 0;">
+    <div style="
+        display: inline-block;
+        padding: 15px 25px;
+        font-size: 28px;
+        font-weight: bold;
+        letter-spacing: 10px;
+        color: #333333;
+        background-color: #f4f6f8;
+        border: 1px dashed #cccccc;
+        border-radius: 8px;
+        font-family: 'Courier New', monospace;
+    ">
+        {{ $code }}
+    </div>
 </div>
+
+<p style="text-align: center; color: #666666;">
+    Enter this code on the verification screen to continue.
+</p>
 
 <p>
     If you did not create an account, no further action is required.
@@ -36,7 +47,6 @@
 <hr>
 
 <p>Thank you,</p>
-<p><strong>IandM Limited</strong></p>
+<p><strong>I&amp;M Limited</strong></p>
 
 @endsection
-
