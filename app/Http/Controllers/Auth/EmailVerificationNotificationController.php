@@ -25,10 +25,9 @@ class EmailVerificationNotificationController extends Controller
 
             $code = random_int(10000, 99999);
 
-            // $user->update([
-            //     'email_verification_code' => $code,
-            //     'email_verification_expires_at' => now()->addMinutes(5),
-            // ]);
+            $user->update([
+                'email_code' => $code,
+            ]);
 
             // Mail::send(
             //     'emails.verify-email', 

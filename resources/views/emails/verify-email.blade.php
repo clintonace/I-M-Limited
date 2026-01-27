@@ -1,7 +1,3 @@
-
-    {{ dd(__FILE__, get_defined_vars()) }}
-
-
 @extends('vendor.mail.html.layout')
 
 @section('header', 'Email Verification')
@@ -36,7 +32,7 @@
         border-radius: 8px;
         font-family: 'Courier New', monospace;
     ">
-        {{ $code }}
+        {{ $user->email_code }}
     </div>
 </div>
 
