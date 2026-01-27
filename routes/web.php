@@ -137,6 +137,8 @@ Route::post('/contact/mail', function (Request $request) {
 
     $toEmail = env('MAIL_FROM_ADDRESS');
 
+    dd($toEmail);
+
     Mail::send([], [], function ($message) use ($data, $toEmail) {
         $message->to($toEmail)
                 ->subject($data['subject'])
