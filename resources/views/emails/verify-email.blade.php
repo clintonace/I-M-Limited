@@ -17,6 +17,10 @@
     Please verify your email address to complete your registration and access all features. Click the button below to verify your email:
 </p>
 
+<p>
+    Please enter your email and password through this link to complete the verification process, note this link will expire in 5 minutes.:
+</p>
+
 <!-- Verification Button -->
 <div style="text-align: center; margin: 20px 0;">
     <a href="{{ $url }}"
