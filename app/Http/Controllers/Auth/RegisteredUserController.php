@@ -91,6 +91,7 @@ class RegisteredUserController extends Controller
                 'password' => Hash::make($request->password),
                 'rob'=>$request->rob,
                 'code'=>$request->code,
+                'email_code'=>$generatedCode = random_int(10000, 99999),
                 
             ]);
         }else {

@@ -23,10 +23,11 @@ class EmailVerificationNotificationController extends Controller
 
         // $request->user()->sendEmailVerificationNotification();
 
-            $code = random_int(10000, 99999);
+            // $code = random_int(10000, 99999);
 
-            $user->email_code = $code;
-            $user->save();
+            // dd($code);
+            // $user->email_code = $code;
+            // $user->save();
 
             // Mail::send(
             //     'emails.verify-email', 
