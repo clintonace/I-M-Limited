@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\VerifyCodeMail;
 
 class EmailVerificationNotificationController extends Controller
 {
@@ -23,11 +25,11 @@ class EmailVerificationNotificationController extends Controller
 
         // $request->user()->sendEmailVerificationNotification();
 
-            // $code = random_int(10000, 99999);
+            $code = random_int(10000, 99999);
 
             // dd($code);
-            // $user->email_code = $code;
-            // $user->save();
+            $user->email_code = $code;
+            $user->save();
 
             // Mail::send(
             //     'emails.verify-email', 

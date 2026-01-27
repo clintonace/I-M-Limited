@@ -9,65 +9,104 @@
             <div class="outer-box">
                 <!-- Login Form -->
                 <div class="login-form default-form">
-                    <div class="form-inner">
-                        <h3>Email verification</h3>
-                        <!--Login Form-->
+    <div class="form-inner">
+        <h3>Email Verification</h3>
 
-                        <div>
-                            <p>
-                                Thanks for signing up! Before getting started, could you verify your email address by
-                                clicking on the link we just emailed to you? If you didn\'t receive the email, we will
-                                gladly send you another.
-                            </p>
-                        </div>
+        <div>
+            <p>
+                Thanks for signing up! Please enter the <strong>5-digit verification code</strong>
+                we sent to your email address to complete your registration.
+            </p>
+        </div>
 
-                        <br>
-                        <br>
-                        
+        <br>
 
-                        @if (session('status') == 'verification-link-sent')
-                        <div>
-                            <p>
-                                A new verification link has been sent to the email address you provided during registration.
-                            </p>
-                        </div>
-                        @endif
+        {{-- Success / Info Message --}}
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
 
-                        <br>
-                        <br>
+        {{-- Error Message --}}
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                {{ $errors->first() }}
+            </div>
+        @endif
 
-                        <div class="form-group">
-                                <div class="field-outer">
+        <br>
 
-                                    <form action="{{route('logout')}}" method="POST">
-                                        @csrf
+        <!-- Verification Code Form -->
+        <form method="POST" action="{{ route('verification.code.verify') }}">
+            @csrf
 
-                                         <button style="color: white;" class="theme-btn btn-style-two w-full fade-top">Logout</button>
-                                    </form>
-                                </div>
-                        </div>
-
-                        <form method="POST" action="{{ route('verification.send') }}">
-                            @csrf
-
-                            <div>
-                                <button style="color: white;" class="theme-btn btn-style-two w-full fade-top">
-                                    {{ __('Resend Verification Email') }}
-                                </button>
-                            </div>
-                        </form>
-
-                        <div class="form-group">
-                            <div class="field-outer">
-
-                                <a href="{{ route('login') }}" style="color: white;" class="theme-btn btn-style-two w-full fade-top">Login</a>
-                                 <p class="p-3 text-center text-sm text-gray-600">
-                                    Please login after verification to access your dashboard.
-                                </p>
-                            </div>                          
-                        </div>
-                    </div>
+            <div class="form-group">
+                <div class="field-outer">
+                    <input
+                        type="text"
+                        name="code"
+                        maxlength="5"
+                        inputmode="numeric"
+                        pattern="[0-9]{5}"
+                        placeholder="Enter 5-digit code"
+                        required
+                        class="text-center"
+                        style="letter-spacing: 8px; font-size: 22px;"
+                    >
                 </div>
+            </div>
+
+            <div class="form-group">
+                <button style="color: white;"
+                        class="theme-btn btn-style-two w-full fade-top">
+                    Verify Email
+                </button>
+            </div>
+        </form>
+
+        <br>
+
+        <!-- Resend Code -->
+        <form method="POST" action="{{ route('verification.send') }}">
+            @csrf
+
+            <div>
+                <button style="color: white;"
+                        class="theme-btn btn-style-two w-full fade-top">
+                    Resend Verification Code
+                </button>
+            </div>
+        </form>
+
+        <br>
+
+        <!-- Logout -->
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+
+            <div class="form-group">
+                <button style="color: white;"
+                        class="theme-btn btn-style-two w-full fade-top">
+                    Logout
+                </button>
+            </div>
+        </form>
+
+        <br>
+
+        <!-- <div class="text-center">
+            <p class="text-sm text-gray-600">
+                Please verify your email before logging in to access your dashboard.
+            </p>
+            <a href="{{ route('login') }}" style="color: white;"
+               class="theme-btn btn-style-two w-full fade-top">
+                Login
+            </a>
+        </div> -->
+    </div>
+</div>
+
                 <!--End Login Form -->
             </div>
         </div>
