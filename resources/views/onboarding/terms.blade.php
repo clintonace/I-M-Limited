@@ -35,30 +35,157 @@
             <div class="text">Home / Terms and Conditions</div>
           </div>
 
-          <div class="text-box">
-            <h3>1. Terms</h3>
-            <p>Pharetra nulla ullamcorper sit lectus. Fermentum mauris pellentesque nec nibh sed et, vel diam, massa. Placerat quis vel fames interdum urna lobortis sagittis sed pretium. Aliquam eget posuere sit enim elementum nulla vulputate magna. Morbi sed arcu proin quis tortor non risus. </p>
-            <p>Elementum lectus a porta commodo suspendisse arcu, aliquam lectus faucibus. Nisl malesuada tortor, ligula aliquet felis vitae enim. Mi augue aliquet mauris non elementum tincidunt eget facilisi. Pellentesque massa ipsum tempus vel aliquam massa eu pulvinar eget. </p>
-          </div>
+         <!-- TERMS OF SERVICE -->
+            <div class="text-box">
+                <h3>1. Acceptance of Terms</h3>
+                <p>
+                    By accessing or using I&amp;M Limited (“I&amp;M”)’s website, platform, or services,
+                    you agree to these Terms of Service (“Terms”).
+                </p>
+                <p>
+                    If you do not agree, you should not use our platform.
+                </p>
+            </div>
 
-          <div class="text-box">
-            <h3>2. Limitations</h3>
-            <p>Pharetra nulla ullamcorper sit lectus. Fermentum mauris pellentesque nec nibh sed et, vel diam, massa. Placerat quis vel fames interdum urna lobortis sagittis sed pretium. Aliquam eget posuere sit enim elementum nulla vulputate magna. Morbi sed arcu proin quis tortor non risus. </p>
-            <p>Elementum lectus a porta commodo suspendisse arcu, aliquam lectus faucibus. Nisl malesuada tortor, ligula aliquet felis vitae enim. Mi augue aliquet mauris non elementum tincidunt eget facilisi. Pellentesque massa ipsum tempus vel aliquam massa eu pulvinar eget. </p>
-          </div>
+            <div class="text-box">
+                <h3>2. About I&amp;M Limited</h3>
+                <p>
+                    I&amp;M Limited is a workforce solutions company connecting global organizations
+                    with African professionals through:
+                </p>
+                <ul>
+                    <li>Talent placement</li>
+                    <li>Managed teams</li>
+                    <li>Outsourcing and project delivery</li>
+                </ul>
+                <p>
+                    We operate as a facilitator, manager, and service provider,
+                    not an employer of client organizations.
+                </p>
+            </div>
 
+            <div class="text-box">
+                <h3>3. User Accounts</h3>
 
-          <div class="text-box">
-            <h3>3. Revisions and Errata</h3>
-            <p>Pharetra nulla ullamcorper sit lectus. Fermentum mauris pellentesque nec nibh sed et, vel diam, massa. Placerat quis vel fames interdum urna lobortis sagittis sed pretium. Aliquam eget posuere sit enim elementum nulla vulputate magna. Morbi sed arcu proin quis tortor non risus. </p>
-            <p>Elementum lectus a porta commodo suspendisse arcu, aliquam lectus faucibus. Nisl malesuada tortor, ligula aliquet felis vitae enim. Mi augue aliquet mauris non elementum tincidunt eget facilisi. Pellentesque massa ipsum tempus vel aliquam massa eu pulvinar eget. </p>
-          </div>
+                <h5>a. Account Responsibility</h5>
+                <p>Users are responsible for:</p>
+                <ul>
+                    <li>Providing accurate information</li>
+                    <li>Maintaining account security</li>
+                    <li>Activities conducted through their account</li>
+                </ul>
 
-          <div class="text-box">
-            <h3>4. Site Terms of Use Modifications</h3>
-            <p>Pharetra nulla ullamcorper sit lectus. Fermentum mauris pellentesque nec nibh sed et, vel diam, massa. Placerat quis vel fames interdum urna lobortis sagittis sed pretium. Aliquam eget posuere sit enim elementum nulla vulputate magna. Morbi sed arcu proin quis tortor non risus. </p>
-            <p>Elementum lectus a porta commodo suspendisse arcu, aliquam lectus faucibus. Nisl malesuada tortor, ligula aliquet felis vitae enim. Mi augue aliquet mauris non elementum tincidunt eget facilisi. Pellentesque massa ipsum tempus vel aliquam massa eu pulvinar eget. </p>
-          </div>
+                <h5>b. Account Types</h5>
+                <p>Accounts may be created as:</p>
+                <ul>
+                    <li>Company accounts</li>
+                    <li>Talent accounts</li>
+                </ul>
+                <p>
+                    Each account type has specific access and limitations.
+                </p>
+            </div>
+
+            <div class="text-box">
+                <h3>4. Platform Use</h3>
+                <p>Users agree to:</p>
+                <ul>
+                    <li>Use the platform lawfully and professionally</li>
+                    <li>Not misuse information obtained through I&amp;M</li>
+                    <li>Not bypass I&amp;M to engage talents or clients directly</li>
+                    <li>Respect confidentiality and intellectual property</li>
+                </ul>
+                <p>
+                    Unauthorized use may result in suspension or termination.
+                </p>
+            </div>
+
+            <div class="text-box">
+                <h3>5. Talent Engagement &amp; Outsourcing</h3>
+                <p>I&amp;M may support:</p>
+                <ul>
+                    <li>Dedicated talent placements</li>
+                    <li>Project-based or outsourced team delivery</li>
+                    <li>Multi-client engagements for eligible talents</li>
+                </ul>
+                <p>
+                    Specific terms for engagements may be governed by separate agreements.
+                </p>
+            </div>
+
+            <div class="text-box">
+                <h3>6. Payments &amp; Fees</h3>
+                <p>
+                    Service fees, where applicable, are agreed separately with client organizations.
+                    I&amp;M Limited reserves the right to amend pricing models as services evolve.
+                </p>
+            </div>
+
+            <div class="text-box">
+                <h3>7. Intellectual Property</h3>
+                <p>
+                    All website content, branding, systems, and materials belong to
+                    I&amp;M Limited unless otherwise stated.
+                </p>
+                <p>
+                    Users may not reproduce or misuse platform content without permission.
+                </p>
+            </div>
+
+            <div class="text-box">
+                <h3>8. Confidentiality</h3>
+                <p>
+                    Users may access sensitive information during engagements and agree
+                    to maintain confidentiality at all times.
+                </p>
+            </div>
+
+            <div class="text-box">
+                <h3>9. Limitation of Liability</h3>
+                <p>I&amp;M Limited is not liable for:</p>
+                <ul>
+                    <li>Business losses</li>
+                    <li>Indirect or consequential damages</li>
+                    <li>Acts or omissions of third parties outside our control</li>
+                </ul>
+                <p>
+                    Our role is to facilitate and manage workforce solutions
+                    to the best of our professional ability.
+                </p>
+            </div>
+
+            <div class="text-box">
+                <h3>10. Termination</h3>
+                <p>I&amp;M Limited reserves the right to:</p>
+                <ul>
+                    <li>Suspend or terminate accounts for violations</li>
+                    <li>Remove content or profiles that breach these Terms</li>
+                </ul>
+            </div>
+
+            <div class="text-box">
+                <h3>11. Governing Law</h3>
+                <p>
+                    These Terms are governed by the laws of the Federal Republic of Nigeria,
+                    without prejudice to international engagements.
+                </p>
+            </div>
+
+            <div class="text-box">
+                <h3>12. Updates to Terms</h3>
+                <p>
+                    We may update these Terms periodically.
+                    Continued use of the platform constitutes acceptance of updated Terms.
+                </p>
+            </div>
+
+            <div class="text-box">
+                <h3>13. Contact</h3>
+                <p>
+                    For questions regarding these Terms, please contact us via the website.
+                </p>
+            </div>
+
         </div>
       </section>
       <!-- End TNC Section -->

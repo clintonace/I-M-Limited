@@ -65,7 +65,7 @@
                                         <label for="remember" class="remember"><span class="custom-checkbox"></span>
                                             Remember me</label>
                                     </div>
-                                    <a href="#" class="pwd text-white">Forgot password?</a>
+                                    <!-- <a href="{{route('verification.send')}}" class="pwd text-white">Forgot password?</a> -->
                                 </div>
                             </div>
 

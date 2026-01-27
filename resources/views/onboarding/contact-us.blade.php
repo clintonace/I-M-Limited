@@ -58,7 +58,7 @@
               <h3 class="mb-3">How can we help?</h3>
               <p class="mb-4">Choose what best applies to you.</p>
 
-              <div class="row">
+              <!-- <div class="row">
 
                   <div class="col-lg-4 col-md-6 mb-3">
                       <label class="help-option">
@@ -95,15 +95,15 @@
                       </label>
                   </div>
 
-              </div>
+              </div> -->
           </div>
 
           <div class="row">
               <div class="contact-block col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box">
-                  <span class="icon"><i class="fa fa-map-marker-alt text-warning"></i></span>
+                  <span class="icon"><i style="color: #fe681c" class="fa fa-map-marker-alt"></i></span>
                   <h4>Address</h4>
-                  <p>
+                  <p style="color: #fe681c">
                       33, Windsor Estate,<br>
                       Conservation Road,<br>
                       Lekki, Lagos, Nigeria.
@@ -112,18 +112,18 @@
               </div>
               <div class="contact-block col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box">
-                    <span class="icon"><i class="fa fa-phone text-warning"></i></span>
+                    <span class="icon"><i style="color: #fe681c" class="fa fa-phone "></i></span>
 
                   <h4>Call Us</h4>
-                  <p><a href="#" class="text-warning">+234 913 4019 930</a></p>
+                  <p><a href="#" style="color: #fe681c" class="">+234 913 4019 930</a></p>
                 </div>
               </div>
               <div class="contact-block col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box">
-                    <span class="icon"><i class="fa fa-message text-warning"></i></span>
+                    <span  class="icon"><i style="color: #fe681c" class="fa fa-message "></i></span>
 
                   <h4>Email</h4>
-                  <p><a href="info@iandmlimited.com">info@iandmlimited.com</a></p>
+                  <p><a style="color: #fe681c" href="info@iandmlimited.com">info@iandmlimited.com</a></p>
                 </div>
               </div>
             </div>
@@ -161,21 +161,31 @@
 
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                         <label>Subject</label>
-                        <input type="text" name="subject" class="subject" placeholder="Subject *" required>
+                        <!-- <input type="text" name="subject" class="subject" placeholder="Subject *" required> -->
+
+                        <select name="subject" id="">
+                            <option selected disabled>Select Subject</option>
+                            <option value="Hiring Talent">I’m a company looking to hire talent</option>
+                            <option value="Outsourcing / Managed Teams">I’m exploring outsourcing or managed teams</option>
+                            <option value="Market Expansion">I want to expand into the African region</option>
+                            <option value="Join Talent Network">I’m a professional joining the IM talent network</option>
+                            <option value="General Inquiry">I have a general inquiry</option>
+
+                        </select>
                         @if ($errors->has('subject'))
                             <span class="text-danger">{{ $errors->first('subject') }}</span>
                         @endif
                     </div>
 
-                    <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+                    <!-- <div class="col-lg-6 col-md-12 col-sm-12 form-group">
                         <label>Company Name (Optional)</label>
                         <input type="text" name="company" placeholder="Company name">
-                    </div>
+                    </div> -->
 
-                    <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+                    <!-- <div class="col-lg-6 col-md-12 col-sm-12 form-group">
                         <label>Role / Title (Optional)</label>
                         <input type="text" name="role" placeholder="Your role">
-                    </div>
+                    </div> -->
 
 
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
