@@ -1,6 +1,6 @@
-@php
+
     {{ dd(__FILE__, get_defined_vars()) }}
-@endphp
+
 
 @extends('vendor.mail.html.layout')
 
