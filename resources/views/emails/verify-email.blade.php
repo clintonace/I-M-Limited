@@ -32,7 +32,7 @@
         border-radius: 8px;
         font-family: 'Courier New', monospace;
     ">
-        {{ $code }}
+        <!-- {{ $code }} -->
     </div>
 </div>
 
