@@ -1,3 +1,7 @@
+
+
+
+
 @extends('vendor.mail.html.layout')
 
 @section('header', 'Booking Notification')
