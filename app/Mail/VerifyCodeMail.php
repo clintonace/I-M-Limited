@@ -13,25 +13,28 @@ class VerifyCodeMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+      public User $user;
+    public string $code;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(User $user, string $code)
     {
-        //
+        $this->user = $user;
+        $this->code = $code;
     }
-
     /**
      * Get the message envelope.
      *
      * @return \Illuminate\Mail\Mailables\Envelope
      */
-    public function envelope()
+    public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Verify Code Mail',
+            subject: 'Verify Your Email Address',
         );
     }
 
@@ -40,10 +43,14 @@ class VerifyCodeMail extends Mailable
      *
      * @return \Illuminate\Mail\Mailables\Content
      */
-    public function content()
+    public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails.verify-email', // 👈 YOUR BLADE FILE
+            with: [
+                'user' => $this->user,
+                'code' => $this->code, // ✅ PASSED HERE
+            ],
         );
     }
 

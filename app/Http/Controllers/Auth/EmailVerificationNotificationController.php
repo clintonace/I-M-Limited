@@ -30,13 +30,17 @@ class EmailVerificationNotificationController extends Controller
             //     'email_verification_expires_at' => now()->addMinutes(5),
             // ]);
 
-            Mail::send(
-                'emails.verify-email', 
-                ['user' => $user, 'code' => $code],
-                function ($message) use ($user) {
-                    $message->to($user->email)
-                        ->subject('Verify Your Email Address');
-                }
+            // Mail::send(
+            //     'emails.verify-email', 
+            //     ['user' => $user, 'code' => $code],
+            //     function ($message) use ($user) {
+            //         $message->to($user->email)
+            //             ->subject('Verify Your Email Address');
+            //     }
+            // );
+
+            Mail::to($user->email)->send(
+                new VerifyCodeMail($user, $code)
             );
 
         return back()->with('status', 'verification-link-sent');
