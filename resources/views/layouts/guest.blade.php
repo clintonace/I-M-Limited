@@ -413,6 +413,36 @@
     </div><!-- End Page Wrapper -->
 
 
+    <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/6980a5f25a765b1c399b0bc5/1jgf8gfc8';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+        </script>
+    <!--End of Tawk.to Script-->
+
+
+    <!--Start of Tawk.to Script-->
+    <!-- <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6980a5f25a765b1c399b0bc5/1jgf8vs50';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script> -->
+<!--End of Tawk.to Script-->
+
+
     <script src="/onboarding/js/jquery.js"></script>
     <script src="/onboarding/js/popper.min.js"></script>
     <script src="/onboarding/js/chosen.min.js"></script>
@@ -554,9 +584,8 @@
 
 
     <!-- Floating CTA -->
-    <div id="floatingCta" class="floating-cta open">
+    <!-- <div id="floatingCta" class="floating-cta open">
 
-        <!-- Close Button -->
         <button class="cta-close" onclick="toggleCta(false)">
             
             <i class="fal fa-close ms-2" style="position: relative; z-index: 10;"></i>
@@ -571,7 +600,7 @@
         <a style="position: relative; z-index: 10; font-weight: 700;" href="{{route('register')}}" class="theme-btn btn-style-two text-white fade-top">
             → Get Started !
         </a>
-    </div>
+    </div> -->
 
     <!-- Minified CTA Icon -->
     <div id="ctaMinified" class="cta-minified" onclick="toggleCta(true)">

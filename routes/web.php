@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Http;
 
 /*
 |--------------------------------------------------------------------------
@@ -210,10 +211,14 @@ Route::prefix('company')->middleware('company')->group(function () {
 
 Route::get('test-eureka', [CompanyController::class, 'testEureka'])->name('test.eureka');
 
+Route::view('test-ai', 'test-ai')->name('test.ai');
+
 // Mail::raw('Testing email functionality for the email', function ($message) {
 //     $message->to('clintonace09@gmail.com')
 //             ->subject('Test Email');
 // });
+
+
 
 
 
