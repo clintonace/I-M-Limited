@@ -2,14 +2,7 @@
 <header
 
 style="
-                background-image:
-                    linear-gradient(
-                        to bottom,
-                        rgba(0,0,0,0.75),
-                        rgba(0,0,0,0.35),
-                        rgba(0,0,0,0.00)
-                    );
-               
+                background-color: #0a0a0a;
                 background-repeat: no-repeat;
                 background-size: cover;
             " 
@@ -20,167 +13,62 @@ class="main-header header-style-two">
         <div class="main-box">
             <!--Nav Outer -->
             <div class="nav-outer">
-                <div class="logo-box">
-                    <div class="logo"><a href="{{route('welcome')}}"><img alt="" title="Our Logo"></a></div>
-                    <div class="round-logo-container">
+                <!-- <div class="logo-box"> -->
 
-                    <a href="{{route('welcome')}}">
-                        <img height="20px;" width="20px" src="/onboarding/IandM-white-logo.png" alt="">
-                    </a>
-                        
-                    </div>
+                <div>
+                   
+                    <!-- <div class="logo"><a href="{{route('welcome')}}"><img alt="" title="Our Logo"></a></div> -->
+                        <div class="round-logo-container">
+
+                            <a href="{{route('welcome')}}">
+                                <img height="20px;" width="20px" src="/onboarding/images/logo.png" alt="">
+                            </a>
+                        </div>
                 </div>
 
-                <nav class="nav main-menu">
-                    <ul class="navigation" id="navbar">
-                        {{-- <li class="current">
-                            <span>Home</span>
-                        </li> --}}
-                        {{-- <li class="current"> --}}
+                <nav  class="nav main-menu">
+                    <ul  class="navigation" id="navbar">
+                       
 
-                        <li>
+                        <li  class="{{ request()->routeIs('welcome') ? 'current' : '' }}">
                             <a href="{{route('welcome')}}">
                                 <span>Home</span>
                             </a>
-
-
                         </li>
 
-                    {{-- 
-
-                        <li>
-                            <span>
-                                <a style="color: white" href="{{route('portfolio.colors')}}">
-                                    Portfolio
-                                </a>
-                            </span>
-
-                        </li>
-
-                
-                
-                        <li class="dropdown has-mega-menu" id="has-mega-menu">
-                            <span>Find Jobs</span>
-                            <div class="mega-menu">
-                                <div class="mega-menu-bar row">
-                                    <div class="column col-lg-3 col-md-3 col-sm-12">
-                                        <h3>Jobs Listing</h3>
-                                        <ul>
-                                            <li><a href="{{route('job.list')}}">Engineering</a></li>
-                                            <li><a href="{{route('job.list')}}">Health</a></li>
-                                            <li><a href="{{route('job.list')}}">Construction</a></li>
-                                            <li><a href="{{route('job.list')}}">IT</a></li>
-                                            <li><a href="{{route('job.list')}}">Robotics</a></li>
-                                            <li><a href="{{route('job.list')}}">Cyber Security</a></li>
-
-                                        </ul>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                        </li>
-                        <li class="dropdown">
-                            <span>Companies</span>
-                            <ul>
-                                <li>
-                                    <span><a href="{{route('employer.list')}}">Alcon Nig</a></span>
-                                    <span><a href="{{route('employer.list')}}">NLNG</a></span>
-                                    <span><a href="{{route('employer.list')}}">Dencove Ltd.</a></span>
-                                    <span><a href="{{route('employer.list')}}">Acer Inc.</a></span>
-                                    <span><a href="{{route('employer.list')}}">FFSD</a></span>
-                                </li>
-                                <li><a href="{{route('employer.list')}}">Employers List</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <span>Candidates</span>
-                            <ul>
-                                <li>
-                                    <span>
-                                        <a href="{{route('candidates.list')}}">Engineering</a>
-                                    </span>
-                                    <span>
-                                        <a href="{{route('candidates.list')}}">Writers</a>
-                                    </span>
-                                    <span>
-                                        <a href="{{route('candidates.list')}}">IT</a>
-                                    </span>
-                                    <span>
-                                        <a href="{{route('candidates.list')}}">Project Managers</a>
-                                    </span>
-                                    <span>
-                                        <a href="{{route('candidates.list')}}">Producers</a>
-                                    </span>
-
-
-                                </li>
-
-                                <li><a href="{{route('candidates.list')}}">Candidates List</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="{{route('contact.us')}}">
-                                <span>Contact us</span>
-                            </a>
-
-                        </li>
-                        <li>
+                        <li  class="{{request()->routeIs('about.us') ? 'current' : ''}}">
                             <a href="{{route('about.us')}}">
-                                <span>Service</span>
-                            </a>
-
-
-                        </li> 
-                        
-                --}}
-
-
-
-                        {{-- <li><a href="{{route('candidates.list')}}">Candidates List</a></li> --}}
-
-                        <li>
-                            <a href="{{route('about.us')}}">
-                                <span>About us</span>
+                                <span>About</span>
                             </a>
                         </li>
 
-                        <li>
+                        <li class="{{request()->routeIs('for.company') ? 'current' : ''}}">
                             <a href="{{route('for.company')}}">
-                                <span>For Companies</span>
+                                <span>Companies</span>
                             </a>
                         </li> 
 
-                        <li>
+                        <li class="{{request()->routeIs('for.talent') ? 'current' : ''}}">
                             <a href="{{route('for.talent')}}">
-                                <span>For Talents</span>
+                                <span>Talents</span>
                             </a>
                         </li>
                             
-                        <li>
+                        <li class="#">
                             <a href="#">
                                 <span>Resources</span>
                             </a>
                         </li>
-
                        
-                        
-                        <li>
+                        <li class="{{request()->routeIs('contact.us') ? 'current' : ''}}">
                             <a href="{{route('contact.us')}}">
-                                <span>Contact us</span>
+                                <span>Contact</span>
                             </a>
                         </li>
-                        {{--<li>
-                            <a href="{{route('testimony')}}">
-                                <span>Testimonials</span>
-                            </a>
-                        </li>--}}
-
-
+                      
                         <!-- Only for Mobile View -->
                         <li class="mm-add-listing">
                             <a href="{{route('login')}}" class="theme-btn btn-style-three">Login</a>
-
                         </li>
                     </ul>
                 </nav>
@@ -191,8 +79,8 @@ class="main-header header-style-two">
                 <!-- Login/Register -->
                 <div class="btn-box">
 
-                    <a href="{{route('login')}}" class="theme-btn btn-style-six ">Login</a>
-                    <a href="{{route('register')}}" class="theme-btn btn-style-six">Register</a>
+                    <a href="{{route('login')}}" class="theme-btn btn-style-six ">LOG IN</a>
+                    <a href="{{route('register')}}" class="theme-btn btn-style-six">REGISTER</a>
                 </div>
             </div>
         </div>
@@ -241,7 +129,7 @@ class="main-header header-style-two">
         <path
             d="M0,40 C120,60 240,20 360,30 480,40 600,70 720,60 840,50 960,20 1080,30 1200,40 1320,55 1440,40"
             fill="none"
-            stroke="#fe681c"
+            stroke="#E94E1B"
             stroke-width="6"
         >
             <!-- Wave motion -->

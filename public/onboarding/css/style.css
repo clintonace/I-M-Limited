@@ -121,8 +121,9 @@ body {
   background: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
-  font-family: 'Jost', sans-serif;
+  /* font-family: 'Jost', sans-serif; */
   font-style: normal;
+  font-family:'Montserrat', 'Helvetica Neue', sans-serif;
 }
 
 a {
@@ -2469,18 +2470,19 @@ Buttons Styles
   position: relative;
   text-align: center;
   white-space: nowrap;
-  color: #ffffff;
+  color: #E94E1B;
   background-color: transparent;
-  border: 1px solid #ffffff;
+  border: 1px solid #E94E1B;
   line-height: 20px;
   border-radius: 8px;
   font-weight: 400;
   padding: 14px 35px;
+  font-style: italic;
 }
 
 .btn-style-six:hover {
-  color: #302EA7;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: #E94E1B;
 }
 
 /* Btn Style Seven */
@@ -5912,16 +5914,16 @@ Main Header
 } */
 
 .round-logo-container {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
+    width: 30%;
+    height: 30%;
+    /* border-radius: 50%; */
     overflow: hidden;
-    background-color: #000000; /* Adjust the background color as needed */
+    /* background-color: #000000; Adjust the background color as needed */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 30px;
-    margin: 20px 0 20px 0;
+    padding: 10px;
+    margin: 10px 0 10px 0;
 }
 
 .round-logo-container img {
@@ -6368,8 +6370,18 @@ Header Style Two
 .header-style-two .main-menu .navigation > li.current.dropdown > span:after,
 .header-style-two .main-menu .navigation > li.current > a,
 .header-style-two .main-menu .navigation > li.current > span {
-  color: #000000;
-  text-decoration: underline;
+  color: #ffffff;
+  /* text-decoration: underline; */
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.header-style-two .main-menu .navigation > li > a
+{
+  color: #E94E1B;
+  text-transform: uppercase;
+  font-weight: 600;
+
 }
 
 .header-style-two .main-menu .navigation > li > ul > li > ul,
