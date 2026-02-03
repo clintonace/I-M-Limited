@@ -11,7 +11,7 @@
     <meta property="og:title" content="Connect with Top Nigerian Remote Talent" />
     <meta property="og:description"
         content="Helping global companies discover skilled Nigerian professionals ready to excel remotely. Find top talent in tech, customer support, design, and more." />
-    <meta property="og:image" content="https://iandmlimited.com/logos/IandM-no-white-bg-logo-.png" />
+    <meta property="og:image" content="https://iandmlimited.com/images/logo.png" />
     <meta property="og:url" content="https://iandmlimited.com" />
     <meta property="og:type" content="website" />
     <meta name="google-site-verification" content="t-LZsEXUGJN1fsfkAALqn5VatLkolFDlMIPP4i6HedU" />
@@ -23,7 +23,7 @@
         we make it easy for companies to find their perfect remote match—anywhere in the world."
         property="twitter:description" />
 
-    <meta content="https://iandmlimited.com/logos/IandM-no-white-bg-logo-.png" property="twitter:image" />
+    <meta content="https://iandmlimited.com/images/logo.png" property="twitter:image" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Webflow" name="generator" />
@@ -32,8 +32,8 @@
     <link href="/onboarding/css/style.css" rel="stylesheet">
     <link href="/onboarding/css/responsive.css" rel="stylesheet">
 
-    <link rel="shortcut icon" href="/onboarding/IandM-no-white-bg-logo-.png" type="image/x-icon">
-    <link rel="icon" href="/onboarding/IandM-no-white-bg-logo-.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/onboarding/images/logo.png" type="image/x-icon">
+    <link rel="icon" href="/onboarding/images/logo.png" type="image/x-icon">
 
     {{--
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
