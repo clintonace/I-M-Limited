@@ -101,7 +101,7 @@ Global Settings
 
 :root{
     /* --bs-yellow: #f6ad3e; */
-    --bs-yellow: #fe681c;
+    --bs-yellow: #E94E1B;
     --bs-black: #000000;
     --bs-white: #ffffff;
 }
@@ -356,7 +356,7 @@ p,
   display: none;
 }
 .review-color{
-  color: #fe681c;
+  color: #E94E1B;
 }
 .theme-color{
   color: #1967D2;
@@ -3826,11 +3826,11 @@ Dashboard
 }
 
 .ui-item.ui-yellow h4 {
-  color: #fe681c;
+  color: #E94E1B;
 }
 
 .ui-item.ui-yellow .icon {
-  color: #fe681c;
+  color: #E94E1B;
   background: rgba(249, 171, 0, 0.1);
 }
 
@@ -5361,7 +5361,7 @@ Main Footer
   width: 40px;
   line-height: 40px;
   height: 40px;
-  background: #fe681c;
+  background: #E94E1B;
   color: #ffffff;
   text-align: center;
   box-shadow: 0px 6px 15px rgba(64, 79, 104, 0.05);
@@ -5378,7 +5378,7 @@ Main Footer
 }
 
 .newsletter-form .response .success {
-  background: #fe681c;
+  background: #E94E1B;
   color: #ffffff;
 }
 
@@ -5456,7 +5456,7 @@ Main Footer / Style Two
 }
 
 .main-footer.style-two .social-links a:hover {
-  color: #fe681c;
+  color: #E94E1B;
 }
 
 .main-footer.style-two .d-flex .list:first-child {
@@ -5506,7 +5506,7 @@ Main Footer / Style Three
 }
 
 .main-footer.style-three .social-links a:hover {
-  color: #fe681c;
+  color: #E94E1B;
 }
 
 .main-footer.style-three .d-flex .list:first-child {
@@ -6312,7 +6312,7 @@ Main Header
   line-height: 50px;
 }
 .home21-jp-btn:hover{
-  background-color:#fe681c;
+  background-color:#E94E1B;
   color: #202124;
 }
 .bdrs120{
@@ -6387,12 +6387,12 @@ Header Style Two
 .header-style-two .main-menu .navigation > li > ul > li > ul,
 .header-style-two .main-menu .navigation > li > .mega-menu,
 .header-style-two .main-menu .navigation > li > ul {
-  border-top-color: #fe681c;
+  border-top-color: #E94E1B;
 }
 
 .header-style-two .main-menu .navigation > li > .mega-menu:before,
 .header-style-two .main-menu .navigation > li > ul:before {
-  border-bottom-color: #fe681c;
+  border-bottom-color: #E94E1B;
 }
 
 .header-style-two .theme-btn {
@@ -7106,7 +7106,7 @@ Job Section
 .job-block.at-jsv6 .inner-box{
   border-radius: 18px;
   border-radius: 18px;
-  border: 1px solid #fe681c;
+  border: 1px solid #E94E1B;
 }
 .job-block.at-jsv6:hover .inner-box{
   border: 1px solid #ECEDF2;
@@ -7116,7 +7116,7 @@ Job Section
 }
 .job-block.at-jlv16.active .inner-box,
 .job-block.at-jlv17.active .inner-box{
-  border: 1px solid #fe681c;
+  border: 1px solid #E94E1B;
 }
 .job-block.at-jlv17.at-jlv15 .tags{
   bottom: 20px;
@@ -7242,7 +7242,7 @@ Job Section
 }
 .job-other-info.at-jsv17.active{
   background-color: #fff;
-  border: 1px solid #fe681c;
+  border: 1px solid #E94E1B;
 }
 .job-other-info.at-jsv17 li{
   padding: 5px 15px;
@@ -7312,7 +7312,7 @@ Job Section
 
 .job-other-info li.required {
   background: rgba(249, 171, 0, 0.15);
-  color: #fe681c;
+  color: #E94E1B;
 }
 
 .job-section .btn-box {
@@ -10603,14 +10603,14 @@ Registeration Banners
 .resume-outer.theme-yellow .resume-block .edit-box .year,
 .resume-outer.theme-yellow .resume-block .name {
   background: #fef2d9;
-  color: #fe681c;
+  color: #E94E1B;
 }
 .resume-outer.theme-yellow.at-sv5 .resume-block .name{
   background-color: #FFDDC2;
 }
 
 .resume-outer.theme-yellow .resume-block .info-box span {
-  color: #fe681c;
+  color: #E94E1B;
 }
 
 /***
@@ -21609,7 +21609,7 @@ Info Blocks
   font-weight: 700;
   justify-content: center;
   align-items: center;
-  color: #fe681c;
+  color: #E94E1B;
   background: rgba(249, 171, 0, 0.15);
 }
 

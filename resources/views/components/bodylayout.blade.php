@@ -531,11 +531,64 @@ cards.forEach(card => {
 <!-- End Work Section -->
 
 <!-- Work Section -->
-<section class="layout-pb-100">
+<section 
+    style="
+        padding:140px 0;
+        color:white;
+        overflow:hidden;
+        position:relative;
+        background: linear-gradient(to right, 
+            #000000 0%, 
+            #000000 50%, 
+            #000000 50%, 
+            #E94E1B 100%);
+        background-size:200% 100%;
+        background-position:left center;
+        transition:background-position 1.2s ease;
+    "
+    
+   
+>
+
+    <!-- IMAGE LAYER -->
+    <!-- <div id="hoverMan"
+         style="
+            position:absolute;
+            bottom:0;
+            right:8%;
+            height:90%;
+            display:flex;
+            align-items:flex-end;
+            opacity:0;
+            transform:translateX(60px);
+            transition:all 1.2s ease;
+            z-index:1;
+         ">
+        <img src='/onboarding/images/suited.png'
+             style="height:100%; object-fit:contain;">
+    </div> -->
+
+    <!-- ORANGE OPACITY OVERLAY -->
+    <!-- <div style="
+        position:absolute;
+        top:0;
+        right:0;
+        width:50%;
+        height:100%;
+        background:black;
+        opacity:0.2;
+        pointer-events:none;
+        z-index:0;
+    "></div> -->
+
+    <!-- YOUR EXISTING CONTENT -->
+    <!-- <div style="position:relative; z-index:2;">
+    </div> -->
+
     <div class="auto-container">
-        <div class="sec-title text-center">
-            <h2>How It Works</h2>
-            <div class="text">Streamline your hiring or job search journey with our simple and efficient process tailored to your needs.</div>
+        <div class="sec-title text-center ">
+            <h2 style="color:white;" >How It Works</h2>
+            <div  style="color:white; margin:20px">Streamline your hiring or job search journey with our simple and efficient process tailored to your needs.</div>
         </div>
 
         <div class="row grid-base pt-50 wow fadeInUp">
@@ -547,8 +600,8 @@ cards.forEach(card => {
                         <span class="icon icon-drawing"></span>
                     </div>
 
-                    <h5 class="title">Register With Us</h5>
-                    <p class="text">Sign up to access a global network of talented professionals and employers.</p>
+                    <h5 class="title" style="color:white;">Register With Us</h5>
+                    <p  style="color:white;">Sign up to access a global network of talented professionals and employers.</p>
                 </div>
             </div>
 
@@ -559,8 +612,8 @@ cards.forEach(card => {
                         <span class="icon icon-process"></span>
                     </div>
 
-                    <h5 class="title">Create Your Profile</h5>
-                    <p class="text">Showcase your skills, experience, or company needs to stand out to the right audience.</p>
+                    <h5 class="title" style="color:white;">Create Your Profile</h5>
+                    <p  style="color:white;">Showcase your skills, experience, or company needs to stand out to the right audience.</p>
                 </div>
             </div>
 
@@ -571,8 +624,8 @@ cards.forEach(card => {
                         <span class="icon icon-task"></span>
                     </div>
 
-                    <h5 class="title">Upload Your Resume</h5>
-                    <p class="text">Upload your resume or job details to simplify connections with the perfect candidates or roles.</p>
+                    <h5 class="title" style="color:white;">Upload Your Resume</h5>
+                    <p  style="color:white;">Upload your resume or job details to simplify connections with the perfect candidates or roles.</p>
                 </div>
             </div>
 
@@ -583,8 +636,8 @@ cards.forEach(card => {
                         <span class="icon icon-one-finger-click"></span>
                     </div>
 
-                    <h5 class="title">Now Take a Rest</h5>
-                    <p class="text">Leave the rest to us! Sit back as we match talent and opportunities seamlessly.</p>
+                    <h5 class="title" style="color:white;">Now Take a Rest</h5>
+                    <p  style="color:white;">Leave the rest to us! Sit back as we match talent and opportunities seamlessly.</p>
                 </div>
             </div>
 
