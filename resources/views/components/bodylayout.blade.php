@@ -225,7 +225,7 @@
 <!-- End Banner Section-->
 
 <!-- What we do Section -->
-<section class="layout-pt-120 layout-pb-100">
+<!-- <section class="layout-pt-120 layout-pb-100">
     <div class="auto-container">
         <div class="sec-title text-center">
             <h2>What We Do.</h2>
@@ -243,7 +243,6 @@
 
         <div class="row grid-base pt-10 wow fadeInUp">
 
-           <!-- SERVICES LIST -->
             <div class="row mt-5">
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
@@ -322,7 +321,213 @@
 
         </div>
     </div>
+</section> -->
+
+
+
+
+
+<section 
+    style="
+        padding:140px 0;
+        overflow:hidden;
+        position:relative;
+        background: linear-gradient(to right, 
+            #000000 0%, 
+            #000000 50%, 
+            #000000 50%, 
+            #E94E1B 100%);
+        background-size:200% 100%;
+        background-position:left center;
+        transition:background-position 1.2s ease;
+    "
+    onmouseenter="
+        this.style.backgroundPosition='right center';
+        document.getElementById('hoverMan').style.opacity='1';
+        document.getElementById('hoverMan').style.transform='translateX(0)';
+    "
+    onmouseleave="
+        this.style.backgroundPosition='left center';
+        document.getElementById('hoverMan').style.opacity='0';
+        document.getElementById('hoverMan').style.transform='translateX(60px)';
+    "
+>
+
+    <!-- IMAGE LAYER -->
+    <div id="hoverMan"
+         style="
+            position:absolute;
+            bottom:0;
+            right:8%;
+            height:90%;
+            display:flex;
+            align-items:flex-end;
+            opacity:0;
+            transform:translateX(60px);
+            transition:all 1.2s ease;
+            z-index:1;
+         ">
+        <img src='/onboarding/images/suited.png'
+             style="height:100%; object-fit:contain;">
+    </div>
+
+    <!-- ORANGE OPACITY OVERLAY -->
+    <div style="
+        position:absolute;
+        top:0;
+        right:0;
+        width:50%;
+        height:100%;
+        background:black;
+        opacity:0.2;
+        pointer-events:none;
+        z-index:0;
+    "></div>
+
+    <!-- YOUR EXISTING CONTENT -->
+    <div style="position:relative; z-index:2;">
+        <!-- Keep all your cards and content here -->
+    </div>
+
+    <div style="text-align:center; margin-bottom:80px; color:white;">
+        <h2 style="font-size:48px; font-weight:800;">What We Do.</h2>
+        <p style="max-width:800px; margin:20px auto; opacity:0.8;">
+            We Connect, Build, and Manage Global Teams from Africa.
+        </p>
+        <p style="color:white; font-size:20px; margin-top:10px; opacity:0.9;">
+                        I&amp;M Limited helps international organizations access exceptional African
+                        professionals while we provide the local structures that support
+                        performance, compliance, and long-term success.
+                    </p> 
+    </div>
+
+    <div style="width:100%; overflow:hidden;">
+
+        <div id="cardTrack"
+             style="display:flex; gap:50px; width:max-content;">
+
+            <!-- CARDS (WILL BE DUPLICATED BY JS FOR TRUE LOOP) -->
+
+            <!-- CARD -->
+            <div class="dock-card"
+                 style="min-width:420px; padding:60px; border-radius:25px;
+                        background:black; color:white;
+                        position:relative; overflow:hidden;
+                        transition:transform 0.35s ease;">
+
+                <!-- Orange Shape -->
+                <div style="position:absolute; top:-60px; right:-60px;
+                            width:220px; height:220px;
+                            background:#E94E1B; border-radius:50%;
+                            opacity:0.5;"></div>
+
+                <!-- ICON -->
+                <div style="font-size:40px; margin-bottom:25px;"> <i class="fas fa-globe" style="color:#E94E1B;"></i></div>
+
+                <h4 style="font-size:26px; font-weight:700; margin-bottom:20px;">
+                    Talent Acquisition
+                </h4>
+
+                <p style="opacity:0.8; font-size:24px;">
+                    We identify, vet, and place high-performing African professionals tailored to your needs.
+                </p>
+            </div>
+
+            <div class="dock-card"
+                 style="min-width:420px; padding:60px; border-radius:25px;
+                        background:black; color:white;
+                        position:relative; overflow:hidden;
+                        transition:transform 0.35s ease;">
+
+                <div style="position:absolute; bottom:-80px; right:-80px;
+                            width:250px; height:250px;
+                            background:#E94E1B;
+                            clip-path: polygon(0 50%, 100% 0, 0 100%);
+                            opacity:0.5;"></div>
+
+                <div style="font-size:40px; margin-bottom:25px;"> <i class="fas fa-users" style="color:#E94E1B;"></i></div>
+
+                <h4 style="font-size:26px; font-weight:700; margin-bottom:20px;">
+                    Workforce Deployment
+                </h4>
+
+                <p style="opacity:0.8; font-size:24px;">
+                    Seamless onboarding, payroll, HR operations across borders.
+                </p>
+            </div>
+
+            <div class="dock-card"
+                 style="min-width:420px; padding:60px; border-radius:25px;
+                        background:black; color:white;
+                        position:relative; overflow:hidden;
+                        transition:transform 0.35s ease;">
+
+                <div style="position:absolute; top:0; left:0;
+                            width:100%; height:6px;
+                            background:#E94E1B;
+                            clip-path: polygon(0 0, 100% 0, 0 100%);
+                            opacity:0.5;"></div>
+
+                <div style="font-size:40px; margin-bottom:25px;"> <i class="fas fa-shield-alt" style="color:#E94E1B;"></i></div>
+
+                <h4 style="font-size:26px; font-weight:700; margin-bottom:20px;">
+                    Secure & Compliant Operations
+                </h4>
+
+                <p style="opacity:0.8; font-size:24px;">
+                    Fully compliant employment and legal structures.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
 </section>
+
+<script>
+const track = document.getElementById("cardTrack");
+
+// Duplicate cards for seamless infinite effect
+track.innerHTML += track.innerHTML;
+
+let scrollSpeed = 0.3; // smaller = slower
+let position = 0;
+let isPaused = false;
+
+function animate() {
+    if (!isPaused) {
+        position -= scrollSpeed;
+        if (Math.abs(position) >= track.scrollWidth / 2) {
+            position = 0;
+        }
+        track.style.transform = `translateX(${position}px)`;
+    }
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+// Pause when hovering ANY card
+track.addEventListener("mouseenter", () => isPaused = true);
+track.addEventListener("mouseleave", () => isPaused = false);
+
+// REAL Dock hover effect
+const cards = document.querySelectorAll(".dock-card");
+
+cards.forEach(card => {
+    card.addEventListener("mouseenter", () => {
+        card.style.transform = "scale(1.18)";
+        card.style.zIndex = "10";
+    });
+
+    card.addEventListener("mouseleave", () => {
+        card.style.transform = "scale(1)";
+        card.style.zIndex = "1";
+    });
+});
+</script>
+
+
 <!-- End Work Section -->
 
 <!-- Work Section -->
