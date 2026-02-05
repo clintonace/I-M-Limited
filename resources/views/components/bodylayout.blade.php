@@ -729,7 +729,7 @@
     ">
 
     <!-- LEFT IMAGE -->
-    <img src="/onboarding/images/wo.png"
+    <img src="/onboarding/images/woup.png"
          style="
             position:absolute;
             bottom:0;
@@ -742,7 +742,7 @@
          ">
 
     <!-- RIGHT IMAGE -->
-    <img src="/onboarding/images/mm.png"
+    <img src="/onboarding/images/maup.png"
          style="
             position:absolute;
             bottom:0;
@@ -771,13 +771,13 @@
                 Why I&amp;M <span style="color:#E94E1B;">?</span>
             </h2>
 
-            <p style="font-size:20px; opacity:0.85; margin-bottom:20px;">
+            <p style="font-size:20px; opacity:0.85; margin-bottom:20px; color:white;">
                 Reliable Talent. Reliable Systems.
             </p>
 
-            <p style="font-size:18px; opacity:0.65; line-height:1.8;">
-                Great teams don’t run on talent alone.
-                They run on structure, support, and systems that actually work.
+            <p style="font-size:18px; opacity:0.65; line-height:1.8; font-style:italic; color:white; padding:0 150px 0 150px;">
+                <span style="color:#E94BE9;">"</span>Great teams don’t run on talent alone.
+                They run on structure, support, and systems that actually work.<span style="color:#E94BE9;">"</span>
             </p>
         </div>
 
@@ -813,7 +813,8 @@
                     Pre-Vetted Professionals
                 </h5>
 
-                <p style="opacity:0.7; line-height:1.7;">
+                <p style="opacity:0.7; line-height:1.7; font-style:italic; color:white;">
+                     No guesswork.
                     We handpick and vet high-performing African professionals ready to deliver from day one.
                 </p>
             </div>
@@ -831,7 +832,7 @@
                     Fully Managed Teams
                 </h5>
 
-                <p style="opacity:0.7; line-height:1.7;">
+                <p style="opacity:0.7; line-height:1.7; font-style:italic; color:white;">
                     We assemble, manage, and support teams so you can focus on results — not admin.
                 </p>
             </div>
@@ -849,7 +850,7 @@
                     Structured Onboarding
                 </h5>
 
-                <p style="opacity:0.7; line-height:1.7;">
+                <p style="opacity:0.7; line-height:1.7; font-style:italic; color:white;">
                     Clear processes, defined expectations, and supervision ensure every hire hits the ground running.
                 </p>
             </div>
@@ -867,7 +868,7 @@
                     Secure Physical Workspaces
                 </h5>
 
-                <p style="opacity:0.7; line-height:1.7;">
+                <p style="opacity:0.7; line-height:1.7; font-style:italic; color:white;">
                     Sensitive tools and workflows stay protected in secure operational environments.
                 </p>
             </div>
@@ -885,7 +886,7 @@
                     Compliance & Transparency
                 </h5>
 
-                <p style="opacity:0.7; line-height:1.7;">
+                <p style="opacity:0.7; line-height:1.7; font-style:italic; color:white;">
                     Employment, payroll, and operations handled correctly with full visibility.
                 </p>
             </div>
@@ -903,7 +904,7 @@
                     One Ecosystem. Zero Headaches.
                 </h5>
 
-                <p style="opacity:0.7; line-height:1.7;">
+                <p style="opacity:0.7; line-height:1.7; font-style:italic; color:white;">
                     We manage the teams behind your success — end to end.
                 </p>
             </div>

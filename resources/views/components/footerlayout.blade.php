@@ -6,7 +6,7 @@
         <div class="row">
           <div class="big-column col-xl-4 col-lg-3 col-md-12">
             <div class="footer-column about-widget">
-              <div class="logo"><a href="#"><img style="height: 80px; width: 80px;" src="/onboarding/IandM-no-bg-logo-.png" alt=""></a></div>
+              <div class="logo"><a href="#"><img style=" width: 100px;" src="/onboarding/images/logo.png" alt=""></a></div>
               <p class="phone-num"><span>Email us </span><a href="#">info@imengin.com</a></p>
               <p class="address">Connecting top remote talent with companies worldwide. Find skilled professionals for roles like developers, designers, and support experts tailored to your needs.</p>
               {{-- <p class="address">Connecting top remote talent with companies worldwide. Find skilled professionals for roles like developers, designers, and support experts tailored to your needs. <br><a href="#" class="email">info@imengin.com</a></p> --}}

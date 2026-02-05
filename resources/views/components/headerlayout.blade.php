@@ -88,7 +88,7 @@ class="main-header header-style-two">
 
     <!-- Mobile Header -->
     <div class="mobile-header">
-        <div class="logo round-logo-container"><a href="#"><img src="/onboarding/IandM-white-logo.png" alt=""
+        <div class="logo round-logo-container"><a href="#"><img src="/onboarding/images/logo.png" alt=""
                     title=""></a></div>
 
         <!--Nav Box-->

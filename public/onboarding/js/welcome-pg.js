@@ -182,8 +182,8 @@ cards.forEach(card => {
 
 function toggleSideImages() {
 
-    const leftImg = document.querySelector("img[src='/onboarding/images/wo.png']");
-    const rightImg = document.querySelector("img[src='/onboarding/images/mm.png']");
+    const leftImg = document.querySelector("img[src='/onboarding/images/woup.png']");
+    const rightImg = document.querySelector("img[src='/onboarding/images/maup.png']");
 
     if (window.innerWidth <= 992) {
 
