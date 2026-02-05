@@ -500,223 +500,28 @@
 </section>
 
 
-<script>
-
-function applyMobileStyles() {
-
-    const section = document.querySelector("section");
-    const hoverMan = document.getElementById("hoverMan");
-    const mobileMan = document.getElementById("mobileMan");
-    const cards = document.querySelectorAll(".dock-card");
-    const headings = section.querySelectorAll("h2");
-    const paragraphs = section.querySelectorAll("p");
-
-    if (window.innerWidth <= 992) {
-
-        /* Remove gradient animation */
-        section.style.background = "#000000";
-        section.onmouseenter = null;
-        section.onmouseleave = null;
-
-        /* Reduce padding */
-        section.style.padding = "90px 20px";
-
-        /* Hide desktop hover image */
-        if (hoverMan) {
-            hoverMan.style.display = "none";
-        }
-
-        /* Show mobile image */
-        if (mobileMan) {
-            mobileMan.style.display = "block";
-        }
-
-        /* Reduce heading size */
-        headings.forEach(h => {
-            h.style.fontSize = "32px";
-        });
-
-        /* Reduce paragraph size */
-        paragraphs.forEach(p => {
-            p.style.fontSize = "16px";
-        });
-
-        /* Make cards square */
-        cards.forEach(card => {
-
-            card.style.minWidth = "260px";
-            card.style.width = "260px";
-            card.style.height = "260px";
-            card.style.padding = "30px";
-            card.style.display = "flex";
-            card.style.flexDirection = "column";
-            card.style.justifyContent = "center";
-
-            const h4 = card.querySelector("h4");
-            const p = card.querySelector("p");
-            const icon = card.querySelector("i");
-
-            if (h4) h4.style.fontSize = "18px";
-            if (p) p.style.fontSize = "14px";
-            if (icon) icon.style.fontSize = "24px";
-        });
-
-    } else {
-
-        /* Restore desktop gradient */
-        section.style.background = `
-            linear-gradient(to right, 
-                #000000 0%, 
-                #000000 50%, 
-                #000000 50%, 
-                #E94E1B 100%)
-        `;
-        section.style.backgroundSize = "200% 100%";
-        section.style.backgroundPosition = "left center";
-        section.style.transition = "background-position 1.2s ease";
-
-        /* Restore hover animation */
-        section.onmouseenter = function() {
-            this.style.backgroundPosition = "right center";
-            if (hoverMan) {
-                hoverMan.style.opacity = "1";
-                hoverMan.style.transform = "translateX(0)";
-            }
-        };
-
-        section.onmouseleave = function() {
-            this.style.backgroundPosition = "left center";
-            if (hoverMan) {
-                hoverMan.style.opacity = "0";
-                hoverMan.style.transform = "translateX(60px)";
-            }
-        };
-
-        /* Show desktop hover image */
-        if (hoverMan) {
-            hoverMan.style.display = "flex";
-        }
-
-        /* Hide mobile image */
-        if (mobileMan) {
-            mobileMan.style.display = "none";
-        }
-
-        /* Restore padding */
-        section.style.padding = "140px 0";
-    }
-}
-
-/* Run on load */
-applyMobileStyles();
-
-/* Run on resize */
-window.addEventListener("resize", applyMobileStyles);
-
-</script>
-
-
-
-<script>
-const track = document.getElementById("cardTrack");
-
-// Duplicate cards for seamless infinite effect
-track.innerHTML += track.innerHTML;
-
-let scrollSpeed = 0.9; // smaller = slower
-let position = 0;
-let isPaused = false;
-
-function animate() {
-    if (!isPaused) {
-        position -= scrollSpeed;
-        if (Math.abs(position) >= track.scrollWidth / 2) {
-            position = 0;
-        }
-        track.style.transform = `translateX(${position}px)`;
-    }
-    requestAnimationFrame(animate);
-}
-
-animate();
-
-// Pause when hovering ANY card
-track.addEventListener("mouseenter", () => isPaused = true);
-track.addEventListener("mouseleave", () => isPaused = false);
-
-// REAL Dock hover effect
-const cards = document.querySelectorAll(".dock-card");
-
-cards.forEach(card => {
-    card.addEventListener("mouseenter", () => {
-        card.style.transform = "scale(1.18)";
-        card.style.zIndex = "10";
-    });
-
-    card.addEventListener("mouseleave", () => {
-        card.style.transform = "scale(1)";
-        card.style.zIndex = "1";
-    });
-});
-</script>
-
-
 <!-- End Work Section -->
 
 <!-- Work Section -->
 <section 
-    style="
-        padding:140px 0;
-        color:white;
-        overflow:hidden;
-        position:relative;
-        background: linear-gradient(to right, 
-            #000000 0%, 
-            #000000 50%, 
-            #000000 50%, 
-            #E94E1B 100%);
-        background-size:200% 100%;
-        background-position:left center;
-        transition:background-position 1.2s ease;
-    "
+        style="
+            padding:140px 0;
+            color:white;
+            overflow:hidden;
+            position:relative;
+            background: linear-gradient(to right, 
+                #000000 0%, 
+                #000000 50%, 
+                #000000 50%, 
+                #E94E1B 100%);
+            background-size:200% 100%;
+            background-position:left center;
+            transition:background-position 1.2s ease;
+        "
+        
     
-   
->
+    >
 
-    <!-- IMAGE LAYER -->
-    <!-- <div id="hoverMan"
-         style="
-            position:absolute;
-            bottom:0;
-            right:8%;
-            height:90%;
-            display:flex;
-            align-items:flex-end;
-            opacity:0;
-            transform:translateX(60px);
-            transition:all 1.2s ease;
-            z-index:1;
-         ">
-        <img src='/onboarding/images/suited.png'
-             style="height:100%; object-fit:contain;">
-    </div> -->
-
-    <!-- ORANGE OPACITY OVERLAY -->
-    <!-- <div style="
-        position:absolute;
-        top:0;
-        right:0;
-        width:50%;
-        height:100%;
-        background:black;
-        opacity:0.2;
-        pointer-events:none;
-        z-index:0;
-    "></div> -->
-
-    <!-- YOUR EXISTING CONTENT -->
-    <!-- <div style="position:relative; z-index:2;">
-    </div> -->
 
     <div class="auto-container">
         <div class="sec-title text-center ">
@@ -779,120 +584,342 @@ cards.forEach(card => {
 </section>
 <!-- End Work Section -->
 
-<section class="layout-pb-100">
-    <div class="auto-container">
+    <!-- <section  style="
+                padding:140px 0;
+                color:white;
+                overflow:hidden;
+                position:relative;
+                background: linear-gradient(to right, 
+                    #000000 0%, 
+                    #000000 50%, 
+                    #000000 50%, 
+                    #E94E1B 100%);
+                background-size:200% 100%;
+                background-position:left center;
+                transition:background-position 1.2s ease;
+            "
+            
+        
+        >
+        <div class="auto-container">
 
-        <!-- SECTION TITLE -->
-        <div class="sec-title text-center">
+            <div class="sec-title text-center">
 
-         <h2>Why I&amp;M <span style="color: #E94E1B; font-weight: bold; font-size: 1.2em;">?</span></h2>
-            <div class="text"> Reliable Talent. Reliable Systems.</div>
+            <h2>Why I&amp;M <span style="color: #E94E1B; font-weight: bold; font-size: 1.2em;">?</span></h2>
+                <div class="text"> Reliable Talent. Reliable Systems.</div>
 
-            <div class="text mt-3">
-                <p>
-                    Great teams don’t run on talent alone.
-                    They run on structure, support, and systems that actually work.
-                </p>
+                <div class="text mt-3">
+                    <p>
+                        Great teams don’t run on talent alone.
+                        They run on structure, support, and systems that actually work.
+                    </p>
+                </div>
             </div>
+
+            <div class="row mt-5 wow fadeInUp">
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="feature-block-two work-block -type-4">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <span class="icon flaticon-user"></span>
+                            </div>
+                            <h5>Pre-Vetted Professionals</h5>
+                            <p>
+                                No guesswork. We handpick and vet high-performing African
+                                professionals who are ready to deliver from day one.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="feature-block-two work-block -type-4">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <span class="icon flaticon-briefcase"></span>
+                            </div>
+                            <h5>Fully Managed Teams</h5>
+                            <p>
+                                Need a full project team? We assemble, manage, and support
+                                teams so you can focus on results — not admin.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="feature-block-two work-block -type-4">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <span class="icon flaticon-settings"></span>
+                            </div>
+                            <h5>Structured Onboarding</h5>
+                            <p>
+                                Clear processes, defined expectations, and active supervision
+                                ensure every hire hits the ground running.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="feature-block-two work-block -type-4">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <span class="icon flaticon-shield"></span>
+                            </div>
+                            <h5>Secure Physical Workspaces</h5>
+                            <p>
+                                Sensitive tools and workflows stay protected with our
+                                secure, on-ground operational environments.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="feature-block-two work-block -type-4">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <span class="icon flaticon-tick"></span>
+                            </div>
+                            <h5>Compliance &amp; Transparency</h5>
+                            <p>
+                                Employment, payroll, and operations handled correctly —
+                                with full visibility and peace of mind.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="feature-block-two work-block -type-4 bg-white">
+                        <div class="inner-box text-center">
+                            <div class="icon-box">
+                                <span class="icon flaticon-layers"></span>
+                            </div>
+                            <h5>One Ecosystem. Zero Headaches.</h5>
+                            <p>
+                                Whether you’re hiring long-term talent or outsourcing projects,
+                                we manage the teams behind your success — end to end.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section> -->
+
+
+   
+
+
+
+
+
+<section style="
+        padding:160px 0;
+        background:#000000;
+        color:white;
+        position:relative;
+        overflow:hidden;
+    ">
+
+    <!-- LEFT IMAGE -->
+    <img src="/onboarding/images/wo.png"
+         style="
+            position:absolute;
+            bottom:0;
+            left:0;
+            height:90%;
+            object-fit:contain;
+            opacity:2;
+            z-index:1;
+            pointer-events:none;
+         ">
+
+    <!-- RIGHT IMAGE -->
+    <img src="/onboarding/images/mm.png"
+         style="
+            position:absolute;
+            bottom:0;
+            right:0;
+            height:90%;
+            object-fit:contain;
+            opacity:2;
+            z-index:1;
+            pointer-events:none;
+         ">
+
+    <!-- Dark Overlay -->
+    <div style="
+        position:absolute;
+        inset:0;
+        background:rgba(0, 0, 0, 0);
+        z-index:2;
+    "></div>
+
+    <div class="auto-container" style="position:relative; z-index:3;">
+
+        <!-- Section Title -->
+        <div style="text-align:center; max-width:850px; margin:0 auto 100px auto;">
+
+            <h2 style="font-size:50px; font-weight:800; margin-bottom:20px;">
+                Why I&amp;M <span style="color:#E94E1B;">?</span>
+            </h2>
+
+            <p style="font-size:20px; opacity:0.85; margin-bottom:20px;">
+                Reliable Talent. Reliable Systems.
+            </p>
+
+            <p style="font-size:18px; opacity:0.65; line-height:1.8;">
+                Great teams don’t run on talent alone.
+                They run on structure, support, and systems that actually work.
+            </p>
         </div>
 
-        <!-- WHY US GRID -->
-        <div class="row mt-5 wow fadeInUp">
+        <!-- Cards Grid -->
+        <div style="
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap:40px;
+        ">
 
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="feature-block-two work-block -type-4">
-                    <div class="inner-box">
-                        <div class="icon-box">
-                            <span class="icon flaticon-user"></span>
-                        </div>
-                        <h5>Pre-Vetted Professionals</h5>
-                        <p>
-                            No guesswork. We handpick and vet high-performing African
-                            professionals who are ready to deliver from day one.
-                        </p>
-                    </div>
+            <!-- CARD 1 -->
+            <div style="
+                background:#111111;
+                padding:50px 40px;
+                border-radius:18px;
+                border:1px solid rgba(255,255,255,0.06);
+                transition:all 0.4s ease;
+            "
+            onmouseenter="
+                this.style.transform='translateY(-10px)';
+                this.style.borderColor='#E94E1B';
+            "
+            onmouseleave="
+                this.style.transform='translateY(0)';
+                this.style.borderColor='rgba(255,255,255,0.06)';
+            ">
+
+                <div style="font-size:32px; color:#E94E1B; margin-bottom:25px;">
+                    <i class="fas fa-user"></i>
                 </div>
+
+                <h5 style="font-size:22px; font-weight:700; margin-bottom:15px;">
+                    Pre-Vetted Professionals
+                </h5>
+
+                <p style="opacity:0.7; line-height:1.7;">
+                    We handpick and vet high-performing African professionals ready to deliver from day one.
+                </p>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="feature-block-two work-block -type-4">
-                    <div class="inner-box">
-                        <div class="icon-box">
-                            <span class="icon flaticon-briefcase"></span>
-                        </div>
-                        <h5>Fully Managed Teams</h5>
-                        <p>
-                            Need a full project team? We assemble, manage, and support
-                            teams so you can focus on results — not admin.
-                        </p>
-                    </div>
+            <!-- CARD 2 -->
+            <div style="background:#111111; padding:50px 40px; border-radius:18px; border:1px solid rgba(255,255,255,0.06); transition:all 0.4s ease;"
+            onmouseenter="this.style.transform='translateY(-10px)'; this.style.borderColor='#E94E1B';"
+            onmouseleave="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255,255,255,0.06)';">
+
+                <div style="font-size:32px; color:#E94E1B; margin-bottom:25px;">
+                    <i class="fas fa-briefcase"></i>
                 </div>
+
+                <h5 style="font-size:22px; font-weight:700; margin-bottom:15px;">
+                    Fully Managed Teams
+                </h5>
+
+                <p style="opacity:0.7; line-height:1.7;">
+                    We assemble, manage, and support teams so you can focus on results — not admin.
+                </p>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="feature-block-two work-block -type-4">
-                    <div class="inner-box">
-                        <div class="icon-box">
-                            <span class="icon flaticon-settings"></span>
-                        </div>
-                        <h5>Structured Onboarding</h5>
-                        <p>
-                            Clear processes, defined expectations, and active supervision
-                            ensure every hire hits the ground running.
-                        </p>
-                    </div>
+            <!-- CARD 3 -->
+            <div style="background:#111111; padding:50px 40px; border-radius:18px; border:1px solid rgba(255,255,255,0.06); transition:all 0.4s ease;"
+            onmouseenter="this.style.transform='translateY(-10px)'; this.style.borderColor='#E94E1B';"
+            onmouseleave="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255,255,255,0.06)';">
+
+                <div style="font-size:32px; color:#E94E1B; margin-bottom:25px;">
+                    <i class="fas fa-cogs"></i>
                 </div>
+
+                <h5 style="font-size:22px; font-weight:700; margin-bottom:15px;">
+                    Structured Onboarding
+                </h5>
+
+                <p style="opacity:0.7; line-height:1.7;">
+                    Clear processes, defined expectations, and supervision ensure every hire hits the ground running.
+                </p>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="feature-block-two work-block -type-4">
-                    <div class="inner-box">
-                        <div class="icon-box">
-                            <span class="icon flaticon-shield"></span>
-                        </div>
-                        <h5>Secure Physical Workspaces</h5>
-                        <p>
-                            Sensitive tools and workflows stay protected with our
-                            secure, on-ground operational environments.
-                        </p>
-                    </div>
+            <!-- CARD 4 -->
+            <div style="background:#111111; padding:50px 40px; border-radius:18px; border:1px solid rgba(255,255,255,0.06); transition:all 0.4s ease;"
+            onmouseenter="this.style.transform='translateY(-10px)'; this.style.borderColor='#E94E1B';"
+            onmouseleave="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255,255,255,0.06)';">
+
+                <div style="font-size:32px; color:#E94E1B; margin-bottom:25px;">
+                    <i class="fas fa-shield-alt"></i>
                 </div>
+
+                <h5 style="font-size:22px; font-weight:700; margin-bottom:15px;">
+                    Secure Physical Workspaces
+                </h5>
+
+                <p style="opacity:0.7; line-height:1.7;">
+                    Sensitive tools and workflows stay protected in secure operational environments.
+                </p>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="feature-block-two work-block -type-4">
-                    <div class="inner-box">
-                        <div class="icon-box">
-                            <span class="icon flaticon-tick"></span>
-                        </div>
-                        <h5>Compliance &amp; Transparency</h5>
-                        <p>
-                            Employment, payroll, and operations handled correctly —
-                            with full visibility and peace of mind.
-                        </p>
-                    </div>
+            <!-- CARD 5 -->
+            <div style="background:#111111; padding:50px 40px; border-radius:18px; border:1px solid rgba(255,255,255,0.06); transition:all 0.4s ease;"
+            onmouseenter="this.style.transform='translateY(-10px)'; this.style.borderColor='#E94E1B';"
+            onmouseleave="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255,255,255,0.06)';">
+
+                <div style="font-size:32px; color:#E94E1B; margin-bottom:25px;">
+                    <i class="fas fa-check-circle"></i>
                 </div>
+
+                <h5 style="font-size:22px; font-weight:700; margin-bottom:15px;">
+                    Compliance & Transparency
+                </h5>
+
+                <p style="opacity:0.7; line-height:1.7;">
+                    Employment, payroll, and operations handled correctly with full visibility.
+                </p>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="feature-block-two work-block -type-4 bg-white">
-                    <div class="inner-box text-center">
-                        <div class="icon-box">
-                            <span class="icon flaticon-layers"></span>
-                        </div>
-                        <h5>One Ecosystem. Zero Headaches.</h5>
-                        <p>
-                            Whether you’re hiring long-term talent or outsourcing projects,
-                            we manage the teams behind your success — end to end.
-                        </p>
-                    </div>
+            <!-- CARD 6 -->
+            <div style="background:#111111; padding:50px 40px; border-radius:18px; border:1px solid rgba(255,255,255,0.06); transition:all 0.4s ease;"
+            onmouseenter="this.style.transform='translateY(-10px)'; this.style.borderColor='#E94E1B';"
+            onmouseleave="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255,255,255,0.06)';">
+
+                <div style="font-size:32px; color:#E94E1B; margin-bottom:25px;">
+                    <i class="fas fa-layer-group"></i>
                 </div>
+
+                <h5 style="font-size:22px; font-weight:700; margin-bottom:15px;">
+                    One Ecosystem. Zero Headaches.
+                </h5>
+
+                <p style="opacity:0.7; line-height:1.7;">
+                    We manage the teams behind your success — end to end.
+                </p>
             </div>
 
         </div>
 
     </div>
 </section>
+
+
+
+
+
+      
+
+
 
 <!-- Job Categories -->
 <!-- <section class="job-categories border-bottom-0 pt-0">

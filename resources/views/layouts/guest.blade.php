@@ -388,7 +388,7 @@
     </style>
 </head>
 
-<body data-anm=".anm">
+<body  data-anm=".anm">
 
     @include('sweetalert::alert')
 
@@ -458,6 +458,7 @@
     <script src="/onboarding/js/owl.js"></script>
     <script src="/onboarding/js/wow.js"></script>
     <script src="/onboarding/js/script.js"></script>
+    <script src="/onboarding/js/welcome-pg.js"></script>
     <script defer src="/onboarding/js/basics.js"></script>
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyDaaCBm4FEmgKs5cfVrh3JYue3Chj1kJMw&amp;ver=5.2.4"></script>
 
