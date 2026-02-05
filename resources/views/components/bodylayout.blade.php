@@ -371,6 +371,21 @@
              style="height:100%; object-fit:contain;">
     </div>
 
+    <img id="mobileMan"
+     src="/onboarding/images/man.png"
+     style="
+        display:none;
+        position:absolute;
+        bottom:0;
+        left:50%;
+        transform:translateX(-50%);
+        width:90%;
+        max-width:500px;
+        z-index:0;
+        pointer-events:none;
+     ">
+
+
     <!-- ORANGE OPACITY OVERLAY -->
     <div style="
         position:absolute;
@@ -390,11 +405,11 @@
     </div>
 
     <div style="text-align:center; margin-bottom:80px; color:white;">
-        <h2 style="font-size:48px; font-weight:800;">What We Do.</h2>
-        <p style="max-width:800px; margin:20px auto; opacity:0.8;">
+        <h2 style="font-size:48px; font-weight:800;">What We Do <span style="color:#E94E1B;">.</span></h2>
+        <p style="max-width:800px; color:white; margin:20px auto; opacity:0.8;">
             We Connect, Build, and Manage Global Teams from Africa.
         </p>
-        <p style="color:white; font-size:20px; margin-top:10px; opacity:0.9;">
+        <p style="color:white; font-size:20px; margin-top:10px; opacity:0.9; font-style:italic;">
                         I&amp;M Limited helps international organizations access exceptional African
                         professionals while we provide the local structures that support
                         performance, compliance, and long-term success.
@@ -428,8 +443,8 @@
                     Talent Acquisition
                 </h4>
 
-                <p style="opacity:0.8; font-size:24px;">
-                    We identify, vet, and place high-performing African professionals tailored to your needs.
+                <p style="opacity:0.8; font-size:24px; font-style:italic; color:white;">
+                    <span style="color:#E94E1B;">"</span>We identify, vet, and place high-performing African professionals tailored to your needs. <span style="color:#E94E1B;">"</span>
                 </p>
             </div>
 
@@ -451,8 +466,8 @@
                     Workforce Deployment
                 </h4>
 
-                <p style="opacity:0.8; font-size:24px;">
-                    Seamless onboarding, payroll, HR operations across borders.
+                <p style="opacity:0.8; font-size:24px; font-style:italic; color:white;">
+                    <span style="color:#E94E1B;">"</span>Seamless onboarding, payroll, HR operations across borders.<span style="color:#E94E1B;">"</span>
                 </p>
             </div>
 
@@ -474,8 +489,8 @@
                     Secure & Compliant Operations
                 </h4>
 
-                <p style="opacity:0.8; font-size:24px;">
-                    Fully compliant employment and legal structures.
+                <p style="opacity:0.8; font-size:24px; font-style:italic; color:white;">
+                    <span style="color:#E94E1B;">"</span>Fully compliant employment and legal structures.<span style="color:#E94E1B;">"</span>
                 </p>
             </div>
 
@@ -484,13 +499,131 @@
 
 </section>
 
+
+<script>
+
+function applyMobileStyles() {
+
+    const section = document.querySelector("section");
+    const hoverMan = document.getElementById("hoverMan");
+    const mobileMan = document.getElementById("mobileMan");
+    const cards = document.querySelectorAll(".dock-card");
+    const headings = section.querySelectorAll("h2");
+    const paragraphs = section.querySelectorAll("p");
+
+    if (window.innerWidth <= 992) {
+
+        /* Remove gradient animation */
+        section.style.background = "#000000";
+        section.onmouseenter = null;
+        section.onmouseleave = null;
+
+        /* Reduce padding */
+        section.style.padding = "90px 20px";
+
+        /* Hide desktop hover image */
+        if (hoverMan) {
+            hoverMan.style.display = "none";
+        }
+
+        /* Show mobile image */
+        if (mobileMan) {
+            mobileMan.style.display = "block";
+        }
+
+        /* Reduce heading size */
+        headings.forEach(h => {
+            h.style.fontSize = "32px";
+        });
+
+        /* Reduce paragraph size */
+        paragraphs.forEach(p => {
+            p.style.fontSize = "16px";
+        });
+
+        /* Make cards square */
+        cards.forEach(card => {
+
+            card.style.minWidth = "260px";
+            card.style.width = "260px";
+            card.style.height = "260px";
+            card.style.padding = "30px";
+            card.style.display = "flex";
+            card.style.flexDirection = "column";
+            card.style.justifyContent = "center";
+
+            const h4 = card.querySelector("h4");
+            const p = card.querySelector("p");
+            const icon = card.querySelector("i");
+
+            if (h4) h4.style.fontSize = "18px";
+            if (p) p.style.fontSize = "14px";
+            if (icon) icon.style.fontSize = "24px";
+        });
+
+    } else {
+
+        /* Restore desktop gradient */
+        section.style.background = `
+            linear-gradient(to right, 
+                #000000 0%, 
+                #000000 50%, 
+                #000000 50%, 
+                #E94E1B 100%)
+        `;
+        section.style.backgroundSize = "200% 100%";
+        section.style.backgroundPosition = "left center";
+        section.style.transition = "background-position 1.2s ease";
+
+        /* Restore hover animation */
+        section.onmouseenter = function() {
+            this.style.backgroundPosition = "right center";
+            if (hoverMan) {
+                hoverMan.style.opacity = "1";
+                hoverMan.style.transform = "translateX(0)";
+            }
+        };
+
+        section.onmouseleave = function() {
+            this.style.backgroundPosition = "left center";
+            if (hoverMan) {
+                hoverMan.style.opacity = "0";
+                hoverMan.style.transform = "translateX(60px)";
+            }
+        };
+
+        /* Show desktop hover image */
+        if (hoverMan) {
+            hoverMan.style.display = "flex";
+        }
+
+        /* Hide mobile image */
+        if (mobileMan) {
+            mobileMan.style.display = "none";
+        }
+
+        /* Restore padding */
+        section.style.padding = "140px 0";
+    }
+}
+
+/* Run on load */
+applyMobileStyles();
+
+/* Run on resize */
+window.addEventListener("resize", applyMobileStyles);
+
+</script>
+
+
+
 <script>
 const track = document.getElementById("cardTrack");
 
 // Duplicate cards for seamless infinite effect
 track.innerHTML += track.innerHTML;
 
-let scrollSpeed = 0.3; // smaller = slower
+let scrollSpeed = 0.9; // smaller = slower
 let position = 0;
 let isPaused = false;
 
@@ -808,7 +941,7 @@ cards.forEach(card => {
 <!-- End Job Categories -->
 
 <!-- HOW IT WORKS -->
-<section class=" layout-pb-60">
+<!-- <section class=" layout-pb-60">
     <div class="auto-container">
 
     <div class="sec-title text-center">
@@ -820,7 +953,6 @@ cards.forEach(card => {
 
         <div class="row wow fadeInUp">
 
-            <!-- FOR COMPANIES -->
             <div class="banner-style-home22 at-home22 mb30 col-md-6 col-sm-12">
                 <div class="">
                     <div class="content">
@@ -859,7 +991,6 @@ cards.forEach(card => {
                 </div>
             </div>
 
-            <!-- FOR TALENTS -->
             <div class="banner-style-home22 at-home22 mb30 col-md-6 col-sm-12">
                 <div class="">
                     <div class="content">
@@ -887,11 +1018,11 @@ cards.forEach(card => {
 
         </div>
     </div>
-</section>
+</section> -->
 <!-- END HOW IT WORKS -->
 
 <!-- Candidates Section -->
-<section class="candidates-section">
+<!-- <section class="candidates-section">
     <div class="auto-container">
         <div class="sec-title">
             <h2>Featured Candidates</h2>
@@ -900,7 +1031,6 @@ cards.forEach(card => {
 
         <div class="carousel-outer wow fadeInUp">
             <div class="candidates-carousel owl-carousel owl-theme default-dots">
-                <!-- Candidate Block -->
                 @foreach ($infos as $info)
                 <div class="candidate-block">
                     <div class="inner-box">
@@ -919,24 +1049,22 @@ cards.forEach(card => {
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- End Candidates Section -->
 
 <!-- Testimonial Section -->
-<section class="testimonial-section style-two">
+<!-- <section class="testimonial-section style-two">
     <div class="auto-container">
-        <!-- Sec Title -->
-        <div class="sec-title text-center">
+
+    <div class="sec-title text-center">
             <h2>Testimonials From Our Customers</h2>
             <div class="text">Great reviews from our customers.</div>
         </div>
 
         <div class="carousel-outer wow fadeInUp">
 
-            <!-- Testimonial Carousel -->
             <div class="testimonial-carousel-three owl-carousel owl-theme default-dots">
 
-                <!--Testimonial Block -->
                 @if ($testimonies->isEmpty())
 
                 <div class="testimonial-block">
@@ -972,7 +1100,7 @@ cards.forEach(card => {
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- End Testimonial Section -->
 
 
