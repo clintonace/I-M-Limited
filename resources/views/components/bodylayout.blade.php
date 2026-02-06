@@ -742,12 +742,12 @@
          ">
 
     <!-- RIGHT IMAGE -->
-    <img src="/onboarding/images/maup.png"
+    <img src="/onboarding/images/brown-man.png"
          style="
             position:absolute;
             bottom:0;
             right:0;
-            height:90%;
+            height:85%;
             object-fit:contain;
             opacity:2;
             z-index:1;

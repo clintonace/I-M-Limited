@@ -4,9 +4,9 @@
 
 
     <!--Page Title-->
-    <section   class="page-title">
+    <!-- <section   class="page-title">
         <div class="auto-container">
-          <div style="margin-top: 100px " class="title-outer">
+          <div style="margin-top: 100px" class="title-outer">
             <h1>About Us</h1>
             <ul class="page-breadcrumb">
               <li><a href="{{route('welcome')}}">Home</a></li>
@@ -14,7 +14,119 @@
             </ul>
           </div>
         </div>
-    </section>
+    </section> -->
+
+
+    <section style="position:relative; height:100vh; overflow:hidden;">
+
+    <!-- IMAGE 1 -->
+    <div class="hero-slide"
+        style="background:url('/onboarding/images/suited.png') center center / cover no-repeat;
+               position:absolute; top:0; left:0; width:100%; height:100%;
+               z-index:1; opacity:1; transition:opacity 1s ease;">
+    </div>
+
+    <!-- IMAGE 2 -->
+    <div class="hero-slide"
+        style="background:url('/onboarding/images/womann.png') center center / cover no-repeat;
+               position:absolute; top:0; left:0; width:100%; height:100%;
+               z-index:1; opacity:0; transition:opacity 1s ease;">
+    </div>
+
+    <!-- IMAGE 3 -->
+    <div class="hero-slide"
+        style="background:url('/onboarding/images/suited.png') center center / cover no-repeat;
+               position:absolute; top:0; left:0; width:100%; height:100%;
+               z-index:1; opacity:0; transition:opacity 1s ease;">
+    </div>
+
+    <!-- Dark Overlay -->
+    <div style="position:absolute; top:0; left:0; width:100%; height:100%;
+                background:rgba(0,0,0,0.65); z-index:2;"></div>
+
+    <!-- Content -->
+    <div style="position:relative; z-index:3; height:100%;
+                display:flex; align-items:center;">
+        <div class="auto-container">
+
+            <div style="max-width:700px; font-family:'Montserrat', 'Helvetica Neue', sans-serif;">
+
+                <h2 style="color:white; font-size:48px;
+                           font-weight:300; font-style:italic; text-transform: uppercase; margin-bottom:10px;">
+                    The Future of Work 
+                </h2>
+
+                <h1 style="color:#E94E1B; font-size:40px;
+                           font-weight:500; line-height:1.1; margin-bottom:25px;">
+                           <span  style="color: #E94E1B; text-transform: uppercase;">—Powered by African Talent</span>
+                </h1>
+
+                <p style="color:white; font-size:20px; margin-bottom:5px;">
+                    About I&amp;M Limited: Redefining how global organizations discover, build, and work with exceptional talent across borders.
+                </p>
+
+                <!-- <p style="color:white; font-size:20px; margin-bottom:35px;">
+                    Built and supported from Africa. Serving the World.
+                </p> -->
+
+                <!-- CTA -->
+                <!-- <a href="{{route('register', ['type' => 'candidate'])}}"
+                   style="display:inline-block;
+                          background-color:#E94E1B;
+                          color:black;
+                          font-weight:700;
+                          padding:15px 35px;
+                          border-radius:40px;
+                          text-decoration:none;">
+                    JOIN TALENT NETWORK
+                </a> -->
+
+                <!-- SLIDER DOTS -->
+                <div style="margin-top:25px; display:flex; gap:12px;">
+                    <span onclick="showSlide(0)" class="dot"
+                        style="width:14px; height:14px; border-radius:50%;
+                               background:#E94E1B; cursor:pointer;"></span>
+                    <span onclick="showSlide(1)" class="dot"
+                        style="width:14px; height:14px; border-radius:50%;
+                               background:white; opacity:0.5; cursor:pointer;"></span>
+                    <span onclick="showSlide(2)" class="dot"
+                        style="width:14px; height:14px; border-radius:50%;
+                               background:white; opacity:0.5; cursor:pointer;"></span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<script>
+    let current = 0;
+    const slides = document.querySelectorAll(".hero-slide");
+    const dots = document.querySelectorAll(".dot");
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.opacity = i === index ? "1" : "0";
+        });
+
+        dots.forEach((dot, i) => {
+            dot.style.background = i === index ? "#E94E1B" : "white";
+            dot.style.opacity = i === index ? "1" : "0.5";
+        });
+
+        current = index;
+    }
+
+    function autoSlide() {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+    }
+
+    setInterval(autoSlide, 6000);
+</script>
+
       <!--End Page Title-->
 
 
