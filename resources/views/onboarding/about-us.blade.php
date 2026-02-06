@@ -22,21 +22,21 @@
     <!-- IMAGE 1 -->
     <div class="hero-slide"
         style="background:url('/onboarding/images/suited.png') center center / cover no-repeat;
-               position:absolute; top:0; left:0; width:100%; height:100%;
+               position:absolute; top:100px; left:0; width:100%; height:100%;
                z-index:1; opacity:1; transition:opacity 1s ease;">
     </div>
 
     <!-- IMAGE 2 -->
     <div class="hero-slide"
-        style="background:url('/onboarding/images/womann.png') center center / cover no-repeat;
-               position:absolute; top:0; left:0; width:100%; height:100%;
+        style="background:url('/onboarding/images/woleft.png') center center / cover no-repeat;
+               position:absolute; top:105px; left:150px; width:100%; height:170%;
                z-index:1; opacity:0; transition:opacity 1s ease;">
     </div>
 
     <!-- IMAGE 3 -->
     <div class="hero-slide"
-        style="background:url('/onboarding/images/suited.png') center center / cover no-repeat;
-               position:absolute; top:0; left:0; width:100%; height:100%;
+        style="background:url('/onboarding/images/dreads.png') center center / cover no-repeat;
+               position:absolute; top:90px; left:150px; width:100%; height:170%;
                z-index:1; opacity:0; transition:opacity 1s ease;">
     </div>
 
@@ -131,7 +131,7 @@
 
 
       <!-- About Section Three -->
-      <section class="about-section-three">
+      <section  style="background-color: #000;" class="about-section-three">
         <div class="auto-container">
           <div class="images-box">
             <div class="row">
@@ -176,11 +176,17 @@
           </div>
           <!-- Fun Fact Section -->
 
+          
+
           <div class="text-box modern-about">
 
-            <span class="sub-title">About I&amp;M Limited</span>
+          <div>
+            <img style="width: 150px; height: auto;" src="/onboarding/images/logo.png" alt="I&M Limited Logo">
+          </div>
 
-            <h3>
+            <span style="font-style: italic; color: #fff;" class="sub-title">About I&amp;M <span style="color:#E94E1B">Limited</span></span>
+
+            <!-- <h3>
                 The Future of Work — <br>
                 Powered by African Talent
             </h3>
@@ -190,29 +196,26 @@
                 build, and work with exceptional talent across borders.
             </p>
 
-            <div class="divider"></div>
+            <div class="divider"></div> -->
 
-            <h4>Who We Are</h4>
+            <h4 style="color: #fff;">Company Bio <span style="color:#E94E1B">.</span></h4>
 
-            <p>
-                We are a talent and workforce operations company connecting
-                Africa’s brightest professionals with forward-thinking global companies.
+            <p style="color: #fff; font-size: 18px; line-height: 1.6;">
+                
+                I&M Limited is a global virtual workforce company connecting top Nigerian talent with businesses around the world through
+                remote work opportunities. We specialize in hiring, training, and managing highly skilled virtual employees who operate seamlessly
+                from Nigeria to support international companies.
+                We bridge the global skills gap by giving organizations access to dependable, high-performing professionals regardless of
+                location while helping companies scale faster and more cost-effectively across borders. From startups to established enterprises,
+                we enable businesses to grow internationally with confidence.
+                Our mission is to empower Nigerian professionals with international roles that allow them to thrive globally while working
+                locally. By combining world-class talent, structured operations, and remote workforce expertise, we create virtual teams that
+                drive productivity, innovation, and long-term growth.
+                At I&M Limited, we don’t just hire virtual employees we build global teams, support international expansion, and connect
+                Nigeria to the world of work.
             </p>
 
-            <p>
-                Beyond hiring, we provide the systems, physical infrastructure,
-                and on-ground support teams need to perform, grow, and succeed.
-            </p>
-
-            <p>
-                Our approach blends structured operations, human-centered management,
-                and long-term workforce development.
-            </p>
-
-            <p>
-                We don’t just staff teams — we build, manage, and deploy them
-                for long-term roles or on-demand project delivery.
-            </p>
+           
 
           </div>
 
@@ -221,399 +224,10 @@
       <!-- End About Section Three -->
 
      
-      <div class="section-divider wave-divider">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-            <path
-                d="M0,30 C120,10 240,50 360,40 480,30 600,10 720,20 840,30 960,50 1080,40 1200,30 1320,15 1440,20 L1440,60 L0,60 Z"
-                fill="url(#waveGradient)"
-            ></path>
-
-            <defs>
-                <linearGradient id="waveGradient" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0%" stop-color="#fe681c" stop-opacity="0.9" />
-                    <stop offset="50%" stop-color="#fe681c" stop-opacity="0.35" />
-                    <stop offset="100%" stop-color="#fe681c" stop-opacity="0.05" />
-                </linearGradient>
-            </defs>
-        </svg>
-      </div>
-
-      <!-- Testimonial Section Two -->
-      <section class="testimonial-section-two">
-        <div class="container-fluid">
-          <div class="testimonial-left"><img src="/onboarding/images/resource/testimonial-left.png" alt=""></div>
-          <div class="testimonial-right"><img src="/onboarding/images/resource/testimonial-right.png" alt=""></div>
-          <!-- Sec Title -->
-          <div class="sec-title text-center">
-            <h2>Testimonials From Our Customers</h2>
-            <div class="text">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor</div>
-          </div>
-
-          <div class="carousel-outer">
-            <!-- Testimonial Carousel -->
-            <div class="testimonial-carousel owl-carousel owl-theme">
-
-              <!--Testimonial Block -->
-              <div class="testimonial-block-two">
-                <div class="inner-box">
-                  <div class="thumb"><img src="/onboarding/images/resource/testi-thumb-1.png" alt=""></div>
-                  <h4 class="title">Great quality!</h4>
-                  <div class="text">Without JobHunt i’d be homeless, they found me a job and got me sorted out quickly with everything! Can’t quite… The Mitech team works really hard to ensure high level of quality</div>
-                  <div class="info-box">
-                    <h4 class="name">Adebayo Kunle</h4>
-                    <span class="designation">Web Developer</span>
-                  </div>
-                </div>
-              </div>
-
-              <!--Testimonial Block -->
-              <div class="testimonial-block-two">
-                <div class="inner-box">
-                  <div class="thumb"><img src="/onboarding/images/resource/testi-thumb-1.png" alt=""></div>
-                  <h4 class="title">Great quality!</h4>
-                  <div class="text">Without JobHunt i’d be homeless, they found me a job and got me sorted out quickly with everything! Can’t quite… The Mitech team works really hard to ensure high level of quality</div>
-                  <div class="info-box">
-                    <h4 class="name">Emmanual Kenneth</h4>
-                    <span class="designation">Web Developer</span>
-                  </div>
-                </div>
-              </div>
-
-              <!--Testimonial Block -->
-              <div class="testimonial-block-two">
-                <div class="inner-box">
-                  <div class="thumb"><img src="/onboarding/images/resource/testi-thumb-1.png" alt=""></div>
-                  <h4 class="title">Great quality!</h4>
-                  <div class="text">Without JobHunt i’d be homeless, they found me a job and got me sorted out quickly with everything! Can’t quite… The Mitech team works really hard to ensure high level of quality</div>
-                  <div class="info-box">
-                    <h4 class="name">Andrew Robinson</h4>
-                    <span class="designation">Web Developer</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End Testimonial Section -->
-
-      <div class="section-divider wave-divider">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-            <path
-                d="M0,30 C120,10 240,50 360,40 480,30 600,10 720,20 840,30 960,50 1080,40 1200,30 1320,15 1440,20 L1440,60 L0,60 Z"
-                fill="url(#waveGradient)"
-            ></path>
-
-            <defs>
-                <linearGradient id="waveGradient" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0%" stop-color="#fe681c" stop-opacity="0.9" />
-                    <stop offset="50%" stop-color="#fe681c" stop-opacity="0.35" />
-                    <stop offset="100%" stop-color="#fe681c" stop-opacity="0.05" />
-                </linearGradient>
-            </defs>
-        </svg>
-      </div>
-
-    <section class=" layout-pb-100">
-      <div class="auto-container">
-          <div class="row justify-content-center">
-
-              <div class="col-lg-10 text-center">
-                  <div class="sec-title">
-                      <span style="color: #fe681c; font-weight: bold; font-size: 24px;" class="sub-title">Our Purpose</span>
-                      <h2>Building Opportunity Beyond Borders</h2>
-                  </div>
-              </div>
-
-              <div class="row mt-5">
-
-                  <div class="col-lg-6 col-md-12">
-                      <div class="feature-block-two p-5">
-                          <div class="inner-box">
-                              <h4>Our Mission</h4>
-                              <p>
-                                  To unlock global opportunities for African professionals
-                                  and deliver workforce solutions that reimagine business
-                                  growth beyond borders.
-                              </p>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="col-lg-6 col-md-12">
-                      <div class="feature-block-two p-5">
-                          <div class="inner-box">
-                              <h4>Our Vision</h4>
-                              <p>
-                                  We see Africa as an established global hub for exceptional
-                                  talent — advancing the future of work through innovation,
-                                  inclusion, and integrity.
-                              </p>
-                          </div>
-                      </div>
-                  </div>
-
-              </div>
-
-          </div>
-      </div>
-    </section>
+   
 
 
-    <div class="section-divider wave-divider">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-            <path
-                d="M0,30 C120,10 240,50 360,40 480,30 600,10 720,20 840,30 960,50 1080,40 1200,30 1320,15 1440,20 L1440,60 L0,60 Z"
-                fill="url(#waveGradient)"
-            ></path>
-
-            <defs>
-                <linearGradient id="waveGradient" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0%" stop-color="#fe681c" stop-opacity="0.9" />
-                    <stop offset="50%" stop-color="#fe681c" stop-opacity="0.35" />
-                    <stop offset="100%" stop-color="#fe681c" stop-opacity="0.05" />
-                </linearGradient>
-            </defs>
-        </svg>
-    </div>
-
-    <section class="layout-pt-100 layout-pb-100">
-        <div class="auto-container">
-
-            <div class="sec-title text-center">
-                <span style="color: #fe681c; font-weight: bold; font-size: 24px;"  class="sub-title">Our Values</span>
-                <h2>The Principles That Guide Everything We Do</h2>
-            </div>
-
-            <div class="row mt-5 owl-carousel values-carousel">
-
-                <div class="col-lg-12 col-md-6">
-                    <div class="feature-block-two work-block -type-4">
-                        <div class="inner-box">
-                            <h5>Excellence</h5>
-                            <p>
-                                World-class standards, integrity, precision,
-                                and accountability in everything we deliver.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-12 col-md-6">
-                    <div class="feature-block-two work-block -type-4">
-                        <div class="inner-box">
-                            <h5>Growth</h5>
-                            <p>
-                                Curiosity, adaptability, continuous learning,
-                                and innovation — for people and businesses.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-12 col-md-6">
-                    <div class="feature-block-two work-block -type-4">
-                        <div class="inner-box">
-                            <h5>Impact</h5>
-                            <p>
-                                Collaboration with purpose — creating real value
-                                for talent, clients, and communities.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-
-    <div class="section-divider wave-divider">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-            <path
-                d="M0,30 C120,10 240,50 360,40 480,30 600,10 720,20 840,30 960,50 1080,40 1200,30 1320,15 1440,20 L1440,60 L0,60 Z"
-                fill="url(#waveGradient)"
-            ></path>
-
-            <defs>
-                <linearGradient id="waveGradient" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0%" stop-color="#fe681c" stop-opacity="0.9" />
-                    <stop offset="50%" stop-color="#fe681c" stop-opacity="0.35" />
-                    <stop offset="100%" stop-color="#fe681c" stop-opacity="0.05" />
-                </linearGradient>
-            </defs>
-        </svg>
-    </div>
-
-    <section class=" layout-pb-100">
-        <div class="auto-container">
-
-            <div class="sec-title text-center">
-                <span style="color: #fe681c; font-weight: bold; font-size: 24px;"  class="sub-title">What Makes Us Different</span>
-                <h2>A Complete Ecosystem — Not Just Recruitment</h2>
-                <div class="text mt-3">
-                    We don’t just place talent. We build the structure
-                    that makes global work reliable.
-                </div>
-            </div>
-
-            <div class="row mt-5">
-
-                <!-- <div class="col-lg-8  justify-content-center gap-4"> -->
-                    <div class="col-lg-6">
-                      <ul class="list-style-one animated-list">
-                          <li class="wow fadeInUp">A vetted, high-quality talent pipeline</li>
-                          <li class="wow fadeInUp" data-wow-delay="100ms">Full-time staffing & project-based team outsourcing</li>
-                          <li class="wow fadeInUp" data-wow-delay="200ms">Local onboarding & workforce supervision</li>
-                      </ul>
-                  </div>
-
-                  <div class="col-lg-6">
-                      <ul class="list-style-one">
-                          <li>Secure workspaces for sensitive systems</li>
-                          <li>Compliance, reporting & structured documentation</li>
-                          <li>Tech-enabled processes with human-centered leadership</li>
-                      </ul>
-                  </div>
-                <!-- </div> -->
-
-            </div>
-
-            <div class="text-center mt-4">
-                <p>
-                    We create certainty in cross-border workflows.
-                    <br>
-                    <strong>Talent + Structure = Reliability.</strong>
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-
-    <div class="section-divider wave-divider">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-            <path
-                d="M0,30 C120,10 240,50 360,40 480,30 600,10 720,20 840,30 960,50 1080,40 1200,30 1320,15 1440,20 L1440,60 L0,60 Z"
-                fill="url(#waveGradient)"
-            ></path>
-
-            <defs>
-                <linearGradient id="waveGradient" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0%" stop-color="#fe681c" stop-opacity="0.9" />
-                    <stop offset="50%" stop-color="#fe681c" stop-opacity="0.35" />
-                    <stop offset="100%" stop-color="#fe681c" stop-opacity="0.05" />
-                </linearGradient>
-            </defs>
-        </svg>
-    </div>
-
-    <section class="layout-pb-100 ">
-        <div class="auto-container">
-
-            <div class="row justify-content-center">
-                <div class="col-lg-9">
-
-                    <div class="sec-title text-center">
-                        <span style="color: #fe681c; font-weight: bold; font-size: 24px;" class="sub-title">Our Story</span>
-                        <h2>From Insight to Impact</h2>
-                    </div>
-
-                    <div class="text mt-4">
-                        <p>
-                            I&amp;M began with a simple truth:
-                            Africa is full of brilliant professionals.
-                            What they often lack is access, structure, and opportunity.
-                        </p>
-
-                        <p>
-                            We built the system that solves that — for talent and
-                            companies alike.
-                        </p>
-
-                        <p>
-                            Today, we operate as a bridge between global work
-                            and African potential, creating value that grows
-                            businesses and strengthens economies.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-    <div class="section-divider wave-divider">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-            <path
-                d="M0,30 C120,10 240,50 360,40 480,30 600,10 720,20 840,30 960,50 1080,40 1200,30 1320,15 1440,20 L1440,60 L0,60 Z"
-                fill="url(#waveGradient)"
-            ></path>
-
-            <defs>
-                <linearGradient id="waveGradient" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0%" stop-color="#fe681c" stop-opacity="0.9" />
-                    <stop offset="50%" stop-color="#fe681c" stop-opacity="0.35" />
-                    <stop offset="100%" stop-color="#fe681c" stop-opacity="0.05" />
-                </linearGradient>
-            </defs>
-        </svg>
-    </div>
-
-    <section class="layout-pb-100">
-        <div class="auto-container">
-
-            <div class="sec-title text-center">
-                <span style="color: #fe681c; font-weight: bold; font-size: 24px;" class="sub-title">Our Operations</span>
-                <h2>Built for Security, Scale, and Oversight</h2>
-            </div>
-
-            <div class="row justify-content-center mt-4">
-                <div class="col-lg-8 text-center">
-                    <p>
-                        I&amp;M Limited maintains physical operational bases in Africa,
-                        enabling secure workforce management, monitored delivery,
-                        and reliable compliance for global organizations.
-                    </p>
-                </div>
-            </div>
-
-            <div class="row mt-5">
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-block-two p-5">
-                        <div class="inner-box">
-                            <h5>Secure Systems</h5>
-                            <p>Controlled installations for sensitive tools and platforms.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-block-two p-5">
-                        <div class="inner-box">
-                            <h5>Monitored Environments</h5>
-                            <p>Structured, supervised workspaces that ensure performance.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-block-two p-5">
-                        <div class="inner-box">
-                            <h5>Compliance & Oversight</h5>
-                            <p>Reliable governance, reporting, and operational control.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
+    
 
     </x-slot>
 
