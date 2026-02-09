@@ -197,19 +197,15 @@
             <p>
                 We are a talent and workforce operations company connecting
                 Africa’s brightest professionals with forward-thinking global companies.
-            </p>
-
-            <p>
+           
                 Beyond hiring, we provide the systems, physical infrastructure,
                 and on-ground support teams need to perform, grow, and succeed.
-            </p>
+           
 
-            <p>
+           
                 Our approach blends structured operations, human-centered management,
                 and long-term workforce development.
-            </p>
-
-            <p>
+           
                 We don’t just staff teams — we build, manage, and deploy them
                 for long-term roles or on-demand project delivery.
             </p>
