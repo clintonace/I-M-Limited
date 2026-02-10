@@ -89,11 +89,33 @@
                                     <strong>Made in Africa. Serving the World.</strong>
                                 </div>
 
-                                <a style="color: white" href="{{route('register', ['type' => 'employer'])}}"
-                                class="btn btn-style-two mt-4 wow fadeInUp fade-top"
-                                data-wow-delay="300ms">
-                                    → Build With I&M
-                                </a>
+                                <a href="{{route('register', ['type' => 'candidate'])}}"
+                                    style="
+                                            display:inline-block;
+                                            background-color:#E94E1B;
+                                            color:black;
+                                            font-weight:700;
+                                            padding:15px 35px;
+                                            border-radius:40px;
+                                            text-decoration:none;
+                                            transition:all 0.3s ease;
+                                    "
+                                    onmouseenter="
+                                            this.style.backgroundColor='#ffffff';
+                                            this.style.color='#E94E1B';
+                                            this.style.transform='translateY(-3px)';
+                                            this.style.boxShadow='0 12px 30px rgba(0,0,0,0.3)';
+                                    "
+                                    onmouseleave="
+                                            this.style.backgroundColor='#E94E1B';
+                                            this.style.color='black';
+                                            this.style.transform='translateY(0)';
+                                            this.style.boxShadow='none';
+                                    "
+                                    >
+                                        JOIN TALENT NETWORK
+                                    </a>
+
                             </div>
                         </div>
                     </div>
@@ -102,21 +124,22 @@
 
 
             <!-- WHAT YOU GET -->
-            <section class="layout-pt-120 layout-pb-100">
+            <section style="background-color: #000;" class="about-section-three">
                 <div class="auto-container">
 
-                    <div class="sec-title text-center wow fadeInUp">
-                        <h2>What You Get</h2>
-                        <h2 class="sub-title text-black">
+                    <div style="margin-top: 50px;" class="sec-title text-center wow fadeInUp">
+                        <h2 style="color: white;">What You Get <span style="color: #E94E1B;">.</span></h2>
+                        <h4 style="color: white;" class="sub-title text-white">
                             Talent You Can Trust. Systems You Can Count On.
-                        </h2>
-                        <div class="text mt-3">
+                        </h4>
+                        
+                        <div style="color: white;" class="text-white mt-3">
                             We help international companies build reliable results
                             without the risks of cross-border hiring.
                         </div>
                     </div>
 
-                    <div class="row mt-5">
+                    <div style="color: white;" class="row mt-5">
                         @foreach ([
                             'Pre-vetted, high-performing professionals',
                             'Project teams for on-demand work',
@@ -129,7 +152,7 @@
                         <div class="col-lg-4 col-md-6 mb-4 wow fadeInUp" data-wow-delay="{{ $i * 100 }}ms">
                             <div class="feature-block-two company-card">
                                 <div class="inner-box">
-                                    <h5>{{ $item }}</h5>
+                                    <h5 style="color: white;">{{ $item }}</h5>
                                 </div>
                             </div>
                         </div>
@@ -138,19 +161,19 @@
                     </div>
 
                     <div class="text-center mt-4 wow fadeInUp">
-                        <strong><h2>You choose the model. We provide the structure.</h2></strong>
+                        <strong><h2 style="color: white;">You choose the model. We provide the structure.</h2></strong>
                     </div>
 
                 </div>
             </section>
 
             <!-- OUR MODELS -->
-            <section style="padding: 100px 0;" class="layout-pt-100 layout-pb-100 bg-light">
+            <section style="padding: 100px 0; background-color: #000;" class="about-section-three">
                 <div class="auto-container">
 
                     <div class="sec-title text-center wow fadeInUp">
-                        <h2>Our Models</h2>
-                        <h2 class="sub-title text-black">Two Ways to Build With I&M</h2>
+                        <h2 class=" text-white">Our Models <span style="color: #E94E1B;">.</span></h2>
+                        <h2 class="sub-title text-white">Two Ways to Build With I&M</h2>
                     </div>
 
                     <div class="row mt-5">
@@ -160,17 +183,17 @@
                             <div class="feature-block-two company-card">
                                 <div class="inner-box p-5">
                                     <h4>Dedicated Talent (Staffing)</h4>
-                                    <p class="mt-2">
+                                    <p class="mt-2 text-white">
                                         Full-time professionals assigned exclusively to your organization —
                                         ideal for long-term roles and stable team growth.
                                     </p>
 
-                                    <ul class="list-style-one animated-list mt-3">
-                                        <li>Vetted talent</li>
-                                        <li>Performance oversight</li>
-                                        <li>Local supervision</li>
-                                        <li>Compliance & reporting</li>
-                                        <li>Secure systems setup</li>
+                                    <ul class="list-style-one animated-list text-white mt-3">
+                                        <li class="text-white">Vetted talent</li>
+                                        <li class="text-white">Performance oversight</li>
+                                        <li class="text-white">Local supervision</li>
+                                        <li class="text-white">Compliance & reporting</li>
+                                        <li class="text-white">Secure systems setup</li>
                                     </ul>
                                 </div>
                             </div>
@@ -181,17 +204,17 @@
                             <div class="feature-block-two company-card">
                                 <div class="inner-box p-5">
                                     <h4>Outsourced Project Teams (Managed Services)</h4>
-                                    <p class="mt-2">
+                                    <p class="mt-2 text-white">
                                         I&M-managed teams delivering complete projects on your behalf —
                                         without internal overhead.
                                     </p>
 
-                                    <ul class="list-style-one animated-list mt-3">
-                                        <li>Multidisciplinary teams</li>
-                                        <li>Scalable workforce</li>
-                                        <li>Continual monitoring</li>
-                                        <li>Quality-controlled delivery</li>
-                                        <li>No internal overhead</li>
+                                    <ul class="list-style-one animated-list text-white mt-3">
+                                        <li class="text-white">Multidisciplinary teams</li>
+                                        <li class="text-white">Scalable workforce</li>
+                                        <li class="text-white">Continual monitoring</li>
+                                        <li class="text-white">Quality-controlled delivery</li>
+                                        <li class="text-white">No internal overhead</li>
                                     </ul>
                                 </div>
                             </div>
@@ -203,12 +226,12 @@
             </section>
 
             <!-- WHY US -->
-            <section class="layout-pt-120 layout-pb-100">
+            <section style="background-color: #000;" class="about-section-three">
                 <div class="auto-container">
 
                     <div class="sec-title text-center wow fadeInUp">
-                        <h2>Why I&M</h2>
-                        <h2 class="sub-title text-black">
+                        <h2 class="text-white">Why I&M <span style="color: #E94E1B;">.</span></h2>
+                        <h2 class="sub-title text-white">
                             More Than Recruitment — A Talent Operations Partner
                         </h2>
                     </div>
@@ -216,11 +239,11 @@
                     <div class="row mt-4 justify-content-center">
                         <div class="col-lg-8">
                             <ul class="list-style-one animated-list text-center">
-                                <li class="wow fadeInUp">Secure physical office infrastructure</li>
-                                <li class="wow fadeInUp" data-wow-delay="100ms">Monitored delivery & productivity</li>
-                                <li class="wow fadeInUp" data-wow-delay="200ms">Cultural alignment & communication structure</li>
-                                <li class="wow fadeInUp" data-wow-delay="300ms">Compliance & documentation handling</li>
-                                <li class="wow fadeInUp" data-wow-delay="400ms">Long-term workforce development</li>
+                                <li class="wow fadeInUp text-white">Secure physical office infrastructure</li>
+                                <li class="wow fadeInUp text-white" data-wow-delay="100ms">Monitored delivery & productivity</li>
+                                <li class="wow fadeInUp text-white" data-wow-delay="200ms">Cultural alignment & communication structure</li>
+                                <li class="wow fadeInUp text-white" data-wow-delay="300ms">Compliance & documentation handling</li>
+                                <li class="wow fadeInUp text-white" data-wow-delay="400ms">Long-term workforce development</li>
                             </ul>
                         </div>
                     </div>
@@ -229,7 +252,7 @@
             </section>
 
             <!-- IMPACT -->
-            <section style="padding: 100px 0;" class="layout-pt-100 layout-pb-120 bg-light">
+            <!-- <section style="padding: 100px 0; background-color: #000;" class="about-section-three">
                 <div class="auto-container text-center">
 
                     <div class="sec-title wow fadeInUp">
@@ -249,7 +272,7 @@
                     </a>
 
                 </div>
-            </section>
+            </section> -->
        
     </x-slot>
 

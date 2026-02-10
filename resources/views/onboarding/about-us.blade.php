@@ -2,21 +2,9 @@
 
     <x-slot name="body">
 
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
 
-    <!--Page Title-->
-    <!-- <section   class="page-title">
-        <div class="auto-container">
-          <div style="margin-top: 100px" class="title-outer">
-            <h1>About Us</h1>
-            <ul class="page-breadcrumb">
-              <li><a href="{{route('welcome')}}">Home</a></li>
-              <li>About Us</li>
-            </ul>
-          </div>
-        </div>
-    </section> -->
-
-   <script>
     let current = 0;
     const slides = document.querySelectorAll(".hero-slide");
     const dots = document.querySelectorAll(".dot");
@@ -35,12 +23,16 @@
     }
 
     function autoSlide() {
+        if (slides.length === 0) return;
         current = (current + 1) % slides.length;
         showSlide(current);
     }
 
     setInterval(autoSlide, 6000);
+
+});
 </script>
+
 
 
     <section style="position:relative; height:100vh; overflow:hidden;">

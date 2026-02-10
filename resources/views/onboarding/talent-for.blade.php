@@ -89,11 +89,32 @@
                                     <strong>Made in Africa. Serving the World.</strong>
                                 </div>
 
-                                <a style="color: white" href="#join-network"
-                                class="btn btn-style-two mt-4 wow fadeInUp fade-top"
-                                data-wow-delay="300ms">
-                                    → Join the Talent Network
-                                </a>
+                                <a href="{{route('register', ['type' => 'candidate'])}}"
+                                    style="
+                                            display:inline-block;
+                                            background-color:#E94E1B;
+                                            color:black;
+                                            font-weight:700;
+                                            padding:15px 35px;
+                                            border-radius:40px;
+                                            text-decoration:none;
+                                            transition:all 0.3s ease;
+                                    "
+                                    onmouseenter="
+                                            this.style.backgroundColor='#ffffff';
+                                            this.style.color='#E94E1B';
+                                            this.style.transform='translateY(-3px)';
+                                            this.style.boxShadow='0 12px 30px rgba(0,0,0,0.3)';
+                                    "
+                                    onmouseleave="
+                                            this.style.backgroundColor='#E94E1B';
+                                            this.style.color='black';
+                                            this.style.transform='translateY(0)';
+                                            this.style.boxShadow='none';
+                                    "
+                                    >
+                                        JOIN TALENT NETWORK
+                                    </a>
                             </div>
                         </div>
                     </div>
@@ -101,13 +122,13 @@
             </section>
 
 
-            <section class="layout-pt-120 layout-pb-100">
+            <section style="background-color: #000;" class="layout-pt-120 layout-pb-100">
                 <div class="auto-container">
 
                     <div class="sec-title text-center wow fadeInUp">
-                        <h2 class="text-black">What You Get <span style="color: #fe681c;">?</span> </h2>
-                        <h2  class="sub-title text-black">Work Globally. Grow Confidently.</h2>
-                        <div class="text mt-3">
+                        <h2 class="text-white">What You Get <span style="color: #fe681c;">?</span> </h2>
+                        <h2  class="sub-title text-white">Work Globally. Grow Confidently.</h2>
+                        <div class="text-white mt-3">
                             Build meaningful, long-term global careers — without relocation.
                         </div>
                     </div>
@@ -136,21 +157,21 @@
                     </div>
 
                     <div class="text-center mt-4 wow fadeInUp">
-                        <strong><h2>When you win, we win.</h2></strong>
+                        <strong><h2 class="text-white">When you win, we win.</h2></strong>
                     </div>
 
                 </div>
             </section>
 
 
-            <section style="padding: 100px 0;" class="layout-pt-100 layout-pb-100 bg-light">
+            <section style="padding: 100px 0; background-color: #000;" class="layout-pt-100 layout-pb-100 ">
                 <div class="auto-container">
 
                     <div class="row align-items-center">
 
                         <div class="col-lg-6 wow fadeInLeft">
-                            <h2>We Build With You, Not Around You</h2>
-                            <p class="mt-3">
+                            <h2 class="text-white">We Build With You, Not Around You</h2>
+                            <p class="mt-3 text-white">
                                 We don’t see you as a CV.
                                 We see you as a professional with potential.
                             </p>
@@ -158,11 +179,11 @@
 
                         <div class="col-lg-6">
                             <ul class="list-style-one animated-list">
-                                <li class="wow fadeInUp">Skills development</li>
-                                <li class="wow fadeInUp" data-wow-delay="100ms">Communication enhancement</li>
-                                <li class="wow fadeInUp" data-wow-delay="200ms">Professional alignment</li>
-                                <li class="wow fadeInUp" data-wow-delay="300ms">Mental well-being support</li>
-                                <li class="wow fadeInUp" data-wow-delay="400ms">Performance coaching</li>
+                                <li class="wow fadeInUp text-white">Skills development</li>
+                                <li class="wow fadeInUp text-white" data-wow-delay="100ms">Communication enhancement</li>
+                                <li class="wow fadeInUp text-white" data-wow-delay="200ms">Professional alignment</li>
+                                <li class="wow fadeInUp text-white" data-wow-delay="300ms">Mental well-being support</li>
+                                <li class="wow fadeInUp text-white" data-wow-delay="400ms">Performance coaching</li>
                             </ul>
                         </div>
 
@@ -172,12 +193,12 @@
             </section>
 
 
-            <section class="layout-pt-120 layout-pb-100">
+            <section style="background-color: #000;" class="layout-pt-120 layout-pb-100">
                 <div class="auto-container">
 
                     <div class="sec-title text-center wow fadeInUp">
-                        <h2 class="">How It Works</h2>
-                        <h2 class="sub-title text-black">A Simple Path to Global Work</h2>
+                        <h2 class="text-white">How It Works</h2>
+                        <h2 class="sub-title text-white">A Simple Path to Global Work</h2>
                     </div>
 
                     <div class="row mt-5">
@@ -193,8 +214,8 @@
                         <div class="col-lg-6 mb-4 wow fadeInUp" data-wow-delay="{{ $step * 120 }}ms">
                             <div class="feature-block-two">
                                 <div class="inner-box">
-                                    <h5>Step {{ $step + 1 }}</h5>
-                                    <p>{{ $text }}</p>
+                                    <h5 class="text-white">Step {{ $step + 1 }}</h5>
+                                    <p class="text-white">{{ $text }}</p>
                                 </div>
                             </div>
                         </div>
@@ -204,31 +225,57 @@
                     </div>
 
                     <div class="text-center mt-4 wow fadeInUp">
-                        <a href="#join-network" class="btn btn btn-style-two fade-top text-white" data-wow-delay="300ms">
-                            → Join the Network
+                       <a href="{{route('register', ['type' => 'candidate'])}}"
+                        style="
+                                display:inline-block;
+                                background-color:#E94E1B;
+                                color:black;
+                                font-weight:700;
+                                padding:15px 35px;
+                                border-radius:40px;
+                                text-decoration:none;
+                                transition:all 0.3s ease;
+                        "
+                        onmouseenter="
+                                this.style.backgroundColor='#ffffff';
+                                this.style.color='#E94E1B';
+                                this.style.transform='translateY(-3px)';
+                                this.style.boxShadow='0 12px 30px rgba(0,0,0,0.3)';
+                        "
+                        onmouseleave="
+                                this.style.backgroundColor='#E94E1B';
+                                this.style.color='black';
+                                this.style.transform='translateY(0)';
+                                this.style.boxShadow='none';
+                        "
+                        >
+                            JOIN TALENT NETWORK
                         </a>
                     </div>
+
+
+                    
 
                 </div>
             </section>
 
 
-            <section style="padding: 100px 0;" class="layout-pt-100 layout-pb-100 bg-light">
+            <section style="padding: 100px 0; background-color: #000;" class="layout-pt-100 layout-pb-100 ">
                 <div class="auto-container">
 
                     <div class="sec-title text-center wow fadeInUp">
-                        <h2 class="">Who We’re Looking For</h2>
-                        <h2 class="sub-title text-black">Professionals Ready for Global Work</h2>
+                        <h2 class="text-white">Who We’re Looking For</h2>
+                        <h2 class="sub-title text-white">Professionals Ready for Global Work</h2>
                     </div>
 
                     <div class="row mt-4 justify-content-center">
                         <div class="col-lg-8">
                             <ul class="list-style-one animated-list text-center">
-                                <li class="wow fadeInUp">Skilled & reliable</li>
-                                <li class="wow fadeInUp" data-wow-delay="100ms">Clear communicators</li>
-                                <li class="wow fadeInUp" data-wow-delay="200ms">Growth-oriented</li>
-                                <li class="wow fadeInUp" data-wow-delay="300ms">Structured & accountable</li>
-                                <li class="wow fadeInUp" data-wow-delay="400ms">Ready for global exposure</li>
+                                <li class="wow fadeInUp text-white">Skilled & reliable</li>
+                                <li class="wow fadeInUp text-white" data-wow-delay="100ms">Clear communicators</li>
+                                <li class="wow fadeInUp text-white" data-wow-delay="200ms">Growth-oriented</li>
+                                <li class="wow fadeInUp text-white" data-wow-delay="300ms">Structured & accountable</li>
+                                <li class="wow fadeInUp text-white" data-wow-delay="400ms">Ready for global exposure</li>
                             </ul>
                         </div>
                     </div>
@@ -237,12 +284,12 @@
             </section>
 
 
-            <section style="padding: 100px 0;" class="layout-pt-120 layout-pb-100">
+            <section style="padding: 100px 0; background-color: #000;" class="layout-pt-120 layout-pb-100">
                 <div class="auto-container">
 
                     <div class="sec-title text-center wow fadeInUp">
-                        <h2 class="">Disciplines</h2>
-                        <h2 class="sub-title text-black">Find Your Place in Our Talent Community</h2>
+                        <h2 class="text-white">Disciplines</h2>
+                        <h2 class="sub-title text-white">Find Your Place in Our Talent Community</h2>
                     </div>
 
                     <div class="row mt-5">
@@ -259,7 +306,7 @@
                         <div style="padding: 20px;" class="col-lg-4 col-md-6 mb-4 wow zoomIn" data-wow-delay="{{ $i * 100 }}ms">
                             <div class="feature-block-two talent-card">
                                 <div class="inner-box pt-5 text-center">
-                                    <h5>{{ $discipline }}</h5>
+                                    <h5 class="text-white">{{ $discipline }}</h5>
                                 </div>
                             </div>
                         </div>
@@ -272,15 +319,15 @@
             </section>
 
 
-            <section style="padding: 100px 0;" class="layout-pt-100 layout-pb-120 bg-light">
+            <!-- <section style="padding: 100px 0; background-color: #000;" class="layout-pt-100 layout-pb-120 ">
                 <div class="auto-container text-center">
 
                     <div class="sec-title wow fadeInUp">
-                        <h2 class="">Impact</h2>
-                        <h2 class="sub-title text-black">Your Growth, Our Priority</h2>
+                        <h2 class="text-white">Impact</h2>
+                        <h2 class="sub-title text-white">Your Growth, Our Priority</h2>
                     </div>
 
-                    <p class="mt-4 wow fadeInUp">
+                    <p class="mt-4 wow fadeInUp text-white">
                         Our talents have contributed to impact-driven projects across Europe and Africa —
                         growing in confidence, skill, and global exposure.
                     </p>
@@ -290,7 +337,7 @@
                     </a>
 
                 </div>
-            </section>
+            </section> -->
        
     </x-slot>
 
