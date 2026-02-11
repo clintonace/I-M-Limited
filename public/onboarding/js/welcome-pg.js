@@ -1,6 +1,56 @@
 
+    document.addEventListener("DOMContentLoaded", function () {
 
+        let current = 0;
+        const slides = document.querySelectorAll(".hero-slide");
+        const dots = document.querySelectorAll(".dot");
 
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = i === index ? "1" : "0";
+            });
+
+            dots.forEach((dot, i) => {
+                dot.style.background = i === index ? "#E94E1B" : "white";
+                dot.style.opacity = i === index ? "1" : "0.5";
+            });
+
+            current = index;
+        }
+
+        function autoSlide() {
+            if (slides.length === 0) return;
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        }
+
+        setInterval(autoSlide, 6000);
+
+    });
+
+    let current = 0;
+    const slides = document.querySelectorAll(".hero-slide");
+    const dots = document.querySelectorAll(".dot");
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.opacity = i === index ? "1" : "0";
+        });
+
+        dots.forEach((dot, i) => {
+            dot.style.background = i === index ? "#E94E1B" : "white";
+            dot.style.opacity = i === index ? "1" : "0.5";
+        });
+
+        current = index;
+    }
+
+    function autoSlide() {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+    }
+
+    setInterval(autoSlide, 6000);
 
 
 function applyMobileStyles() {
