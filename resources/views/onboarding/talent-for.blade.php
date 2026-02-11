@@ -122,200 +122,470 @@
             </section>
 
 
-            <section style="background-color: #000;" class="layout-pt-120 layout-pb-100">
-                <div class="auto-container">
+            <section style="background:#000; padding:140px 0; position:relative; overflow:hidden;">
 
-                    <div class="sec-title text-center wow fadeInUp">
-                        <h2 class="text-white">What You Get <span style="color: #fe681c;">?</span> </h2>
-                        <h2  class="sub-title text-white">Work Globally. Grow Confidently.</h2>
-                        <div class="text-white mt-3">
-                            Build meaningful, long-term global careers — without relocation.
-                        </div>
+                <!-- Background Grid -->
+                <div style="
+                    position:absolute;
+                    top:0; left:0;
+                    width:100%; height:100%;
+                    background:
+                    linear-gradient(rgba(233,78,27,0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(233,78,27,0.03) 1px, transparent 1px);
+                    background-size:90px 90px;
+                    opacity:.3;
+                "></div>
+
+                <div class="auto-container" style="position:relative; z-index:2;">
+
+                    <div style="text-align:center; margin-bottom:100px;">
+                        <h2 style="color:#fff; font-size:44px;">
+                            What You Get <span style="color:#E94E1B;">?</span>
+                        </h2>
+                        <p style="color:#bbb;">Work Globally. Grow Confidently.</p>
+                        <p style="color:#bbb;">Build meaningful, long-term global careers — without relocation.</p>
                     </div>
 
-                    <div class="row mt-5">
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:50px;">
 
                         @foreach ([
-                            'Premium global opportunities',
-                            'Fair, transparent compensation',
-                            'Structured onboarding & systems',
-                            'Access to global-standard tools',
-                            'Career development & growth',
-                            'A supportive talent community'
-                        ] as $index => $item)
+                        'Premium global opportunities',
+                        'Fair, transparent compensation',
+                        'Structured onboarding & systems',
+                        'Access to global-standard tools',
+                        'Career development & growth',
+                        'A supportive talent community'
+                        ] as $item)
 
-                        <div class="col-lg-4 col-md-6 mb-4 wow fadeInUp" data-wow-delay="{{ $index * 100 }}ms">
-                            <div class="feature-block-two work-block -type-4 talent-card">
-                                <div class="inner-box">
-                                    <h5>{{ $item }}</h5>
-                                </div>
-                            </div>
+                        <div style="
+                            background:#111;
+                            padding:70px;
+                            border-radius:20px;
+                            border:1px solid rgba(255,255,255,.05);
+                            transition:all .4s ease;
+                            position:relative;
+                        "
+                        onmouseenter="
+                            this.style.transform='translateY(-12px)';
+                            this.style.boxShadow='0 40px 100px rgba(233,78,27,.25)';
+                        "
+                        onmouseleave="
+                            this.style.transform='translateY(0)';
+                            this.style.boxShadow='none';
+                        ">
+
+                            <h5 style="color:#fff;">{{ $item }}</h5>
+
+                            <!-- Corner Accent -->
+                            <div style="
+                                position:absolute;
+                                bottom:0; right:0;
+                                width:80px; height:80px;
+                                border-bottom:2px solid rgba(233,78,27,.4);
+                                border-right:2px solid rgba(233,78,27,.4);
+                            "></div>
+
                         </div>
 
                         @endforeach
 
                     </div>
 
-                    <div class="text-center mt-4 wow fadeInUp">
-                        <strong><h2 class="text-white">When you win, we win.</h2></strong>
-                    </div>
-
                 </div>
             </section>
 
 
-            <section style="padding: 100px 0; background-color: #000;" class="layout-pt-100 layout-pb-100 ">
-                <div class="auto-container">
+            <section style="
+                    background:#000;
+                    padding:160px 20px;
+                    position:relative;
+                    overflow:hidden;
+                ">
 
-                    <div class="row align-items-center">
+                <!-- LARGE HEXAGON -->
+                <div style="
+                    position:absolute;
+                    bottom:-200px;
+                    left:-200px;
+                    width:600px;
+                    height:600px;
+                    border:1px solid rgba(233,78,27,0.15);
+                    clip-path:polygon(25% 6%,75% 6%,100% 50%,75% 94%,25% 94%,0% 50%);
+                    transform:rotate(25deg);
+                    pointer-events:none;
+                "></div>
 
-                        <div class="col-lg-6 wow fadeInLeft">
-                            <h2 class="text-white">We Build With You, Not Around You</h2>
-                            <p class="mt-3 text-white">
-                                We don’t see you as a CV.
-                                We see you as a professional with potential.
+                <!-- MEDIUM HEXAGON -->
+                <div style="
+                    position:absolute;
+                    bottom:-120px;
+                    left:-120px;
+                    width:420px;
+                    height:420px;
+                    border:1px solid rgba(233,78,27,0.12);
+                    clip-path:polygon(25% 6%,75% 6%,100% 50%,75% 94%,25% 94%,0% 50%);
+                    transform:rotate(-15deg);
+                    pointer-events:none;
+                "></div>
+
+                <!-- SMALL HEXAGON -->
+                <div style="
+                    position:absolute;
+                    bottom:-60px;
+                    left:-60px;
+                    width:260px;
+                    height:260px;
+                    border:1px solid rgba(233,78,27,0.18);
+                    clip-path:polygon(25% 6%,75% 6%,100% 50%,75% 94%,25% 94%,0% 50%);
+                    transform:rotate(10deg);
+                    pointer-events:none;
+                "></div>
+
+                <div class="build-grid" style="
+                    max-width:1200px;
+                    margin:auto;
+                    display:grid;
+                    grid-template-columns:1fr 1fr;
+                    gap:100px;
+                    align-items:center;
+                    position:relative;
+                    z-index:0;
+                ">
+
+                    <!-- LEFT SIDE -->
+                    <div>
+
+                        <h2 style="
+                            font-size:48px;
+                            font-weight:600;
+                            color:#fff;
+                            line-height:1.2;
+                            margin-bottom:30px;
+                            transition:.4s ease;
+                        "
+                        onmouseenter="this.style.color='#E94E1B'"
+                        onmouseleave="this.style.color='#fff'">
+                            We Build With You,
+                            <br> Not Around You
+                        </h2>
+
+                        <p style="
+                            color:#aaa;
+                            font-size:20px;
+                            line-height:1.8;
+                            max-width:520px;
+                        ">
+                            We don’t see you as a CV. We see you as a professional
+                            with potential — and we equip you with structure,
+                            systems and support to thrive globally.
+                        </p>
+
+                    </div>
+
+                    <!-- RIGHT SIDE -->
+                    <div class="features-grid" style="
+                        display:grid;
+                        grid-template-columns:1fr 1fr;
+                        gap:70px 60px;
+                    ">
+
+                        <!-- Feature Item Template -->
+                        <div style="padding-left:25px;border-left:1px solid rgba(255,255,255,.1);transition:.4s ease;"
+                        onmouseenter="this.style.borderLeft='1px solid #E94E1B';this.style.transform='translateX(8px)'"
+                        onmouseleave="this.style.borderLeft='1px solid rgba(255,255,255,.1)';this.style.transform='translateX(0)'">
+
+                            <div style="width:52px;height:52px;border-radius:14px;background:rgba(233,78,27,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
+                                <i class="fa-solid fa-bullseye" style="color:#E94E1B;"></i>
+                            </div>
+
+                            <h4 style="color:#fff;margin-bottom:10px;">Skills Development</h4>
+                            <p style="color:#aaa;font-size:15px;line-height:1.7;">
+                                Structured upskilling in high-demand global competencies.
                             </p>
                         </div>
 
-                        <div class="col-lg-6">
-                            <ul class="list-style-one animated-list">
-                                <li class="wow fadeInUp text-white">Skills development</li>
-                                <li class="wow fadeInUp text-white" data-wow-delay="100ms">Communication enhancement</li>
-                                <li class="wow fadeInUp text-white" data-wow-delay="200ms">Professional alignment</li>
-                                <li class="wow fadeInUp text-white" data-wow-delay="300ms">Mental well-being support</li>
-                                <li class="wow fadeInUp text-white" data-wow-delay="400ms">Performance coaching</li>
-                            </ul>
+                        <div style="padding-left:25px;border-left:1px solid rgba(255,255,255,.1);transition:.4s ease;"
+                        onmouseenter="this.style.borderLeft='#E94E1B';this.style.transform='translateX(8px)'"
+                        onmouseleave="this.style.borderLeft='1px solid rgba(255,255,255,.1)';this.style.transform='translateX(0)'">
+
+                            <div style="width:52px;height:52px;border-radius:14px;background:rgba(233,78,27,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
+                                <i class="fa-solid fa-comments" style="color:#E94E1B;"></i>
+                            </div>
+
+                            <h4 style="color:#fff;">Communication Enhancement</h4>
+                            <p style="color:#aaa;font-size:15px;line-height:1.7;">
+                                Build clarity and cross-cultural confidence.
+                            </p>
+                        </div>
+
+                        <div style="padding-left:25px;border-left:1px solid rgba(255,255,255,.1);transition:.4s ease;"
+                        onmouseenter="this.style.borderLeft='#E94E1B';this.style.transform='translateX(8px)'"
+                        onmouseleave="this.style.borderLeft='1px solid rgba(255,255,255,.1)';this.style.transform='translateX(0)'">
+
+                            <div style="width:52px;height:52px;border-radius:14px;background:rgba(233,78,27,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
+                                <i class="fa-solid fa-briefcase" style="color:#E94E1B;"></i>
+                            </div>
+
+                            <h4 style="color:#fff;">Professional Alignment</h4>
+                            <p style="color:#aaa;font-size:15px;line-height:1.7;">
+                                Align strengths with real global opportunities.
+                            </p>
+                        </div>
+
+                        <div style="padding-left:25px;border-left:1px solid rgba(255,255,255,.1);transition:.4s ease;"
+                        onmouseenter="this.style.borderLeft='#E94E1B';this.style.transform='translateX(8px)'"
+                        onmouseleave="this.style.borderLeft='1px solid rgba(255,255,255,.1)';this.style.transform='translateX(0)'">
+
+                            <div style="width:52px;height:52px;border-radius:14px;background:rgba(233,78,27,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
+                                <i class="fa-solid fa-heart-pulse" style="color:#E94E1B;"></i>
+                            </div>
+
+                            <h4 style="color:#fff;">Well-being Support</h4>
+                            <p style="color:#aaa;font-size:15px;line-height:1.7;">
+                                Mental resilience systems for long-term success.
+                            </p>
+                        </div>
+
+                        <div style="padding-left:25px;border-left:1px solid rgba(255,255,255,.1);transition:.4s ease;"
+                        onmouseenter="this.style.borderLeft='#E94E1B';this.style.transform='translateX(8px)'"
+                        onmouseleave="this.style.borderLeft='1px solid rgba(255,255,255,.1)';this.style.transform='translateX(0)'">
+
+                            <div style="width:52px;height:52px;border-radius:14px;background:rgba(233,78,27,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
+                                <i class="fa-solid fa-chart-line" style="color:#E94E1B;"></i>
+                            </div>
+
+                            <h4 style="color:#fff;">Performance Coaching</h4>
+                            <p style="color:#aaa;font-size:15px;line-height:1.7;">
+                                Continuous feedback and measurable growth frameworks.
+                            </p>
                         </div>
 
                     </div>
 
                 </div>
+
             </section>
 
+            <style>
+            @media (max-width: 992px) {
 
-            <section style="background-color: #000;" class="layout-pt-120 layout-pb-100">
-                <div class="auto-container">
+                .build-grid {
+                    grid-template-columns: 1fr !important;
+                    gap: 60px !important;
+                }
 
-                    <div class="sec-title text-center wow fadeInUp">
-                        <h2 class="text-white">How It Works</h2>
-                        <h2 class="sub-title text-white">A Simple Path to Global Work</h2>
+                .features-grid {
+                    grid-template-columns: 1fr !important;
+                }
+
+            }
+            </style>
+
+
+            <section style="
+                    background:#000;
+                    padding:150px 0;
+                    position:relative;
+                    overflow:hidden;
+                ">
+
+                    <!-- Subtle Background Grid -->
+                    <div style="
+                        position:absolute;
+                        inset:0;
+                        background:
+                        linear-gradient(rgba(233,78,27,0.03) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(233,78,27,0.03) 1px, transparent 1px);
+                        background-size:100px 100px;
+                        opacity:.3;
+                        pointer-events:none;
+                    "></div>
+
+                    <div class="auto-container" style="position:relative; z-index:2;">
+
+                        <!-- Section Title -->
+                        <div style="text-align:center; margin-bottom:110px;">
+                            <h2 style="
+                                color:#fff;
+                                font-size:44px;
+                                font-weight:600;
+                            ">
+                                Who We’re Looking For
+                                <span style="color:#E94E1B;">.</span>
+                            </h2>
+                            <p style="color:#bbb; margin-top:15px;">
+                                Professionals ready to thrive in global environments.
+                            </p>
+                        </div>
+
+                        <!-- Grid Layout -->
+                        <div style="
+                            display:grid;
+                            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+                            gap:80px;
+                        ">
+
+                            @foreach([
+                                [
+                                    'title' => 'Capability',
+                                    'text'  => 'Skilled, reliable professionals with strong technical or domain expertise.'
+                                ],
+                                [
+                                    'title' => 'Communication',
+                                    'text'  => 'Clear communicators who collaborate confidently across global teams.'
+                                ],
+                                [
+                                    'title' => 'Mindset',
+                                    'text'  => 'Growth-oriented, structured, accountable, and ready for global exposure.'
+                                ]
+                            ] as $block)
+
+                            <div style="
+                                padding-left:40px;
+                                border-left:2px solid rgba(233,78,27,0.4);
+                                transition:.4s ease;
+                            "
+                            onmouseenter="
+                                this.style.borderLeft='2px solid #E94E1B';
+                                this.style.transform='translateX(10px)';
+                            "
+                            onmouseleave="
+                                this.style.borderLeft='2px solid rgba(233,78,27,0.4)';
+                                this.style.transform='translateX(0)';
+                            ">
+
+                                <h4 style="
+                                    color:#fff;
+                                    font-size:22px;
+                                    margin-bottom:20px;
+                                    font-weight:600;
+                                ">
+                                    {{ $block['title'] }}
+                                </h4>
+
+                                <p style="
+                                    color:#bbb;
+                                    font-size:18px;
+                                    line-height:1.8;
+                                ">
+                                    {{ $block['text'] }}
+                                </p>
+
+                            </div>
+
+                            @endforeach
+
+                        </div>
+
                     </div>
 
-                    <div class="row mt-5">
+            </section>
 
-                        @foreach ([
-                            'Create your profile',
-                            'Get verified',
-                            'Get matched',
-                            'Deliver with confidence',
-                            'Work across projects'
+            <section style="background:#000; padding:140px 0;">
+
+                <div class="auto-container">
+
+                    <div style="text-align:center; margin-bottom:100px;">
+                        <h2 style="color:#fff; font-size:44px;">How It Works</h2>
+                    </div>
+
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:60px;">
+
+                        @foreach([
+                        'Create your profile',
+                        'Get verified',
+                        'Get matched',
+                        'Deliver with confidence',
+                        'Work across projects'
                         ] as $step => $text)
 
-                        <div class="col-lg-6 mb-4 wow fadeInUp" data-wow-delay="{{ $step * 120 }}ms">
-                            <div class="feature-block-two">
-                                <div class="inner-box">
-                                    <h5 class="text-white">Step {{ $step + 1 }}</h5>
-                                    <p class="text-white">{{ $text }}</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        @endforeach
-
-                    </div>
-
-                    <div class="text-center mt-4 wow fadeInUp">
-                       <a href="{{route('register', ['type' => 'candidate'])}}"
-                        style="
-                                display:inline-block;
-                                background-color:#E94E1B;
-                                color:black;
-                                font-weight:700;
-                                padding:15px 35px;
-                                border-radius:40px;
-                                text-decoration:none;
-                                transition:all 0.3s ease;
+                        <div style="
+                            background:#111;
+                            padding:80px;
+                            border-radius:20px;
+                            border:1px solid rgba(255,255,255,.05);
+                            position:relative;
+                            transition:.4s ease;
                         "
                         onmouseenter="
-                                this.style.backgroundColor='#ffffff';
-                                this.style.color='#E94E1B';
-                                this.style.transform='translateY(-3px)';
-                                this.style.boxShadow='0 12px 30px rgba(0,0,0,0.3)';
+                            this.style.transform='translateY(-12px)';
+                            this.style.boxShadow='0 50px 120px rgba(233,78,27,.25)';
                         "
                         onmouseleave="
-                                this.style.backgroundColor='#E94E1B';
-                                this.style.color='black';
-                                this.style.transform='translateY(0)';
-                                this.style.boxShadow='none';
-                        "
-                        >
-                            JOIN TALENT NETWORK
-                        </a>
-                    </div>
+                            this.style.transform='translateY(0)';
+                            this.style.boxShadow='none';
+                        ">
 
+                            <h4 style="color:#E94E1B; margin-bottom:20px;">
+                                Step {{ $step + 1 }}
+                            </h4>
 
-                    
+                            <p style="color:#fff;">{{ $text }}</p>
 
-                </div>
-            </section>
-
-
-            <section style="padding: 100px 0; background-color: #000;" class="layout-pt-100 layout-pb-100 ">
-                <div class="auto-container">
-
-                    <div class="sec-title text-center wow fadeInUp">
-                        <h2 class="text-white">Who We’re Looking For</h2>
-                        <h2 class="sub-title text-white">Professionals Ready for Global Work</h2>
-                    </div>
-
-                    <div class="row mt-4 justify-content-center">
-                        <div class="col-lg-8">
-                            <ul class="list-style-one animated-list text-center">
-                                <li class="wow fadeInUp text-white">Skilled & reliable</li>
-                                <li class="wow fadeInUp text-white" data-wow-delay="100ms">Clear communicators</li>
-                                <li class="wow fadeInUp text-white" data-wow-delay="200ms">Growth-oriented</li>
-                                <li class="wow fadeInUp text-white" data-wow-delay="300ms">Structured & accountable</li>
-                                <li class="wow fadeInUp text-white" data-wow-delay="400ms">Ready for global exposure</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-
-            <section style="padding: 100px 0; background-color: #000;" class="layout-pt-120 layout-pb-100">
-                <div class="auto-container">
-
-                    <div class="sec-title text-center wow fadeInUp">
-                        <h2 class="text-white">Disciplines</h2>
-                        <h2 class="sub-title text-white">Find Your Place in Our Talent Community</h2>
-                    </div>
-
-                    <div class="row mt-5">
-
-                        @foreach ([
-                            'Engineering & STEM',
-                            'Digital & Software',
-                            'Operations & Admin',
-                            'Business & Strategy',
-                            'Finance & Accounting',
-                            'Design & Product'
-                        ] as $i => $discipline)
-
-                        <div style="padding: 20px;" class="col-lg-4 col-md-6 mb-4 wow zoomIn" data-wow-delay="{{ $i * 100 }}ms">
-                            <div class="feature-block-two talent-card">
-                                <div class="inner-box pt-5 text-center">
-                                    <h5 class="text-white">{{ $discipline }}</h5>
-                                </div>
-                            </div>
                         </div>
 
                         @endforeach
 
+
+                        <!-- FINAL CTA CARD -->
+                        <a href="{{route('register', ['type' => 'candidate'])}}"
+                        style="
+                                background:linear-gradient(135deg,#E94E1B,#ff8a4d);
+                                padding:80px;
+                                border-radius:20px;
+                                text-decoration:none;
+                                color:#000;
+                                display:flex;
+                                flex-direction:column;
+                                justify-content:center;
+                                align-items:center;
+                                transition:.4s ease;
+                        "
+                        onmouseenter="
+                                this.style.transform='translateY(-12px)';
+                                this.style.boxShadow='0 60px 140px rgba(233,78,27,.35)';
+                        "
+                        onmouseleave="
+                                this.style.transform='translateY(0)';
+                                this.style.boxShadow='none';
+                        ">
+
+                            <div style="
+                                width:70px;
+                                height:70px;
+                                border-radius:50%;
+                                background:#000;
+                                display:flex;
+                                align-items:center;
+                                justify-content:center;
+                                margin-bottom:25px;
+                            ">
+                                <i class="fa-solid fa-arrow-up-right-from-square"
+                                style="color:#E94E1B; font-size:24px;"></i>
+                            </div>
+
+                            <h4 style="
+                                font-weight:700;
+                                font-size:22px;
+                                text-align:center;
+                            ">
+                                Join the Talent Network
+                            </h4>
+
+                            <!-- <p style="
+                                margin-top:15px;
+                                text-align:center;
+                                font-weight:500;
+                            ">
+                                Start your global journey today.
+                            </p> -->
+
+                        </a>
+
                     </div>
 
                 </div>
+
             </section>
 
 
