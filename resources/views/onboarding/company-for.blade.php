@@ -113,7 +113,7 @@
                                             this.style.boxShadow='none';
                                     "
                                     >
-                                        JOIN TALENT NETWORK
+                                        Build With I&M
                                     </a>
 
                             </div>
@@ -129,11 +129,11 @@
 
                     <div style="margin-top: 50px;" class="sec-title text-center wow fadeInUp">
                         <h2 style="color: white;">What You Get <span style="color: #E94E1B;">.</span></h2>
-                        <h4 style="color: white;" class="sub-title text-white">
+                        <h4 style="color: white; " class="sub-title text-white">
                             Talent You Can Trust. Systems You Can Count On.
                         </h4>
                         
-                        <div style="color: white;" class="text-white mt-3">
+                        <div style="color: white; font-size:20px" class="text-white mt-3">
                             We help international companies build reliable results
                             without the risks of cross-border hiring.
                         </div>
@@ -174,7 +174,13 @@
                     <div class="sec-title text-center wow fadeInUp">
                         <h2 class=" text-white">Our Models <span style="color: #E94E1B;">.</span></h2>
                         <h2 class="sub-title text-white">Two Ways to Build With I&M</h2>
+
+                        <h3 class="text-white">You choose the model. We provide the structure.</h3>
                     </div>
+
+                     <!-- <div class="text-center wow fadeInUp">
+                        <strong><h2 style="color: white;"></h2></strong>
+                    </div> -->
 
                     <div class="row mt-5">
 
@@ -220,6 +226,11 @@
                             </div>
                         </div>
 
+
+                          <div class="text-center mt-4 wow fadeInUp">
+                        <strong><h2 style="color: white;">You choose the model. We provide the structure.</h2></strong>
+                    </div>
+
                     </div>
 
                 </div>
@@ -229,14 +240,14 @@
             <section style="background-color: #000;" class="about-section-three">
                 <div class="auto-container">
 
-                    <div class="sec-title text-center wow fadeInUp">
+                    <div class="sec-title text-left wow fadeInUp">
                         <h2 class="text-white">Why I&M <span style="color: #E94E1B;">.</span></h2>
                         <h2 class="sub-title text-white">
                             More Than Recruitment — A Talent Operations Partner
                         </h2>
                     </div>
 
-                    <div class="row mt-4 justify-content-center">
+                    <div class="row mt-4 justify-content-left">
                         <div class="col-lg-8">
                             <ul class="list-style-one animated-list text-center">
                                 <li class="wow fadeInUp text-white">Secure physical office infrastructure</li>
