@@ -136,9 +136,7 @@ Route::post('/contact/mail', function (Request $request) {
         'message' => 'required|string',
     ]);
 
-    $toEmail = 'dev.imlimited@gmail.com';
-
-    // dd($toEmail);
+    $toEmail = env('MAIL_FROM_ADDRESS', 'dev.imlimited@gmail.com');
 
     Mail::send([], [], function ($message) use ($data, $toEmail) {
         $message->to($toEmail)

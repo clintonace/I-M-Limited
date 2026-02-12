@@ -33,12 +33,12 @@
         <div class="auto-container">
             <div class="cotnent-box">
                 <div style="margin: 100px" class="title-box wow fadeInUp" data-wow-delay="300ms">
-                    <h2>Let’s Work Together</h2>
-                    <div class="text">
+                    <h2 style="color: #fff;">Let’s Work Together</h2>
+                    <div class="text-white">
                         Whether you’re building a team, exploring outsourcing,
                         or joining our talent network — we’re here to help you take the next step.
                     </div>
-                    <div class="text mt-2">
+                    <div class="text-white mt-2">
                         <strong>Made in Africa. Serving the World.</strong>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
       <!-- End Banner Section-->
 
       <!-- Contact Section -->
-      <section class="contact-section">
+      <section style="background-color: #000" class="contact-section">
         <div class="auto-container">
           <div class="upper-box">
 
@@ -101,9 +101,9 @@
           <div class="row">
               <div class="contact-block col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box">
-                  <span class="icon"><i style="color: #fe681c" class="fa fa-map-marker-alt"></i></span>
+                  <span class="icon"><i style="color: #E94E1B" class="fa fa-map-marker-alt"></i></span>
                   <h4>Address</h4>
-                  <p style="color: #fe681c">
+                  <p style="color: #000">
                       33, Windsor Estate,<br>
                       Conservation Road,<br>
                       Lekki, Lagos, Nigeria.
@@ -112,18 +112,18 @@
               </div>
               <div class="contact-block col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box">
-                    <span class="icon"><i style="color: #fe681c" class="fa fa-phone "></i></span>
+                    <span class="icon"><i style="color: #E94E1B" class="fa fa-phone "></i></span>
 
                   <h4>Call Us</h4>
-                  <p><a href="#" style="color: #fe681c" class="">+234 913 4019 930</a></p>
+                  <p><a href="#" style="color: #000" class="">+234 913 4019 930</a></p>
                 </div>
               </div>
               <div class="contact-block col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box">
-                    <span  class="icon"><i style="color: #fe681c" class="fa fa-message "></i></span>
+                    <span  class="icon"><i style="color: #E94E1B" class="fa fa-message "></i></span>
 
                   <h4>Email</h4>
-                  <p><a style="color: #fe681c" href="info@iandmlimited.com">info@iandmlimited.com</a></p>
+                  <p><a style="color: #000" href="mailto:info@iandmlimited.com">info@iandmlimited.com</a></p>
                 </div>
               </div>
             </div>
@@ -132,7 +132,7 @@
 
           <!-- Contact Form -->
           <div class="contact-form default-form">
-            <h3>Leave A Message</h3>
+            <h3 class="text-white">Leave A Message</h3>
             <!--Contact Form-->
             <form method="post" action="{{ route('contact.mail') }}">
                 @csrf
@@ -143,8 +143,8 @@
                         <div class="response"></div>
                     </div>
 
-                    <div class="col-lg-6 col-md-12 col-sm-12 form-group">
-                        <label>Your Name</label>
+                    <div class="col-lg-6 col-md-12 col-sm-12 form-group ">
+                        <label class="text-white">Your Name</label>
                         <input type="text" name="name" class="username" placeholder="Your Name*" required>
                         @if ($errors->has('name'))
                             <span class="text-danger">{{ $errors->first('name') }}</span>
@@ -152,7 +152,7 @@
                     </div>
 
                     <div class="col-lg-6 col-md-12 col-sm-12 form-group">
-                        <label>Your Email</label>
+                        <label class="text-white">Your Email</label>
                         <input type="email" name="email" class="email" placeholder="Your Email*" required>
                         @if ($errors->has('email'))
                             <span class="text-danger">{{ $errors->first('email') }}</span>
@@ -160,7 +160,7 @@
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                        <label>Subject</label>
+                        <label class="text-white">Subject</label>
                         <!-- <input type="text" name="subject" class="subject" placeholder="Subject *" required> -->
 
                         <select name="subject" id="">
@@ -189,7 +189,7 @@
 
 
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                        <label>Your Message</label>
+                        <label class="text-white">Your Message</label>
                         <textarea name="message" placeholder="Write your message..." required></textarea>
                         @if ($errors->has('message'))
                             <span class="text-danger">{{ $errors->first('message') }}</span>
