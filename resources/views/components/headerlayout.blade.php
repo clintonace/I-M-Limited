@@ -54,11 +54,11 @@ class="main-header header-style-two">
                             </a>
                         </li>
                             
-                        <li class="#">
+                        <!-- <li class="#">
                             <a href="#">
                                 <span>Resources</span>
                             </a>
-                        </li>
+                        </li> -->
                        
                         <li class="{{request()->routeIs('contact.us') ? 'current' : ''}}">
                             <a href="{{route('contact.us')}}">

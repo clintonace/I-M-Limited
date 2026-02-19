@@ -52,7 +52,7 @@
                         z-index: 0;
                     "
                 >
-                    <source src="/onboarding/video/vid6.mp4" type="video/mp4">
+                    <source src="/onboarding/video/shake.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
 
@@ -143,7 +143,7 @@
                     margin-bottom:80px;
                     letter-spacing:1px;
                 ">
-                    What You Get <span style="color:#E94E1B;">.</span>
+                    What <span style="color:#E94E1B;">You</span> Get .
                 </h2>
 
                 <div style="
@@ -285,7 +285,7 @@
                     color:#fff;
                     font-weight:600;
                 ">
-                    Our Models <span style="color:#E94E1B;">.</span>
+                    <span style="color:#E94E1B;">Our</span> Models.
                 </h2>
 
                 <div style="
@@ -515,7 +515,7 @@
                     color:#fff;
                     font-weight:600;
                 ">
-                    Why I&M <span style="color:#E94E1B;">.</span>
+                    Why Clients Engange <span style="color:#E94E1B;">I&M</span>
                 </h2>
 
                 <div style="

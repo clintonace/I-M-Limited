@@ -140,7 +140,7 @@
 
                     <div style="text-align:center; margin-bottom:100px;">
                         <h2 style="color:#fff; font-size:44px;">
-                            What You Get <span style="color:#E94E1B;">?</span>
+                            What <span style="color:#E94E1B;">You</span> Get ?
                         </h2>
                         <p style="color:#bbb;">Work Globally. Grow Confidently.</p>
                         <p style="color:#bbb;">Build meaningful, long-term global careers — without relocation.</p>
@@ -149,12 +149,12 @@
                     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:50px;">
 
                         @foreach ([
-                        'Premium global opportunities',
-                        'Fair, transparent compensation',
-                        'Structured onboarding & systems',
-                        'Access to global-standard tools',
-                        'Career development & growth',
-                        'A supportive talent community'
+                            ['icon' => 'fa-globe', 'text' => 'Premium global opportunities'],
+                            ['icon' => 'fa-hand-holding-dollar', 'text' => 'Fair, transparent compensation'],
+                            ['icon' => 'fa-diagram-project', 'text' => 'Structured onboarding & systems'],
+                            ['icon' => 'fa-laptop-code', 'text' => 'Access to global-standard tools'],
+                            ['icon' => 'fa-chart-line', 'text' => 'Career development & growth'],
+                            ['icon' => 'fa-users', 'text' => 'A supportive talent community'],
                         ] as $item)
 
                         <div style="
@@ -174,7 +174,15 @@
                             this.style.boxShadow='none';
                         ">
 
-                            <h5 style="color:#fff;">{{ $item }}</h5>
+                            <div style="
+                                    font-size:40px;
+                                    color:#e94e1b;
+                                    margin-bottom:25px;
+                                ">
+                                <i class="fa-solid {{ $item['icon'] }}"></i>
+                            </div>
+
+                            <h5 style="color:#fff;">{{ $item['text'] }}</h5>
 
                             <!-- Corner Accent -->
                             <div style="
@@ -265,8 +273,8 @@
                         "
                         onmouseenter="this.style.color='#E94E1B'"
                         onmouseleave="this.style.color='#fff'">
-                            We Build With You,
-                            <br> Not Around You
+                            We <span style="color:#E94E1B;">Build</span> With You,
+                            <br> Not Around <span style="color:#E94E1B;">You</span>
                         </h2>
 
                         <p style="
@@ -410,8 +418,7 @@
                                 font-size:44px;
                                 font-weight:600;
                             ">
-                                Who We’re Looking For
-                                <span style="color:#E94E1B;">.</span>
+                                Who We’re <span style="color:#E94E1B;">Looking</span> For.
                             </h2>
                             <p style="color:#bbb; margin-top:15px;">
                                 Professionals ready to thrive in global environments.
@@ -486,18 +493,18 @@
                 <div class="auto-container">
 
                     <div style="text-align:center; margin-bottom:100px;">
-                        <h2 style="color:#fff; font-size:44px;">How It Works</h2>
+                        <h2 style="color:#fff; font-size:44px;"><span style="color:#E94E1B;">How</span> It Works</h2>
                     </div>
 
                     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:60px;">
 
                         @foreach([
-                        'Create your profile',
-                        'Get verified',
-                        'Get matched',
-                        'Deliver with confidence',
-                        'Work across projects'
-                        ] as $step => $text)
+                            ['icon' => 'fa-user-plus', 'text' => 'Create your profile'],
+                            ['icon' => 'fa-circle-check', 'text' => 'Get verified'],
+                            ['icon' => 'fa-handshake', 'text' => 'Get matched'],
+                            ['icon' => 'fa-rocket', 'text' => 'Deliver with confidence'],
+                            ['icon' => 'fa-briefcase', 'text' => 'Work across projects'],
+                        ] as $step => $item)
 
                         <div style="
                             background:#111;
@@ -516,11 +523,20 @@
                             this.style.boxShadow='none';
                         ">
 
+                        <!-- Icon -->
+                        <div style="
+                            font-size:42px;
+                            color:#e94e1b;
+                            margin-bottom:25px;
+                        ">
+                            <i class="fa-solid {{ $item['icon'] }}"></i>
+                        </div>
+
                             <h4 style="color:#E94E1B; margin-bottom:20px;">
                                 Step {{ $step + 1 }}
                             </h4>
 
-                            <p style="color:#fff;">{{ $text }}</p>
+                            <p style="color:#fff;">{{ $item['text'] }}</p>
 
                         </div>
 

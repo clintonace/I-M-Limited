@@ -6,14 +6,14 @@
 
             <!-- IMAGE 1 -->
             <div class="hero-slide"
-                style="background:url('/onboarding/images/suited.png') center center / cover no-repeat;
-                    position:absolute; top:100px; left:0; width:100%; height:100%;
+                style="background:url('/onboarding/images/woleft.png') center center / cover no-repeat;
+                    position:absolute; top:100px; left:150px; width:100%; height:250%;
                     z-index:1; opacity:1; transition:opacity 1s ease;">
             </div>
 
             <!-- IMAGE 2 -->
             <div class="hero-slide"
-                style="background:url('/onboarding/images/woleft.png') center center / cover no-repeat;
+                style="background:url('/onboarding/images/brown-ma.png') center center / cover no-repeat;
                     position:absolute; top:105px; left:150px; width:100%; height:170%;
                     z-index:1; opacity:0; transition:opacity 1s ease;">
             </div>
@@ -43,11 +43,11 @@
 
                         <h1 style="color:#E94E1B; font-size:40px;
                                 font-weight:500; line-height:1.1; margin-bottom:25px;">
-                                <span  style="color: #E94E1B; text-transform: uppercase;">—Powered by African Talent</span>
+                                <span  style="color: #E94E1B; text-transform: uppercase;">Powered by African Talent</span>
                         </h1>
 
                         <p style="color:white; font-size:20px; margin-bottom:5px;">
-                            About I&amp;M Limited: Redefining how global organizations discover, build, and work with exceptional talent across borders.
+                            I&amp;M Limited: Redefining how global organizations discover, build, and work with exceptional talent across borders.
                         </p>
 
                         <!-- <p style="color:white; font-size:20px; margin-bottom:35px;">
@@ -86,304 +86,557 @@
 
       </section>
 
-      <section  style="background-color: #000;" class="about-section-three">
+      
+
+      <section style="background-color: #000;" class="about-section-three">
         <div class="auto-container">
-          <div class="images-box">
-            <div class="row">
-              <div class="column col-lg-3 col-md-6 col-sm-6">
-                <figure class="image"><img src="/onboarding/images/workers.png" alt=""></figure>
-              </div>
-              <div class="column col-lg-3 col-md-6 col-sm-6">
-                <figure class="image"><img src="/onboarding/images/wo3.png" alt=""></figure>
-                <!-- <figure class="image"><img src="/onboarding/images/wo2.png" alt=""></figure> -->
-              </div>
-              <div class="column col-lg-3 col-md-6 col-sm-6">
-                <!-- <figure class="image"><img src="/onboarding/images/wo3.png" alt=""></figure> -->
-                <figure class="image"><img src="/onboarding/images/wo4.png" alt=""></figure>
-              </div>
-              <div class="column col-lg-3 col-md-6 col-sm-6">
-                <figure class="image"><img src="/onboarding/images/wo5.png" alt=""></figure>
-              </div>
-            </div>
-          </div>
 
-          <!-- Fun Fact Section -->
-          <div class="fun-fact-section" style="margin-bottom:80px;">
-            <div class="row">
-              <!--Column-->
-              <div class="counter-column col-lg-4 col-md-4 col-sm-12 wow fadeInUp">
-                <div class="count-box" style="color:#E94E1B"><span style="color:#E94E1B" class="count-text" data-speed="3000" data-stop="150">0</span>+</div>
-                <h4 style="color:#fff" class="counter-title">European Clients Served.</h4>
-              </div>
-
-              <!--Column-->
-              <div class="counter-column col-lg-4 col-md-4 col-sm-12 wow fadeInUp" data-wow-delay="400ms">
-                <div class="count-box" style="color:#E94E1B"><span style="color:#E94E1B" class="count-text" data-speed="3000" data-stop="80">0</span>%</div>
-                <h4 style="color:#fff" class="counter-title">Satisfactory ratings, 80% upwards.</h4>
-              </div>
-
-              <!--Column-->
-              <div class="counter-column col-lg-4 col-md-4 col-sm-12 wow fadeInUp" data-wow-delay="800ms">
-                <div class="count-box" style="color:#E94E1B"><span style="color:#E94E1B" class="count-text" data-speed="3000" data-stop="2">0</span>+</div>
-                <h4 style="color:#fff" class="counter-title">Years Client Engagement</h4>
-              </div>
-            </div>
-          </div>
-          <!-- Fun Fact Section -->
-
-        <div class="text-box modern-about"
-              style="position:relative; overflow:hidden;"
-
-                onmouseenter="
-                  const logo = document.getElementById('aboutLogo');
-                  const container = logo.parentElement;
-                  const move = (container.offsetWidth - logo.offsetWidth) / 2;
-                  logo.style.transform = 'translateX(' + move + 'px)';
-                "
-                onmouseleave="
-                  const logo = document.getElementById('aboutLogo');
-                  logo.style.transform = 'translateX(0)';
-                "
-
-                >
-
-                <div style="margin-bottom:25px;">
-                    <img id="aboutLogo"
-                        src="/onboarding/images/logo.png"
-                        alt="I&M Limited Logo"
-                        style="
-                            width:50px;
-                            height:auto;
-                            transition:transform 0.8s ease;
-                            display:block;
-                        ">
-                </div>
-
-                <span style="font-style: italic; color:#fff;">
-                    About I&amp;M <span style="color:#E94E1B">Limited</span>
-                </span>
-
+            <div class="sec-title text-box modern-about text-left">
                 <h4 style="color:#fff; margin-top:10px;">
-                    Who we are <span style="color:#E94E1B">.</span>
-                </h4>
+                 <span style="color:#E94E1B">Who</span> we are.
+                    </h4>
+                <!-- <span style="color: #ffffff; font-weight: bold; font-size: 24px;"  class="sub-title">Our Values <span style="color:#E94E1B">.</span></span> -->
+                <!-- <h6 style="color: #ffffff;">The Principles That Guide Everything We Do</h6> -->
+            </div>
+            
 
-                <p style="color:#fff; font-size:18px; line-height:1.6; margin-top:20px;">
-                        We are a talent and workforce operations company connecting
-                        Africa’s brightest professionals with forward-thinking global companies.
-                
-                        Beyond hiring, we provide the systems, physical infrastructure,
-                        and on-ground support teams need to perform, grow, and succeed.
-                
-                        Our approach blends structured operations, human-centered management,
-                        and long-term workforce development.
-                
-                        We don’t just staff teams — we build, manage, and deploy them
-                        for long-term roles or on-demand project delivery.
-                </p>            
+                <div style="
+                    max-width:900px;
+                    margin:auto;
+                " class="mt-5">
 
+               
+
+                    <!-- Card -->
+                    <div style="
+                        background:#111;
+                        padding:90px;
+                        border-radius:20px;
+                        position:relative;
+                        overflow:hidden;
+                        border:1px solid rgba(255,255,255,0.05);
+                        transition:all 0.4s ease;
+                    "
+                    onmouseenter="
+                        this.style.transform='translateY(-15px)';
+                        this.style.boxShadow='0 60px 140px rgba(233,78,27,0.25)';
+                    "
+                    onmouseleave="
+                        this.style.transform='translateY(0)';
+                        this.style.boxShadow='none';
+                    ">
+
+                        <!-- Decorative Line Geometry -->
+                        <div style="
+                            position:absolute;
+                            top:0;
+                            left:0;
+                            width:140px;
+                            height:140px;
+                            border-top:2px solid rgba(233,78,27,0.4);
+                            border-left:2px solid rgba(233,78,27,0.4);
+                        "></div>
+
+                        <div style="
+                            position:absolute;
+                            bottom:-120px;
+                            right:-120px;
+                            width:350px;
+                            height:350px;
+                            border:1px solid rgba(233,78,27,0.08);
+                            transform:rotate(25deg);
+                        "></div>
+
+                        <div style="
+                            position:absolute;
+                            top:50%;
+                            left:0;
+                            width:100%;
+                            height:1px;
+                            background:rgba(233,78,27,0.05);
+                        "></div>
+
+                       <p style="color:#fff; font-size:18px; line-height:1.6; margin-top:20px;">
+                             We are a talent and workforce operations company connecting
+                            Africa’s brightest professionals with forward-thinking global companies.
+                    
+                            Beyond hiring, we provide the systems, physical infrastructure,
+                            and on-ground support teams need to perform, grow, and succeed.
+                    
+                            Our approach blends structured operations, human-centered management,
+                            and long-term workforce development.
+                    
+                            We don’t just staff teams — we build, manage, and deploy them
+                            for long-term roles or on-demand project delivery.
+                        </p>
+                    </div>
+
+                </div>
+           
         </div>
-
       </section>
-
-      <section  style="background-color: #000;" class="about-section-three">
+      
+      <section style="background-color: #000;" class="about-section-three">
         <div class="auto-container">
 
-        <div class="text-box modern-about"
-              style="position:relative; overflow:hidden;"
+            <div class="sec-title text-box modern-about text-left">
+                <h4 style="color:#fff; margin-top:10px;">
+                        Our  <span style="color:#E94E1B">Story</span>.
+                    </h4>
+                <!-- <span style="color: #ffffff; font-weight: bold; font-size: 24px;"  class="sub-title">Our Values <span style="color:#E94E1B">.</span></span> -->
+                <!-- <h6 style="color: #ffffff;">The Principles That Guide Everything We Do</h6> -->
+            </div>
+            
 
-                onmouseenter="
-                  const logo = document.getElementById('aboutLogoo');
-                  const container = logo.parentElement;
-                  const move = (container.offsetWidth - logo.offsetWidth) / 2;
-                  logo.style.transform = 'translateX(' + move + 'px)';
-                "
-                onmouseleave="
-                  const logo = document.getElementById('aboutLogoo');
-                  logo.style.transform = 'translateX(0)';
-                "
+                <div style="
+                    max-width:900px;
+                    margin:auto;
+                " class="mt-5">
 
-          >
+               
 
-            <!-- <div style="margin-bottom:25px;">
-                <img id="aboutLogoo"
-                    src="/onboarding/images/logo.png"
-                    alt="I&M Limited Logo"
-                    style="
-                        width:50px;
-                        height:auto;
-                        transition:transform 0.8s ease;
-                        display:block;
+                    <!-- Card -->
+                    <div style="
+                        background:#111;
+                        padding:90px;
+                        border-radius:20px;
+                        position:relative;
+                        overflow:hidden;
+                        border:1px solid rgba(255,255,255,0.05);
+                        transition:all 0.4s ease;
+                    "
+                    onmouseenter="
+                        this.style.transform='translateY(-15px)';
+                        this.style.boxShadow='0 60px 140px rgba(233,78,27,0.25)';
+                    "
+                    onmouseleave="
+                        this.style.transform='translateY(0)';
+                        this.style.boxShadow='none';
                     ">
-            </div> -->
 
-            <h4 style="color:#fff; margin-top:10px;">
-                Our story <span style="color:#E94E1B">.</span>
-            </h4>
+                        <!-- Decorative Line Geometry -->
+                        <div style="
+                            position:absolute;
+                            top:0;
+                            left:0;
+                            width:140px;
+                            height:140px;
+                            border-top:2px solid rgba(233,78,27,0.4);
+                            border-left:2px solid rgba(233,78,27,0.4);
+                        "></div>
 
-            <p style="color:#fff; font-size:18px; line-height:1.6; margin-top:20px;">
+                        <div style="
+                            position:absolute;
+                            bottom:-120px;
+                            right:-120px;
+                            width:350px;
+                            height:350px;
+                            border:1px solid rgba(233,78,27,0.08);
+                            transform:rotate(25deg);
+                        "></div>
 
-                    We are a talent and workforce operations company connecting
-                    Africa’s brightest professionals with forward-thinking global companies.
-              
-                    Beyond hiring, we provide the systems, physical infrastructure,
-                    and on-ground support teams need to perform, grow, and succeed.
-              
-                    Our approach blends structured operations, human-centered management,
-                    and long-term workforce development.
-              
-                    We don’t just staff teams — we build, manage, and deploy them
-                    for long-term roles or on-demand project delivery.
-            </p>
+                        <div style="
+                            position:absolute;
+                            top:50%;
+                            left:0;
+                            width:100%;
+                            height:1px;
+                            background:rgba(233,78,27,0.05);
+                        "></div>
 
+                       <p style="color:#fff; font-size:18px; line-height:1.6; margin-top:20px;">
+                             Some companies are born from theoretical market analysis. I&M Limited was born from lived experience. 
+
+                            Founded by Akim Ismael, whose journey from Nigeria to Europe as a refugee revealed the transformative power of structure and access, I&M exists to address a simple truth: African talent has never lacked capability, only consistent access to opportunity and systems that support long-term growth. 
+
+                            Rather than exporting people, we focus on building systems. We work directly with locally based professionals to create and manage stable, compliant, and reliable operational frameworks that allow talent to perform consistently in global environments. 
+
+                            Today, I&M operates through an impact-driven model, helping companies build through teams in Africa that are not just hired, but supported and built to last; bridging the global talent gap between continents. 
+                        </p>
+                    </div>
+
+                </div>
+           
         </div>
-      </section>
-
-      <section  style="background-color: #000;" class="about-section-three">
-            <div class="auto-container">
-
-                <div class="text-box modern-about text-center">
-
-                    <h4 style="color:#fff; margin-top:10px;">
-                        Our Purpose <span style="color:#E94E1B">.</span>
-                    </h4>
-                    
-
-                    <p style="color:#fff; font-size:18px; line-height:1.6; margin-top:20px;">
-                            To unlock global opportunities for African professionals
-                                            and deliver workforce solutions that reimagine business
-                                            growth beyond borders.
-                    </p>
-
-                </div>
-            </div>
-      </section>
-
-      <section  style="background-color: #000;" class="about-section-three">
-            <div class="auto-container">
-
-                <div class="text-box modern-about text-center">
-
-                    <h4 style="color:#fff; margin-top:10px;">
-                        Our Vision <span style="color:#E94E1B">.</span>
-                    </h4>
-                    
-
-                    <p style="color:#fff; font-size:18px; line-height:1.6; margin-top:20px;">
-                              We see Africa as an established global hub for exceptional
-                                    talent — advancing the future of work through innovation,
-                                    inclusion, and integrity.
-                    </p>
-
-                </div>
-            </div>
       </section>
 
       <section style="background-color: #000;" class="about-section-three">
         <div class="auto-container">
 
-            <div class="sec-title text-box modern-about text-center">
+            <div class="sec-title text-box modern-about text-left">
                 <h4 style="color:#fff; margin-top:10px;">
-                        Our Values <span style="color:#E94E1B">.</span>
+                        Our  <span style="color:#E94E1B">Footprint</span>.
                     </h4>
                 <!-- <span style="color: #ffffff; font-weight: bold; font-size: 24px;"  class="sub-title">Our Values <span style="color:#E94E1B">.</span></span> -->
                 <!-- <h6 style="color: #ffffff;">The Principles That Guide Everything We Do</h6> -->
             </div>
+            
 
-            <div class="row mt-5 owl-carousel values-carousel">
-                <div class="col-lg-12 col-md-6">
-                    <div class="feature-block-two work-block -type-4">
-                        <div class="inner-box" 
-                            style="
-                                background: linear-gradient(135deg, #E94E1B, #B93712);
-                                color: #fff;
-                                padding: 40px 30px;
-                                border-radius: 20px;
-                                position: relative;
-                                overflow: hidden;
-                            ">
-                            
-                            <div style="
-                                position:absolute;
-                                top:-50px;
-                                right:-50px;
-                                width:160px;
-                                height:160px;
-                                background:rgba(255,255,255,0.08);
-                                border-radius:50%;
-                            "></div>
+                <div style="
+                    max-width:900px;
+                    margin:auto;
+                " class="mt-5">
 
-                            <h5 style="font-weight:bold;">Excellence</h5>
-                            <p class="text-black">
-                                World-class standards, integrity, precision,
-                                and accountability in everything we deliver.
-                            </p>
-                        </div>
+               
+
+                    <!-- Card -->
+                    <div style="
+                        background:#111;
+                        padding:90px;
+                        border-radius:20px;
+                        position:relative;
+                        overflow:hidden;
+                        border:1px solid rgba(255,255,255,0.05);
+                        transition:all 0.4s ease;
+                    "
+                    onmouseenter="
+                        this.style.transform='translateY(-15px)';
+                        this.style.boxShadow='0 60px 140px rgba(233,78,27,0.25)';
+                    "
+                    onmouseleave="
+                        this.style.transform='translateY(0)';
+                        this.style.boxShadow='none';
+                    ">
+
+                        <!-- Decorative Line Geometry -->
+                        <div style="
+                            position:absolute;
+                            top:0;
+                            left:0;
+                            width:140px;
+                            height:140px;
+                            border-top:2px solid rgba(233,78,27,0.4);
+                            border-left:2px solid rgba(233,78,27,0.4);
+                        "></div>
+
+                        <div style="
+                            position:absolute;
+                            bottom:-120px;
+                            right:-120px;
+                            width:350px;
+                            height:350px;
+                            border:1px solid rgba(233,78,27,0.08);
+                            transform:rotate(25deg);
+                        "></div>
+
+                        <div style="
+                            position:absolute;
+                            top:50%;
+                            left:0;
+                            width:100%;
+                            height:1px;
+                            background:rgba(233,78,27,0.05);
+                        "></div>
+
+                       <p style="color:#fff; font-size:18px; line-height:1.6; margin-top:20px;">
+                             Nigeria is Africa’s most populous nation, home to over 200 million people and one of the youngest populations in the world. Lagos, where I&M operates from, is the country’s commercial centre, contributing approximately 30% of Nigeria’s GDP and serving as a gateway to international trade and innovation. 
+
+                            We operate at the intersection of this demographic strength and global workforce demand. 
+                        </p>
                     </div>
+
                 </div>
-
-                <div class="col-lg-12 col-md-6">
-                    <div class="feature-block-two work-block -type-4">
-                        <div class="inner-box" 
-                            style="
-                                background: linear-gradient(135deg, #FF6A3D, #E94E1B);
-                                color: #fff;
-                                padding: 40px 30px;
-                                border-radius: 20px;
-                                position: relative;
-                                overflow: hidden;
-                            ">
-
-                            <div style="
-                                position:absolute;
-                                bottom:-70px;
-                                left:-70px;
-                                width:220px;
-                                height:220px;
-                                background:rgba(255,255,255,0.1);
-                                transform:rotate(45deg);
-                            "></div>
-
-                            <h5 style="font-weight:bold;">Growth</h5>
-                            <p class="text-black">
-                                Curiosity, adaptability, continuous learning,
-                                and innovation — for people and businesses.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-12 col-md-6">
-                    <div class="feature-block-two work-block -type-4">
-                        <div class="inner-box" 
-                            style="
-                                background: linear-gradient(135deg, #C73E15, #E94E1B, #FF7B4D);
-                                color: #fff;
-                                padding: 40px 30px;
-                                border-radius: 20px;
-                                position: relative;
-                                overflow: hidden;
-                            ">
-
-                            <div style="
-                                position:absolute;
-                                top:0;
-                                left:0;
-                                width:100%;
-                                height:100%;
-                                background: radial-gradient(circle at bottom right, rgba(255,255,255,0.12), transparent 60%);
-                            "></div>
-
-                            <h5 style="font-weight:bold; position:relative;">Impact</h5>
-                            <p style="position:relative;" class="text-black">
-                                Collaboration with purpose — creating real value
-                                for talent, clients, and communities.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           
         </div>
       </section>
+
+      <section style="background-color: #000;" class="about-section-three">
+        <div class="auto-container">
+
+            <div class="sec-title text-box modern-about text-left">
+                <h4 style="color:#fff; margin-top:10px;">
+                        Our  <span style="color:#E94E1B">Purpose</span>.
+                    </h4>
+                <!-- <span style="color: #ffffff; font-weight: bold; font-size: 24px;"  class="sub-title">Our Values <span style="color:#E94E1B">.</span></span> -->
+                <!-- <h6 style="color: #ffffff;">The Principles That Guide Everything We Do</h6> -->
+            </div>
+            
+
+                <div style="
+                    max-width:900px;
+                    margin:auto;
+                " class="mt-5">
+
+               
+
+                    <!-- Card -->
+                    <div style="
+                        background:#111;
+                        padding:90px;
+                        border-radius:20px;
+                        position:relative;
+                        overflow:hidden;
+                        border:1px solid rgba(255,255,255,0.05);
+                        transition:all 0.4s ease;
+                    "
+                    onmouseenter="
+                        this.style.transform='translateY(-15px)';
+                        this.style.boxShadow='0 60px 140px rgba(233,78,27,0.25)';
+                    "
+                    onmouseleave="
+                        this.style.transform='translateY(0)';
+                        this.style.boxShadow='none';
+                    ">
+
+                        <!-- Decorative Line Geometry -->
+                        <div style="
+                            position:absolute;
+                            top:0;
+                            left:0;
+                            width:140px;
+                            height:140px;
+                            border-top:2px solid rgba(233,78,27,0.4);
+                            border-left:2px solid rgba(233,78,27,0.4);
+                        "></div>
+
+                        <div style="
+                            position:absolute;
+                            bottom:-120px;
+                            right:-120px;
+                            width:350px;
+                            height:350px;
+                            border:1px solid rgba(233,78,27,0.08);
+                            transform:rotate(25deg);
+                        "></div>
+
+                        <div style="
+                            position:absolute;
+                            top:50%;
+                            left:0;
+                            width:100%;
+                            height:1px;
+                            background:rgba(233,78,27,0.05);
+                        "></div>
+
+                       <p style="color:#fff; font-size:18px; line-height:1.6; margin-top:20px;">
+                            To unlock global opportunities for African professionals and deliver workforce solutions that reimagine business growth beyond borders.   
+                        </p>
+                    </div>
+
+                </div>
+           
+        </div>
+      </section>
+
+      <section style="background-color: #000;" class="about-section-three">
+        <div class="auto-container">
+
+            <div class="sec-title text-box modern-about text-left">
+                <h4 style="color:#fff; margin-top:10px;">
+                        Our  <span style="color:#E94E1B">Vision</span>.
+                    </h4>
+                <!-- <span style="color: #ffffff; font-weight: bold; font-size: 24px;"  class="sub-title">Our Values <span style="color:#E94E1B">.</span></span> -->
+                <!-- <h6 style="color: #ffffff;">The Principles That Guide Everything We Do</h6> -->
+            </div>
+            
+
+                <div style="
+                    max-width:900px;
+                    margin:auto;
+                " class="mt-5">
+
+               
+
+                    <!-- Card -->
+                    <div style="
+                        background:#111;
+                        padding:90px;
+                        border-radius:20px;
+                        position:relative;
+                        overflow:hidden;
+                        border:1px solid rgba(255,255,255,0.05);
+                        transition:all 0.4s ease;
+                    "
+                    onmouseenter="
+                        this.style.transform='translateY(-15px)';
+                        this.style.boxShadow='0 60px 140px rgba(233,78,27,0.25)';
+                    "
+                    onmouseleave="
+                        this.style.transform='translateY(0)';
+                        this.style.boxShadow='none';
+                    ">
+
+                        <!-- Decorative Line Geometry -->
+                        <div style="
+                            position:absolute;
+                            top:0;
+                            left:0;
+                            width:140px;
+                            height:140px;
+                            border-top:2px solid rgba(233,78,27,0.4);
+                            border-left:2px solid rgba(233,78,27,0.4);
+                        "></div>
+
+                        <div style="
+                            position:absolute;
+                            bottom:-120px;
+                            right:-120px;
+                            width:350px;
+                            height:350px;
+                            border:1px solid rgba(233,78,27,0.08);
+                            transform:rotate(25deg);
+                        "></div>
+
+                        <div style="
+                            position:absolute;
+                            top:50%;
+                            left:0;
+                            width:100%;
+                            height:1px;
+                            background:rgba(233,78,27,0.05);
+                        "></div>
+
+                       <p style="color:#fff; font-size:18px; line-height:1.6; margin-top:20px;">
+                            We see Africa as an established global hub for exceptional talent — advancing the future of work through innovation, inclusion, and integrity.
+                        </p>
+
+                    </div>
+
+                </div>
+           
+        </div>
+      </section>
+
+      
+
+      <section style="background-color: #000;" class="about-section-three">
+        <div class="auto-container">
+
+            <div class="sec-title text-box modern-about text-left">
+                <h4 style="color:#fff; margin-top:10px;">
+                        Our  <span style="color:#E94E1B">Values</span>.
+                    </h4>
+                <!-- <span style="color: #ffffff; font-weight: bold; font-size: 24px;"  class="sub-title">Our Values <span style="color:#E94E1B">.</span></span> -->
+                <!-- <h6 style="color: #ffffff;">The Principles That Guide Everything We Do</h6> -->
+            </div>
+            
+
+                <div style="
+                    max-width:900px;
+                    margin:auto;
+                " class="mt-5">
+
+               
+
+                    <!-- Card -->
+                    <div style="
+                        background:#111;
+                        padding:90px;
+                        border-radius:20px;
+                        position:relative;
+                        overflow:hidden;
+                        border:1px solid rgba(255,255,255,0.05);
+                        transition:all 0.4s ease;
+                    "
+                    onmouseenter="
+                        this.style.transform='translateY(-15px)';
+                        this.style.boxShadow='0 60px 140px rgba(233,78,27,0.25)';
+                    "
+                    onmouseleave="
+                        this.style.transform='translateY(0)';
+                        this.style.boxShadow='none';
+                    ">
+
+                        <!-- Decorative Line Geometry -->
+                        <div style="
+                            position:absolute;
+                            top:0;
+                            left:0;
+                            width:140px;
+                            height:140px;
+                            border-top:2px solid rgba(233,78,27,0.4);
+                            border-left:2px solid rgba(233,78,27,0.4);
+                        "></div>
+
+                        <div style="
+                            position:absolute;
+                            bottom:-120px;
+                            right:-120px;
+                            width:350px;
+                            height:350px;
+                            border:1px solid rgba(233,78,27,0.08);
+                            transform:rotate(25deg);
+                        "></div>
+
+                        <div style="
+                            position:absolute;
+                            top:50%;
+                            left:0;
+                            width:100%;
+                            height:1px;
+                            background:rgba(233,78,27,0.05);
+                        "></div>
+
+                        <!-- Content -->
+                        <ul style="
+                            list-style:none;
+                            padding:0;
+                            margin:0;
+                            font-size:18px;
+                            line-height:2.4;
+                            color:#bbb;
+                        ">
+
+                            <li style="display:flex; align-items:flex-start; gap:15px; transition:all 0.3s ease;"
+                                onmouseenter="this.style.color='#fff';"
+                                onmouseleave="this.style.color='#bbb';">
+                                <span style="
+                                    width:10px;
+                                    height:10px;
+                                    background:#E94E1B;
+                                    border-radius:50%;
+                                    margin-top:10px;
+                                    flex-shrink:0;
+                                "></span>
+                                <span style="color:#E94E1B;">Excellence:</span>
+                                World-class standards, integrity, precision,
+                                and accountability in everything we deliver.
+                            </li>
+
+                            <li style="display:flex; align-items:flex-start; gap:15px; transition:all 0.3s ease;"
+                                onmouseenter="this.style.color='#fff';"
+                                onmouseleave="this.style.color='#bbb';">
+                                <span style="
+                                    width:10px;
+                                    height:10px;
+                                    background:#E94E1B;
+                                    border-radius:50%;
+                                    margin-top:10px;
+                                    flex-shrink:0;
+                                "></span>
+                                <span style="color:#E94E1B;">Growth:</span>
+                                Curiosity, adaptability, continuous learning,
+                                and innovation — for people and businesses.
+                            </li>
+
+                            <li style="display:flex; align-items:flex-start; gap:15px; transition:all 0.3s ease;"
+                                onmouseenter="this.style.color='#fff';"
+                                onmouseleave="this.style.color='#bbb';">
+                                <span style="
+                                    width:10px;
+                                    height:10px;
+                                    background:#E94E1B;
+                                    border-radius:50%;
+                                    margin-top:10px;
+                                    flex-shrink:0;
+                                "></span>
+                                <span style="color:#E94E1B;">Impact:</span>
+                                Collaboration with purpose — creating real value
+                                for talent, clients, and communities.
+                            </li>
+
+                           
+
+                        </ul>
+
+                    </div>
+
+                </div>
+           
+        </div>
+      </section>
+
+      
 
     </x-slot>
 

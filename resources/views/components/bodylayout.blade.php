@@ -727,8 +727,7 @@
         position:relative;
         overflow:hidden;
     ">
-
-    <!-- LEFT IMAGE -->
+<!-- 
     <img src="/onboarding/images/woup.png"
          style="
             position:absolute;
@@ -741,7 +740,6 @@
             pointer-events:none;
          ">
 
-    <!-- RIGHT IMAGE -->
     <img src="/onboarding/images/brown-man.png"
          style="
             position:absolute;
@@ -752,7 +750,7 @@
             opacity:2;
             z-index:1;
             pointer-events:none;
-         ">
+         "> -->
 
     <!-- Dark Overlay -->
     <div style="

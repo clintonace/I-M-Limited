@@ -375,49 +375,89 @@ class AiConverterController extends Controller
         return redirect()->route('ai-login');
     }
 
-    private static function downloadAll($batch, $type){
+    private static function downloadAll($batch, $txt){
 
+        // dd($batch, $type);
 
-         $files = AiUpload::where('batch', $batch)->pluck($type);
+         $txt = AiUpload::where('batch', $batch)->pluck($txt); //Rollo
 
-         $txtb = AiUpload::where('batch', $batch)->pluck('txtb');
+         $txtb = AiUpload::where('batch', $batch)->pluck('txtb');  //Raff
+    
+        //  $txt = AiUpload::where('batch', $batch)->whereNotNull('txt')->pluck('txt'); //Rollo
+
+        //  dd($files, $txtb);
 
          $num = rand(0, 9999);
 
-            if ($files->isEmpty()) {
+            if ($txt->isEmpty() && $txtb->isEmpty()) {
                 Alert::info('Info', 'Keine Dateien für diesen Stapel gefunden.');
             }
 
             // Define zip filename + path
-            $zipFileName = "batch_{$type}_{$batch}_{$num}.zip";
+            $zipFileName = "batch_txt_{$batch}_{$num}.zip";
             $zipPath = storage_path("app/public/converted/{$zipFileName}");
 
             // Create new zip archive
             $zip = new ZipArchive;
             if ($zip->open($zipPath, \ZipArchive::CREATE | \ZipArchive::OVERWRITE) === true) {
-                foreach ($files as $file) {
-                    $filePath = storage_path("app/public/converted/{$file}");
-                    if (file_exists($filePath)) {
-                        $zip->addFile($filePath, basename($filePath));
+                //Rollo
+                if (!$txt->isEmpty()) {
+                        foreach ($txt as $file) {
+
+                        if ($file === null) {
+                            continue;
+                        }
+                        $filePath = storage_path("app/public/converted/{$file}");
+                        if (file_exists($filePath)) {
+                            $zip->addFile($filePath, basename($filePath));
+                        }
+                        // dd('processed txt');
                     }
+                    
                 }
 
-                
-                if ($type != 'pdf') {
+                //Raff
+                if (!$txtb->isEmpty()) {
                         foreach ($txtb as $file) {
 
                         if ($file === null) {
                             continue;
                         }
-
                         $filePath = storage_path("app/public/converted/{$file}");
                         if (file_exists($filePath)) {
                             $zip->addFile($filePath, basename($filePath));
                         }
+                        // dd('processed txtb');
                     }
+                    
                 }
 
-                // dd($type);
+                
+                // if ($type != 'pdf') {
+                //     foreach ($txtb as $file) {
+
+                //         if ($file === null) {
+                //             continue;
+                //         }
+
+                //         $filePath = storage_path("app/public/converted/{$file}");
+                //         if (file_exists($filePath)) {
+                //             $zip->addFile($filePath, basename($filePath));
+                //         }
+                //     }
+
+                //     foreach ($txt as $file) {
+
+                //         if ($file === null) {
+                //             continue;
+                //         }
+
+                //         $filePath = storage_path("app/public/converted/{$file}");
+                //         if (file_exists($filePath)) {
+                //             $zip->addFile($filePath, basename($filePath));
+                //         }
+                //     }
+                // }
 
 
                 $zip->close();

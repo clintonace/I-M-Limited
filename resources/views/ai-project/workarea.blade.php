@@ -99,21 +99,25 @@
                                             <td style="padding: 14px 12px;">Text Datei</td>
                                             <td style="padding: 14px 12px; font-weight: 500; color: #111827;">{{ $r?->original_name }}</td>
                                             <td style="padding: 14px 12px; border-top-right-radius: 10px; min-width: 180px;">
-                                                <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
-                                                    <a href="{{ route('ai.see.converted', $r?->txt) }}" 
-                                                    target="_blank" 
-                                                    title="View Text Rollo.txt"
-                                                    style="text-decoration: none; color: #000000ff; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
-                                                        Rollo.txt
-                                                        <i class="fas fa-eye" style="font-size: 18px; color: #000000ff;"></i>
-                                                    </a>
+                                                
+                                                @if(!is_null($r->txt))
+                                                    <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+                                                        <a href="{{ route('ai.see.converted', $r?->txt) }}" 
+                                                        target="_blank" 
+                                                        title="View Text Rollo.txt"
+                                                        style="text-decoration: none; color: #000000ff; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+                                                            Rollo.txt
+                                                            <i class="fas fa-eye" style="font-size: 18px; color: #000000ff;"></i>
+                                                        </a>
 
-                                                    <a href="{{ route('download.file', $r?->txt) }}" 
-                                                    title="Download Text"
-                                                    style="text-decoration: none; color: #6d6d6d; display: inline-flex; align-items: center; gap: 6px;">
-                                                        <i class="fas fa-download" style="font-size: 18px;"></i>
-                                                    </a>
-                                                </div>
+                                                        <a href="{{ route('download.file', $r?->txt) }}" 
+                                                        title="Download Text"
+                                                        style="text-decoration: none; color: #6d6d6d; display: inline-flex; align-items: center; gap: 6px;">
+                                                            <i class="fas fa-download" style="font-size: 18px;"></i>
+                                                        </a>
+                                                    </div>
+                                                @endif
+
 
                                                 @if(!is_null($r->txtb))
                                                 <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap; margin-top: 8px;">
