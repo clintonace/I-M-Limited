@@ -22,12 +22,12 @@
                     <ul class="list">
                       <li><a href="{{route('privacy')}}">Privacy & Securty</a></li>
                       <li><a href="{{route('terms')}}">Terms of Service</a></li>
-                      <li><a href="{{route('disclaimer')}}">Disclaimers</a></li>
+                      <!-- <li><a href="{{route('disclaimer')}}">Disclaimers</a></li> -->
                     </ul>
 
                     <ul class="list">
-                      <li><a href="{{route('works')}}">How It Works</a></li>
-                      <li><a href="{{route('candidates.list')}}">For Employers</a></li>
+                      <!-- <li><a href="{{route('works')}}">How It Works</a></li> -->
+                      <!-- <li><a href="{{route('candidates.list')}}">For Employers</a></li> -->
                       <li><a href="{{route('contact.us')}}">Contact Us</a></li>
                     </ul>
                   </div>
@@ -36,7 +36,7 @@
 
               <div class="footer-column col-lg-4 col-md-12 col-sm-12">
                 <div class="footer-widget">
-                  <h4 class="widget-title">Join Us Now!</h4>
+                  <h4 class="widget-title">Interested in our Journey?</h4>
                   <div class="widget-content">
                     <div class="newsletter-form">
                       <div class="text text-white">We don’t spam, so don’t worry.</div>
