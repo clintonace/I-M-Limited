@@ -57,12 +57,23 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <button style="color: white;"
                         class="theme-btn btn-style-two w-full fade-top">
                     Verify Email
                 </button>
-            </div>
+            </div> -->
+
+            <button type="submit" name="log-in"
+                style="display:inline-block;
+                        background-color:#E94E1B;
+                        color:black;
+                        font-weight:700;
+                        padding:15px 35px;
+                        border-radius:40px;
+                        text-decoration:none;">
+                    Verify Email
+            </button>
         </form>
 
         <br>
@@ -72,9 +83,19 @@
             @csrf
 
             <div>
-                <button style="color: white;"
+                <!-- <button style="color: white;"
                         class="theme-btn btn-style-two w-full fade-top">
                     Resend Verification Code
+                </button> -->
+                <button type="submit" name="log-in"
+                    style="display:inline-block;
+                            background-color:#E94E1B;
+                            color:black;
+                            font-weight:700;
+                            padding:15px 35px;
+                            border-radius:40px;
+                            text-decoration:none;">
+                        Resend Verification Code
                 </button>
             </div>
         </form>
@@ -85,12 +106,23 @@
         <form method="POST" action="{{ route('logout') }}">
             @csrf
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <button style="color: white;"
                         class="theme-btn btn-style-two w-full fade-top">
                     Logout
                 </button>
-            </div>
+            </div> -->
+
+            <button type="submit" name="log-in"
+                style="display:inline-block;
+                        background-color:#E94E1B;
+                        color:black;
+                        font-weight:700;
+                        padding:15px 35px;
+                        border-radius:40px;
+                        text-decoration:none;">
+                    Logout
+            </button>
         </form>
 
         <br>
