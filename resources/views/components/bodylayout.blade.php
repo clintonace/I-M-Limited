@@ -405,7 +405,7 @@
     </div>
 
     <div style="text-align:center; margin-bottom:80px; color:white;">
-        <h2 style="font-size:48px; font-weight:800;">What We Do <span style="color:#E94E1B;">.</span></h2>
+        <h2 style="font-size:48px; font-weight:800;"><span style="color:#E94E1B;">What</span> We Do </h2>
         <p style="max-width:800px; color:white; margin:20px auto; opacity:0.8;">
             We Connect, Build, and Manage Global Teams from Africa.
         </p>
@@ -525,7 +525,7 @@
 
     <div class="auto-container">
         <div class="sec-title text-center ">
-            <h2 style="color:white;" >How It Works</h2>
+            <h2 style="color:white;" >How It <span style="color:#E94E1B;">Works</span></h2>
             <div  style="color:white; margin:20px">Streamline your hiring or job search journey with our simple and efficient process tailored to your needs.</div>
         </div>
 
