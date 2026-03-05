@@ -488,6 +488,175 @@
 
             </section>
 
+
+            <section style="
+    background:#000;
+    padding:160px 0;
+    position:relative;
+    overflow:hidden;
+">
+
+    <!-- Subtle Grid Background -->
+    <div style="
+        position:absolute;
+        inset:0;
+        background:
+        linear-gradient(rgba(233,78,27,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(233,78,27,0.03) 1px, transparent 1px);
+        background-size:100px 100px;
+        opacity:.3;
+        pointer-events:none;
+    "></div>
+
+    <div class="auto-container" style="position:relative; z-index:2;">
+
+        <!-- Main Flex Layout -->
+        <div style="
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            position:relative;
+            gap:60px;
+        ">
+
+            <!-- LEFT CONTENT -->
+            <div style="max-width:520px;">
+
+                <h2 style="
+                    color:#fff;
+                    font-size:46px;
+                    font-weight:600;
+                    line-height:1.2;
+                    margin-bottom:25px;
+                ">
+                    Built for <span style="color:#E94E1B;">Global</span> Teams.
+                </h2>
+
+                <p style="
+                    color:#bbb;
+                    font-size:18px;
+                    line-height:1.8;
+                    margin-bottom:40px;
+                ">
+                    We connect structured, growth-ready professionals to global companies 
+                    through transparent systems and measurable productivity.
+                </p>
+
+                <div style="
+                    display:flex;
+                    gap:30px;
+                ">
+                    <div>
+                        <h4 style="color:#fff; font-size:22px; margin-bottom:10px;">Structured</h4>
+                        <p style="color:#888;">Clear workflows and accountability systems.</p>
+                    </div>
+
+                    <div>
+                        <h4 style="color:#fff; font-size:22px; margin-bottom:10px;">Measured</h4>
+                        <p style="color:#888;">Performance insights that drive results.</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT VISUAL BLOCK -->
+            <div style="
+                position:relative;
+                width:600px;
+                height:650px;
+                border-radius:40px;
+                background:linear-gradient(180deg,#E94E1B,#8c2b0f);
+                display:flex;
+                align-items:flex-end;
+                justify-content:center;
+            ">
+
+                <!-- IMAGE -->
+                <img src="/onboarding/images/peeps.png" alt="Monitor"
+                     style="
+                        height:720px;
+                        position:absolute;
+                        bottom:0;
+                        object-fit:contain;
+                     ">
+
+                <!-- TOP LEFT FLOATING CARD -->
+                <div style="
+                    position:absolute;
+                    top:-60px;
+                    left:-80px;
+                    background:#111;
+                    border-radius:20px;
+                    padding:25px;
+                    width:280px;
+                    box-shadow:0 30px 60px rgba(0,0,0,.5);
+                ">
+
+                    <h4 style="color:#fff; margin-bottom:15px;">Marketing</h4>
+
+                    <div style="
+                        height:6px;
+                        background:#222;
+                        border-radius:10px;
+                        overflow:hidden;
+                        margin-bottom:10px;
+                    ">
+                        <div style="
+                            width:48%;
+                            height:100%;
+                            background:#E94E1B;
+                        "></div>
+                    </div>
+
+                    <p style="color:#aaa; font-size:14px;">18 hrs • 48%</p>
+                </div>
+
+
+                <!-- BOTTOM RIGHT FLOATING CARD -->
+                <div style="
+                    position:absolute;
+                    bottom:-50px;
+                    right:-80px;
+                    background:#111;
+                    border-radius:20px;
+                    padding:25px;
+                    width:300px;
+                    box-shadow:0 30px 60px rgba(0,0,0,.5);
+                ">
+
+                    <h4 style="color:#fff; margin-bottom:20px;">Weekly Limit</h4>
+
+                    <div style="
+                        height:8px;
+                        background:#222;
+                        border-radius:20px;
+                        overflow:hidden;
+                        margin-bottom:12px;
+                    ">
+                        <div style="
+                            width:60%;
+                            height:100%;
+                            background:#E94E1B;
+                        "></div>
+                    </div>
+
+                    <div style="display:flex; justify-content:space-between;">
+                        <span style="color:#aaa;">40 hrs</span>
+                        <span style="color:#fff;">60%</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
             <section style="background:#000; padding:140px 0;">
 
                 <div class="auto-container">

@@ -27,6 +27,8 @@ use Illuminate\Support\Facades\Http;
 |
 */
 
+Route::view('/section', 'sect')->name('section');
+
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');

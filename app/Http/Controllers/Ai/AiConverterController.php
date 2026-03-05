@@ -145,7 +145,7 @@ class AiConverterController extends Controller
     {
 
         $data['results'] = Deleted::where('id', '!=', 0)->delete();
-        Alert::success('Erfolgreich', 'Datei erfolgreich gelöscht.');
+        // Alert::success('Erfolgreich', 'Datei erfolgreich gelöscht.');
         return back();
     }
 
@@ -164,7 +164,7 @@ class AiConverterController extends Controller
 
             $file->delete();
 
-            Alert::success('Erfolgreich', 'Datei erfolgreich gelöscht.');
+            // Alert::success('Erfolgreich', 'Datei erfolgreich gelöscht.');
             return back();
 
 
@@ -180,12 +180,12 @@ class AiConverterController extends Controller
 
             $file->delete();
 
-            Alert::success('Erfolgreich', 'Datei erfolgreich gelöscht.');
+            // Alert::success('Erfolgreich', 'Datei erfolgreich gelöscht.');
             return back();
 
         }   
         
-        Alert::info('Info', 'Datei nicht gefunden.');
+        // Alert::info('Info', 'Datei nicht gefunden.');
         return back();
     }
 
@@ -296,7 +296,7 @@ class AiConverterController extends Controller
 
             }else{
 
-                Alert::info('Fehler', 'Eine oder alle Ihre Dateien wurden nicht erfolgreich verarbeitet.');
+                // Alert::info('Fehler', 'Eine oder alle Ihre Dateien wurden nicht erfolgreich verarbeitet.');
                 return back();
 
             }
@@ -304,7 +304,7 @@ class AiConverterController extends Controller
         }
 
         // The list of the uploaded files ids to be imploded here. 
-        Alert::success('Erfolgreich', 'Verarbeitung erfolgreich.');
+        // Alert::success('Erfolgreich', 'Verarbeitung erfolgreich.');
         return redirect()->route('ai-workarea', ['id' => $upload->batch]);
 
     }
@@ -318,7 +318,7 @@ class AiConverterController extends Controller
             abort(404, 'Datei nicht gefunden');
         }
 
-        Alert::success('Erfolg', 'Datei heruntergeladen');
+        // Alert::success('Erfolg', 'Datei heruntergeladen');
         return response()->download($path);
     }
 
@@ -363,7 +363,7 @@ class AiConverterController extends Controller
             return redirect()->route('ai-project');
         }
 
-        Alert::info('Fehlgeschlagen', 'Benutzer nicht gefunden.');
+        // Alert::info('Fehlgeschlagen', 'Benutzer nicht gefunden.');
         return back()->withErrors(new MessageBag([
             'login' => 'Ungültige Anmeldedaten. Bitte versuchen Sie es erneut.'
         ]))->withInput();
@@ -467,7 +467,7 @@ class AiConverterController extends Controller
             }
 
             // Return the zip for download and delete it afterwards
-            Alert::success('Erfolg', 'Alle Dateien wurden heruntergeladen.');
+            // Alert::success('Erfolg', 'Alle Dateien wurden heruntergeladen.');
             return response()->download($zipPath)->deleteFileAfterSend(true);
 
     }

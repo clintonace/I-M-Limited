@@ -50,7 +50,7 @@ class AiRolesController extends Controller
             $user = User::where('email', $request->email)->first();
             $user->assignRole($request->role);   
 
-            Alert::success('Success', 'Assigned Successfully.');
+            // Alert::success('Success', 'Assigned Successfully.');
             return back();
     }
 
@@ -73,7 +73,7 @@ class AiRolesController extends Controller
 
             $role->givePermissionTo($permission);
 
-            Alert::success('Success', 'You have assigned permissions to this role');
+            // Alert::success('Success', 'You have assigned permissions to this role');
             return back();
         
     }
@@ -124,7 +124,7 @@ class AiRolesController extends Controller
         $role->save();
     
 
-        Alert::success('Success', 'Role created.');
+        // Alert::success('Success', 'Role created.');
         return back();
     }
 
@@ -149,7 +149,7 @@ class AiRolesController extends Controller
         $permission->save();
     
 
-        Alert::success('Success', 'Permission created.');
+        // Alert::success('Success', 'Permission created.');
         return back();
     }
 
