@@ -176,9 +176,4 @@ class AiUserManagementController extends Controller
         return back();
 
     }
-    
-    
-    
-
-
 }
