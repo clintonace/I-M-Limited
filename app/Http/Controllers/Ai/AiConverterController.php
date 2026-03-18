@@ -194,6 +194,7 @@ class AiConverterController extends Controller
         // dd($id);
 
         $data['results'] = AiUpload::where('batch',$id)->where('status', 'converted')->get();
+        // dd($data['results']);
         return view('ai-project.workarea', $data);
     }
 
@@ -202,7 +203,7 @@ class AiConverterController extends Controller
     {
         $validated = $request->validate([
             'files' => 'required|array',
-            'files.*' => 'file|mimes:pdf|max:10240',
+            'files.*' => 'file|mimes:pdf,txt|max:10240',
                
         ]);
 
@@ -218,17 +219,20 @@ class AiConverterController extends Controller
 
             $file = $f;
             $originalFileName = $file->getClientOriginalName();
-            $uniqueName = 'IandM_' . rand(100000, 999999) . '_';
+            $orgExtension = $file->getClientOriginalExtension();
+            $uniqueName = 'IandM_' . rand(100000, 999999) . '_' . '.'.$orgExtension;
             $path = $file->storeAs('/public/uploads', $uniqueName);
             // $path = $file->storeAs('/public/uploads', $originalFileName);
             $fullPath = storage_path('app/' . $path);
+
+            // dd($fullPath);
 
             $response = Http::attach(
                 'files',
                 file_get_contents($fullPath),
                 $uniqueName
             // )->post($route .'/process_pdf/');
-            )->post($route .'/process_multiple_files/');
+            )->post($route .'/process_multiple_files');
             // )->post('http://31.97.126.130:2000/process_multiple_pdfs');
 
 
@@ -242,8 +246,8 @@ class AiConverterController extends Controller
                 $upload->save();
                 
                 $data = $response->json(); // Decode the JSON response
-
                 // dd($data);
+
                 foreach ($data['output_files']as $output) {
                     // dd($output);
                     $upload->txt = $output['txt'] ?? null;
@@ -255,6 +259,8 @@ class AiConverterController extends Controller
                     $upload->save();
 
                     $downloadUrl = $route."/download/output_file/{$upload->txt}";
+
+                    // dd($downloadUrl);
 
                  }
 
@@ -305,6 +311,8 @@ class AiConverterController extends Controller
 
         // The list of the uploaded files ids to be imploded here. 
         // Alert::success('Erfolgreich', 'Verarbeitung erfolgreich.');
+
+        // dd($upload->batch);
         return redirect()->route('ai-workarea', ['id' => $upload->batch]);
 
     }
