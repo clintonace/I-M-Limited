@@ -224,7 +224,7 @@ class AiConverterController extends Controller
             $fullPath = storage_path('app/' . $path);
 
             $response = Http::attach(
-                'pdf_files',
+                'files',
                 file_get_contents($fullPath),
                 $uniqueName
             // )->post($route .'/process_pdf/');
