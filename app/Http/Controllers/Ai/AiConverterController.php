@@ -228,7 +228,7 @@ class AiConverterController extends Controller
                 file_get_contents($fullPath),
                 $uniqueName
             // )->post($route .'/process_pdf/');
-            )->post($route .'/process_multiple_pdfs/');
+            )->post($route .'/process_multiple_files/');
             // )->post('http://31.97.126.130:2000/process_multiple_pdfs');
 
 
