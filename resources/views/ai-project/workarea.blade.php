@@ -100,7 +100,7 @@
                                             <td style="padding: 14px 12px; font-weight: 500; color: #111827;">{{ $r?->original_name }}</td>
                                             <td style="padding: 14px 12px; border-top-right-radius: 10px; min-width: 180px;">
                                                 
-                                                @if(!is_null($r->txt))
+                                                <!-- @if(!is_null($r->txt))
                                                     <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
                                                         <a href="{{ route('ai.see.converted', $r?->txt) }}" 
                                                         target="_blank" 
@@ -135,7 +135,35 @@
                                                         <i class="fas fa-download" style="font-size: 18px;"></i>
                                                     </a>
                                                 </div>
-                                                @endif
+                                                @endif -->
+                                                @php
+                                                    $textFiles = [
+                                                        'txt' => 'Rollo.txt',
+                                                        'txtb' => 'Raffstore.txt',
+                                                        'txtc' => 'Rollo_schallschutz.txt',
+                                                        'txtd' => 'Raffstore_schallschutz.txt',
+                                                    ];
+                                                @endphp
+
+                                                @foreach($textFiles as $field => $label)
+                                                    @if(!is_null($r->$field) && !empty($r->$field))
+                                                        <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap; margin-top: {{ $loop->first ? '0' : '8px' }};">
+                                                            <a href="{{ route('ai.see.converted', $r->$field) }}" 
+                                                            target="_blank" 
+                                                            title="View Text {{ $label }}"
+                                                            style="text-decoration: none; color: #000000ff; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+                                                                {{ $label }}
+                                                                <i class="fas fa-eye" style="font-size: 18px; color: #000000ff;"></i>
+                                                            </a>
+
+                                                            <a href="{{ route('download.file', $r->$field) }}" 
+                                                            title="Download Text"
+                                                            style="text-decoration: none; color: #6d6d6d; display: inline-flex; align-items: center; gap: 6px;">
+                                                                <i class="fas fa-download" style="font-size: 18px;"></i>
+                                                            </a>
+                                                        </div>
+                                                    @endif
+                                                @endforeach
                                             </td>
                                         </tr>
                                         @endforeach

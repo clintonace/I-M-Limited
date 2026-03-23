@@ -252,6 +252,8 @@ class AiConverterController extends Controller
                     // dd($output);
                     $upload->txt = $output['txt'] ?? null;
                     $upload->txtb = $output['txtb'] ?? null;
+                    $upload->txtc = $output['txtc'] ?? null;
+                    $upload->txtd = $output['txtd'] ?? null;
                     $upload->excel = $output['excel'] ?? null;
                     $upload->pdf = $output['pdf'] ?? null;
                     $upload->base_file = $output['base_filename'] ?? null;
@@ -275,6 +277,8 @@ class AiConverterController extends Controller
                             'excel'=> $filename['excel'],
                             'txt'=> $filename['txt'],
                             'txtb'=> $filename['txtb'],
+                            'txtc'=> $filename['txtc'],
+                            'txtd'=> $filename['txtd'],
                             'pdf' => $filename['pdf'],
 
                         ];
@@ -390,6 +394,10 @@ class AiConverterController extends Controller
          $txt = AiUpload::where('batch', $batch)->pluck($txt); //Rollo
 
          $txtb = AiUpload::where('batch', $batch)->pluck('txtb');  //Raff
+
+         $txtc = AiUpload::where('batch', $batch)->pluck('txtc');  //Rollo2
+
+         $txtd = AiUpload::where('batch', $batch)->pluck('txtd');  //Raff2
     
         //  $txt = AiUpload::where('batch', $batch)->whereNotNull('txt')->pluck('txt'); //Rollo
 
@@ -440,7 +448,40 @@ class AiConverterController extends Controller
                     
                 }
 
-                
+                //rollo2
+
+                if (!$txtc->isEmpty()) {
+                        foreach ($txtc as $file) {
+
+                        if ($file === null) {
+                            continue;
+                        }
+                        $filePath = storage_path("app/public/converted/{$file}");
+                        if (file_exists($filePath)) {
+                            $zip->addFile($filePath, basename($filePath));
+                        }
+                        // dd('processed txtc');
+                    }
+                    
+                }
+
+                //raff2
+
+                if (!$txtd->isEmpty()) {
+                        foreach ($txtd as $file) {
+
+                        if ($file === null) {
+                            continue;
+                        }
+                        $filePath = storage_path("app/public/converted/{$file}");
+                        if (file_exists($filePath)) {
+                            $zip->addFile($filePath, basename($filePath));
+                        }
+                        // dd('processed txtd');
+                    }
+                    
+                }
+
                 // if ($type != 'pdf') {
                 //     foreach ($txtb as $file) {
 
