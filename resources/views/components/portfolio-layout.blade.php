@@ -11,17 +11,20 @@
         we make it easy for companies to find their perfect remote match—anywhere in the world."
         name="description" />
 
-        <meta property="og:title" content="Connect with Top Nigerian Remote Talent" />
-        <meta property="og:description" content="Helping global companies discover skilled Nigerian professionals ready to excel remotely. Find top talent in tech, customer support, design, and more." />
-        <meta property="og:image" content="https://iandmlimited.com/logos/IandM-no-white-bg-logo-.png" />
-        <meta property="og:url" content="https://iandmlimited.com" />
-        <meta property="og:type" content="website" />
+    <meta property="og:title" content="Connect with Top Nigerian Remote Talent" />
+    <meta property="og:description"
+        content="Helping global companies discover skilled Nigerian professionals ready to excel remotely. Find top talent in tech, customer support, design, and more." />
+    <meta property="og:image" content="https://iandmlimited.com/logos/IandM-no-white-bg-logo-.png" />
+    <meta property="og:url" content="https://iandmlimited.com" />
+    <meta property="og:type" content="website" />
 
     <meta content="Connect with Top Nigerian Remote Talent" property="twitter:title" />
-    <meta content="Connecting top remote talent with forward-thinking companies worldwide, we specialize in simplifying the recruitment process for remote positions. Our platform brings you highly skilled professionals
+    <meta
+        content="Connecting top remote talent with forward-thinking companies worldwide, we specialize in simplifying the recruitment process for remote positions. Our platform brings you highly skilled professionals
         tailored to meet your business needs, whether you're looking for developers, designers, customer support experts,
         or other specialized remote roles. With a commitment to quality, efficiency, and global reach,
-        we make it easy for companies to find their perfect remote match—anywhere in the world." property="twitter:description" />
+        we make it easy for companies to find their perfect remote match—anywhere in the world."
+        property="twitter:description" />
 
     <meta content="https://iandmlimited.com/logos/IandM-no-white-bg-logo-.png" property="twitter:image" />
     <meta content="summary_large_image" name="twitter:card" />
@@ -117,10 +120,15 @@
         }
     </style>
     <script type="text/javascript">
-        !function (o, c) { var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);
+        ! function(o, c) {
+            var n = c.documentElement,
+                t = " w-mod-";
+            n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n
+                .className += t + "touch")
+        }(window, document);
     </script>
-    <link href="/onboarding/IandM-no-white-bg-logo-.png" rel="shortcut icon" type="image/x-icon" />
-    <link href="/onboarding/IandM-no-white-bg-logo-.png" rel="apple-touch-icon" />
+    <link href="/onboarding/images/logo.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="/onboarding/images/logo.png" rel="apple-touch-icon" />
     {{-- <script type="text/javascript">
         window.__WEBFLOW_CURRENCY_SETTINGS = { "currencyCode": "USD", "symbol": "$", "decimal": ".", "fractionDigits": 2, "group": ",", "template": "{{wf {\"path\":\"symbol\",\"type\":\"PlainText\"} }} {{wf {\"path\":\"amount\",\"type\":\"CommercePrice\"} }} {{wf {\"path\":\"currencyCode\",\"type\":\"PlainText\"} }}", "hideDecimalForWholeNumbers": false };
     </script> --}}
@@ -128,10 +136,10 @@
     <script type="text/javascript" src="/portfolio_colors/assets/assets/js/script.js"></script>
 </head>
 
-<body >
+<body>
     <div id="home"></div>
-    <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease"
-        data-easing2="ease" role="banner" class="navbar w-nav">
+    <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease"
+        role="banner" class="navbar w-nav">
         <div class="padding-global">
             <div class="container w-container">
                 <div class="navbar-component">
@@ -139,8 +147,9 @@
                         class="nav-menu w-nav-menu">
                         <div data-delay="100" data-hover="true" class="dropdown-navbar w-dropdown">
                             <div class="dropdown w-dropdown-toggle">
-                                <div class="text-size-small caps text-weight-bold"><img style="height: 50px; width: 50px"
-                                        src="/logos/IandM-no-white-bg-logo-.png" alt=""></div>
+                                <div class="text-size-small caps text-weight-bold"><img
+                                        style="height: 60px; width: 60px" src="/onboarding/images/logo.png"
+                                        alt=""></div>
                             </div>
                         </div>
 
@@ -149,14 +158,14 @@
                         class="nav-menu w-nav-menu">
                     </nav>
                     <a href="#" aria-current="page" class="brand-link w-inline-block w--current"><img
-                            style="margin-top: 5px; height: 20px; width: 20px;" src="/logos/IandM-no-white-bg-logo-.png"
+                            style="margin-top: 5px; height: 30px; width: 30px;" src="/onboarding/images/logo.png"
                             loading="lazy" alt="" /></a>
 
                 </div>
             </div>
         </div>
     </div>
-    </div>
+
     <div class="relative-navbar">
 
         <div class="bottom-navbar-sticky">
@@ -164,7 +173,7 @@
                 <div class="bottom-navbar-content">
                     {{-- <div class="brand-logo"><img src="/onboarding/IandM-no-bg-logo-.png" loading="lazy" alt="" />
                     </div> --}}
-                    <div class="vertical-line"></div>
+                    {{-- <div class="vertical-line"></div> --}}
                     <div class="bottom-navbar-links"><a href="#home" aria-current="page"
                             class="bottom-link w-inline-block w--current">
                             <div class="text-size-small caps text-weight-medium">home</div>
@@ -232,12 +241,14 @@
 
                             <h2 data-w-id="110a66de-c01b-8ca1-5129-a1bc3f04211e"
                                 style="-webkit-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-                                class="heading-9 caps ">The Power<br>of<span style="color: #fe681c"> Orange</span></h2>
+                                class="heading-9 caps ">The Power<br>of<span style="color: #fe681c"> Orange</span>
+                            </h2>
                         </div>
                         <div class="max-width-36vw utility-box-gap">
                             <div data-w-id="2fa4545a-da5a-815c-c76c-6ba3c441f838" class="slide-in">
                                 <p class="text-size-huge size-mobile">
-                                    <span style="color: #fe681c">Orange</span> symbolizes enthusiasm, creativity, and the vibrant energy of youth—
+                                    <span style="color: #fe681c">Orange</span> symbolizes enthusiasm, creativity, and
+                                    the vibrant energy of youth—
                                     qualities we cherish at I&M. We believe in the potential of Nigeria’s young talent
                                     to ignite innovation and drive success.
 
@@ -245,9 +256,11 @@
                             </div>
                             <div data-w-id="609759a9-d06c-3cc7-9f92-fcaef3a0f569" class="slide-in">
                                 <p class="text-size-huge text-color-light size-mobile">
-                                    <span class="font-color">Together, we can harness this energy to build a brighter future for your business.
-                                         </span>Let’s collaborate and transform our shared vision into something extraordinary!
-                                        Your journey to success starts with us!
+                                    <span class="font-color">Together, we can harness this energy to build a brighter
+                                        future for your business.
+                                    </span>Let’s collaborate and transform our shared vision into something
+                                    extraordinary!
+                                    Your journey to success starts with us!
 
                                 </p>
                             </div>
@@ -377,7 +390,8 @@
                             </div>
                             <h2 data-w-id="110a66de-c01b-8ca1-5129-a1bc3f04211e"
                                 style="-webkit-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-                                class="heading-9 caps"><span style="color: #fe681c">Success</span> with Lean Management
+                                class="heading-9 caps"><span style="color: #fe681c">Success</span> with Lean
+                                Management
                             </h2>
                         </div>
                         <div class="max-width-36vw utility-box-gap">
@@ -682,7 +696,8 @@
                                                     class="project-arrow" />
                                                 <div class="white-circle"></div>
                                             </div><img alt="Team" loading="lazy"
-                                                src="/portfolio_colors/IandM-images/IandM 5 train.jpg" class="image" />
+                                                src="/portfolio_colors/IandM-images/IandM 5 train.jpg"
+                                                class="image" />
                                             <div class="mask-frame bottom"></div>
                                         </div>
                                         {{-- <div data-w-id="0ba3e832-e20a-f036-4c52-2996b4374712" style="opacity:0"
@@ -1071,7 +1086,8 @@
                                 <div role="list" class="works-3-list w-dyn-items">
                                     <div role="listitem" class="works-3-item w-dyn-item"><a
                                             data-w-id="6c9a0b8a-02a1-9dc3-239d-f0c0ca32ceb2"
-                                            href="/works/sweater-weather" class="home-projects-wrapper w-inline-block">
+                                            href="/works/sweater-weather"
+                                            class="home-projects-wrapper w-inline-block">
                                             <div class="home-projects-image home-3"><img loading="lazy"
                                                     style="height: 300px; width: 300px; border-radius: 10px"
                                                     src="/portfolio_colors/IandM-images/IandM 17 concentrated.jpg"
@@ -1099,8 +1115,8 @@
                                                 </div>
                                                 <div data-w-id="6c9a0b8a-02a1-9dc3-239d-f0c0ca32cec0"
                                                     class="home-projects-arrow"><img loading="lazy"
-                                                        src="/portfolio_colors/assets/images/grey-arrow.svg" alt="Arrow"
-                                                        class="arrow" />
+                                                        src="/portfolio_colors/assets/images/grey-arrow.svg"
+                                                        alt="Arrow" class="arrow" />
                                                 </div>
                                             </div>
                                         </a></div>
@@ -1108,7 +1124,8 @@
                                             data-w-id="6c9a0b8a-02a1-9dc3-239d-f0c0ca32ceb2" href="#"
                                             class="home-projects-wrapper w-inline-block">
                                             <div class="home-projects-image home-3"><img loading="lazy"
-                                                    src="/portfolio_colors/IandM-images/IandM 22 corperate.jpg" alt=""
+                                                    src="/portfolio_colors/IandM-images/IandM 22 corperate.jpg"
+                                                    alt=""
                                                     style="height: 300px; width: 300px; border-radius: 10px"
                                                     class="image" /></div>
                                             <div class="home-projects-content">
@@ -1132,8 +1149,8 @@
                                                 </div>
                                                 <div data-w-id="6c9a0b8a-02a1-9dc3-239d-f0c0ca32cec0"
                                                     class="home-projects-arrow"><img loading="lazy"
-                                                        src="/portfolio_colors/assets/images/grey-arrow.svg" alt="Arrow"
-                                                        class="arrow" />
+                                                        src="/portfolio_colors/assets/images/grey-arrow.svg"
+                                                        alt="Arrow" class="arrow" />
                                                 </div>
                                             </div>
                                         </a></div>
@@ -1141,7 +1158,8 @@
                                             data-w-id="6c9a0b8a-02a1-9dc3-239d-f0c0ca32ceb2" href="#"
                                             class="home-projects-wrapper w-inline-block">
                                             <div class="home-projects-image home-3"><img loading="lazy"
-                                                    src="/portfolio_colors/IandM-images/IandM 21 people.jpg" alt=""
+                                                    src="/portfolio_colors/IandM-images/IandM 21 people.jpg"
+                                                    alt=""
                                                     style="height: 300px; width: 300px; border-radius: 10px"
                                                     class="image" /></div>
                                             <div class="home-projects-content">
@@ -1167,8 +1185,8 @@
                                                 </div>
                                                 <div data-w-id="6c9a0b8a-02a1-9dc3-239d-f0c0ca32cec0"
                                                     class="home-projects-arrow"><img loading="lazy"
-                                                        src="/portfolio_colors/assets/images/grey-arrow.svg" alt="Arrow"
-                                                        class="arrow" />
+                                                        src="/portfolio_colors/assets/images/grey-arrow.svg"
+                                                        alt="Arrow" class="arrow" />
                                                 </div>
                                             </div>
                                         </a></div>
@@ -1176,7 +1194,8 @@
                                             data-w-id="6c9a0b8a-02a1-9dc3-239d-f0c0ca32ceb2" href="/works/outliers"
                                             class="home-projects-wrapper w-inline-block">
                                             <div class="home-projects-image home-3"><img loading="lazy"
-                                                    src="/portfolio_colors/IandM-images/IandM 24 technology.jpg" alt=""
+                                                    src="/portfolio_colors/IandM-images/IandM 24 technology.jpg"
+                                                    alt=""
                                                     style="height: 300px; width: 300px; border-radius: 10px"
                                                     class="image" /></div>
                                             <div class="home-projects-content">
@@ -1200,8 +1219,8 @@
                                                 </div>
                                                 <div data-w-id="6c9a0b8a-02a1-9dc3-239d-f0c0ca32cec0"
                                                     class="home-projects-arrow"><img loading="lazy"
-                                                        src="/portfolio_colors/assets/images/grey-arrow.svg" alt="Arrow"
-                                                        class="arrow" />
+                                                        src="/portfolio_colors/assets/images/grey-arrow.svg"
+                                                        alt="Arrow" class="arrow" />
                                                 </div>
                                             </div>
                                         </a></div>
@@ -1262,7 +1281,7 @@
             </div>
         </section>
 
-        {{--Our display --}}
+        {{-- Our display --}}
         <section>
             <div class="padding-global">
                 <div class="w-layout-blockcontainer container w-container">
@@ -1273,7 +1292,8 @@
                                     <div data-w-id="b01f902c-63ef-dc1c-228a-296f7a241b13" style="opacity:1"
                                         role="listitem" class="blog-card w-dyn-item"><a href="#"
                                             class="blog-card-image w-inline-block"><img alt="5 Things About Branding"
-                                                loading="lazy" src="/portfolio_colors/IandM-images/IandM 8 together.jpg"
+                                                loading="lazy"
+                                                src="/portfolio_colors/IandM-images/IandM 8 together.jpg"
                                                 class="image" />
                                             <div class="mask-frame"></div>
                                         </a>
@@ -1282,7 +1302,8 @@
                                                 <div><a href="#" class="text-size-xlarge">Success Through Strong
                                                         <span class="color-it">Partnerships</span> (Our Clients)</a>
                                                 </div>
-                                                <div class="opacity-80 max-width-blog"><a href="#">Our partnership with
+                                                <div class="opacity-80 max-width-blog"><a href="#">Our
+                                                        partnership with
                                                         D&M KG in Germany serves as an example of
                                                         successful collaboration. In the field of technical drawings,
                                                         our engineering team has worked closely with German colleagues
@@ -1311,15 +1332,17 @@
                                     </div>
                                     <div data-w-id="b01f902c-63ef-dc1c-228a-296f7a241b13" style="opacity:1"
                                         role="listitem" class="blog-card w-dyn-item"><a href="#"
-                                            class="blog-card-image w-inline-block"><img alt="Our Clients" loading="lazy"
-                                                src="/portfolio_colors/assets/images/image18.jpg" class="image" />
+                                            class="blog-card-image w-inline-block"><img alt="Our Clients"
+                                                loading="lazy" src="/portfolio_colors/assets/images/image18.jpg"
+                                                class="image" />
                                             <div class="mask-frame"></div>
                                         </a>
                                         <div class="blog-bottom-content">
                                             <div class="blog-second-card">
                                                 <div><a href="#" class="text-size-xlarge">Our <span
                                                             class="color-it">Clients</span></a></div>
-                                                <div class="opacity-80 max-width-blog"><a href="#">Currently, we serve
+                                                <div class="opacity-80 max-width-blog"><a href="#">Currently, we
+                                                        serve
                                                         primarily German
                                                         customers, who value our
                                                         seamless service and
@@ -1349,7 +1372,8 @@
                                     </div>
                                     <div data-w-id="b01f902c-63ef-dc1c-228a-296f7a241b13" style="opacity:1"
                                         role="listitem" class="blog-card w-dyn-item"><a href="#"
-                                            class="blog-card-image w-inline-block"><img alt="Our Clients" loading="lazy"
+                                            class="blog-card-image w-inline-block"><img alt="Our Clients"
+                                                loading="lazy"
                                                 src="/portfolio_colors/IandM-images/IandM 27 Sheggz seated.jpg"
                                                 class="image" />
                                             <div class="mask-frame"></div>
@@ -1360,7 +1384,8 @@
                                                             class="color-it">Talent</span> for Your
                                                         Business</a>
                                                 </div>
-                                                <div class="opacity-80 max-width-blog"><a href="#">Working with us opens
+                                                <div class="opacity-80 max-width-blog"><a href="#">Working with
+                                                        us opens
                                                         the door to a world of top-tier professionals, handpicked to
                                                         elevate your team. Through flexible remote work solutions, you
                                                         gain access to a diverse
@@ -1696,9 +1721,10 @@
                                     exciting
                                     journey! Your future awaits!
                                 </h6>
-                                <div class="contact-email-wrapper"><a href="#" class="contact-email w-inline-block">
+                                <div class="contact-email-wrapper"><a href="#"
+                                        class="contact-email w-inline-block">
                                         <div class="email-line"></div>
-                                        <div class="text-size-medium">info@imengin.com</div><img loading="lazy"
+                                        <div class="text-size-medium">hr@iandmlimited.com</div><img loading="lazy"
                                             src="/portfolio_colors/assets/images/copy-20icon.svg" alt="Copy Icon"
                                             class="copy-icon" />
                                     </a>
@@ -1715,80 +1741,78 @@
                         <div data-w-id="306d7d83-f732-8433-32f6-5206932eb091" style="opacity:1"
                             class="contact-right-content">
                             {{-- <div class="contact-right-content"> --}}
-                                <div id="w-node-_306d7d83-f732-8433-32f6-5206932eb092-e90cf757"
-                                    data-w-id="306d7d83-f732-8433-32f6-5206932eb092" style="opacity:0"
-                                    class="contact-form-header">
-                                    <div href="#" class="navbar-left-content"><img loading="lazy"
-                                            src="/portfolio_colors/assets/images/logo.svg" alt="Logo icon"
-                                            class="navbar-logo-image" />
-                                        <div class="navbar-logo-text">
-                                            <div class="text-weight-medium">Contact us</div>
-                                        </div>
+                            <div id="w-node-_306d7d83-f732-8433-32f6-5206932eb092-e90cf757"
+                                data-w-id="306d7d83-f732-8433-32f6-5206932eb092" style="opacity:0"
+                                class="contact-form-header">
+                                <div href="#" class="navbar-left-content"><img loading="lazy"
+                                        src="/portfolio_colors/assets/images/logo.svg" alt="Logo icon"
+                                        class="navbar-logo-image" />
+                                    <div class="navbar-logo-text">
+                                        <div class="text-weight-medium">Contact us</div>
                                     </div>
-                                    <div class="text-weight-light">I&M</div>
                                 </div>
-                                <div data-w-id="306d7d83-f732-8433-32f6-5206932eb09c" style="opacity:1"
-                                    class="contact-form">
-                                    <div class="w-form">
-                                        <form id="email-form" name="email-form" data-name="Email Form" method="get"
-                                            class="form" data-wf-page-id="671131609b81cf89e90cf757"
-                                            data-wf-element-id="306d7d83-f732-8433-32f6-5206932eb09e">
-                                            <label for="name">Name</label>
-                                            <input class="text-field w-input" maxlength="256" name="name"
-                                                data-name="Name" placeholder="Enter your name" type="text" id="name"
-                                                required="" />
-                                            <label for="email">Email Address</label>
-                                            <input class="text-field w-input" maxlength="256" name="email"
-                                                data-name="Email" placeholder="Enter your e-mail" type="email"
-                                                id="email" required="" />
-                                            <label for="field">Message</label>
-                                            <textarea id="field" name="field"  data-name="Field"
-
-                                                class="message-field w-input">
+                                <div class="text-weight-light">I&M</div>
+                            </div>
+                            <div data-w-id="306d7d83-f732-8433-32f6-5206932eb09c" style="opacity:1"
+                                class="contact-form">
+                                <div class="w-form">
+                                    <form id="email-form" name="email-form" data-name="Email Form" method="get"
+                                        class="form" data-wf-page-id="671131609b81cf89e90cf757"
+                                        data-wf-element-id="306d7d83-f732-8433-32f6-5206932eb09e">
+                                        <label for="name">Name</label>
+                                        <input class="text-field w-input" maxlength="256" name="name"
+                                            data-name="Name" placeholder="Enter your name" type="text"
+                                            id="name" required="" />
+                                        <label for="email">Email Address</label>
+                                        <input class="text-field w-input" maxlength="256" name="email"
+                                            data-name="Email" placeholder="Enter your e-mail" type="email"
+                                            id="email" required="" />
+                                        <label for="field">Message</label>
+                                        <textarea id="field" name="field" data-name="Field" class="message-field w-input">
                                             </textarea>
 
 
-                                            <a href="#contact" data-w-id="aceb7894-5f4c-c97e-0527-d57d17abc63c"
-                                                class="main-button-navbar button-hero mobile w-inline-block">
-                                                <div class="relative">
-                                                    <div class="text-weight-medium">Send message</div>
-                                                </div>
-                                                <div class="button-mask-pricing"></div>
+                                        <a href="#contact" data-w-id="aceb7894-5f4c-c97e-0527-d57d17abc63c"
+                                            class="main-button-navbar button-hero mobile w-inline-block">
+                                            <div class="relative">
+                                                <div class="text-weight-medium">Send message</div>
+                                            </div>
+                                            <div class="button-mask-pricing"></div>
 
-                                            </a>
-                                        </form>
-                                        <div class="success-message w-form-done"><img loading="lazy"
-                                                src="/portfolio_colors/assets/images/logo-20blue.svg"
-                                                alt="Logo blue icon" class="success-message-image" />
-                                            <div>Thank you! Your submission has been received!</div>
-                                        </div>
-                                        <div class="error-message w-form-fail">
-                                            <div>Oops! Something went wrong while submitting the form.</div>
-                                        </div>
+                                        </a>
+                                    </form>
+                                    <div class="success-message w-form-done"><img loading="lazy"
+                                            src="/portfolio_colors/assets/images/logo-20blue.svg" alt="Logo blue icon"
+                                            class="success-message-image" />
+                                        <div>Thank you! Your submission has been received!</div>
+                                    </div>
+                                    <div class="error-message w-form-fail">
+                                        <div>Oops! Something went wrong while submitting the form.</div>
                                     </div>
                                 </div>
-                                <div data-w-id="306d7d83-f732-8433-32f6-5206932eb0b5" style="opacity:0"
-                                    class="contact-footer">
-                                    <p class="text-color-grey">Thank you for visiting my portfolio! I&#x27;m excited
-                                        to
-                                        hear from
-                                        you. If you have any questions, comments, or project inquiries, please
-                                        don&#x27;t hesitate
-                                        to get in touch with me.  I&#x27;ll do my best to get back to you as soon as
-                                        possible within
-                                        24 hours!</p>
-                                </div>
+                            </div>
+                            <div data-w-id="306d7d83-f732-8433-32f6-5206932eb0b5" style="opacity:0"
+                                class="contact-footer">
+                                <p class="text-color-grey">Thank you for visiting my portfolio! I&#x27;m excited
+                                    to
+                                    hear from
+                                    you. If you have any questions, comments, or project inquiries, please
+                                    don&#x27;t hesitate
+                                    to get in touch with me.  I&#x27;ll do my best to get back to you as soon as
+                                    possible within
+                                    24 hours!</p>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="overflow-hidden">
-                    <section>
-                        <div class="padding-global">
-                            <div class="w-layout-blockcontainer container w-container">
-                                <div class="footer-wrapper">
-                                    {{-- <div class="cta-wrapper">
+            <div class="overflow-hidden">
+                <section>
+                    <div class="padding-global">
+                        <div class="w-layout-blockcontainer container w-container">
+                            <div class="footer-wrapper">
+                                {{-- <div class="cta-wrapper">
                                         <div data-w-id="cedc70e1-6e36-a4f3-c5a3-8bf4c405d51f" class="cta-header">
                                             <div data-w-id="cedc70e1-6e36-a4f3-c5a3-8bf4c405d520"
                                                 class="overflow-hiden-footer">
@@ -1823,46 +1847,49 @@
                                             </div>
                                         </div>
                                     </div> --}}
-                                    <div class="footer-bottom-content">
+                                <div class="footer-bottom-content">
 
-                                        {{-- <div class="footer-content">
+                                    {{-- <div class="footer-content">
                                             <div data-w-id="cedc70e1-6e36-a4f3-c5a3-8bf4c405d52d" class="footer-email">
                                                 <div class="text-size-huge">info@imengin.com </div>
                                             </div>
 
 
                                         </div> --}}
-                                        <div data-w-id="cedc70e1-6e36-a4f3-c5a3-8bf4c405d53e"
-                                            class="footer-links-wrapper">
-                                            <div class="credits-wrapper"><a href="#" target="_blank"
-                                                    class="credits w-inline-block">
-                                                    <p class="paragraph">Design &amp; Developed by <span
-                                                            class="text-color-white"><span
-                                                                style="color: #fe681c">code</span>Brown</span></p>
-                                                </a><a href="#" target="_blank" class="credits w-inline-block">
+                                    <div data-w-id="cedc70e1-6e36-a4f3-c5a3-8bf4c405d53e"
+                                        class="footer-links-wrapper">
+                                        <div class="credits-wrapper"><a href="#" target="_blank"
+                                                class="credits w-inline-block">
+                                                <p class="paragraph">Design &amp; Developed by <span
+                                                        class="text-color-white"><span
+                                                            style="color: #fe681c">code</span>Brown</span></p>
+                                            </a><a href="#" target="_blank" class="credits w-inline-block">
 
-                                                </a></div>
+                                            </a></div>
 
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </section>
-                </div>
+                    </div>
+                </section>
             </div>
-
         </section>
 
     </div>
 
+
+
+    {{-- </div> --}}
+
     <script type="text/javascript">
         function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-            {pageLanguage: 'en'},
-            'google_translate_element'
-        );
-    }
+            new google.translate.TranslateElement({
+                    pageLanguage: 'en'
+                },
+                'google_translate_element'
+            );
+        }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
     </script>
