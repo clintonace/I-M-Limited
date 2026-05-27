@@ -8,7 +8,7 @@
             </div>
 
         <div class="container is-navebar w-container"><a href="{{route('ai-project')}}" aria-current="page"
-                class="brand w-nav-brand w--current"><img src="/onboarding/IandM-no-white-bg-logo-.png"  style="height: 50px; width: 50px; background-color: #FFFFFFB7; border-radius:50%; padding: 10px" loading="lazy"
+                class="brand w-nav-brand w--current"><img src="/onboarding/images/logo.png"  style="height: 50px; width: 50px; background-color: #0000003c; border-radius:50%; padding: 10px" loading="lazy"
                     alt="Logo" /></a>
             <nav role="navigation" class="nav-menu w-nav-menu">
                {{-- <a href="/" aria-current="page"

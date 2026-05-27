@@ -13,7 +13,7 @@
     <meta property="og:title" content="Connect with Top Nigerian Remote Talent" />
     <meta property="og:description"
         content="Helping global companies discover skilled Nigerian professionals ready to excel remotely. Find top talent in tech, customer support, design, and more." />
-    <meta property="og:image" content="https://iandmlimited.com/logos/IandM-no-white-bg-logo-.png" />
+    <meta property="og:image" content="https://iandmlimited.com/onboarding/images/logo.png" />
     <meta property="og:url" content="https://iandmlimited.com" />
     <meta property="og:type" content="website" />
 
@@ -26,7 +26,7 @@
         we make it easy for companies to find their perfect remote match—anywhere in the world."
         property="twitter:description" />
 
-    <meta content="https://iandmlimited.com/logos/IandM-no-white-bg-logo-.png" property="twitter:image" />
+    <meta content="https://iandmlimited.com/onboarding/images/logo.png" property="twitter:image" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Webflow" name="generator" />
@@ -238,7 +238,7 @@
                                         class="absolute inset-y-0 left-0 my-auto h-[75%] w-[21%] rounded-full opacity-50">
                                     </div> --}}
                                     {{-- <div class="absolute inset-0 m-auto h-[120%] w-[21%] rounded-full"> --}}
-                                        <img src="/onboarding/IandM-white-logo.png" height="20px" width="20px" alt="">
+                                        <img src="/onboarding/images/logo.png" height="20px" width="20px" alt="Logo">
                                         {{--
                                     </div> --}}
                                     {{-- <div

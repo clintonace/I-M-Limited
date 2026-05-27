@@ -148,8 +148,21 @@
                         <div data-delay="100" data-hover="true" class="dropdown-navbar w-dropdown">
                             <div class="dropdown w-dropdown-toggle">
                                 <div class="text-size-small caps text-weight-bold"><img
-                                        style="height: 60px; width: 60px" src="/onboarding/images/logo.png"
-                                        alt=""></div>
+                                src="/onboarding/images/logo.png"
+                                alt="Logo"
+                                style="
+                                    height: 60px;
+                                    width: 60px;
+                                    border-radius: 50%;
+                                    object-fit: contain;
+                                    object-position: center;
+                                    display: flex;
+                                    padding: 4px;
+                                    background: transparent;
+                                    border: none;
+                                    outline: none;
+                                    box-shadow: none;
+                                "></div>
                             </div>
                         </div>
 
@@ -157,9 +170,24 @@
                     <nav role="navigation" id="w-node-a0814933-dfa2-4581-2ed5-24b9b1fe3048-b1fe301d"
                         class="nav-menu w-nav-menu">
                     </nav>
-                    <a href="#" aria-current="page" class="brand-link w-inline-block w--current"><img
-                            style="margin-top: 5px; height: 30px; width: 30px;" src="/onboarding/images/logo.png"
-                            loading="lazy" alt="" /></a>
+                    <a href="#" aria-current="page" class="brand-link w-inline-block w--current">
+                        <img
+                            src="/onboarding/images/logo.png"
+                            alt="Logo"
+                            style="
+                                height: 60px;
+                                width: 60px;
+                                border-radius: 50%;
+                                object-fit: contain;
+                                object-position: center;
+                                display: flex;
+                                padding: 4px;
+                                background: transparent;
+                                border: none;
+                                outline: none;
+                                box-shadow: none;
+                            ">
+                    </a>
 
                 </div>
             </div>

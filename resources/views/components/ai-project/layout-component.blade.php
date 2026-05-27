@@ -83,8 +83,8 @@
     <script type="text/javascript">
         !function (o, c) { var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);
     </script>
-    <link href="/onboarding/IandM-no-white-bg-logo-.png" rel="shortcut icon" type="image/x-icon" />
-    <link href="/onboarding/IandM-no-white-bg-logo-.png" rel="apple-touch-icon" />
+    <link href="/onboarding/images/logo.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="/onboarding/images/logo.png" rel="apple-touch-icon" />
     <link href="/ai-project/css/alzen-ai-saas-website-template.d2129f217.min.css" rel="stylesheet" type="text/css" />
 
     <!-- Bootstrap 5 CSS CDN -->
