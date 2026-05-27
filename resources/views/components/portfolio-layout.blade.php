@@ -8,7 +8,7 @@
         content="Connecting top remote talent with forward-thinking companies worldwide, we specialize in simplifying the recruitment process for remote positions. Our platform brings you highly skilled professionals
         tailored to meet your business needs, whether you're looking for developers, designers, customer support experts,
         or other specialized remote roles. With a commitment to quality, efficiency, and global reach,
-        we make it easy for companies to find their perfect remote match—anywhere in the world."
+        we make it easy forcompanies to find their perfect remote match—anywhere in the world."
         name="description" />
 
     <meta property="og:title" content="Connect with Top Nigerian Remote Talent" />
