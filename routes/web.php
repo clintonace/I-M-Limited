@@ -131,6 +131,11 @@ Route::prefix('candidate-dash')->middleware('candidate')->group(function () {
 
 // to send a contact us mail to the admin
 Route::post('/contact/mail', function (Request $request) {
+
+    if ($request->filled('website')) {
+        abort(403);
+    }
+    
     $data = $request->validate([
         'name' => 'required|string|max:255',
         'email' => 'required|email|max:255',

@@ -143,6 +143,8 @@
                         <div class="response"></div>
                     </div>
 
+                    <input type="text" name="website" style="display:none">
+
                     <div class="col-lg-6 col-md-12 col-sm-12 form-group ">
                         <label class="text-white">Your Name</label>
                         <input type="text" name="name" class="username" placeholder="Your Name*" required>
