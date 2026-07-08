@@ -137,11 +137,22 @@
                                                 </div>
                                                 @endif -->
                                                 @php
+                                                    // $textFiles = [
+                                                    //     'txt' => 'Rollo.txt',
+                                                    //     'txtb' => 'Raffstore.txt',
+                                                    //     'txtc' => 'Rollo_schallschutz.txt',
+                                                    //     'txtd' => 'Raffstore_schallschutz.txt',
+                                                    // ];
+
                                                     $textFiles = [
                                                         'txt' => 'Rollo.txt',
                                                         'txtb' => 'Raffstore.txt',
                                                         'txtc' => 'Rollo_schallschutz.txt',
                                                         'txtd' => 'Raffstore_schallschutz.txt',
+                                                        'txte' => 'Rollo_AK_EPS.txt',
+                                                        'txtf' => 'Rollo_AK_Gutex.txt',
+                                                        'txtg' => 'Raffstore_AK_EPS.txt',
+                                                        'txth' => 'Raffstore_AK_Gutex.txt',
                                                     ];
                                                 @endphp
 
