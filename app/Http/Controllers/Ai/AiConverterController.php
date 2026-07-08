@@ -254,6 +254,10 @@ class AiConverterController extends Controller
                     $upload->txtb = $output['txtb'] ?? null;
                     $upload->txtc = $output['txtc'] ?? null;
                     $upload->txtd = $output['txtd'] ?? null;
+                    $upload->txte = $output['txte'] ?? null;
+                    $upload->txtf = $output['txtf'] ?? null;
+                    $upload->txtg = $output['txtg'] ?? null;
+                    $upload->txth = $output['txth'] ?? null;
                     $upload->excel = $output['excel'] ?? null;
                     $upload->pdf = $output['pdf'] ?? null;
                     $upload->base_file = $output['base_filename'] ?? null;
@@ -279,6 +283,10 @@ class AiConverterController extends Controller
                             'txtb'=> $filename['txtb'],
                             'txtc'=> $filename['txtc'],
                             'txtd'=> $filename['txtd'],
+                            'txte'=> $filename['txte'],
+                            'txtf'=> $filename['txtf'],
+                            'txtg'=> $filename['txtg'],
+                            'txth'=> $filename['txth'],
                             'pdf' => $filename['pdf'],
 
                         ];

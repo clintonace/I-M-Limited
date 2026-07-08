@@ -154,6 +154,8 @@
                                                         'txtg' => 'Raffstore_AK_EPS.txt',
                                                         'txth' => 'Raffstore_AK_Gutex.txt',
                                                     ];
+
+                                                    // dd($results);
                                                 @endphp
 
                                                 @foreach($textFiles as $field => $label)
