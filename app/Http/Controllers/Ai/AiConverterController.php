@@ -208,7 +208,8 @@ class AiConverterController extends Controller
         ]);
 
         // $route = 'https://ai-bxij.onrender.com';
-        $route = 'http://31.97.126.130:2000';
+        // $route = 'http://31.97.126.130:2000';
+        $route = 'http://76.13.131.17:32776';
         // $route = 'http://localhost:5000';
 
         
