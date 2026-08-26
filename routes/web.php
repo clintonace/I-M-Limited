@@ -145,15 +145,15 @@ Route::post('/contact/mail', function (Request $request) {
 
     $toEmail = env('MAIL_FROM_ADDRESS', 'dev.imlimited@gmail.com');
 
-    Mail::send([], [], function ($message) use ($data, $toEmail) {
-        $message->to($toEmail)
-                ->subject($data['subject'])
-                ->html(
-                    '<p><strong>Name:</strong> ' . $data['name'] . '</p>' .
-                    '<p><strong>Email:</strong> ' . $data['email'] . '</p>' .
-                    '<p><strong>Message:</strong> ' . $data['message'] . '</p>'
-                );
-    });
+    // Mail::send([], [], function ($message) use ($data, $toEmail) {
+    //     $message->to($toEmail)
+    //             ->subject($data['subject'])
+    //             ->html(
+    //                 '<p><strong>Name:</strong> ' . $data['name'] . '</p>' .
+    //                 '<p><strong>Email:</strong> ' . $data['email'] . '</p>' .
+    //                 '<p><strong>Message:</strong> ' . $data['message'] . '</p>'
+    //             );
+    // });
 
     Alert::success('Success', 'Your message has been sent successfully!');
     return back();

@@ -161,6 +161,8 @@
                         @endif
                     </div>
 
+                    
+
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                         <label class="text-white">Subject</label>
                         <!-- <input type="text" name="subject" class="subject" placeholder="Subject *" required> -->
@@ -197,6 +199,17 @@
                             <span class="text-danger">{{ $errors->first('message') }}</span>
                         @endif
                     </div>
+
+                    {{-- <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+                        <label class="text-white">Robot check</label>
+                        <select name="" id="" disabled="disabled">
+                            <option value="0"></option>
+                        </select>
+                        <input type="email" name="email" class="email" placeholder="Your Email*" required>
+                        @if ($errors->has('email'))
+                            <span class="text-danger">{{ $errors->first('email') }}</span>
+                        @endif
+                    </div> --}}
 
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                         <button class="theme-btn btn-style-three" type="submit" id="submit" name="submit-form">Send Message</button>
