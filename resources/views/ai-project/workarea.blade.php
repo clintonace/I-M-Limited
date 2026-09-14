@@ -153,6 +153,9 @@
                                                         'txtf' => 'Rollo_AK_Gutex.txt',
                                                         'txtg' => 'Raffstore_AK_EPS.txt',
                                                         'txth' => 'Raffstore_AK_Gutex.txt',
+                                                        'txti' =>  'Zubehoer.txt' ,
+                                                        'txtj' =>  'Rollo_Keller.txt',
+                                                        'txtk' =>  'Raffstore_Keller.txt',
                                                     ];
 
                                                     // dd($results);

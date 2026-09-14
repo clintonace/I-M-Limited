@@ -259,6 +259,9 @@ class AiConverterController extends Controller
                     $upload->txtf = $output['txtf'] ?? null;
                     $upload->txtg = $output['txtg'] ?? null;
                     $upload->txth = $output['txth'] ?? null;
+                    $upload->txti = $output['txti'] ?? null;
+                    $upload->txtj = $output['txtj'] ?? null;
+                    $upload->txtk = $output['txtk'] ?? null;
                     $upload->excel = $output['excel'] ?? null;
                     $upload->pdf = $output['pdf'] ?? null;
                     $upload->base_file = $output['base_filename'] ?? null;
@@ -288,6 +291,9 @@ class AiConverterController extends Controller
                             'txtf'=> $filename['txtf'],
                             'txtg'=> $filename['txtg'],
                             'txth'=> $filename['txth'],
+                            'txti'=> $filename['txti'],
+                            'txtj'=> $filename['txtj'],
+                            'txtk'=> $filename['txtk'],
                             'pdf' => $filename['pdf'],
 
                         ];
@@ -517,6 +523,9 @@ class AiConverterController extends Controller
             'txtf',  // Rollo_AK_Gutex.txt
             'txtg',  // Raffstore_AK_EPS.txt
             'txth',  // Raffstore_AK_Gutex.txt
+            'txti',
+			'txtj',
+			'txtk',
         ];
 
         $num = rand(0, 9999);
