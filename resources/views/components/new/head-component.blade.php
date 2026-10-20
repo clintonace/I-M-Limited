@@ -103,4 +103,20 @@
         type="text/javascript">!function (o, c) { var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);</script>
     {{-- <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon" />
     <link href="images/app-icon.png" rel="apple-touch-icon" /> --}}
+
+
+    {{-- Calender things here  --}}
+
+     <!-- STANDARD JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@7.1.3/all/global.js"></script>
+
+    <!-- THEME JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@7.1.3/themes/monarch/global.js"></script>
+
+    <!-- STYLESHEETS -->
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@7.1.3/skeleton.css' rel='stylesheet' />
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@7.1.3/themes/monarch/theme.css' rel='stylesheet' />
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@7.1.3/themes/monarch/palettes/purple.css' rel='stylesheet' />
+
+   
 </head>

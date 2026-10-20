@@ -20,7 +20,7 @@
                         <div data-w-id="6b5727f3-21e3-ae21-6b40-fb8aef4ea199"
                             style="opacity:0;-webkit-transform:translate3d(0, 32px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 32px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 32px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 32px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);filter:blur(5px)"
                             class="ui-button-div"><a data-wf--ui-button--variant="base"
-                                href="{{ route('new.contact') }}" class="ui-button w-inline-block">
+                                href="{{ route('new.book_a_call') }}" class="ui-button w-inline-block">
                                 <div>Book  a  call, Start Your Expansion
 
                                 </div>
@@ -236,7 +236,7 @@
                 <div class="w-layout-blockcontainer ui-container w-container">
                     <div class="w-layout-grid ui-approach-grid">
                         <div id="w-node-db74d534-4094-7077-e249-d3b81af8774f-95272b21" class="ui-approach-div">
-                            <div class="ui-approach-image-wrapper"><img src="/newonboarding/images/approach.webp"
+                            <div class="ui-approach-image-wrapper"><img src="/newonboarding/images/_BTP4081.jpg"
                                     loading="lazy" style="opacity:0" data-w-id="29f918c2-067c-536c-0c30-84b8678884e9"
                                     alt="Approach Image" class="ui-approach-image" /></div>
                         </div>
@@ -432,7 +432,7 @@
                                         class="ui-feature-div">
                                         <div class="ui-feature-image-wrapper"><img style="opacity:0"
                                                 data-w-id="20236e0e-c5aa-4556-8651-34cb4d9cf13a" alt="Feature Image"
-                                                src="/newonboarding/images/feature1.webp" loading="lazy"
+                                                src="/newonboarding/images/_BTP4067.jpg" loading="lazy"
                                                 class="ui-feature-image" /></div>
                                     </div>
                                     <div class="ui-feature-div">
@@ -480,8 +480,8 @@
                                     <div id="w-node-_6e47be3f-ba76-917e-8f82-029fdc480d43-95272b21"
                                         class="ui-feature-div">
                                         <div class="ui-feature-image-wrapper"><img sizes="100vw"
-                                                srcset="/newonboarding/images/feature2-p-500.webp 500w, /newonboarding/images/feature2-p-800.webp 800w, /newonboarding/images/feature2-p-1080.webp 1080w, /newonboarding/images/feature2-p-1600.webp 1600w, /newonboarding/images/feature2-p-2000.webp 2000w, /newonboarding/images/feature2.webp 2480w"
-                                                alt="Feature Image" src="/newonboarding/images/feature2.webp"
+                                                srcset="/newonboarding/images/feature2-p-500.webp 500w, /newonboarding/images/_BTP4004.jpg 800w, /newonboarding/images/_BTP4004.jpg 1080w, /newonboarding/images/_BTP4004.jpg 1600w, /newonboarding/images/_BTP4004.jpg 2000w, /newonboarding/images/_BTP4004.jpg"
+                                                alt="Feature Image" src="/newonboarding/images/_BTP4004.jpg"
                                                 loading="lazy" class="ui-feature-image" /></div>
                                     </div>
                                     <div id="w-node-_6e47be3f-ba76-917e-8f82-029fdc480d46-95272b21"
@@ -518,8 +518,8 @@
                                     <div id="w-node-f1fb9580-2bb8-fc1b-14d1-1aead03d6635-95272b21"
                                         class="ui-feature-div">
                                         <div class="ui-feature-image-wrapper"><img sizes="100vw"
-                                                srcset="/newonboarding/images/feature3-p-500.webp 500w, /newonboarding/images/feature3-p-800.webp 800w, /newonboarding/images/feature3-p-1080.webp 1080w, /newonboarding/images/feature3.webp 1500w"
-                                                alt="Feature Image" src="/newonboarding/images/feature3.webp"
+                                                srcset="/newonboarding/images/_BTP3957.jpg 500w, /newonboarding/images/_BTP3957.jpg 800w, /newonboarding/images/_BTP3957.jpg 1080w, /newonboarding/images/_BTP3957.jpg 1500w"
+                                                alt="Feature Image" src="/newonboarding/images/_BTP3957.jpg"
                                                 loading="lazy" class="ui-feature-image" /></div>
                                     </div>
                                     <div class="ui-feature-div">
@@ -613,10 +613,15 @@
                                 <div class="w-layout-grid ui-feature-grid">
                                     <div id="w-node-f1fb9580-2bb8-fc1b-14d1-1aead03d6635-95272b21"
                                         class="ui-feature-div">
+
                                         <div class="ui-feature-image-wrapper"><img sizes="100vw"
-                                                srcset="images/feature3-p-500.webp 500w, images/feature3-p-800.webp 800w, images/feature3-p-1080.webp 1080w, images/feature3.webp 1500w"
-                                                alt="Feature Image" src="/newonboarding/images/feature3.webp"
+                                                srcset="/newonboarding/images/_BTP4097.jpg 500w, /newonboarding/images/_BTP4097.jpg 800w, /newonboarding/images/_BTP4097.jpg 1080w, /newonboarding/images/_BTP4097.jpg 1500w"
+                                                alt="Feature Image" src="/newonboarding/images/_BTP4097.jpg"
                                                 loading="lazy" class="ui-feature-image" /></div>
+                                        {{-- <div class="ui-feature-image-wrapper"><img sizes="100vw"
+                                                srcset="images/_BTP4097.jpg 500w, images/_BTP4097.jpg 800w, images/_BTP4097.jpg 1080w, images/_BTP4097.jpg 1500w"
+                                                alt="Feature Ime" src="/newonboarding/images/_BTP4097.jpg"
+                                                loading="lazy" class="ui-feature-image" /></div> --}}
                                     </div>
                                     <div class="ui-feature-div">
                                         <div class="ui-feature-wrapper-div">
@@ -640,8 +645,8 @@
                                     <div id="w-node-f1fb9580-2bb8-fc1b-14d1-1aead03d6635-95272b21"
                                         class="ui-feature-div">
                                         <div class="ui-feature-image-wrapper"><img sizes="100vw"
-                                                srcset="/newonboarding/images/feature3-p-500.webp 500w, /newonboarding/images/feature3-p-800.webp 800w, /newonboarding/images/feature3-p-1080.webp 1080w, /newonboarding/images/feature3.webp 1500w"
-                                                alt="Feature Image" src="/newonboarding/images/feature3.webp"
+                                                srcset="/newonboarding/images/feature3-p-500.webp 500w, /newonboarding/images/_BTP4119.jpg 800w, /newonboarding/images/_BTP4119.jpg 1080w, /newonboarding/images/_BTP4119.jpg 1500w"
+                                                alt="Feature Image" src="/newonboarding/images/_BTP4119.jpg"
                                                 loading="lazy" class="ui-feature-image" /></div>
                                     </div>
                                     <div class="ui-feature-div">
@@ -702,6 +707,7 @@
                     </div>
                 </div>
             </section>
+            
             <section id="results" class="ui-main-section ui-background-gray">
                 <div class="w-layout-blockcontainer ui-container w-container">
                     <div class="ui-results-heading-wrapper">

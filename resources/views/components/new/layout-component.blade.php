@@ -5,6 +5,8 @@
 
 <body>
 
+     @include('sweetalert::alert')
+
     {{-- Header --}}
     <x-new.navbar-component />
 

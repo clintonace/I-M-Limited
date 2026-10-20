@@ -34,7 +34,21 @@ Route::get('/', function () {
 
 Route::prefix('web/')->group(function () {
     Route::get('/contact', [OnboardingController::class, 'contact'])->name('new.contact');
+
+    Route::get('/book-a-call-page', [OnboardingController::class, 'bookACall'])->name('new.book_a_call');
+    Route::post('/book', [OnboardingController::class, 'bookClient'])->name('new.client.book');
+
+    Route::get('/faqs', [OnboardingController::class, 'faqs'])->name('new.faqs');
+
+    Route::get('/services', [OnboardingController::class, 'services'])->name('new.services');
+
+    Route::get('/aboutus', [OnboardingController::class, 'aboutus'])->name('new.aboutus');
+
+    Route::get('/how-it-works', [OnboardingController::class, 'howItWorks'])->name('new.how-it-works');
     
+
+    
+
 
 
 });

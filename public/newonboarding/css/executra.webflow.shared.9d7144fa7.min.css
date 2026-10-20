@@ -2309,7 +2309,7 @@ h4 {
 
 .ui-hero-section {
     padding-bottom: var(--_spacing---spacing--space-xxxxl);
-    background-image: linear-gradient(90deg, var(--color--black), transparent), url(../images/hero-background.webp);
+    background-image: linear-gradient(90deg, var(--color--black), transparent), url(../images/_BTP3902.jpg);
     background-position: 0 0, 50%;
     background-size: auto, cover;
     flex-flow: column;
@@ -2623,6 +2623,33 @@ h4 {
     background-position: 0 0, 50% 0;
     background-size: auto, cover
 }
+
+.ui-main-section.ui-cta-sect {
+    background-image: linear-gradient(90deg, #0000009e, var(--color--black)), url(../images/_BTP4031.jpg);
+    background-position: 0 0, 50% 0;
+    background-size: auto, cover
+}
+
+.ui-main-section.ui-cta-sectt {
+    background-image: linear-gradient(90deg, #0000009e, var(--color--black)), url(../images/_BTP4097.jpg);
+    background-position: 0 0, 50% 0;
+    background-size: auto, cover
+}
+
+.ui-main-section.ui-cta-aboutus {
+    background-image: linear-gradient(90deg, #0000009e, var(--color--black)), url(../images/_BTP4115.jpg);
+    background-position: 0 0, 50% 0;
+    background-size: auto, cover
+}
+
+
+.ui-main-section.ui-cta-login {
+    background-image: linear-gradient(90deg, #0000009e, var(--color--black)), url(../images/_BTP4097.jpg);
+    background-position: 0 0, 50% 0;
+    background-size: auto, cover
+}
+
+
 
 .ui-center {
     text-align: center
