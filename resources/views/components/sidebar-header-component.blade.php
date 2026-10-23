@@ -102,6 +102,49 @@
                             <!-- BEGIN: Second Child -->
                             <!-- END: Second Child -->
                         </li>
+
+
+                        @if(Auth::user() && Auth::user()->isAdmin())
+                            <li class="side-menu__divider">
+                                Manage Meetings/FreeTime
+                            </li>
+
+                            <li>
+                                <a href="{{ route('admin.freetime.view') }}"
+                                    class="side-menu__link  {{ Route::currentRouteName()== 'admin.freetime.view' ? 'side-menu__link--active': '' }}">
+                                    <i data-tw-merge="" data-lucide="mail-check" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                                    <div class="side-menu__link__title">Free Time</div>
+                                    {{-- @if($requests->where('is_new', true)->count() > 0)
+
+                                        <div class="side-menu__link__badge">
+                                            {{ $requests->where('is_new', true)->count() }}
+                                        </div>
+                                    @endif --}}
+                                </a>
+                                <!-- BEGIN: Second Child -->
+                                <!-- END: Second Child -->
+                            </li>
+                            {{-- <li>
+                                <a href="{{ route('admin.book.event') }}"
+                                    class="side-menu__link {{ Route::currentRouteName()== 'admin.book.event' ? 'side-menu__link--active': '' }}">
+                                    <i data-tw-merge="" data-lucide="bell" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                                    <div class="side-menu__link__title">Book Event</div>
+
+                                </a>
+                                <!-- BEGIN: Second Child -->
+                                <!-- END: Second Child -->
+                            </li> --}}
+                            {{-- <li>
+                                <a href="{{ route('admin.all.events') }}"
+                                    class="side-menu__link {{ Route::currentRouteName()== 'admin.all.events' ? 'side-menu__link--active': '' }}">
+                                    <i data-tw-merge="" data-lucide="play" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                                    <div class="side-menu__link__title">Events</div>
+
+                                </a>
+                                <!-- BEGIN: Second Child -->
+                                <!-- END: Second Child -->
+                            </li> --}}
+                        @endif
                     
                         <li class="side-menu__divider">
                             Manage Requests/Events

@@ -63,6 +63,7 @@ Route::prefix('admin')->middleware('admin')->group(function () {
      Route::post('/dept-edit', [ToolController::class, 'deptEdit'])->name('admin.dept.edit');
      Route::post('/skill-edit', [ToolController::class, 'skillEdit'])->name('admin.skill.edit');
      Route::post('/hobby-edit', [ToolController::class, 'hobbyEdit'])->name('admin.hobby.edit');
+
     });
 
      Route::prefix('openings')->middleware('admin')->group(function () {
@@ -85,6 +86,18 @@ Route::prefix('admin')->middleware('admin')->group(function () {
 
       Route::get('/prompt-view', [BroadcastController::class, 'promptView'])->name('admin.prompt.view');
       Route::post('/prompt-create', [BroadcastController::class, 'promptCreate'])->name('admin.prompt');
+
+    });
+
+
+    Route::prefix('calender')->middleware('admin')->group(function () {
+
+     Route::get('/freetime-view', [AdminController::class, 'freeTimeView'])->name('admin.freetime.view');
+     Route::post('/mk-freetime', [AdminController::class, 'mkFreetime'])->name('admin.mk.freetime');
+
+     Route::get('/this-freetime/{freetime?}', [AdminController::class, 'thisFreetimeView'])->name('admin.this.freetime');
+
+     
 
     });
 

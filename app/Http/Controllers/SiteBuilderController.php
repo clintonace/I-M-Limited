@@ -26,12 +26,16 @@ class SiteBuilderController extends Controller
         'name' => 'nullable|string|max:255',
     ]);
 
-    $logo=self::imageUploader($request->logo, Auth::user(), 'Testimony-Logo-uploads');
+    if ($request->hasFile('logo')) {
+           $logo=self::imageUploader($request->logo, Auth::user(), 'Testimony-Logo-uploads');
+
+    } 
+
 
     Testimony::create([
         'title' => $request->title,
         'testimony' => $request->testimony,
-        'logo' => $logo,
+        'logo' => $logo ?? null,
         'name' => $request->name,
     ]);
 

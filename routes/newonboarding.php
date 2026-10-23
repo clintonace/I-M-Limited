@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Http;
+use App\Http\Controllers\CustomMailAssistantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,9 +29,9 @@ use Illuminate\Support\Facades\Http;
 
 Route::view('/section', 'sect')->name('section');
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('welcome');
 
 Route::prefix('web/')->group(function () {
     Route::get('/contact', [OnboardingController::class, 'contact'])->name('new.contact');
@@ -52,3 +53,10 @@ Route::prefix('web/')->group(function () {
 
 
 });
+
+Route::post('/ai/custom-mail/chat', [
+    CustomMailAssistantController::class,
+    'chat',
+])
+    ->middleware(['auth', 'throttle:20,1'])
+    ->name('ai.custom-mail.chat');

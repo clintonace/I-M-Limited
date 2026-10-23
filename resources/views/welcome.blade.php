@@ -707,7 +707,7 @@
                     </div>
                 </div>
             </section>
-            
+
             <section id="results" class="ui-main-section ui-background-gray">
                 <div class="w-layout-blockcontainer ui-container w-container">
                     <div class="ui-results-heading-wrapper">
@@ -759,8 +759,10 @@
             </section>
 
 
+
+
             <div data-w-id="5dc269ba-0428-d668-4a37-50c2f4e322bb" style="opacity:0" class="ui-results-image-wrapper">
-                <img src="/newonboarding/images/social-proof.webp" loading="lazy" alt="Results Image"
+                <img src="/newonboarding/images/af.png" loading="lazy" alt="Results Image"
                     class="ui-results-image" />
             </div>
 
@@ -964,383 +966,55 @@
                         data-disable-swipe="false" data-w-id="582e924e-8745-4e0e-ea1e-d2022d3bc981"
                         data-autoplay-limit="0" data-nav-spacing="12" data-duration="500" data-infinite="true">
                         <div class="w-slider-mask">
-                            <div class="ui-testimonial-slide w-slide">
-                                <div class="ui-testimonial-card">
-                                    <div class="ui-testimonial-user-wrapper"><img
-                                            src="/newonboarding/images/testimonial1.png" loading="lazy"
-                                            alt="User Profile" class="ui-testimonial-user-image" />
-                                        <div class="ui-testimonial-user-div">
-                                            <div class="ui-large-paragraph">Evelyn Hart</div>
-                                            <div class="ui-small-paragraph">Founder, Hartline Consulting – USA</div>
+
+                            @foreach ($testimonies as $t)
+                                <div class="ui-testimonial-slide w-slide">
+                                    <div class="ui-testimonial-card">
+                                        <div class="ui-testimonial-user-wrapper">
+                                            <div class="ui-testimonial-user-image"
+                                                style="display: flex; align-items: center; justify-content: center;
+                                                    background: #E94E1B; color: white; font-weight: bold;
+                                                    font-size: 18px; border-radius: 50%; flex-shrink: 0;">
+
+                                                    {{ collect(explode(' ', trim($t?->name ?? '')))->filter()->take(2)->map(fn($part) => strtoupper(substr($part, 0, 1)))->implode('') }}
+
+                                            </div>
+                                            <div class="ui-testimonial-user-div">
+                                                <div class="ui-large-paragraph">{{ $t?->name }}</div>
+                                                <div class="ui-small-paragraph">{{ $t?->title }}</div>
+                                            </div>
                                         </div>
+                                        <p class="ui-extra-large-paragraph ui-testimonial-review-text">
+                                            {{ $t?->testimony }}</p>
+                                        <div class="ui-testimonial-icon w-embed"><svg viewBox="0 0 107 20"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_2019_11)">
+                                                    <path d="M20.0625 0H0V20H20.0625V0Z" fill="#E94E1B" />
+                                                    <path d="M41.7969 0H21.7344V20H41.7969V0Z" fill="#E94E1B" />
+                                                    <path d="M63.5312 0H43.4688V20H63.5312V0Z" fill="#E94E1B" />
+                                                    <path d="M85.2656 0H65.2031V20H85.2656V0Z" fill="#E94E1B" />
+                                                    <path d="M107 0H86.9375V20H107V0Z" fill="#fffff" />
+                                                    <path
+                                                        d="M10.0312 13.4792L13.0823 12.7083L14.3571 16.625L10.0312 13.4792ZM17.053 8.41667H11.6821L10.0312 3.375L8.38018 8.41667H3.00928L7.35615 11.5417L5.70518 16.5833L10.0521 13.4583L12.7271 11.5417L17.053 8.41667Z"
+                                                        fill="white" />
+                                                    <path
+                                                        d="M31.7655 13.4792L34.8167 12.7083L36.0915 16.625L31.7655 13.4792ZM38.7874 8.41667H33.4165L31.7655 3.375L30.1146 8.41667H24.7437L29.0905 11.5417L27.4396 16.5833L31.7864 13.4583L34.4614 11.5417L38.7874 8.41667Z"
+                                                        fill="white" />
+                                                    <path
+                                                        d="M53.4999 13.4792L56.5511 12.7083L57.8259 16.625L53.4999 13.4792ZM60.5218 8.41667H55.1509L53.4999 3.375L51.8489 8.41667H46.478L50.8249 11.5417L49.1739 16.5833L53.5208 13.4583L56.1958 11.5417L60.5218 8.41667Z"
+                                                        fill="white" />
+                                                    <path
+                                                        d="M75.2343 13.4792L78.2855 12.7083L79.5603 16.625L75.2343 13.4792ZM82.2562 8.41667H76.8853L75.2343 3.375L73.5833 8.41667H68.2124L72.5593 11.5417L70.9083 16.5833L75.2552 13.4583L77.9302 11.5417L82.2562 8.41667Z"
+                                                        fill="white" />
+                                                    <path
+                                                        d="M96.9687 13.4792L100.02 12.7083L101.295 16.625L96.9687 13.4792ZM103.991 8.41667H98.6196L96.9687 3.375L95.3177 8.41667H89.9468L94.2937 11.5417L92.6427 16.5833L96.9896 13.4583L99.6646 11.5417L103.991 8.41667Z"
+                                                        fill="white" />
+                                                </g>
+                                            </svg></div>
                                     </div>
-                                    <p class="ui-extra-large-paragraph ui-testimonial-review-text">“In just a few
-                                        weeks, my
-                                        entire offer structure finally made sense. I raised my rates confidently, and
-                                        clients responded better than ever.”</p>
-                                    <div class="ui-testimonial-icon w-embed"><svg viewBox="0 0 107 20" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <g clip-path="url(#clip0_2019_11)">
-                                                <path d="M20.0625 0H0V20H20.0625V0Z" fill="#00B67A" />
-                                                <path d="M41.7969 0H21.7344V20H41.7969V0Z" fill="#00B67A" />
-                                                <path d="M63.5312 0H43.4688V20H63.5312V0Z" fill="#00B67A" />
-                                                <path d="M85.2656 0H65.2031V20H85.2656V0Z" fill="#00B67A" />
-                                                <path d="M107 0H86.9375V20H107V0Z" fill="#00B67A" />
-                                                <path
-                                                    d="M10.0312 13.4792L13.0823 12.7083L14.3571 16.625L10.0312 13.4792ZM17.053 8.41667H11.6821L10.0312 3.375L8.38018 8.41667H3.00928L7.35615 11.5417L5.70518 16.5833L10.0521 13.4583L12.7271 11.5417L17.053 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M31.7655 13.4792L34.8167 12.7083L36.0915 16.625L31.7655 13.4792ZM38.7874 8.41667H33.4165L31.7655 3.375L30.1146 8.41667H24.7437L29.0905 11.5417L27.4396 16.5833L31.7864 13.4583L34.4614 11.5417L38.7874 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M53.4999 13.4792L56.5511 12.7083L57.8259 16.625L53.4999 13.4792ZM60.5218 8.41667H55.1509L53.4999 3.375L51.8489 8.41667H46.478L50.8249 11.5417L49.1739 16.5833L53.5208 13.4583L56.1958 11.5417L60.5218 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M75.2343 13.4792L78.2855 12.7083L79.5603 16.625L75.2343 13.4792ZM82.2562 8.41667H76.8853L75.2343 3.375L73.5833 8.41667H68.2124L72.5593 11.5417L70.9083 16.5833L75.2552 13.4583L77.9302 11.5417L82.2562 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M96.9687 13.4792L100.02 12.7083L101.295 16.625L96.9687 13.4792ZM103.991 8.41667H98.6196L96.9687 3.375L95.3177 8.41667H89.9468L94.2937 11.5417L92.6427 16.5833L96.9896 13.4583L99.6646 11.5417L103.991 8.41667Z"
-                                                    fill="white" />
-                                            </g>
-                                        </svg></div>
                                 </div>
-                            </div>
-                            <div class="ui-testimonial-slide w-slide">
-                                <div class="ui-testimonial-card">
-                                    <div class="ui-testimonial-user-wrapper"><img
-                                            src="/newonboarding/images/testimonial2.png" loading="lazy"
-                                            alt="User Profile" class="ui-testimonial-user-image" />
-                                        <div class="ui-testimonial-user-div">
-                                            <div class="ui-large-paragraph">Daniel Brooks</div>
-                                            <div class="ui-small-paragraph">Business Coach – Toronto, Canada</div>
-                                        </div>
-                                    </div>
-                                    <p class="ui-extra-large-paragraph ui-testimonial-review-text">“I went from
-                                        scattered
-                                        services to a clean, premium consulting suite. Sales calls are shorter,
-                                        conversions
-                                        are higher, and delivery feels effortless.”</p>
-                                    <div class="ui-testimonial-icon w-embed"><svg viewBox="0 0 107 20" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <g clip-path="url(#clip0_2019_11)">
-                                                <path d="M20.0625 0H0V20H20.0625V0Z" fill="#00B67A" />
-                                                <path d="M41.7969 0H21.7344V20H41.7969V0Z" fill="#00B67A" />
-                                                <path d="M63.5312 0H43.4688V20H63.5312V0Z" fill="#00B67A" />
-                                                <path d="M85.2656 0H65.2031V20H85.2656V0Z" fill="#00B67A" />
-                                                <path d="M107 0H86.9375V20H107V0Z" fill="#00B67A" />
-                                                <path
-                                                    d="M10.0312 13.4792L13.0823 12.7083L14.3571 16.625L10.0312 13.4792ZM17.053 8.41667H11.6821L10.0312 3.375L8.38018 8.41667H3.00928L7.35615 11.5417L5.70518 16.5833L10.0521 13.4583L12.7271 11.5417L17.053 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M31.7655 13.4792L34.8167 12.7083L36.0915 16.625L31.7655 13.4792ZM38.7874 8.41667H33.4165L31.7655 3.375L30.1146 8.41667H24.7437L29.0905 11.5417L27.4396 16.5833L31.7864 13.4583L34.4614 11.5417L38.7874 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M53.4999 13.4792L56.5511 12.7083L57.8259 16.625L53.4999 13.4792ZM60.5218 8.41667H55.1509L53.4999 3.375L51.8489 8.41667H46.478L50.8249 11.5417L49.1739 16.5833L53.5208 13.4583L56.1958 11.5417L60.5218 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M75.2343 13.4792L78.2855 12.7083L79.5603 16.625L75.2343 13.4792ZM82.2562 8.41667H76.8853L75.2343 3.375L73.5833 8.41667H68.2124L72.5593 11.5417L70.9083 16.5833L75.2552 13.4583L77.9302 11.5417L82.2562 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M96.9687 13.4792L100.02 12.7083L101.295 16.625L96.9687 13.4792ZM103.991 8.41667H98.6196L96.9687 3.375L95.3177 8.41667H89.9468L94.2937 11.5417L92.6427 16.5833L96.9896 13.4583L99.6646 11.5417L103.991 8.41667Z"
-                                                    fill="white" />
-                                            </g>
-                                        </svg></div>
-                                </div>
-                            </div>
-                            <div class="ui-testimonial-slide w-slide">
-                                <div class="ui-testimonial-card">
-                                    <div class="ui-testimonial-user-wrapper"><img
-                                            src="/newonboarding/images/testimonial3.png" loading="lazy"
-                                            alt="User Profile" class="ui-testimonial-user-image" />
-                                        <div class="ui-testimonial-user-div">
-                                            <div class="ui-large-paragraph">Lina Sorensen</div>
-                                            <div class="ui-small-paragraph">Operations Lead, Denmark</div>
-                                        </div>
-                                    </div>
-                                    <p class="ui-extra-large-paragraph ui-testimonial-review-text">“The framework
-                                        helped us
-                                        streamline our onboarding and proposal process. Our team now delivers
-                                        consistently,
-                                        and client feedback has improved dramatically.”</p>
-                                    <div class="ui-testimonial-icon w-embed"><svg viewBox="0 0 107 20" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <g clip-path="url(#clip0_2019_11)">
-                                                <path d="M20.0625 0H0V20H20.0625V0Z" fill="#00B67A" />
-                                                <path d="M41.7969 0H21.7344V20H41.7969V0Z" fill="#00B67A" />
-                                                <path d="M63.5312 0H43.4688V20H63.5312V0Z" fill="#00B67A" />
-                                                <path d="M85.2656 0H65.2031V20H85.2656V0Z" fill="#00B67A" />
-                                                <path d="M107 0H86.9375V20H107V0Z" fill="#00B67A" />
-                                                <path
-                                                    d="M10.0312 13.4792L13.0823 12.7083L14.3571 16.625L10.0312 13.4792ZM17.053 8.41667H11.6821L10.0312 3.375L8.38018 8.41667H3.00928L7.35615 11.5417L5.70518 16.5833L10.0521 13.4583L12.7271 11.5417L17.053 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M31.7655 13.4792L34.8167 12.7083L36.0915 16.625L31.7655 13.4792ZM38.7874 8.41667H33.4165L31.7655 3.375L30.1146 8.41667H24.7437L29.0905 11.5417L27.4396 16.5833L31.7864 13.4583L34.4614 11.5417L38.7874 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M53.4999 13.4792L56.5511 12.7083L57.8259 16.625L53.4999 13.4792ZM60.5218 8.41667H55.1509L53.4999 3.375L51.8489 8.41667H46.478L50.8249 11.5417L49.1739 16.5833L53.5208 13.4583L56.1958 11.5417L60.5218 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M75.2343 13.4792L78.2855 12.7083L79.5603 16.625L75.2343 13.4792ZM82.2562 8.41667H76.8853L75.2343 3.375L73.5833 8.41667H68.2124L72.5593 11.5417L70.9083 16.5833L75.2552 13.4583L77.9302 11.5417L82.2562 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M96.9687 13.4792L100.02 12.7083L101.295 16.625L96.9687 13.4792ZM103.991 8.41667H98.6196L96.9687 3.375L95.3177 8.41667H89.9468L94.2937 11.5417L92.6427 16.5833L96.9896 13.4583L99.6646 11.5417L103.991 8.41667Z"
-                                                    fill="white" />
-                                            </g>
-                                        </svg></div>
-                                </div>
-                            </div>
-                            <div class="ui-testimonial-slide w-slide">
-                                <div class="ui-testimonial-card">
-                                    <div class="ui-testimonial-user-wrapper"><img
-                                            src="/newonboarding/images/testimonial4.png" loading="lazy"
-                                            alt="User Profile" class="ui-testimonial-user-image" />
-                                        <div class="ui-testimonial-user-div">
-                                            <div class="ui-large-paragraph">James Foster</div>
-                                            <div class="ui-small-paragraph">Marketing Strategist – London, UK</div>
-                                        </div>
-                                    </div>
-                                    <p class="ui-extra-large-paragraph ui-testimonial-review-text">“The clarity I
-                                        gained
-                                        from the program transformed my approach to campaigns. I’ve seen a 50% increase
-                                        in
-                                        engagement rates!”</p>
-                                    <div class="ui-testimonial-icon w-embed"><svg viewBox="0 0 107 20" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <g clip-path="url(#clip0_2019_11)">
-                                                <path d="M20.0625 0H0V20H20.0625V0Z" fill="#00B67A" />
-                                                <path d="M41.7969 0H21.7344V20H41.7969V0Z" fill="#00B67A" />
-                                                <path d="M63.5312 0H43.4688V20H63.5312V0Z" fill="#00B67A" />
-                                                <path d="M85.2656 0H65.2031V20H85.2656V0Z" fill="#00B67A" />
-                                                <path d="M107 0H86.9375V20H107V0Z" fill="#00B67A" />
-                                                <path
-                                                    d="M10.0312 13.4792L13.0823 12.7083L14.3571 16.625L10.0312 13.4792ZM17.053 8.41667H11.6821L10.0312 3.375L8.38018 8.41667H3.00928L7.35615 11.5417L5.70518 16.5833L10.0521 13.4583L12.7271 11.5417L17.053 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M31.7655 13.4792L34.8167 12.7083L36.0915 16.625L31.7655 13.4792ZM38.7874 8.41667H33.4165L31.7655 3.375L30.1146 8.41667H24.7437L29.0905 11.5417L27.4396 16.5833L31.7864 13.4583L34.4614 11.5417L38.7874 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M53.4999 13.4792L56.5511 12.7083L57.8259 16.625L53.4999 13.4792ZM60.5218 8.41667H55.1509L53.4999 3.375L51.8489 8.41667H46.478L50.8249 11.5417L49.1739 16.5833L53.5208 13.4583L56.1958 11.5417L60.5218 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M75.2343 13.4792L78.2855 12.7083L79.5603 16.625L75.2343 13.4792ZM82.2562 8.41667H76.8853L75.2343 3.375L73.5833 8.41667H68.2124L72.5593 11.5417L70.9083 16.5833L75.2552 13.4583L77.9302 11.5417L82.2562 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M96.9687 13.4792L100.02 12.7083L101.295 16.625L96.9687 13.4792ZM103.991 8.41667H98.6196L96.9687 3.375L95.3177 8.41667H89.9468L94.2937 11.5417L92.6427 16.5833L96.9896 13.4583L99.6646 11.5417L103.991 8.41667Z"
-                                                    fill="white" />
-                                            </g>
-                                        </svg></div>
-                                </div>
-                            </div>
-                            <div class="ui-testimonial-slide w-slide">
-                                <div class="ui-testimonial-card">
-                                    <div class="ui-testimonial-user-wrapper"><img
-                                            src="/newonboarding/images/testimonial5.png" loading="lazy"
-                                            alt="User Profile" class="ui-testimonial-user-image" />
-                                        <div class="ui-testimonial-user-div">
-                                            <div class="ui-large-paragraph">Sofia Chen</div>
-                                            <div class="ui-small-paragraph">Product Manager – Sydney, Australia</div>
-                                        </div>
-                                    </div>
-                                    <p class="ui-extra-large-paragraph ui-testimonial-review-text">“This approach
-                                        simplified
-                                        complex projects. We launched ahead of schedule and with a 30% reduction in
-                                        costs.”
-                                    </p>
-                                    <div class="ui-testimonial-icon w-embed"><svg viewBox="0 0 107 20" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <g clip-path="url(#clip0_2019_11)">
-                                                <path d="M20.0625 0H0V20H20.0625V0Z" fill="#00B67A" />
-                                                <path d="M41.7969 0H21.7344V20H41.7969V0Z" fill="#00B67A" />
-                                                <path d="M63.5312 0H43.4688V20H63.5312V0Z" fill="#00B67A" />
-                                                <path d="M85.2656 0H65.2031V20H85.2656V0Z" fill="#00B67A" />
-                                                <path d="M107 0H86.9375V20H107V0Z" fill="#00B67A" />
-                                                <path
-                                                    d="M10.0312 13.4792L13.0823 12.7083L14.3571 16.625L10.0312 13.4792ZM17.053 8.41667H11.6821L10.0312 3.375L8.38018 8.41667H3.00928L7.35615 11.5417L5.70518 16.5833L10.0521 13.4583L12.7271 11.5417L17.053 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M31.7655 13.4792L34.8167 12.7083L36.0915 16.625L31.7655 13.4792ZM38.7874 8.41667H33.4165L31.7655 3.375L30.1146 8.41667H24.7437L29.0905 11.5417L27.4396 16.5833L31.7864 13.4583L34.4614 11.5417L38.7874 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M53.4999 13.4792L56.5511 12.7083L57.8259 16.625L53.4999 13.4792ZM60.5218 8.41667H55.1509L53.4999 3.375L51.8489 8.41667H46.478L50.8249 11.5417L49.1739 16.5833L53.5208 13.4583L56.1958 11.5417L60.5218 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M75.2343 13.4792L78.2855 12.7083L79.5603 16.625L75.2343 13.4792ZM82.2562 8.41667H76.8853L75.2343 3.375L73.5833 8.41667H68.2124L72.5593 11.5417L70.9083 16.5833L75.2552 13.4583L77.9302 11.5417L82.2562 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M96.9687 13.4792L100.02 12.7083L101.295 16.625L96.9687 13.4792ZM103.991 8.41667H98.6196L96.9687 3.375L95.3177 8.41667H89.9468L94.2937 11.5417L92.6427 16.5833L96.9896 13.4583L99.6646 11.5417L103.991 8.41667Z"
-                                                    fill="white" />
-                                            </g>
-                                        </svg></div>
-                                </div>
-                            </div>
-                            <div class="ui-testimonial-slide w-slide">
-                                <div class="ui-testimonial-card">
-                                    <div class="ui-testimonial-user-wrapper"><img
-                                            src="/newonboarding/images/testimonial6.png" loading="lazy"
-                                            alt="User Profile" class="ui-testimonial-user-image" />
-                                        <div class="ui-testimonial-user-div">
-                                            <div class="ui-large-paragraph">Tariq Ali</div>
-                                            <div class="ui-small-paragraph">UX Designer – Dubai, UAE</div>
-                                        </div>
-                                    </div>
-                                    <p class="ui-extra-large-paragraph ui-testimonial-review-text">“Adopting this
-                                        framework
-                                        made my design process more intuitive. User feedback is overwhelmingly positive,
-                                        and
-                                        I feel more confident in my choices.”</p>
-                                    <div class="ui-testimonial-icon w-embed"><svg viewBox="0 0 107 20" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <g clip-path="url(#clip0_2019_11)">
-                                                <path d="M20.0625 0H0V20H20.0625V0Z" fill="#00B67A" />
-                                                <path d="M41.7969 0H21.7344V20H41.7969V0Z" fill="#00B67A" />
-                                                <path d="M63.5312 0H43.4688V20H63.5312V0Z" fill="#00B67A" />
-                                                <path d="M85.2656 0H65.2031V20H85.2656V0Z" fill="#00B67A" />
-                                                <path d="M107 0H86.9375V20H107V0Z" fill="#00B67A" />
-                                                <path
-                                                    d="M10.0312 13.4792L13.0823 12.7083L14.3571 16.625L10.0312 13.4792ZM17.053 8.41667H11.6821L10.0312 3.375L8.38018 8.41667H3.00928L7.35615 11.5417L5.70518 16.5833L10.0521 13.4583L12.7271 11.5417L17.053 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M31.7655 13.4792L34.8167 12.7083L36.0915 16.625L31.7655 13.4792ZM38.7874 8.41667H33.4165L31.7655 3.375L30.1146 8.41667H24.7437L29.0905 11.5417L27.4396 16.5833L31.7864 13.4583L34.4614 11.5417L38.7874 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M53.4999 13.4792L56.5511 12.7083L57.8259 16.625L53.4999 13.4792ZM60.5218 8.41667H55.1509L53.4999 3.375L51.8489 8.41667H46.478L50.8249 11.5417L49.1739 16.5833L53.5208 13.4583L56.1958 11.5417L60.5218 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M75.2343 13.4792L78.2855 12.7083L79.5603 16.625L75.2343 13.4792ZM82.2562 8.41667H76.8853L75.2343 3.375L73.5833 8.41667H68.2124L72.5593 11.5417L70.9083 16.5833L75.2552 13.4583L77.9302 11.5417L82.2562 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M96.9687 13.4792L100.02 12.7083L101.295 16.625L96.9687 13.4792ZM103.991 8.41667H98.6196L96.9687 3.375L95.3177 8.41667H89.9468L94.2937 11.5417L92.6427 16.5833L96.9896 13.4583L99.6646 11.5417L103.991 8.41667Z"
-                                                    fill="white" />
-                                            </g>
-                                        </svg></div>
-                                </div>
-                            </div>
-                            <div class="ui-testimonial-slide w-slide">
-                                <div class="ui-testimonial-card">
-                                    <div class="ui-testimonial-user-wrapper"><img
-                                            src="/newonboarding/images/testimonial7.png" loading="lazy"
-                                            alt="User Profile" class="ui-testimonial-user-image" />
-                                        <div class="ui-testimonial-user-div">
-                                            <div class="ui-large-paragraph">Maria Hwang</div>
-                                            <div class="ui-small-paragraph">Sales Director – Singapore</div>
-                                        </div>
-                                    </div>
-                                    <p class="ui-extra-large-paragraph ui-testimonial-review-text">“My team’s
-                                        performance
-                                        skyrocketed after implementing these strategies. We&#x27;ve closed major deals
-                                        that
-                                        were previously out of reach.”</p>
-                                    <div class="ui-testimonial-icon w-embed"><svg viewBox="0 0 107 20" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <g clip-path="url(#clip0_2019_11)">
-                                                <path d="M20.0625 0H0V20H20.0625V0Z" fill="#00B67A" />
-                                                <path d="M41.7969 0H21.7344V20H41.7969V0Z" fill="#00B67A" />
-                                                <path d="M63.5312 0H43.4688V20H63.5312V0Z" fill="#00B67A" />
-                                                <path d="M85.2656 0H65.2031V20H85.2656V0Z" fill="#00B67A" />
-                                                <path d="M107 0H86.9375V20H107V0Z" fill="#00B67A" />
-                                                <path
-                                                    d="M10.0312 13.4792L13.0823 12.7083L14.3571 16.625L10.0312 13.4792ZM17.053 8.41667H11.6821L10.0312 3.375L8.38018 8.41667H3.00928L7.35615 11.5417L5.70518 16.5833L10.0521 13.4583L12.7271 11.5417L17.053 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M31.7655 13.4792L34.8167 12.7083L36.0915 16.625L31.7655 13.4792ZM38.7874 8.41667H33.4165L31.7655 3.375L30.1146 8.41667H24.7437L29.0905 11.5417L27.4396 16.5833L31.7864 13.4583L34.4614 11.5417L38.7874 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M53.4999 13.4792L56.5511 12.7083L57.8259 16.625L53.4999 13.4792ZM60.5218 8.41667H55.1509L53.4999 3.375L51.8489 8.41667H46.478L50.8249 11.5417L49.1739 16.5833L53.5208 13.4583L56.1958 11.5417L60.5218 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M75.2343 13.4792L78.2855 12.7083L79.5603 16.625L75.2343 13.4792ZM82.2562 8.41667H76.8853L75.2343 3.375L73.5833 8.41667H68.2124L72.5593 11.5417L70.9083 16.5833L75.2552 13.4583L77.9302 11.5417L82.2562 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M96.9687 13.4792L100.02 12.7083L101.295 16.625L96.9687 13.4792ZM103.991 8.41667H98.6196L96.9687 3.375L95.3177 8.41667H89.9468L94.2937 11.5417L92.6427 16.5833L96.9896 13.4583L99.6646 11.5417L103.991 8.41667Z"
-                                                    fill="white" />
-                                            </g>
-                                        </svg></div>
-                                </div>
-                            </div>
-                            <div class="ui-testimonial-slide w-slide">
-                                <div class="ui-testimonial-card">
-                                    <div class="ui-testimonial-user-wrapper"><img
-                                            src="/newonboarding/images/testimonial8.png" loading="lazy"
-                                            alt="User Profile" class="ui-testimonial-user-image" />
-                                        <div class="ui-testimonial-user-div">
-                                            <div class="ui-large-paragraph">Kevin Wright</div>
-                                            <div class="ui-small-paragraph">Startup Founder – Berlin, Germany</div>
-                                        </div>
-                                    </div>
-                                    <p class="ui-extra-large-paragraph ui-testimonial-review-text">“The insights I
-                                        gained
-                                        reshaped my business model. My investor pitches are now compelling, and funding
-                                        has
-                                        become easier to secure.”</p>
-                                    <div class="ui-testimonial-icon w-embed"><svg viewBox="0 0 107 20" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <g clip-path="url(#clip0_2019_11)">
-                                                <path d="M20.0625 0H0V20H20.0625V0Z" fill="#00B67A" />
-                                                <path d="M41.7969 0H21.7344V20H41.7969V0Z" fill="#00B67A" />
-                                                <path d="M63.5312 0H43.4688V20H63.5312V0Z" fill="#00B67A" />
-                                                <path d="M85.2656 0H65.2031V20H85.2656V0Z" fill="#00B67A" />
-                                                <path d="M107 0H86.9375V20H107V0Z" fill="#00B67A" />
-                                                <path
-                                                    d="M10.0312 13.4792L13.0823 12.7083L14.3571 16.625L10.0312 13.4792ZM17.053 8.41667H11.6821L10.0312 3.375L8.38018 8.41667H3.00928L7.35615 11.5417L5.70518 16.5833L10.0521 13.4583L12.7271 11.5417L17.053 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M31.7655 13.4792L34.8167 12.7083L36.0915 16.625L31.7655 13.4792ZM38.7874 8.41667H33.4165L31.7655 3.375L30.1146 8.41667H24.7437L29.0905 11.5417L27.4396 16.5833L31.7864 13.4583L34.4614 11.5417L38.7874 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M53.4999 13.4792L56.5511 12.7083L57.8259 16.625L53.4999 13.4792ZM60.5218 8.41667H55.1509L53.4999 3.375L51.8489 8.41667H46.478L50.8249 11.5417L49.1739 16.5833L53.5208 13.4583L56.1958 11.5417L60.5218 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M75.2343 13.4792L78.2855 12.7083L79.5603 16.625L75.2343 13.4792ZM82.2562 8.41667H76.8853L75.2343 3.375L73.5833 8.41667H68.2124L72.5593 11.5417L70.9083 16.5833L75.2552 13.4583L77.9302 11.5417L82.2562 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M96.9687 13.4792L100.02 12.7083L101.295 16.625L96.9687 13.4792ZM103.991 8.41667H98.6196L96.9687 3.375L95.3177 8.41667H89.9468L94.2937 11.5417L92.6427 16.5833L96.9896 13.4583L99.6646 11.5417L103.991 8.41667Z"
-                                                    fill="white" />
-                                            </g>
-                                        </svg></div>
-                                </div>
-                            </div>
-                            <div class="ui-testimonial-slide w-slide">
-                                <div class="ui-testimonial-card">
-                                    <div class="ui-testimonial-user-wrapper"><img
-                                            src="/newonboarding/images/testimonial9.png" loading="lazy"
-                                            alt="User Profile" class="ui-testimonial-user-image" />
-                                        <div class="ui-testimonial-user-div">
-                                            <div class="ui-large-paragraph">Priya Reddy</div>
-                                            <div class="ui-small-paragraph">HR Specialist – Mumbai, India</div>
-                                        </div>
-                                    </div>
-                                    <p class="ui-extra-large-paragraph ui-testimonial-review-text">“Revising our
-                                        recruitment
-                                        strategy with these tools led to a more diverse and qualified candidate pool.
-                                        Our
-                                        hiring process is now much smoother.”</p>
-                                    <div class="ui-testimonial-icon w-embed"><svg viewBox="0 0 107 20" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <g clip-path="url(#clip0_2019_11)">
-                                                <path d="M20.0625 0H0V20H20.0625V0Z" fill="#00B67A" />
-                                                <path d="M41.7969 0H21.7344V20H41.7969V0Z" fill="#00B67A" />
-                                                <path d="M63.5312 0H43.4688V20H63.5312V0Z" fill="#00B67A" />
-                                                <path d="M85.2656 0H65.2031V20H85.2656V0Z" fill="#00B67A" />
-                                                <path d="M107 0H86.9375V20H107V0Z" fill="#00B67A" />
-                                                <path
-                                                    d="M10.0312 13.4792L13.0823 12.7083L14.3571 16.625L10.0312 13.4792ZM17.053 8.41667H11.6821L10.0312 3.375L8.38018 8.41667H3.00928L7.35615 11.5417L5.70518 16.5833L10.0521 13.4583L12.7271 11.5417L17.053 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M31.7655 13.4792L34.8167 12.7083L36.0915 16.625L31.7655 13.4792ZM38.7874 8.41667H33.4165L31.7655 3.375L30.1146 8.41667H24.7437L29.0905 11.5417L27.4396 16.5833L31.7864 13.4583L34.4614 11.5417L38.7874 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M53.4999 13.4792L56.5511 12.7083L57.8259 16.625L53.4999 13.4792ZM60.5218 8.41667H55.1509L53.4999 3.375L51.8489 8.41667H46.478L50.8249 11.5417L49.1739 16.5833L53.5208 13.4583L56.1958 11.5417L60.5218 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M75.2343 13.4792L78.2855 12.7083L79.5603 16.625L75.2343 13.4792ZM82.2562 8.41667H76.8853L75.2343 3.375L73.5833 8.41667H68.2124L72.5593 11.5417L70.9083 16.5833L75.2552 13.4583L77.9302 11.5417L82.2562 8.41667Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M96.9687 13.4792L100.02 12.7083L101.295 16.625L96.9687 13.4792ZM103.991 8.41667H98.6196L96.9687 3.375L95.3177 8.41667H89.9468L94.2937 11.5417L92.6427 16.5833L96.9896 13.4583L99.6646 11.5417L103.991 8.41667Z"
-                                                    fill="white" />
-                                            </g>
-                                        </svg></div>
-                                </div>
-                            </div>
+                            @endforeach
+
                         </div>
                         <div class="ui-testimonial-arrow-left-box w-slider-arrow-left">
                             <div class="ui-testimonial-arrow w-embed"><svg viewBox="0 0 24 24" fill="currentcolor"
@@ -1584,25 +1258,23 @@
                             <form id="wf-form-Email-Form" name="wf-form-Email-Form" data-name="Email Form"
                                 method="get" class="ui-cta-form-div" data-wf-page-id="693310ec12ccb07495272b21"
                                 data-wf-element-id="54e15092-f59e-a7ab-09a2-0ea5bc4a1a64">
-                                
-                                <input
-                                    class="ui-cta-input w-input" maxlength="256" name="Email-Field"
+
+                                <input class="ui-cta-input w-input" maxlength="256" name="Email-Field"
                                     data-name="Email Field" placeholder="ENTER EMAIL ADDRESS" type="email"
                                     id="Email-Field" required="" />
 
-                                    
 
-                                    <select class="ui-cta-input w-input" maxlength="256" name="client-type" required>
-                                        <option value="">Select Client Type</option>
-                                        <option value="Talent">Talent</option>
-                                        <option value="Business">Business</option>
-                                    </select>
 
-                                    <input type="submit"
-                                    data-wait="Please wait..." class="ui-button w-button"
+                                <select class="ui-cta-input w-input" maxlength="256" name="client-type" required>
+                                    <option value="">Select Client Type</option>
+                                    <option value="Talent">Talent</option>
+                                    <option value="Business">Business</option>
+                                </select>
+
+                                <input type="submit" data-wait="Please wait..." class="ui-button w-button"
                                     value="Join the Newsletter" />
-                                
-                                </form>
+
+                            </form>
                             <div class="ui-success-message w-form-done">
                                 <div class="ui-small-paragraph">Thank you! Your submission has been received!</div>
                             </div>

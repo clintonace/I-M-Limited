@@ -30,7 +30,9 @@ use Illuminate\Support\Facades\Http;
 Route::view('/section', 'sect')->name('section');
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $testimonies = \App\Models\Testimony::all();
+    return view('welcome', compact('testimonies'));
 })->name('welcome');
 
 Route::get('/dashboard', function () {

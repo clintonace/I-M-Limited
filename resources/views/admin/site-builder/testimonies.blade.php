@@ -32,6 +32,80 @@
                                 </div>
                             </div> --}}
 
+                            <div class="mt-10">
+                           
+
+
+                            <div class="flex flex-col gap-4 2xl:flex-row 2xl:items-center 2xl:justify-between">
+
+                            <!-- Tabs -->
+                            <ul role="tablist"
+                                class="p-0.5 border w-full flex box mr-auto flex-col rounded-[0.6rem]
+                                    border-slate-200 bg-white sm:flex-row 2xl:w-auto">
+
+                                <li role="presentation"
+                                    class="flex-1 bg-slate-50 first:rounded-l-[0.6rem] last:rounded-r-[0.6rem]">
+                                    <button
+                                        class="active flex w-full items-center justify-center rounded-[0.6rem]
+                                            h-10 px-4 text-sm font-medium text-slate-700 bg-white border border-slate-200 shadow-sm">
+                                        Active Openings
+                                    </button>
+                                </li>
+                            </ul>
+
+                            <!-- Search + Filters -->
+                            <div class="flex flex-wrap items-center gap-2 w-full 2xl:w-auto">
+
+                            <!-- Skill Filters -->
+                                {{-- <div class="flex items-center gap-2">
+
+                                    @foreach ($depts->take(4) as $d)
+
+                                    <a href="?query={{$d?->name}}"
+                                    class="h-10 inline-flex items-center px-4 rounded border text-sm
+                                    {{ request('query') === $d?->name
+                                            ? 'bg-primary text-white border-primary'
+                                            : 'bg-white border-slate-200 hover:bg-slate-50' }}">
+                                        {{$d?->name}}
+                                    </a>
+
+                                    @endforeach
+
+                                    <div class="relative">
+                                        <select name="depts" onchange="window.location.href='?query=' + this.value"
+                                            class="h-10 px-4 rounded border border-slate-200 text-sm bg-white hover:bg-slate-50 cursor-pointer focus:ring-2 focus:ring-primary focus:outline-none">
+                                            <option value="">All Departments</option>
+                                            @foreach ($depts as $d)
+                                                <option value="{{ $d?->name }}" {{ request('query') === $d?->name ? 'selected' : '' }}>
+                                                    {{ $d?->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+                                </div> --}}
+
+                                <!-- Search -->
+                                {{-- <form method="GET" action="{{ url()->current() }}"
+                                    class="flex items-center gap-2 w-full sm:w-auto">
+
+                                    <input type="search" name="query" value="{{ request('query') }}"
+                                        placeholder="Search Openings..."
+                                        class="h-10 w-full sm:w-64 px-3 rounded border border-slate-200
+                                                text-sm focus:ring-2 focus:ring-primary focus:outline-none" />
+
+                                    <button type="submit"
+                                            class="h-10 inline-flex items-center gap-2 px-4
+                                                bg-primary text-white rounded hover:opacity-90">
+                                        <i data-lucide="search" class="w-4 h-4"></i>
+                                        
+                                    </button>
+                                </form> --}}
+
+                                
+                            </div>
+                        </div>
+
                             <div class="flex flex-col gap-y-3 md:h-10 md:flex-row md:items-center">
                                 <div class="text-base font-medium group-[.mode--light]:text-dark">
                                     Create
@@ -100,7 +174,7 @@
                                                             Logo
                                                         </label>
                                                         <input data-tw-merge id="regular-form-6" name="logo"
-                                                            type="file" placeholder="" accept="image/*"
+                                                            type="file" placeholder="" accept="image/*" 
                                                             class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&amp;[readonly]]:bg-slate-100 [&amp;[readonly]]:cursor-not-allowed [&amp;[readonly]]:dark:bg-darkmode-800/50 [&amp;[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 [&amp;[type='file']]:border file:mr-4 file:py-2 file:px-4 file:rounded-l-md file:border-0 file:border-r-[1px] file:border-slate-100/10 file:text-sm file:font-semibold file:bg-slate-100 file:text-slate-500/70 hover:file:bg-200 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&amp;:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10">
                                                     </div>
 

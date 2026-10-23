@@ -10,6 +10,8 @@
     <meta property="og:type" content="website" />
     <meta name="google-site-verification" content="t-LZsEXUGJN1fsfkAALqn5VatLkolFDlMIPP4i6HedU" />
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <meta content="https://iandmlimited.com/images/logo.png" property="twitter:image" />
 
     <meta

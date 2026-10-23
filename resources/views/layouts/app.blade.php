@@ -17,6 +17,7 @@
     <meta property="og:url" content="https://iandmlimited.com" />
     <meta property="og:type" content="website" />
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     
 
     <meta content="Connect with Top Nigerian Remote Talent" property="twitter:title" />

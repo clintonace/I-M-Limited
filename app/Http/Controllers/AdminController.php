@@ -19,10 +19,51 @@ use App\Models\Work;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use RealRashid\SweetAlert\Facades\Alert;
+use Carbon\Carbon;
+use App\Models\FreeForMeet;
+use App\Models\ClientForMeet;
 
 class AdminController extends Controller
 {
 
+    public function freeTimeView(){
+
+        $freetimes = FreeForMeet::all();
+        return view('admin.calender.free-time', compact('freetimes'));
+    }
+
+    public function thisFreeTimeView(FreeForMeet $freetime = null){
+
+        $clientformeets = Clientformeet::where('freeformeet_id', $freetime->id)->get();
+        return view('admin.calender.this-free-time', compact('clientformeets'));
+    }
+
+    public function mkFreetime(Request $request){
+
+
+         $request->validate([
+            'start_time' => 'required',
+            'end_time' => 'required',
+            'day_of_week' => 'required',
+            
+        ]);
+
+        $freetime = new \App\Models\FreeForMeet();
+
+        $freetime->day_name = Carbon::now()
+            ->startOfWeek()
+            ->addDays((int) $request->day_of_week - 1)
+            ->format('l');
+        $freetime->day_of_week  = $request->day_of_week;
+        $freetime->start_time = $request->start_time;
+        $freetime->end_time = $request->end_time;
+        $freetime->duration_minutes = $request->duration_minutes;
+        $freetime->is_active = true;
+        $freetime->save();
+
+        Alert::success('Success', 'Free time slot created successfully.');
+        return back();
+    }
 
    public function suggestTalentsToCompany(Request $request)
     {

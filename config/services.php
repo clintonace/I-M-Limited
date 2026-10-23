@@ -32,7 +32,15 @@ return [
 
     'openai' => [
     'key' => env('OPENAI_API_KEY'),
+    'model' => env('OPENAI_MODEL', 'gpt-5-mini'),
     
     ],
+
+    'ollama' => [
+    'url' => env('OLLAMA_BASE_URL', 'http://76.13.131.17:11434'),
+    'model' => env('OLLAMA_MODEL', 'qwen3:8b'),
+],
+
+    
 
 ];

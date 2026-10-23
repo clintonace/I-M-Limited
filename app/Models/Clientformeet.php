@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Clientformeet extends Model
 {
     use HasFactory;
+
+
+    protected $casts = [
+    'starts_at' => 'datetime',
+    'ends_at' => 'datetime',
+    'created_at' => 'datetime',
+    'updated_at' => 'datetime',
+];
 }
