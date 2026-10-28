@@ -26,9 +26,17 @@ use App\Models\ClientForMeet;
 class AdminController extends Controller
 {
 
-    public function freeTimeView(){
-
+    public function freeTimeView()
+    {
         $freetimes = FreeForMeet::all();
+
+        foreach ($freetimes as $freetime) {
+            $freetime->slots_taken = ClientForMeet::where('freeformeet_id', $freetime->id)
+                ->where('starts_at', '>=', Carbon::today())
+                ->whereNotIn('status', ['cancelled', 'completed'])
+                ->count();
+        }
+
         return view('admin.calender.free-time', compact('freetimes'));
     }
 

@@ -34,6 +34,7 @@ Route::view('/section', 'sect')->name('section');
 // })->name('welcome');
 
 Route::prefix('web/')->group(function () {
+
     Route::get('/contact', [OnboardingController::class, 'contact'])->name('new.contact');
 
     Route::get('/book-a-call-page', [OnboardingController::class, 'bookACall'])->name('new.book_a_call');
@@ -46,6 +47,10 @@ Route::prefix('web/')->group(function () {
     Route::get('/aboutus', [OnboardingController::class, 'aboutus'])->name('new.aboutus');
 
     Route::get('/how-it-works', [OnboardingController::class, 'howItWorks'])->name('new.how-it-works');
+
+    Route::post('/edit-free-time/{id?}', [OnboardingController::class,'editFreeTime'])->name('new.edit.freetime');
+
+    Route::post('/send-client-mail', [OnboardingController::class,'sendClientMail'])->name('new.send.client.mail');
     
 
     
@@ -53,6 +58,11 @@ Route::prefix('web/')->group(function () {
 
 
 });
+
+Route::put('/admin/free-time/{freetime}', [
+    FreeTimeController::class,
+    'update'
+])->name('admin.update.freetime');
 
 Route::post('/ai/custom-mail/chat', [
     CustomMailAssistantController::class,

@@ -13,11 +13,11 @@
 
                             <div class="flex flex-col gap-y-3 md:h-10 md:flex-row md:items-center">
                                 <div class="text-base font-medium group-[.mode--light]:text-dark">
-                                    Create Free Time
+                                    Edit Free Time
                                 </div>
 
                             </div>
-                            <div class="mt-3.5 flex flex-col gap-5 sm:flex-row">
+                            {{-- <div class="mt-3.5 flex flex-col gap-5 sm:flex-row">
 
                                 <div class="w-full pb-10 overflow-hidden">
                                     <div class="flex flex-col w-full box box--stacked">
@@ -83,11 +83,11 @@
                                                             <option value="20:00">8:00 PM</option>
                                                             <option value="21:00">9:00 PM</option>
                                                             <option value="22:00">10:00 PM</option>
-                                                            <option value="23:00">11:00 PM</option>    
+                                                            <option value="23:00">11:00 PM</option>
                                                             <option value="24:00">12:00 AM</option>
                                                         </select>
 
-                                                        
+
                                                     </div>
 
                                                     <!-- End Time -->
@@ -153,7 +153,7 @@
                                 </div>
 
 
-                            </div>
+                            </div> --}}
 
                             <div class="mt-3.5 flex flex-col gap-8">
 
@@ -161,10 +161,9 @@
                                     <div class="flex flex-col gap-y-2 p-5 sm:flex-row sm:items-center">
                                         <div>
                                             <div class="relative">
-                                                <i data-tw-merge="" data-lucide="search"
-                                                    class="absolute inset-y-0 left-0 z-10 my-auto ml-3 h-4 w-4 stroke-[1.3] text-slate-500"></i>
-                                                <input data-tw-merge="" type="text" placeholder="Search users..."
-                                                    class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 [&[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 [&[type='file']]:border file:mr-4 file:py-2 file:px-4 file:rounded-l-md file:border-0 file:border-r-[1px] file:border-slate-100/10 file:text-sm file:font-semibold file:bg-slate-100 file:text-slate-500/70 hover:file:bg-200 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10 rounded-[0.5rem] pl-9 sm:w-64">
+                                                {{-- <i data-tw-merge="" data-lucide="search"
+                                                    class="absolute inset-y-0 left-0 z-10 my-auto ml-3 h-4 w-4 stroke-[1.3] text-slate-500"></i> --}}
+                                                <h1>Edit time in whole number eg. 12:00.</h1>
                                             </div>
                                         </div>
                                         <div class="flex flex-col gap-x-3 gap-y-2 sm:ml-auto sm:flex-row">
@@ -183,37 +182,51 @@
 
                                         </div>
                                     </div>
-                 
+
                                     <div class="overflow-auto xl:overflow-visible">
                                         <table class="w-full text-left border-b border-slate-200/60">
                                             <thead>
                                                 <tr>
-                                                    <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
+                                                    <td
+                                                        class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
                                                         No.
                                                     </td>
-                                                    <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
+                                                    <td
+                                                        class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
                                                         Day
                                                     </td>
-                                                    <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
+                                                    <td
+                                                        class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
                                                         Start Time
                                                     </td>
-                                                    <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
+                                                    <td
+                                                        class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
                                                         End Time
                                                     </td>
-                                                    <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
+                                                    <td
+                                                        class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
                                                         Duration
                                                     </td>
-                                                    <td class="px-5 border-b border-t bg-slate-50 py-4 text-center font-medium text-slate-500">
+                                                    <td
+                                                        class="px-5 border-b border-t bg-slate-50 py-4 text-center font-medium text-slate-500">
                                                         Slots
                                                     </td>
-                                                    <td class="px-5 border-b border-t bg-slate-50 py-4 text-center font-medium text-slate-500">
+                                                    <td
+                                                        class="px-5 border-b border-t bg-slate-50 py-4 text-center font-medium text-slate-500">
                                                         Slots Taken
                                                     </td>
-                                                    <td class="px-5 border-b border-t bg-slate-50 py-4 text-center font-medium text-slate-500">
+                                                    <td
+                                                        class="px-5 border-b border-t bg-slate-50 py-4 text-center font-medium text-slate-500">
                                                         Status
                                                     </td>
-                                                    <td class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
+                                                    {{-- <td
+                                                        class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
                                                         Created Date
+                                                    </td> --}}
+
+                                                    <td
+                                                        class="px-5 border-b border-t bg-slate-50 py-4 font-medium text-slate-500">
+                                                        Actions
                                                     </td>
                                                 </tr>
                                             </thead>
@@ -226,11 +239,13 @@
                                                             {{ $loop->iteration }}
                                                         </td>
 
+
+
                                                         <!-- Clickable Day -->
                                                         <td class="px-5 border-b border-dashed py-4">
-                                                            <a href="{{route('admin.this.freetime', ['freetime' => $freetime?->id])}}"
-                                                            {{-- onclick="event.preventDefault(); alert('Selected day: {{ $freetime->day_name }}');" --}}
-                                                            class="font-medium text-success hover:underline">
+                                                            <a href="{{ route('admin.this.freetime', ['freetime' => $freetime?->id]) }}"
+                                                                {{-- onclick="event.preventDefault(); alert('Selected day: {{ $freetime->day_name }}');" --}}
+                                                                class="font-medium text-success hover:underline">
                                                                 {{ $freetime->day_name }}
                                                             </a>
                                                         </td>
@@ -254,57 +269,185 @@
                                                                 $end = \Carbon\Carbon::parse($freetime->end_time);
                                                                 $duration = (int) $freetime->duration_minutes;
 
-                                                                $totalSlots = $duration > 0 && $end->gt($start)
-                                                                    ? (int) floor($start->diffInMinutes($end) / $duration)
-                                                                    : 0;
+                                                                $totalSlots =
+                                                                    $duration > 0 && $end->gt($start)
+                                                                        ? (int) floor(
+                                                                            $start->diffInMinutes($end) / $duration,
+                                                                        )
+                                                                        : 0;
                                                             @endphp
 
-                                                            <span class="inline-flex items-center justify-center min-w-9 text-danger rounded-md bg-red-100 px-3 py-1 font-semibold text-red-700">
+                                                            <span
+                                                                class="inline-flex items-center justify-center min-w-9 text-danger rounded-md bg-red-100 px-3 py-1 font-semibold text-red-700">
                                                                 {{ $totalSlots }}
                                                             </span>
                                                         </td>
 
                                                         <!-- Dummy Slots Taken: Green -->
                                                         <td class="px-5 border-b border-dashed py-4 text-center">
-                                                            <span class="inline-flex text-success items-center justify-center min-w-9 rounded-md bg-green-100 px-3 py-1 font-semibold text-green-700">
-                                                                3
+                                                            <span
+                                                                class="inline-flex text-success items-center justify-center min-w-9 rounded-md bg-green-100 px-3 py-1 font-semibold text-green-700">
+                                                                {{ $freetime->slots_taken }}
                                                             </span>
                                                         </td>
 
                                                         <!-- Active Status -->
                                                         <td class="px-5 border-b border-dashed py-4 text-center">
                                                             @if ($freetime->is_active)
-                                                                <span class="inline-flex items-center text-success rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
+                                                                <span
+                                                                    class="inline-flex items-center text-success rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
                                                                     Active
                                                                 </span>
                                                             @else
-                                                                <span class="inline-flex items-center rounded-full bg-red-100 px-3 py-1 text-xs font-semibold text-red-700">
+                                                                <span
+                                                                    class="inline-flex items-center rounded-full bg-red-100 px-3 py-1 text-xs font-semibold text-red-700">
                                                                     Inactive
                                                                 </span>
                                                             @endif
                                                         </td>
 
-                                                        <td class="px-5 border-b border-dashed py-4">
+                                                        {{-- <td class="px-5 border-b border-dashed py-4">
                                                             <div class="font-medium">
                                                                 {{ $freetime->created_at?->format('d M Y') ?? 'N/A' }}
                                                             </div>
                                                             <div class="mt-0.5 text-xs text-slate-500">
                                                                 {{ $freetime->created_at?->diffForHumans() ?? '' }}
                                                             </div>
+                                                        </td> --}}
+
+                                                        <td class="px-5 border-b border-dashed py-4">
+                                                            <button type="button" data-tw-toggle="modal"
+                                                                data-tw-target="#free-time-modal-{{ $freetime->id }}"
+                                                                class="text-primary hover:underline">
+                                                                Edit
+                                                            </button>
                                                         </td>
 
                                                     </tr>
+
+                                                    <!-- The Modal -->
+                                                    <div data-tw-backdrop="" aria-hidden="true" tabindex="-1"
+                                                        id="free-time-modal-{{ $freetime->id }}"
+                                                        class="modal p-4 group bg-gradient-to-b from-theme-1/50 via-theme-2/50 to-black/50 transition-[visibility,opacity] w-screen h-screen fixed left-0 top-0 z-[9999] [&:not(.show)]:duration-[0s,0.2s] [&:not(.show)]:delay-[0.2s,0s] [&:not(.show)]:invisible [&:not(.show)]:opacity-0 [&.show]:visible [&.show]:opacity-100 [&.show]:duration-[0s,0.4s]">
+
+                                                        <div
+                                                            class="w-[50%] max-w-[100px] mx-auto bg-white relative rounded-md shadow-md transition-[margin-top,transform] duration-[0.4s,0.3s] -mt-16 group-[.show]:mt-16 sm:w-[560px] p-8"
+                                                            style= "padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+
+                                                            <div class="flex items-center justify-between mb-6">
+                                                                <h4 class="text-lg font-semibold text-slate-800">
+                                                                    Edit Free Time
+                                                                </h4>
+
+                                                                <button type="button" data-tw-dismiss="modal"
+                                                                    aria-label="Close"
+                                                                    class="text-2xl text-slate-500 hover:text-slate-800">
+                                                                    &times;
+                                                                </button>
+                                                            </div>
+
+                                                            <form
+                                                                action="{{ route('new.edit.freetime', ['id' => $freetime->id]) }}"
+                                                                method="POST" class="space-y-5">
+
+                                                                @csrf
+
+                                                                <div class="text-left">
+                                                                    <label class="inline-block mb-2">Day</label>
+                                                                    <select name="day_of_week" required
+                                                                        class="transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md focus:ring-4 focus:ring-primary dark:bg-darkmode-800 dark:border-transparent">
+                                                                        @foreach ([
+                                                                                        1 => 'Monday',
+                                                                                        2 => 'Tuesday',
+                                                                                        3 => 'Wednesday',
+                                                                                        4 => 'Thursday',
+                                                                                        5 => 'Friday',
+                                                                                        6 => 'Saturday',
+                                                                                        7 => 'Sunday',
+                                                                                    ] as $day => $name)
+                                                                            <option value="{{ $day }}"
+                                                                                {{ $freetime->day_of_week == $day ? 'selected' : '' }}>
+                                                                                {{ $name }}
+                                                                            </option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                </div>
+
+                                                                <div class="text-left">
+                                                                    <label class="inline-block mb-2">Start Time</label>
+                                                                    <input type="time" name="start_time"
+                                                                        value="{{ substr($freetime->start_time, 0, 5) }}"
+                                                                        required
+                                                                        class="transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md focus:ring-4 focus:ring-primary dark:bg-darkmode-800 dark:border-transparent">
+                                                                </div>
+
+                                                                <div class="text-left">
+                                                                    <label class="inline-block mb-2">End Time</label>
+                                                                    <input type="time" name="end_time"
+                                                                        value="{{ substr($freetime->end_time, 0, 5) }}"
+                                                                        required
+                                                                        class="transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md focus:ring-4 focus:ring-primary dark:bg-darkmode-800 dark:border-transparent">
+                                                                </div>
+
+                                                                <div class="text-left">
+                                                                    <label class="inline-block mb-2">Duration
+                                                                        (minutes)</label>
+                                                                    <input type="number" name="duration_minutes"
+                                                                        value="{{ $freetime->duration_minutes }}"
+                                                                        min="1" required
+                                                                        class="transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md focus:ring-4 focus:ring-primary dark:bg-darkmode-800 dark:border-transparent">
+                                                                </div>
+
+                                                                <div class="text-left">
+                                                                    <label class="inline-block mb-2">Status</label>
+                                                                    <select name="is_active"
+                                                                        class="transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md focus:ring-4 focus:ring-primary dark:bg-darkmode-800 dark:border-transparent">
+                                                                        <option value="1"
+                                                                            {{ $freetime->is_active ? 'selected' : '' }}>
+                                                                            Active
+                                                                        </option>
+                                                                        <option value="0"
+                                                                            {{ !$freetime->is_active ? 'selected' : '' }}>
+                                                                            Inactive
+                                                                        </option>
+                                                                    </select>
+                                                                </div>
+
+                                                                <div class="flex justify-end gap-3 pt-2">
+                                                                    <button type="button" data-tw-dismiss="modal"
+                                                                        class="transition duration-200 border shadow-sm inline-flex items-center justify-center py-2 px-4 rounded-md font-medium cursor-pointer">
+                                                                        Cancel
+                                                                    </button>
+
+                                                                    <button type="submit"
+                                                                        class="transition duration-200 border shadow-sm inline-flex items-center justify-center py-2 px-4 rounded-md font-medium cursor-pointer bg-primary border-primary text-white">
+                                                                        Save Changes
+                                                                    </button>
+                                                                </div>
+
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                   
+
+                                                    {{-- @endforeach --}}
                                                 @empty
                                                     <tr>
-                                                        <td colspan="9" class="px-5 py-8 text-center text-slate-500">
+                                                        <td colspan="9"
+                                                            class="px-5 py-8 text-center text-slate-500">
                                                             No free times have been created yet.
                                                         </td>
                                                     </tr>
+
+                                                    <!-- Edit Button -->
+
                                                 @endforelse
                                             </tbody>
                                         </table>
                                     </div>
-                                   
+
+
+
                                     <div
                                         class="flex-reverse flex flex-col-reverse flex-wrap items-center gap-y-2 p-5 sm:flex-row">
                                         <nav class="mr-auto w-full flex-1 sm:w-auto">
@@ -412,7 +555,7 @@
                 return `${String(hour % 24).padStart(2, '0')}:00`;
             }
 
-            startTime.addEventListener('change', function () {
+            startTime.addEventListener('change', function() {
                 endTime.innerHTML =
                     '<option value="">Choose an end time</option>';
 
@@ -428,6 +571,48 @@
 
                     const value = getTimeValue(hour);
                     endTime.add(new Option(getTimeLabel(hour), value));
+                }
+            });
+        </script>
+
+
+        <script>
+            function openFreeTimeModal(modalId) {
+                const modal = document.getElementById(modalId);
+
+                if (modal) {
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            function closeFreeTimeModal(modalId) {
+                const modal = document.getElementById(modalId);
+
+                if (modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            }
+
+            // Close when clicking the dark background
+            document.querySelectorAll('.free-time-modal').forEach(function(modal) {
+                modal.addEventListener('click', function(event) {
+                    if (event.target === modal) {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+
+            // Close when pressing Escape
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    document.querySelectorAll('.free-time-modal').forEach(function(modal) {
+                        modal.style.display = 'none';
+                    });
+
+                    document.body.style.overflow = '';
                 }
             });
         </script>

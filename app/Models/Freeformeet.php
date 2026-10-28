@@ -16,7 +16,7 @@ class Freeformeet extends Model
         'day_name',
         'status',
         'duration_minutes',
+        'is_active',
         
-
     ];
 }
