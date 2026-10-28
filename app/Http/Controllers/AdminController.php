@@ -46,30 +46,57 @@ class AdminController extends Controller
         return view('admin.calender.this-free-time', compact('clientformeets'));
     }
 
-    public function mkFreetime(Request $request){
-
-
-         $request->validate([
-            'start_time' => 'required',
-            'end_time' => 'required',
-            'day_of_week' => 'required',
-            
+    public function mkFreetime(Request $request)
+    {
+        $validated = $request->validate([
+            'start_time' => 'required|date_format:H:i',
+            'end_time' => 'required|date_format:H:i|after:start_time',
+            'day_of_week' => 'required|integer|between:1,7',
+            'duration_minutes' => 'required|integer|min:1',
         ]);
+
+        // Calculate total available minutes
+        $startTime = Carbon::createFromFormat('H:i', $validated['start_time']);
+        $endTime = Carbon::createFromFormat('H:i', $validated['end_time']);
+
+        $totalMinutes = $startTime->diffInMinutes($endTime);
+
+        // Calculate how many complete booking slots are available
+        $slotsPerDay = intdiv(
+            $totalMinutes,
+            $validated['duration_minutes']
+        );
+
+        if ($slotsPerDay < 1) {
+            Alert::error(
+                'Invalid Schedule',
+                'The selected duration must allow at least one booking slot.'
+            );
+
+            return back()->withInput();
+        }
 
         $freetime = new \App\Models\FreeForMeet();
 
         $freetime->day_name = Carbon::now()
             ->startOfWeek()
-            ->addDays((int) $request->day_of_week - 1)
+            ->addDays((int) $validated['day_of_week'] - 1)
             ->format('l');
-        $freetime->day_of_week  = $request->day_of_week;
-        $freetime->start_time = $request->start_time;
-        $freetime->end_time = $request->end_time;
-        $freetime->duration_minutes = $request->duration_minutes;
+
+        $freetime->day_of_week = $validated['day_of_week'];
+        $freetime->start_time = $validated['start_time'];
+        $freetime->end_time = $validated['end_time'];
+        $freetime->duration_minutes = $validated['duration_minutes'];
+        $freetime->slots_per_day = $slotsPerDay;
         $freetime->is_active = true;
+
         $freetime->save();
 
-        Alert::success('Success', 'Free time slot created successfully.');
+        Alert::success(
+            'Success',
+            "Free time slot created successfully. {$slotsPerDay} booking slots are available per day."
+        );
+
         return back();
     }
 

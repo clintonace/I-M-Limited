@@ -7,12 +7,53 @@ use Illuminate\Http\Request;
 use App\Models\FreeForMeet;
 use App\Models\ClientForMeet;
 use Carbon\Carbon;
+use App\Jobs\SendClientMailJob;
+use App\Mail\MeetingBookingMail;
+use Illuminate\Support\Facades\Mail;
 
 use RealRashid\SweetAlert\Facades\Alert;
 
 class OnboardingController extends Controller
 {
     //
+
+
+    public function sendClientMail(Request $request, ClientForMeet $id)
+    {
+
+    // dd($request->all(), $id);
+
+        $email = $id->email;
+
+        // dd($email);
+
+        if($email == null){
+
+            Alert::error('Error', 'No mail was associated with this.');
+            return back();
+        }
+
+        $validated = $request->validate([
+            
+            'subject' => ['required', 'string', 'max:255'],
+            'note' => ['required', 'string'],
+        ]);
+
+        SendClientMailJob::dispatch(
+            $email,
+            auth()->user()->email,
+            $validated['subject'],
+            $validated['note']
+        );
+
+        Alert::success('Mail queued', 'Your mail has been queued and wwill be sent shortly!');
+
+        return back();
+    }
+
+    
+
+
     public function contact()
     {
 
@@ -30,9 +71,6 @@ class OnboardingController extends Controller
         return view('newonboarding.bookacall', compact('schedule'));
 
     } 
-
-
-    
     
     public function bookClient(Request $request)
     {
@@ -58,6 +96,33 @@ class OnboardingController extends Controller
             'notes' => 'nullable|string|max:255',
         ]);
 
+        // Get the selected schedule
+        $schedule = FreeForMeet::findOrFail(
+            $validatedData['schedule_id']
+        );
+
+        // Check how many bookings already exist for this schedule and day
+        $bookedCount = ClientForMeet::where(
+            'freeformeet_id',
+            $schedule->id
+        )
+            ->whereDate('starts_at', $validatedData['date'])
+            ->where('status', 'confirmed')
+            ->count();
+
+        // Get the maximum number of slots available per day
+        $availableSlots = $schedule->slots_per_day;
+
+        // Stop booking if all slots are filled
+        if ($bookedCount >= $availableSlots) {
+            Alert::error(
+                'Booking Filled',
+                'Sorry, all available booking slots for this day have been filled.'
+            );
+
+            return back()->withInput();
+        }
+
 
         // Create a new ClientForMeet record
         $clientForMeet = new ClientForMeet();
@@ -69,7 +134,46 @@ class OnboardingController extends Controller
         $clientForMeet->notes = $validatedData['notes'];
         $clientForMeet->save(); 
 
-        Alert::success('Free Time Updated', 'Your free time has been successfully updated!');
+        // Prepare meeting details
+        $meetingDate = Carbon::parse($validatedData['start_time'])
+            ->format('d M Y');
+
+        $startTime = Carbon::parse($validatedData['start_time'])
+            ->format('h:i A');
+
+        $endTime = Carbon::parse($validatedData['end_time'])
+            ->format('h:i A');
+
+        // Application email from your mail configuration
+        $adminEmail = config('mail.from.address');
+
+        // Queue notification to the application email
+        if ($adminEmail) {
+            Mail::to($adminEmail)->queue(
+                new MeetingBookingMail(
+                    'admin',
+                    $clientForMeet->email,
+                    $meetingDate,
+                    $startTime,
+                    $endTime,
+                    $clientForMeet->notes
+                )
+            );
+        }
+
+        // Queue confirmation to the client
+        Mail::to($clientForMeet->email)->queue(
+            new MeetingBookingMail(
+                'client',
+                $clientForMeet->email,
+                $meetingDate,
+                $startTime,
+                $endTime,
+                $clientForMeet->notes
+            )
+        );
+
+        Alert::success('Meeting Booked', 'Your meeting has been booked you will recieve a confirmation mail!');
         return back();
        
 
@@ -120,19 +224,48 @@ class OnboardingController extends Controller
                 ]);
         }
 
+        // Calculate total available minutes
+        $start = Carbon::createFromFormat('H:i:s', $startTime);
+        $end = Carbon::createFromFormat('H:i:s', $endTime);
+
+        $totalMinutes = $start->diffInMinutes($end);
+
+        // Calculate available slots using the duration
+        $slotsPerDay = intdiv(
+            $totalMinutes,
+            $validated['duration_minutes']
+        );
+
+        if ($slotsPerDay < 1) {
+            return back()
+                ->withInput()
+                ->withErrors([
+                    'duration_minutes' => 'The selected duration must allow at least one booking slot.',
+                ]);
+        }
+
+        // Update the free-time schedule
         $freetime = Freeformeet::findOrFail($id);
 
         $freetime->update([
             'day_of_week' => $validated['day_of_week'],
+            'day_name' => Carbon::now()
+                ->startOfWeek()
+                ->addDays((int) $validated['day_of_week'] - 1)
+                ->format('l'),
             'start_time' => $startTime,
             'end_time' => $endTime,
             'duration_minutes' => $validated['duration_minutes'],
+            'slots_per_day' => $slotsPerDay,
             'is_active' => $validated['is_active'],
         ]);
 
-        Alert::success('Free Time Updated', 'Your free time has been successfully updated!');
-        return back();
+        Alert::success(
+            'Free Time Updated',
+            "Your free time has been updated successfully. {$slotsPerDay} booking slots are available per day."
+        );
 
+        return back();
     }
 
     public function faqs()

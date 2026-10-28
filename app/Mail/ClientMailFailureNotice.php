@@ -3,57 +3,47 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
-use Illuminate\Mail\Mailables\Content;
-use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
 class ClientMailFailureNotice extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
+    public function __construct(
+        public string $recipientEmail,
+        public string $originalSubject,
+    ) {}
 
-    /**
-     * Get the message envelope.
-     *
-     * @return \Illuminate\Mail\Mailables\Envelope
-     */
-    public function envelope()
+    public function build()
     {
-        return new Envelope(
-            subject: 'Client Mail Failure Notice',
-        );
-    }
+        return $this->subject('Update: Your email could not be sent')
+            ->html('
+                <div style="font-family:Arial,sans-serif;color:#222;
+                            max-width:600px;line-height:1.7">
+                    <h2 style="color:#E94E1B">Email sending update</h2>
 
-    /**
-     * Get the message content definition.
-     *
-     * @return \Illuminate\Mail\Mailables\Content
-     */
-    public function content()
-    {
-        return new Content(
-            view: 'view.name',
-        );
-    }
+                    <p>Hello,</p>
 
-    /**
-     * Get the attachments for the message.
-     *
-     * @return array
-     */
-    public function attachments()
-    {
-        return [];
+                    <p>
+                        We were unable to send your email after several
+                        attempts. We are sorry for the inconvenience.
+                    </p>
+
+                    <p><strong>Email subject:</strong> '
+                        . e($this->originalSubject) . '</p>
+
+                    <p><strong>Recipient:</strong> '
+                        . e($this->recipientEmail) . '</p>
+
+                    <p>
+                        Please check the recipient email address and try
+                        again. If the problem continues, contact your
+                        support team for assistance.
+                    </p>
+
+                    <p>Thank you for your patience.</p>
+                </div>
+            ');
     }
 }

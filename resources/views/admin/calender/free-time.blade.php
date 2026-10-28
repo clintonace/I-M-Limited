@@ -17,7 +17,7 @@
                                 </div>
 
                             </div>
-                            {{-- <div class="mt-3.5 flex flex-col gap-5 sm:flex-row">
+                            <div class="mt-3.5 flex flex-col gap-5 sm:flex-row">
 
                                 <div class="w-full pb-10 overflow-hidden">
                                     <div class="flex flex-col w-full box box--stacked">
@@ -153,7 +153,7 @@
                                 </div>
 
 
-                            </div> --}}
+                            </div>
 
                             <div class="mt-3.5 flex flex-col gap-8">
 

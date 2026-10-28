@@ -174,6 +174,84 @@
                                                             </div>
                                                         </td>
                                                     </tr>
+
+                                                    <!-- Custom Mail Modal -->
+                                                    <div id="customMailModal"
+                                                        style="display:none; position:fixed; z-index:9999; inset:0;
+                                                        width:100%; height:100%; background:rgba(0,0,0,0.65);
+                                                        align-items:center; justify-content:center; padding:15px;
+                                                        box-sizing:border-box;">
+
+                                                        <div style="background:#fff; width:100%; max-width:760px;
+                                                            max-height:95vh; overflow-y:auto; padding:25px;
+                                                            box-sizing:border-box; position:relative;">
+
+                                                            <button type="button" onclick="closeCustomMailModal()"
+                                                                aria-label="Close"
+                                                                style="position:absolute; top:12px; right:15px;
+                                                                border:none; background:none; font-size:25px;
+                                                                cursor:pointer; color:#555;">
+                                                                &times;
+                                                            </button>
+
+                                                            <h3 style="margin:0 0 6px; color:#222; font-size:20px;">
+                                                                Compose Custom Mail
+                                                            </h3>
+
+                                                            <p style="font-size:13px; color:#777; margin:0 0 20px;">
+                                                                Enter the subject and message for your email.
+                                                            </p>
+
+                                                            <form id="customMailForm" method="POST" action="{{route('new.send.client.mail', ['id'=>$booking?->id])}}">
+                                                                @csrf
+                                                                <div style="margin-bottom:18px;">
+                                                                    <label for="customMailSubject"
+                                                                        style="display:block; font-size:13px;
+                                                                        font-weight:600; color:#333; margin-bottom:7px;">
+                                                                        Subject
+                                                                    </label>
+
+                                                                    <input type="text" id="customMailSubject"  
+                                                                        name="subject"
+                                                                        placeholder="Enter email subject" required
+                                                                        style="width:100%; box-sizing:border-box;
+                                                                        padding:12px; border:1px solid #ddd;
+                                                                        outline:none; font-size:14px;">
+                                                                </div>
+
+                                                                <div style="margin-bottom:22px;">
+                                                                    <label for="customMailBody"
+                                                                        style="display:block; font-size:13px;
+                                                                        font-weight:600; color:#333; margin-bottom:7px;">
+                                                                        Message Body
+                                                                    </label>
+
+                                                                    <textarea id="customMailBody" name="note"
+                                                                        placeholder="Write your message here..."
+                                                                        required rows="7"
+                                                                        style="width:100%; box-sizing:border-box;
+                                                                        padding:12px; border:1px solid #ddd;
+                                                                        outline:none; font-size:14px; resize:vertical;
+                                                                        font-family:Arial,sans-serif;"></textarea>
+                                                                </div>
+
+                                                                <div style="display:flex; justify-content:flex-end; gap:10px;">
+                                                                    <button type="button" onclick="closeCustomMailModal()"
+                                                                        style="padding:11px 18px; border:1px solid #ddd;
+                                                                        background:#fff; color:#333; cursor:pointer;">
+                                                                        Cancel
+                                                                    </button>
+
+                                                                    <button type="submit"
+                                                                    class="transition duration-200 border shadow-sm inline-flex items-center justify-center py-2 px-3 rounded-md font-medium cursor-pointer bg-primary border-primary text-white w-24">
+
+                                                                        Save Email Draft
+                                                                    </button>
+                                                                </div>
+
+                                                            </form>
+                                                        </div>
+                                                    </div>
                                                 @empty
                                                     <tr>
                                                         <td colspan="8" class="px-5 py-8 text-center text-slate-500">
@@ -186,83 +264,7 @@
                                     </div>
 
                                 
-                                        <!-- Custom Mail Modal -->
-                                        <div id="customMailModal"
-                                            style="display:none; position:fixed; z-index:9999; inset:0;
-                                            width:100%; height:100%; background:rgba(0,0,0,0.65);
-                                            align-items:center; justify-content:center; padding:15px;
-                                            box-sizing:border-box;">
-
-                                            <div style="background:#fff; width:100%; max-width:760px;
-                                                max-height:95vh; overflow-y:auto; padding:25px;
-                                                box-sizing:border-box; position:relative;">
-
-                                                <button type="button" onclick="closeCustomMailModal()"
-                                                    aria-label="Close"
-                                                    style="position:absolute; top:12px; right:15px;
-                                                    border:none; background:none; font-size:25px;
-                                                    cursor:pointer; color:#555;">
-                                                    &times;
-                                                </button>
-
-                                                <h3 style="margin:0 0 6px; color:#222; font-size:20px;">
-                                                    Compose Custom Mail
-                                                </h3>
-
-                                                <p style="font-size:13px; color:#777; margin:0 0 20px;">
-                                                    Enter the subject and message for your email.
-                                                </p>
-
-                                                <form id="customMailForm" action="{{route('new.send.client.mail')}}">
-
-                                                    <div style="margin-bottom:18px;">
-                                                        <label for="customMailSubject"
-                                                            style="display:block; font-size:13px;
-                                                            font-weight:600; color:#333; margin-bottom:7px;">
-                                                            Subject
-                                                        </label>
-
-                                                        <input type="text" id="customMailSubject"  
-                                                             name="subject"
-                                                            placeholder="Enter email subject" required
-                                                            style="width:100%; box-sizing:border-box;
-                                                            padding:12px; border:1px solid #ddd;
-                                                            outline:none; font-size:14px;">
-                                                    </div>
-
-                                                    <div style="margin-bottom:22px;">
-                                                        <label for="customMailBody"
-                                                            style="display:block; font-size:13px;
-                                                            font-weight:600; color:#333; margin-bottom:7px;">
-                                                            Message Body
-                                                        </label>
-
-                                                        <textarea id="customMailBody" name="note"
-                                                            placeholder="Write your message here..."
-                                                            required rows="7"
-                                                            style="width:100%; box-sizing:border-box;
-                                                            padding:12px; border:1px solid #ddd;
-                                                            outline:none; font-size:14px; resize:vertical;
-                                                            font-family:Arial,sans-serif;"></textarea>
-                                                    </div>
-
-                                                    <div style="display:flex; justify-content:flex-end; gap:10px;">
-                                                        <button type="button" onclick="closeCustomMailModal()"
-                                                            style="padding:11px 18px; border:1px solid #ddd;
-                                                            background:#fff; color:#333; cursor:pointer;">
-                                                            Cancel
-                                                        </button>
-
-                                                        <button type="submit"
-                                                        class="transition duration-200 border shadow-sm inline-flex items-center justify-center py-2 px-3 rounded-md font-medium cursor-pointer bg-primary border-primary text-white w-24">
-
-                                                            Save Email Draft
-                                                        </button>
-                                                    </div>
-
-                                                </form>
-                                            </div>
-                                        </div>
+                                        
 
 
 

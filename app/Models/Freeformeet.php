@@ -17,6 +17,7 @@ class Freeformeet extends Model
         'status',
         'duration_minutes',
         'is_active',
+        'slots_per_day'
         
     ];
 }

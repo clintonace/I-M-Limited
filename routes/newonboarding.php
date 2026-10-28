@@ -53,7 +53,9 @@ Route::prefix('web/')->group(function () {
     Route::post('/send-client-mail', [OnboardingController::class,'sendClientMail'])->name('new.send.client.mail');
     
 
-    
+    Route::post('/send-client-mail/{id?}',    [OnboardingController::class, 'sendClientMail'])->name('new.send.client.mail');
+
+
 
 
 
