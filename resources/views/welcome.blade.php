@@ -31,8 +31,8 @@
                                             fill="currentcolor" />
                                     </svg></div>
                             </a>
-                            
-                            <a data-wf--ui-button--variant="dark-button" href="{{route('new.services')}}"
+
+                            <a data-wf--ui-button--variant="dark-button" href="{{ route('new.services') }}"
                                 class="ui-button w-variant-4e9afd4f-476d-d61c-257a-41833666d6a1 w-inline-block">
                                 <div>Learn more</div>
                                 <div class="ui-button-icon w-embed"><svg viewBox="0 0 18 18" fill="currentcolor"
@@ -41,7 +41,8 @@
                                             d="M4.10203 13.102L12.1423 5.06249H6.1875C6.03832 5.06249 5.89524 5.00323 5.78975 4.89774C5.68426 4.79225 5.625 4.64918 5.625 4.49999C5.625 4.35081 5.68426 4.20773 5.78975 4.10224C5.89524 3.99675 6.03832 3.93749 6.1875 3.93749H13.5C13.6492 3.93749 13.7923 3.99675 13.8977 4.10224C14.0032 4.20773 14.0625 4.35081 14.0625 4.49999V11.8125C14.0625 11.9617 14.0032 12.1048 13.8977 12.2102C13.7923 12.3157 13.6492 12.375 13.5 12.375C13.3508 12.375 13.2077 12.3157 13.1023 12.2102C12.9968 12.1048 12.9375 11.9617 12.9375 11.8125V5.85773L4.89797 13.898C4.84571 13.9502 4.78366 13.9917 4.71538 14.02C4.6471 14.0482 4.57391 14.0628 4.5 14.0628C4.42609 14.0628 4.3529 14.0482 4.28462 14.02C4.21634 13.9917 4.15429 13.9502 4.10203 13.898C4.04977 13.8457 4.00831 13.7837 3.98003 13.7154C3.95175 13.6471 3.93719 13.5739 3.93719 13.5C3.93719 13.4261 3.95175 13.3529 3.98003 13.2846C4.00831 13.2163 4.04977 13.1543 4.10203 13.102Z"
                                             fill="currentcolor" />
                                     </svg></div>
-                            </a></div>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div data-w-id="eab1c50f-fc54-db91-43a6-dd8d593a254f" style="width:100%"
@@ -207,7 +208,7 @@
                     <div data-w-id="d5018167-1e76-5713-868e-eb691caa62e0" style="opacity:0"
                         class="ui-button-div ui-center">
 
-                        <a data-wf--ui-button--variant="white-button" href="{{route('register')}}"
+                        <a data-wf--ui-button--variant="white-button" href="{{ route('register') }}"
                             class="ui-button w-variant-af344089-583b-0e21-33a0-1a8ce564655b w-inline-block">
                             <div>Sign-up </div>
                             <div class="ui-button-icon w-embed"><svg viewBox="0 0 18 18" fill="currentcolor"
@@ -218,7 +219,7 @@
                                 </svg></div>
                         </a>
 
-                        <a data-wf--ui-button--variant="dark-button" href="{{route('login')}}"
+                        <a data-wf--ui-button--variant="dark-button" href="{{ route('login') }}"
                             class="ui-button w-variant-4e9afd4f-476d-d61c-257a-41833666d6a1 w-inline-block">
                             <div>Login</div>
                             <div class="ui-button-icon w-embed"><svg viewBox="0 0 18 18" fill="currentcolor"
@@ -254,7 +255,7 @@
                                     </div>
                                     <div data-w-id="59d8c6a0-f715-a6d8-217d-0eadaead8990" style="opacity:0"
                                         class="ui-button-div"><a data-wf--ui-button--variant="white-button"
-                                            href="{{route('new.book_a_call')}}"
+                                            href="{{ route('new.book_a_call') }}"
                                             class="ui-button w-variant-af344089-583b-0e21-33a0-1a8ce564655b w-inline-block">
                                             <div>Book  a call</div>
                                             <div class="ui-button-icon w-embed"><svg viewBox="0 0 18 18"
@@ -717,8 +718,8 @@
                             class="ui-results-heading">
                             What changes when your business finally clicks.</h2>
                         <div data-w-id="3c13078e-675e-de2e-8975-87f624b4be9a" style="opacity:0"
-                            class="ui-button-div"><a data-wf--ui-button--variant="base" href="{{route('new.book_a_call')}}"
-                                class="ui-button w-inline-block">
+                            class="ui-button-div"><a data-wf--ui-button--variant="base"
+                                href="{{ route('new.book_a_call') }}" class="ui-button w-inline-block">
                                 <div>Book  a call</div>
                                 <div class="ui-button-icon w-embed"><svg viewBox="0 0 18 18" fill="currentcolor"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -959,9 +960,14 @@
                 <div class="w-layout-blockcontainer ui-container w-container">
                     <div class="ui-common-div ui-center">
                         <div data-w-id="321efd36-9b79-f006-f275-ff7850502daf" style="opacity:0"
-                            class="ui-small-paragraph ui-orange-color-text">CLIENT RESULTS</div>
+                            class="ui-small-paragraph ui-orange-color-text">CLIENT SUCCESS STORIES</div>
                         <h2 data-w-id="108616f8-a9c2-14e9-5792-2d24661e30b3" style="opacity:0"
-                            class="ui-testimonial-heading">What experts and teams say about working with us.</h2>
+                            class="ui-testimonial-heading">Global Partnerships. Specialized Teams. Reliable Delivery.
+                        </h2>
+                        <h5>At I&M Limited, we help international businesses strengthen their operations by providing
+                            skilled African professionals and managing dedicated teams aligned with their business
+                            needs. Our client partnerships demonstrate how the right talent and operational support can
+                            contribute to effective project delivery.</h5>
                     </div>
                     <div data-delay="4000" data-animation="slide" class="ui-testimonial-slider-wrapper w-slider"
                         data-autoplay="false" data-easing="ease" style="opacity:0" data-hide-arrows="false"
@@ -978,7 +984,7 @@
                                                     background: #E94E1B; color: white; font-weight: bold;
                                                     font-size: 18px; border-radius: 50%; flex-shrink: 0;">
 
-                                                    {{ collect(explode(' ', trim($t?->name ?? '')))->filter()->take(2)->map(fn($part) => strtoupper(substr($part, 0, 1)))->implode('') }}
+                                                {{ collect(explode(' ', trim($t?->name ?? '')))->filter()->take(2)->map(fn($part) => strtoupper(substr($part, 0, 1)))->implode('') }}
 
                                             </div>
                                             <div class="ui-testimonial-user-div">
@@ -986,8 +992,45 @@
                                                 <div class="ui-small-paragraph">{{ $t?->title }}</div>
                                             </div>
                                         </div>
-                                        <p class="ui-extra-large-paragraph ui-testimonial-review-text">
-                                            {{ $t?->testimony }}</p>
+                                        @php
+                                            // Split the testimony into sections: a short line with no closing
+                                            // punctuation that is followed by more text is treated as a heading
+                                            // (e.g. "Client Overview", "Client Value", "I&M's Solution").
+                                            $lines = array_values(array_filter(array_map('trim', preg_split('/\R/', trim($t?->testimony ?? ''))), 'strlen'));
+                                            $sections = [];
+                                            foreach ($lines as $i => $line) {
+                                                $isHeading = isset($lines[$i + 1])
+                                                    && count(preg_split('/\s+/', $line)) <= 5
+                                                    && !preg_match('/[.!?:]$/', $line);
+                                                if ($isHeading || empty($sections)) {
+                                                    $sections[] = ['heading' => $isHeading ? $line : null, 'body' => []];
+                                                }
+                                                if (!$isHeading) {
+                                                    $sections[count($sections) - 1]['body'][] = $line;
+                                                }
+                                            }
+                                            $overview = implode(' ', $sections[0]['body'] ?? []);
+                                            $details = array_slice($sections, 1);
+                                        @endphp
+                                        <div class="ui-testimonial-review">
+                                            <p class="ui-extra-large-paragraph ui-testimonial-review-text">
+                                                {{ $overview }}</p>
+                                            @if (count($details))
+                                                <div id="testimony-more-{{ $t->id }}" class="ui-testimonial-more">
+                                                    @foreach ($details as $section)
+                                                        @if ($section['heading'])
+                                                            <div class="ui-small-paragraph ui-orange-color-text ui-testimonial-more-heading">
+                                                                {{ $section['heading'] }}</div>
+                                                        @endif
+                                                        <p class="ui-paragraph">{!! nl2br(e(implode("\n", $section['body']))) !!}</p>
+                                                    @endforeach
+                                                </div>
+                                                <button type="button" class="ui-testimonial-read-more" aria-expanded="false"
+                                                    aria-controls="testimony-more-{{ $t->id }}">
+                                                    <span>Read more</span> <i class="fas fa-chevron-down"></i>
+                                                </button>
+                                            @endif
+                                        </div>
                                         <div class="ui-testimonial-icon w-embed"><svg viewBox="0 0 107 20"
                                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_2019_11)">
@@ -1265,13 +1308,15 @@
                                                         value="{{ old('email') }}" placeholder="YOUR EMAIL ADDRESS"
                                                         maxlength="255" required style="padding:14px 16px">
                                                     @error('email')
-                                                        <div class="ui-small-paragraph ui-orange-color-text">{{ $message }}</div>
+                                                        <div class="ui-small-paragraph ui-orange-color-text">
+                                                            {{ $message }}</div>
                                                     @enderror
 
-                                                    <textarea class="ui-cta-input w-input" name="message" rows="4" placeholder="YOUR QUESTION"
-                                                        required style="height:auto;padding:14px 16px;resize:vertical">{{ old('message') }}</textarea>
+                                                    <textarea class="ui-cta-input w-input" name="message" rows="4" placeholder="YOUR QUESTION" required
+                                                        style="height:auto;padding:14px 16px;resize:vertical">{{ old('message') }}</textarea>
                                                     @error('message')
-                                                        <div class="ui-small-paragraph ui-orange-color-text">{{ $message }}</div>
+                                                        <div class="ui-small-paragraph ui-orange-color-text">
+                                                            {{ $message }}</div>
                                                     @enderror
 
                                                     <input type="submit" class="ui-button w-button"
@@ -1336,7 +1381,7 @@
         </main>
 
         <script>
-            (function () {
+            (function() {
                 var item = document.getElementById('faq-8');
                 var toggle = document.getElementById('faq-8-toggle');
                 var panel = document.getElementById('faq-8-panel');
@@ -1352,38 +1397,99 @@
                     return toggle.getAttribute('aria-expanded') === 'true';
                 }
 
-                toggle.addEventListener('click', function () {
+                toggle.addEventListener('click', function() {
                     setOpen(!isOpen());
                 });
-                toggle.addEventListener('keydown', function (e) {
+                toggle.addEventListener('keydown', function(e) {
                     if (e.key === 'Enter' || e.key === ' ') {
                         e.preventDefault();
                         setOpen(!isOpen());
                     }
                 });
 
-                document.getElementById('faq-8-open').addEventListener('click', function (e) {
+                document.getElementById('faq-8-open').addEventListener('click', function(e) {
                     e.preventDefault();
                     setOpen(true);
-                    item.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    setTimeout(function () {
-                        panel.querySelector('input[name="email"]').focus({ preventScroll: true });
+                    item.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                    setTimeout(function() {
+                        panel.querySelector('input[name="email"]').focus({
+                            preventScroll: true
+                        });
                     }, 400);
                 });
 
                 // Keep the panel's height in step with resizing (e.g. textarea drag, viewport change)
-                window.addEventListener('resize', function () {
+                window.addEventListener('resize', function() {
                     if (isOpen()) panel.style.height = panel.scrollHeight + 'px';
                 });
-                panel.querySelector('textarea').addEventListener('mouseup', function () {
+                panel.querySelector('textarea').addEventListener('mouseup', function() {
                     if (isOpen()) panel.style.height = panel.scrollHeight + 'px';
                 });
 
                 @if ($errors->hasAny(['email', 'message']))
                     setOpen(true);
-                    item.scrollIntoView({ block: 'center' });
+                    item.scrollIntoView({
+                        block: 'center'
+                    });
                 @endif
             })();
+        </script>
+
+        <style>
+            .ui-testimonial-more {
+                height: 0;
+                overflow: hidden;
+                transition: height .4s ease;
+            }
+
+            .ui-testimonial-more-heading {
+                margin-top: 20px;
+                margin-bottom: 6px;
+                font-weight: 600;
+            }
+
+            .ui-testimonial-read-more {
+                margin-top: 16px;
+                padding: 0;
+                background: none;
+                border: 0;
+                color: #E94E1B;
+                font-weight: 600;
+                cursor: pointer;
+            }
+
+            .ui-testimonial-read-more i {
+                margin-left: 6px;
+                font-size: 12px;
+                transition: transform .3s ease;
+            }
+
+            .ui-testimonial-read-more[aria-expanded="true"] i {
+                transform: rotate(180deg);
+            }
+        </style>
+
+        <script>
+            document.querySelectorAll('.ui-testimonial-read-more').forEach(function(button) {
+                var panel = document.getElementById(button.getAttribute('aria-controls'));
+
+                button.addEventListener('click', function() {
+                    var open = button.getAttribute('aria-expanded') !== 'true';
+                    panel.style.height = open ? panel.scrollHeight + 'px' : '0px';
+                    button.setAttribute('aria-expanded', open);
+                    button.querySelector('span').textContent = open ? 'Read less' : 'Read more';
+                });
+            });
+
+            window.addEventListener('resize', function() {
+                document.querySelectorAll('.ui-testimonial-read-more[aria-expanded="true"]').forEach(function(button) {
+                    var panel = document.getElementById(button.getAttribute('aria-controls'));
+                    panel.style.height = panel.scrollHeight + 'px';
+                });
+            });
         </script>
     </x-slot>
 </x-new.layout-component>
