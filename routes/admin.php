@@ -101,5 +101,17 @@ Route::prefix('admin')->middleware('admin')->group(function () {
 
     });
 
+
+    Route::prefix('questions')->middleware('admin')->group(function () {
+
+      Route::get('/client-questions',    [AdminController::class, 'clientQuestions'])->name('new.clients.questions');
+      Route::post('/reply/{question}',    [AdminController::class, 'replyQuestion'])->name('new.clients.questions.reply');
+
+
+    });
+
+
+
+
 });
 

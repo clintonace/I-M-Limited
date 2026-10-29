@@ -30,7 +30,9 @@
                                             d="M4.10203 13.102L12.1423 5.06249H6.1875C6.03832 5.06249 5.89524 5.00323 5.78975 4.89774C5.68426 4.79225 5.625 4.64918 5.625 4.49999C5.625 4.35081 5.68426 4.20773 5.78975 4.10224C5.89524 3.99675 6.03832 3.93749 6.1875 3.93749H13.5C13.6492 3.93749 13.7923 3.99675 13.8977 4.10224C14.0032 4.20773 14.0625 4.35081 14.0625 4.49999V11.8125C14.0625 11.9617 14.0032 12.1048 13.8977 12.2102C13.7923 12.3157 13.6492 12.375 13.5 12.375C13.3508 12.375 13.2077 12.3157 13.1023 12.2102C12.9968 12.1048 12.9375 11.9617 12.9375 11.8125V5.85773L4.89797 13.898C4.84571 13.9502 4.78366 13.9917 4.71538 14.02C4.6471 14.0482 4.57391 14.0628 4.5 14.0628C4.42609 14.0628 4.3529 14.0482 4.28462 14.02C4.21634 13.9917 4.15429 13.9502 4.10203 13.898C4.04977 13.8457 4.00831 13.7837 3.98003 13.7154C3.95175 13.6471 3.93719 13.5739 3.93719 13.5C3.93719 13.4261 3.95175 13.3529 3.98003 13.2846C4.00831 13.2163 4.04977 13.1543 4.10203 13.102Z"
                                             fill="currentcolor" />
                                     </svg></div>
-                            </a><a data-wf--ui-button--variant="dark-button" href="#"
+                            </a>
+                            
+                            <a data-wf--ui-button--variant="dark-button" href="{{route('new.services')}}"
                                 class="ui-button w-variant-4e9afd4f-476d-d61c-257a-41833666d6a1 w-inline-block">
                                 <div>Learn more</div>
                                 <div class="ui-button-icon w-embed"><svg viewBox="0 0 18 18" fill="currentcolor"
@@ -205,7 +207,7 @@
                     <div data-w-id="d5018167-1e76-5713-868e-eb691caa62e0" style="opacity:0"
                         class="ui-button-div ui-center">
 
-                        <a data-wf--ui-button--variant="white-button" href="#"
+                        <a data-wf--ui-button--variant="white-button" href="{{route('register')}}"
                             class="ui-button w-variant-af344089-583b-0e21-33a0-1a8ce564655b w-inline-block">
                             <div>Sign-up </div>
                             <div class="ui-button-icon w-embed"><svg viewBox="0 0 18 18" fill="currentcolor"
@@ -216,7 +218,7 @@
                                 </svg></div>
                         </a>
 
-                        <a data-wf--ui-button--variant="dark-button" href="#"
+                        <a data-wf--ui-button--variant="dark-button" href="{{route('login')}}"
                             class="ui-button w-variant-4e9afd4f-476d-d61c-257a-41833666d6a1 w-inline-block">
                             <div>Login</div>
                             <div class="ui-button-icon w-embed"><svg viewBox="0 0 18 18" fill="currentcolor"
@@ -252,7 +254,7 @@
                                     </div>
                                     <div data-w-id="59d8c6a0-f715-a6d8-217d-0eadaead8990" style="opacity:0"
                                         class="ui-button-div"><a data-wf--ui-button--variant="white-button"
-                                            href="#"
+                                            href="{{route('new.book_a_call')}}"
                                             class="ui-button w-variant-af344089-583b-0e21-33a0-1a8ce564655b w-inline-block">
                                             <div>Book  a call</div>
                                             <div class="ui-button-icon w-embed"><svg viewBox="0 0 18 18"
@@ -715,7 +717,7 @@
                             class="ui-results-heading">
                             What changes when your business finally clicks.</h2>
                         <div data-w-id="3c13078e-675e-de2e-8975-87f624b4be9a" style="opacity:0"
-                            class="ui-button-div"><a data-wf--ui-button--variant="base" href="#contact"
+                            class="ui-button-div"><a data-wf--ui-button--variant="base" href="{{route('new.book_a_call')}}"
                                 class="ui-button w-inline-block">
                                 <div>Book  a call</div>
                                 <div class="ui-button-icon w-embed"><svg viewBox="0 0 18 18" fill="currentcolor"
@@ -1060,7 +1062,7 @@
                             <div data-w-id="3c13078e-675e-de2e-8975-87f624b4be9a"
                                 style="opacity:0; margin-top: auto; align-self: flex-end;" class="ui-button-div">
 
-                                <a data-wf--ui-button--variant="base" href=""
+                                <a data-wf--ui-button--variant="base" href="#faq-8" id="faq-8-open"
                                     class="ui-button w-inline-block">
 
                                     <div>Still have questions ?</div>
@@ -1233,6 +1235,51 @@
                                                     forward to hearing from you.</p>
                                             </div>
                                         </a>
+
+                                        {{-- Faq 8 is driven by the script below, not Webflow IX, so it can hold a form --}}
+                                        <div data-w-tab="Faq 8" id="faq-8" class="ui-faq-tab-detail-div">
+                                            <div id="faq-8-toggle" class="ui-faq-tab-heading-div" role="button"
+                                                tabindex="0" aria-expanded="false" aria-controls="faq-8-panel"
+                                                style="cursor:pointer">
+                                                <div class="ui-faq-tab-heading-text">Still have a question? Ask us.
+                                                </div>
+                                                <div id="faq-8-icon" class="ui-faq-icon w-embed"
+                                                    style="transition:transform 400ms ease"><svg viewBox="0 0 18 22"
+                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M17.7801 6.34492C17.4868 6.05169 17.0128 6.05169 16.7196 6.34492L8.99997 14.0645L1.28039 6.34492C0.987157 6.05169 0.513156 6.05169 0.219924 6.34492C-0.073308 6.63816 -0.073308 7.11216 0.219924 7.40539L8.46976 15.6552C8.61601 15.8015 8.80799 15.875 9.00001 15.875C9.19203 15.875 9.38401 15.8015 9.53026 15.6552L17.7801 7.40539C18.0733 7.11216 18.0733 6.63816 17.7801 6.34492Z"
+                                                            fill="white" />
+                                                    </svg></div>
+                                            </div>
+                                            <div id="faq-8-panel" style="height:0px;transition:height 400ms ease"
+                                                class="ui-faq-tab-info-div">
+                                                <form action="{{ route('new.faq.mail') }}" method="POST"
+                                                    class="ui-cta-form-div" style="padding-top:16px">
+                                                    @csrf
+                                                    <input type="hidden" name="name" value="FAQ Visitor">
+                                                    <input type="hidden" name="subject" value="FAQ Question">
+                                                    <input type="text" name="website" tabindex="-1"
+                                                        autocomplete="off" style="display:none">
+
+                                                    <input class="ui-cta-input w-input" type="email" name="email"
+                                                        value="{{ old('email') }}" placeholder="YOUR EMAIL ADDRESS"
+                                                        maxlength="255" required style="padding:14px 16px">
+                                                    @error('email')
+                                                        <div class="ui-small-paragraph ui-orange-color-text">{{ $message }}</div>
+                                                    @enderror
+
+                                                    <textarea class="ui-cta-input w-input" name="message" rows="4" placeholder="YOUR QUESTION"
+                                                        required style="height:auto;padding:14px 16px;resize:vertical">{{ old('message') }}</textarea>
+                                                    @error('message')
+                                                        <div class="ui-small-paragraph ui-orange-color-text">{{ $message }}</div>
+                                                    @enderror
+
+                                                    <input type="submit" class="ui-button w-button"
+                                                        value="Send Question" style="align-self:flex-start">
+                                                </form>
+                                            </div>
+                                        </div>
+
                                     </div>
                                     <div class="ui-display-none w-tab-content">
                                         <div data-w-tab="Faq 1" class="w-tab-pane w--tab-active"></div>
@@ -1242,6 +1289,7 @@
                                         <div data-w-tab="Faq 5" class="w-tab-pane"></div>
                                         <div data-w-tab="Faq 6" class="w-tab-pane"></div>
                                         <div data-w-tab="Faq 7" class="w-tab-pane"></div>
+                                        <div data-w-tab="Faq 8" class="w-tab-pane"></div>
                                     </div>
                                 </div>
                             </div>
@@ -1250,7 +1298,7 @@
                 </div>
             </section>
 
-            <section class="ui-main-section ui-cta-section">
+            {{-- <section class="ui-main-section ui-cta-section">
                 <div class="w-layout-blockcontainer ui-container w-container">
                     <div class="ui-cta-wrapper">
 
@@ -1284,7 +1332,58 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> --}}
         </main>
+
+        <script>
+            (function () {
+                var item = document.getElementById('faq-8');
+                var toggle = document.getElementById('faq-8-toggle');
+                var panel = document.getElementById('faq-8-panel');
+                var icon = document.getElementById('faq-8-icon');
+
+                function setOpen(open) {
+                    panel.style.height = open ? panel.scrollHeight + 'px' : '0px';
+                    icon.style.transform = open ? 'rotate(180deg)' : '';
+                    toggle.setAttribute('aria-expanded', open);
+                }
+
+                function isOpen() {
+                    return toggle.getAttribute('aria-expanded') === 'true';
+                }
+
+                toggle.addEventListener('click', function () {
+                    setOpen(!isOpen());
+                });
+                toggle.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        setOpen(!isOpen());
+                    }
+                });
+
+                document.getElementById('faq-8-open').addEventListener('click', function (e) {
+                    e.preventDefault();
+                    setOpen(true);
+                    item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    setTimeout(function () {
+                        panel.querySelector('input[name="email"]').focus({ preventScroll: true });
+                    }, 400);
+                });
+
+                // Keep the panel's height in step with resizing (e.g. textarea drag, viewport change)
+                window.addEventListener('resize', function () {
+                    if (isOpen()) panel.style.height = panel.scrollHeight + 'px';
+                });
+                panel.querySelector('textarea').addEventListener('mouseup', function () {
+                    if (isOpen()) panel.style.height = panel.scrollHeight + 'px';
+                });
+
+                @if ($errors->hasAny(['email', 'message']))
+                    setOpen(true);
+                    item.scrollIntoView({ block: 'center' });
+                @endif
+            })();
+        </script>
     </x-slot>
 </x-new.layout-component>

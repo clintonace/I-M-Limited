@@ -22,6 +22,8 @@ use RealRashid\SweetAlert\Facades\Alert;
 use Carbon\Carbon;
 use App\Models\FreeForMeet;
 use App\Models\ClientForMeet;
+use App\Models\FaqQuestion;
+use App\Jobs\SendClientMailJob;
 
 class AdminController extends Controller
 {
@@ -609,6 +611,32 @@ class AdminController extends Controller
         $file_name = '/'.'storage/'.$folderName.'/'.$name;
         return $file_name;
 
+    }
+
+
+    public function clientQuestions(){
+
+        $questions = FaqQuestion::latest()->get();
+        return view('admin.questions.index', compact('questions'));
+    }
+
+    public function replyQuestion(Request $request, FaqQuestion $question){
+
+        $validated = $request->validate([
+            'subject' => ['required', 'string', 'max:255'],
+            'note' => ['required', 'string'],
+        ]);
+
+        SendClientMailJob::dispatch(
+            $question->email,
+            auth()->user()->email,
+            $validated['subject'],
+            $validated['note']
+        );
+
+        Alert::success('Mail queued', 'Your reply has been queued and will be sent shortly!');
+
+        return back();
     }
 
 

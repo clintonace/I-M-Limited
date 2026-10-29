@@ -35,50 +35,128 @@
                             class="ui-small-paragraph ui-who-we-help-paragraph">Streamline your job search journey with
                             our simple and efficient process tailored to your needs and experience.</p>
                     </div>
-                    <div class="w-layout-grid ui-who-we-help-grid">
+                    <div class="ui-common-div ui-center ui-services-group-heading">
+                        <h3 class="ui-h4-heading">Services for Clients</h3>
+                    </div>
+                    <div class="w-layout-grid ui-who-we-help-grid ui-services-grid">
                         <div data-w-id="d33d2a28-60fa-1b5f-fce8-9c57627454f8" style="opacity:0"
                             class="ui-who-we-help-div">
                             <div class="ui-who-we-help-card">
-                                <div class="ui-who-we-help-icon w-embed">
-                                    <i class="fas fa-user-plus" style="font-size: 28px; color: white;"></i>
-                                </div>
-                                <h3 class="ui-h4-heading">Onboarding</h3>
-                                <p class="ui-small-paragraph">Talent acquisition and integration services.</p>
+                                <div class="ui-who-we-help-icon w-embed"><i class="fas fa-user-check"
+                                        style="font-size: 28px; color: white;"></i></div>
+                                <h3 class="ui-h4-heading">Talent Acquisition &amp; Recruitment</h3>
+                                <p class="ui-small-paragraph">We source, screen, and connect businesses with qualified African professionals who match their specific role requirements and workforce needs.</p>
                             </div>
                         </div>
                         <div data-w-id="cae166b3-b3f0-b950-6cb1-6acd5ddef6f0" style="opacity:0"
                             class="ui-who-we-help-div">
                             <div class="ui-who-we-help-card">
-                                <div class="ui-who-we-help-icon w-embed"><i class="fas fa-id-card"
+                                <div class="ui-who-we-help-icon w-embed"><i class="fas fa-users"
                                         style="font-size: 28px; color: white;"></i></div>
-                                <h3 class="ui-h4-heading">Talent Profile</h3>
-                                <p class="ui-small-paragraph">Talent profile creation and management services.</p>
+                                <h3 class="ui-h4-heading">Dedicated Teams &amp; Outsourcing</h3>
+                                <p class="ui-small-paragraph">We provide dedicated professionals and outsourced teams to support ongoing business operations, project delivery, and workforce expansion.</p>
                             </div>
                         </div>
                         <div data-w-id="6c885c60-1887-9e2f-1e3f-96faac98dfaa" style="opacity:0"
+                            class="ui-who-we-help-div">
+                            <div class="ui-who-we-help-card">
+                                <div class="ui-who-we-help-icon w-embed"><i class="fas fa-clipboard-list"
+                                        style="font-size: 28px; color: white;"></i></div>
+                                <h3 class="ui-h4-heading">HR &amp; Workforce Management</h3>
+                                <p class="ui-small-paragraph">We support workforce administration through onboarding coordination, employee documentation, leave and attendance records, and performance reporting.</p>
+                            </div>
+                        </div>
+                        <div data-w-id="d33d2a28-60fa-1b5f-fce8-9c57627454f8" style="opacity:0"
+                            class="ui-who-we-help-div">
+                            <div class="ui-who-we-help-card">
+                                <div class="ui-who-we-help-icon w-embed"><i class="fas fa-money-check-alt"
+                                        style="font-size: 28px; color: white;"></i></div>
+                                <h3 class="ui-h4-heading">Payroll Support</h3>
+                                <p class="ui-small-paragraph">We assist with organizing payroll information, maintaining payroll records, and checking payroll inputs to support accurate payroll processing.</p>
+                            </div>
+                        </div>
+                        <div data-w-id="cae166b3-b3f0-b950-6cb1-6acd5ddef6f0" style="opacity:0"
+                            class="ui-who-we-help-div">
+                            <div class="ui-who-we-help-card">
+                                <div class="ui-who-we-help-icon w-embed"><i class="fas fa-globe-africa"
+                                        style="font-size: 28px; color: white;"></i></div>
+                                <h3 class="ui-h4-heading">Market Entry &amp; Operational Support</h3>
+                                <p class="ui-small-paragraph">We help businesses explore African markets through access to local talent, workforce solutions, and agreed operational coordination.</p>
+                            </div>
+                        </div>
+                        <div data-w-id="6c885c60-1887-9e2f-1e3f-96faac98dfaa" style="opacity:0"
+                            class="ui-who-we-help-div">
+                            <div class="ui-who-we-help-card">
+                                <div class="ui-who-we-help-icon w-embed"><i class="fas fa-building"
+                                        style="font-size: 28px; color: white;"></i></div>
+                                <h3 class="ui-h4-heading">Workspace &amp; Infrastructure Support</h3>
+                                <p class="ui-small-paragraph">We offer workspace and related operational support in Nigeria, subject to availability and the specific requirements of the engagement.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-common-div ui-center ui-services-group-heading">
+                        <h3 class="ui-h4-heading">Services for Talents</h3>
+                    </div>
+                    <div class="w-layout-grid ui-who-we-help-grid ui-services-grid">
+                        <div data-w-id="d33d2a28-60fa-1b5f-fce8-9c57627454f8" style="opacity:0"
+                            class="ui-who-we-help-div">
+                            <div class="ui-who-we-help-card">
+                                <div class="ui-who-we-help-icon w-embed"><i class="fas fa-id-card"
+                                        style="font-size: 28px; color: white;"></i></div>
+                                <h3 class="ui-h4-heading">Talent Network Registration</h3>
+                                <p class="ui-small-paragraph">Professionals can create a profile showcasing their CV, qualifications, skills, experience, and career interests for consideration against suitable opportunities.</p>
+                            </div>
+                        </div>
+                        <div data-w-id="cae166b3-b3f0-b950-6cb1-6acd5ddef6f0" style="opacity:0"
+                            class="ui-who-we-help-div">
+                            <div class="ui-who-we-help-card">
+                                <div class="ui-who-we-help-icon w-embed"><i class="fas fa-briefcase"
+                                        style="font-size: 28px; color: white;"></i></div>
+                                <h3 class="ui-h4-heading">Access to Career Opportunities</h3>
+                                <p class="ui-small-paragraph">We connect talent with relevant job openings and project opportunities across engineering, technology, AI, data operations, and other professional fields, depending on availability.</p>
+                            </div>
+                        </div>
+                        <div data-w-id="6c885c60-1887-9e2f-1e3f-96faac98dfaa" style="opacity:0"
+                            class="ui-who-we-help-div">
+                            <div class="ui-who-we-help-card">
+                                <div class="ui-who-we-help-icon w-embed"><i class="fas fa-globe"
+                                        style="font-size: 28px; color: white;"></i></div>
+                                <h3 class="ui-h4-heading">International Project Exposure</h3>
+                                <p class="ui-small-paragraph">We provide access to potential opportunities involving international businesses, allowing professionals to contribute their skills to cross-border projects where suitable.</p>
+                            </div>
+                        </div>
+                        <div data-w-id="d33d2a28-60fa-1b5f-fce8-9c57627454f8" style="opacity:0"
                             class="ui-who-we-help-div">
                             <div class="ui-who-we-help-card">
                                 <div class="ui-who-we-help-icon w-embed"><i class="fas fa-exchange-alt"
                                         style="font-size: 28px; color: white;"></i></div>
-                                <h3 class="ui-h4-heading">Advance Matching</h3>
-                                <p class="ui-small-paragraph">Advanced matching algorithms to connect talent with opportunities.</p>
+                                <h3 class="ui-h4-heading">Skills &amp; Opportunity Matching</h3>
+                                <p class="ui-small-paragraph">We review professional profiles against relevant role requirements to identify potential matches based on experience, technical capabilities, and career interests.</p>
+                            </div>
+                        </div>
+                        <div data-w-id="cae166b3-b3f0-b950-6cb1-6acd5ddef6f0" style="opacity:0"
+                            class="ui-who-we-help-div">
+                            <div class="ui-who-we-help-card">
+                                <div class="ui-who-we-help-icon w-embed"><i class="fas fa-lightbulb"
+                                        style="font-size: 28px; color: white;"></i></div>
+                                <h3 class="ui-h4-heading">Career Insights &amp; Updates</h3>
+                                <p class="ui-small-paragraph">We share relevant career information, professional insights, and opportunity updates to help talents stay informed about developments within their fields.</p>
                             </div>
                         </div>
                         <div data-w-id="6c885c60-1887-9e2f-1e3f-96faac98dfaa" style="opacity:0"
                             class="ui-who-we-help-div">
                             <div class="ui-who-we-help-card">
-                                <div class="ui-who-we-help-icon w-embed"><i class="fas fa-mug-hot"
+                                <div class="ui-who-we-help-icon w-embed"><i class="fas fa-laptop-house"
                                         style="font-size: 28px; color: white;"></i></div>
-                                <h3 class="ui-h4-heading">Now Take a Rest</h3>
-                                <p class="ui-small-paragraph">Leave the rest to us! Sit back as we match talent and
-                                    opportunities seamlessly.</p>
+                                <h3 class="ui-h4-heading">Work Arrangement Preferences</h3>
+                                <p class="ui-small-paragraph">Talents can indicate their preferred remote, hybrid, or on-site arrangements so their preferences can be considered when matching them with available roles.</p>
                             </div>
                         </div>
                     </div>
                     <div data-w-id="d5018167-1e76-5713-868e-eb691caa62e0" style="opacity:0"
                         class="ui-button-div ui-center">
 
-                        <a data-wf--ui-button--variant="white-button" href="#"
+                        <a data-wf--ui-button--variant="white-button" href="{{route('register')}}"
                             class="ui-button w-variant-af344089-583b-0e21-33a0-1a8ce564655b w-inline-block">
                             <div>Sign-up </div>
                             <div class="ui-button-icon w-embed"><svg viewBox="0 0 18 18" fill="currentcolor"
@@ -89,7 +167,7 @@
                                 </svg></div>
                         </a>
 
-                        <a data-wf--ui-button--variant="dark-button" href="#"
+                        <a data-wf--ui-button--variant="dark-button" href="{{route('login')}}"
                             class="ui-button w-variant-4e9afd4f-476d-d61c-257a-41833666d6a1 w-inline-block">
                             <div>Login</div>
                             <div class="ui-button-icon w-embed"><svg viewBox="0 0 18 18" fill="currentcolor"
@@ -103,6 +181,13 @@
                     </div>
                 </div>
             </section>
+
+            <style>
+                .ui-services-group-heading { margin-top: 60px; }
+                @media screen and (min-width: 992px) {
+                    .ui-services-grid { grid-template-columns: 1fr 1fr 1fr; }
+                }
+            </style>
 
         </main>
 

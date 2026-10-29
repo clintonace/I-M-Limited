@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\FreeForMeet;
 use App\Models\ClientForMeet;
+use App\Models\FaqQuestion;
 use Carbon\Carbon;
 use App\Jobs\SendClientMailJob;
 use App\Mail\MeetingBookingMail;
@@ -287,5 +288,29 @@ class OnboardingController extends Controller
     {
         return view('newonboarding.howitworks');
     }
+
+    public function sendFaqMail(Request $request)
+    {
+        // Silently ignore bots that fill the hidden honeypot field
+        if ($request->filled('website')) {
+            return back();
+        }
+
+        $validated = $request->validate([
+            // 'name' => ['nullable', 'string', 'max:255'],
+            'email' => ['required', 'email', 'max:255'],
+            // 'subject' => ['nullable', 'string', 'max:255'],
+            'message' => ['required', 'string', 'max:5000'],
+        ]);
+
+        FaqQuestion::create($validated);
+
+        Alert::success('Question Received', 'Thank you! Your question has been received and we will get back to you shortly.');
+
+        return back();
+    }
+
+
+    
 
 }

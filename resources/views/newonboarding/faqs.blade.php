@@ -109,7 +109,7 @@
                             <div data-w-id="3c13078e-675e-de2e-8975-87f624b4be9a"
                                 style="opacity:0; margin-top: auto; align-self: flex-end;" class="ui-button-div">
 
-                                <a data-wf--ui-button--variant="base" href=""
+                                <a data-wf--ui-button--variant="base" href="#faq-8" id="faq-8-open"
                                     class="ui-button w-inline-block">
 
                                     <div>Still have questions ?</div>
@@ -282,6 +282,49 @@
                                                     forward to hearing from you.</p>
                                             </div>
                                         </a>
+
+                                        <div data-w-tab="Faq 8" id="faq-8" class="ui-faq-tab-detail-div">
+                                            <div id="faq-8-toggle" class="ui-faq-tab-heading-div" role="button"
+                                                tabindex="0" aria-expanded="false" aria-controls="faq-8-panel"
+                                                style="cursor:pointer">
+                                                <div class="ui-faq-tab-heading-text">Still have a question? Ask us.
+                                                </div>
+                                                <div id="faq-8-icon" class="ui-faq-icon w-embed"
+                                                    style="transition:transform 400ms ease"><svg viewBox="0 0 18 22"
+                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M17.7801 6.34492C17.4868 6.05169 17.0128 6.05169 16.7196 6.34492L8.99997 14.0645L1.28039 6.34492C0.987157 6.05169 0.513156 6.05169 0.219924 6.34492C-0.073308 6.63816 -0.073308 7.11216 0.219924 7.40539L8.46976 15.6552C8.61601 15.8015 8.80799 15.875 9.00001 15.875C9.19203 15.875 9.38401 15.8015 9.53026 15.6552L17.7801 7.40539C18.0733 7.11216 18.0733 6.63816 17.7801 6.34492Z"
+                                                            fill="white" />
+                                                    </svg></div>
+                                            </div>
+                                            <div id="faq-8-panel" style="height:0px;transition:height 400ms ease"
+                                                class="ui-faq-tab-info-div">
+                                                <form action="{{ route('new.faq.mail') }}" method="POST"
+                                                    class="ui-cta-form-div" style="padding-top:16px">
+                                                    @csrf
+                                                    <input type="hidden" name="name" value="FAQ Visitor">
+                                                    <input type="hidden" name="subject" value="FAQ Question">
+                                                    <input type="text" name="website" tabindex="-1"
+                                                        autocomplete="off" style="display:none">
+
+                                                    <input class="ui-cta-input w-input" type="email" name="email"
+                                                        value="{{ old('email') }}" placeholder="YOUR EMAIL ADDRESS"
+                                                        maxlength="255" required style="padding:14px 16px">
+                                                    @error('email')
+                                                        <div class="ui-small-paragraph ui-orange-color-text">{{ $message }}</div>
+                                                    @enderror
+
+                                                    <textarea class="ui-cta-input w-input" name="message" rows="4" placeholder="YOUR QUESTION"
+                                                        required style="height:auto;padding:14px 16px;resize:vertical">{{ old('message') }}</textarea>
+                                                    @error('message')
+                                                        <div class="ui-small-paragraph ui-orange-color-text">{{ $message }}</div>
+                                                    @enderror
+
+                                                    <input type="submit" class="ui-button w-button"
+                                                        value="Send Question" style="align-self:flex-start">
+                                                </form>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="ui-display-none w-tab-content">
                                         <div data-w-tab="Faq 1" class="w-tab-pane w--tab-active"></div>
@@ -300,6 +343,57 @@
             </section>
 
         </main>
+
+        <script>
+            (function () {
+                var item = document.getElementById('faq-8');
+                var toggle = document.getElementById('faq-8-toggle');
+                var panel = document.getElementById('faq-8-panel');
+                var icon = document.getElementById('faq-8-icon');
+
+                function setOpen(open) {
+                    panel.style.height = open ? panel.scrollHeight + 'px' : '0px';
+                    icon.style.transform = open ? 'rotate(180deg)' : '';
+                    toggle.setAttribute('aria-expanded', open);
+                }
+
+                function isOpen() {
+                    return toggle.getAttribute('aria-expanded') === 'true';
+                }
+
+                toggle.addEventListener('click', function () {
+                    setOpen(!isOpen());
+                });
+                toggle.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        setOpen(!isOpen());
+                    }
+                });
+
+                document.getElementById('faq-8-open').addEventListener('click', function (e) {
+                    e.preventDefault();
+                    setOpen(true);
+                    item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    setTimeout(function () {
+                        panel.querySelector('input[name="email"]').focus({ preventScroll: true });
+                    }, 400);
+                });
+
+                // Keep the panel's height in step with resizing (e.g. textarea drag, viewport change)
+                window.addEventListener('resize', function () {
+                    if (isOpen()) panel.style.height = panel.scrollHeight + 'px';
+                });
+                panel.querySelector('textarea').addEventListener('mouseup', function () {
+                    if (isOpen()) panel.style.height = panel.scrollHeight + 'px';
+                });
+
+                @if ($errors->hasAny(['email', 'message']))
+                    setOpen(true);
+                    item.scrollIntoView({ block: 'center' });
+                @endif
+            })();
+        </script>
 
     </x-slot>
 

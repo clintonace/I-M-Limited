@@ -2,31 +2,56 @@
 <section class="ui-footer">
     <div class="w-layout-blockcontainer ui-container w-container">
         <div class="ui-footer-main-div">
-            <div class="ui-footer-wrapper-div"><a data-w-id="6753abf9-4b91-8ca4-1559-46412bf45ca0" href="/"
+            <div class="ui-footer-wrapper-div">
+                
+                <a data-w-id="6753abf9-4b91-8ca4-1559-46412bf45ca0" href="{{route('welcome')}}"
                     aria-current="page" class="ui-footer-logo-link w-inline-block w--current"><img
                         src="/newonboarding/logos/white.png" loading="lazy" alt="Logo" class="ui-logo"
-                        style="width: 100px; height: auto; max-height: 40px; object-fit: contain;" /></a>
+                        style="width: 100px; height: auto; max-height: 40px; object-fit: contain;" />
+                    
+                    </a>
+
                 <div data-w-id="6753abf9-4b91-8ca4-1559-46412bf45ca2" class="ui-footer-detail-div">
                     <div class="ui-footer-div">
                         <div class="ui-small-paragraph ui-footer-title">utility</div>
-                        <div class="ui-footer-link-div"><a href="/templates/styleguide"
-                                class="ui-small-paragraph ui-footer-text">About us</a><a href="/templates/changelog"
-                                class="ui-small-paragraph ui-footer-text">Services</a><a href="/templates/license"
-                                class="ui-small-paragraph ui-footer-text">FAQs</a><a href="#404"
-                                class="ui-small-paragraph ui-footer-text">How it works</a></div>
+                        <div class="ui-footer-link-div">
+                                
+                                <a href="{{route('new.aboutus')}}"
+                                class="ui-small-paragraph ui-footer-text">About us</a>
+                                
+                                <a href="{{route('new.services')}}"
+                                class="ui-small-paragraph ui-footer-text">Services</a>
+                                
+                                <a href="{{route('new.faqs')}}"
+                                class="ui-small-paragraph ui-footer-text">FAQs</a>
+                                
+                                <a href="{{route('new.how-it-works')}}"
+                                class="ui-small-paragraph ui-footer-text">How it works</a>
+                            
+                            </div>
                     </div>
                     <div class="ui-footer-div">
                         <div class="ui-small-paragraph ui-footer-title">follow us</div>
-                        <div class="ui-footer-link-div"><a href="https://www.instagram.com/iandmlimited?dlrf=MTZsbXM1aXg5c21o" target="_blank"
-                                class="ui-small-paragraph ui-footer-text">Instagram</a><a href="https://x.com/iandmlimited"
-                                target="_blank" class="ui-small-paragraph ui-footer-text">X</a><a
-                                href="https://www.facebook.com/" target="_blank"
-                                class="ui-small-paragraph ui-footer-text">Facebook</a><a href="https://www.youtube.com/"
-                                target="_blank" class="ui-small-paragraph ui-footer-text">youtube</a></div>
+                        <div class="ui-footer-link-div">
+                            
+                                <a href="https://www.instagram.com/iandmlimited?dlrf=MTZsbXM1aXg5c21o" target="_blank"
+                                class="ui-small-paragraph ui-footer-text">Instagram</a>
+                                
+                                <a href="https://x.com/iandmlimited"
+                                target="_blank" class="ui-small-paragraph ui-footer-text">X</a>
+                                
+                                <a
+                                href="https://linkedin.com/company/iandmlimited" target="_blank"
+                                class="ui-small-paragraph ui-footer-text">Linkedin</a>
+                                
+                                {{-- <a href="https://www.youtube.com/"
+                                target="_blank" class="ui-small-paragraph ui-footer-text">youtube</a>
+                             --}}
+                            </div>
                     </div>
                 </div>
                 <div data-w-id="6753abf9-4b91-8ca4-1559-46412bf45cbb" class="ui-footer-button-div"><a
-                        data-wf--ui-button--variant="base" href="#contact" class="ui-button w-inline-block">
+                        data-wf--ui-button--variant="base" href="{{route('new.book_a_call')}}" class="ui-button w-inline-block">
                         <div>Book  a call</div>
                         <div class="ui-button-icon w-embed"><svg viewBox="0 0 18 18" fill="currentcolor"
                                 xmlns="http://www.w3.org/2000/svg">
