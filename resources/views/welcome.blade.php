@@ -979,14 +979,21 @@
                                 <div class="ui-testimonial-slide w-slide">
                                     <div class="ui-testimonial-card">
                                         <div class="ui-testimonial-user-wrapper">
-                                            <div class="ui-testimonial-user-image"
-                                                style="display: flex; align-items: center; justify-content: center;
-                                                    background: #E94E1B; color: white; font-weight: bold;
-                                                    font-size: 18px; border-radius: 50%; flex-shrink: 0;">
+                                            @if ($t?->logo)
+                                                <img src="{{ $t->logo }}" alt="{{ $t->name }}" loading="lazy"
+                                                    class="ui-testimonial-user-image"
+                                                    style="object-fit: contain; object-position: center; background: #fff;
+                                                        padding: 6px; box-sizing: border-box; border-radius: 50%; flex-shrink: 0;">
+                                            @else
+                                                <div class="ui-testimonial-user-image"
+                                                    style="display: flex; align-items: center; justify-content: center;
+                                                        background: #E94E1B; color: white; font-weight: bold;
+                                                        font-size: 18px; border-radius: 50%; flex-shrink: 0;">
 
-                                                {{ collect(explode(' ', trim($t?->name ?? '')))->filter()->take(2)->map(fn($part) => strtoupper(substr($part, 0, 1)))->implode('') }}
+                                                    {{ collect(explode(' ', trim($t?->name ?? '')))->filter()->take(2)->map(fn($part) => strtoupper(substr($part, 0, 1)))->implode('') }}
 
-                                            </div>
+                                                </div>
+                                            @endif
                                             <div class="ui-testimonial-user-div">
                                                 <div class="ui-large-paragraph">{{ $t?->name }}</div>
                                                 <div class="ui-small-paragraph">{{ $t?->title }}</div>

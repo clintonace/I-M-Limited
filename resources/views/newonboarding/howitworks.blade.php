@@ -106,9 +106,9 @@
                 <div class="w-layout-blockcontainer ui-container w-container">
                     <div class="ui-common-div">
                         <div data-w-id="20d2ff2f-4de7-4fae-8d63-89bd8095befc" style="opacity:0"
-                            class="ui-small-paragraph ui-orange-color-text">For clients</div>
+                            class="ui-small-paragraph ui-orange-color-text">For Talents</div>
                         <h2 data-w-id="396e1b92-7c5b-ff95-0f46-f30921a874d1" style="opacity:0" class="ui-step-heading">
-                            Build Your Global Team With Confidence..</h2>
+                            Build Your Global Portfolio.</h2>
                     </div>
                     <div data-w-id="92dbff0d-5ce6-8eb0-ef3c-1c37c778841a" class="w-layout-grid ui-step-grid">
                         <div data-w-id="fcda76c2-7102-d7b6-9d1c-7c57626a2874" style="opacity:0" class="ui-step-div">
@@ -121,9 +121,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <h3 class="ui-h4-heading">Quick Intro Call</h3>
-                                <p class="ui-small-paragraph ui-step-paragraph">We understand your current offer,
-                                    challenges, and goals. No pitch, just clarity.</p>
+                                <h3 class="ui-h4-heading">Register</h3>
+                                <p class="ui-small-paragraph ui-step-paragraph">Give your onboarding details and prefered user access to our platforms.</p>
                             </div>
                         </div>
                         <div data-w-id="63eb72b8-1b63-0ba1-f814-fa98687087b6" style="opacity:0" class="ui-step-div">
@@ -136,10 +135,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <h3 class="ui-h4-heading">Audit &amp; Roadmap</h3>
-                                <p class="ui-small-paragraph ui-step-paragraph">We review your offers, pricing,
-                                    website, and
-                                    client journey, then design a practical plan.</p>
+                                <h3 class="ui-h4-heading">Profile Update</h3>
+                                <p class="ui-small-paragraph ui-step-paragraph">Fill up your profile with your educational, work and bio data for you account to be activated.</p>
                             </div>
                         </div>
                         <div data-w-id="92298fc6-72e4-0a12-8253-0c959fd20156" style="opacity:0" class="ui-step-div">
@@ -152,10 +149,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <h3 class="ui-h4-heading">Tailored Solutions</h3>
-                                <p class="ui-small-paragraph ui-step-paragraph">Our audit, we customize strategies to
-                                    align
-                                    with your objectives and market needs.</p>
+                                <h3 class="ui-h4-heading">Verify</h3>
+                                <p class="ui-small-paragraph ui-step-paragraph">Look through you uploaded files and filled up details as this will be presented to offering companies.</p>
                             </div>
                         </div>
                         <div data-w-id="ab6e817a-fb02-2fe0-39c4-ee970d348cde" style="opacity:0" class="ui-step-div">
@@ -168,10 +163,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <h3 class="ui-h4-heading">Review &amp; Next Steps</h3>
-                                <p class="ui-small-paragraph ui-step-paragraph">We capture wins, systemize what works,
-                                    and
-                                    decide if continued advisory makes sense.</p>
+                                <h3 class="ui-h4-heading">Engagement</h3>
+                                <p class="ui-small-paragraph ui-step-paragraph">Now your all done, sit back and wait for an engagement with our admin and finally a company.</p>
                             </div>
                         </div>
                     </div>

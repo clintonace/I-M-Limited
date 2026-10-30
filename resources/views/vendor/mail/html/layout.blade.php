@@ -86,8 +86,14 @@
                                     <!-- Body content -->
                                     <tr>
                                         <td class="content-cell">
-                                            @yield('content')
-                                            <!-- This replaces $slot -->
+                                            {{-- Custom emails use @section('content'); framework notifications (e.g. password reset) pass $slot --}}
+                                            @hasSection('content')
+                                                @yield('content')
+                                            @else
+                                                {{ Illuminate\Mail\Markdown::parse($slot ?? '') }}
+
+                                                {{ $subcopy ?? '' }}
+                                            @endif
                                         </td>
                                     </tr>
                                 </table>

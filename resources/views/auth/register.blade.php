@@ -82,16 +82,22 @@
                             <div data-w-id="1345066b-4c5a-d231-9ea4-b9133ae6e27c" style="opacity:0"
                                 class="ui-contact-form-wrapper">
                                 <div class="ui-contact-form-block w-form">
-                                    <form id="wf-form-Contact-Form" name="wf-form-Contact-Form" data-name="Contact Form"
-                                        method="get" class="ui-form" data-wf-page-id="693310ec12ccb07495272b21"
+                                    <form id="wf-form-Contact-Form" action="{{route('clint_reg')}}" name="wf-form-Contact-Form" data-name="Contact Form"
+                                        method="POST" class="ui-form" data-wf-page-id="693310ec12ccb07495272b21"
                                         data-wf-element-id="a02f20df-07e7-5b07-3e5a-fea7f7633cff">
                                         <div class="w-layout-grid ui-form-grid">
 
+                                            @csrf
 
                                             <input
                                                 class="ui-input w-node-b0aedaf5-67c9-7632-abdb-f20367399d2b-95272b21 w-input"
                                                 name="name" data-name="Number" placeholder="Enter name"
                                                 type="name" />
+
+                                            <input
+                                                class="ui-input w-node-b0aedaf5-67c9-7632-abdb-f20367399d2b-95272b21 w-input"
+                                                name="code" value="3188" data-name="Number"
+                                                type="hidden" />
 
                                             
 
