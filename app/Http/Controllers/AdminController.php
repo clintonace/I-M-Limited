@@ -20,8 +20,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use RealRashid\SweetAlert\Facades\Alert;
 use Carbon\Carbon;
-use App\Models\FreeForMeet;
-use App\Models\ClientForMeet;
+use App\Models\Freeformeet;
+use App\Models\Clientformeet;
 use App\Models\FaqQuestion;
 use App\Jobs\SendClientMailJob;
 
@@ -30,10 +30,10 @@ class AdminController extends Controller
 
     public function freeTimeView()
     {
-        $freetimes = FreeForMeet::all();
+        $freetimes = Freeformeet::all();
 
         foreach ($freetimes as $freetime) {
-            $freetime->slots_taken = ClientForMeet::where('freeformeet_id', $freetime->id)
+            $freetime->slots_taken = Clientformeet::where('freeformeet_id', $freetime->id)
                 ->where('starts_at', '>=', Carbon::today())
                 ->whereNotIn('status', ['cancelled', 'completed'])
                 ->count();
@@ -42,7 +42,7 @@ class AdminController extends Controller
         return view('admin.calender.free-time', compact('freetimes'));
     }
 
-    public function thisFreeTimeView(FreeForMeet $freetime = null){
+    public function thisFreeTimeView(Freeformeet $freetime = null){
 
         $clientformeets = Clientformeet::where('freeformeet_id', $freetime->id)->get();
         return view('admin.calender.this-free-time', compact('clientformeets'));
@@ -78,7 +78,7 @@ class AdminController extends Controller
             return back()->withInput();
         }
 
-        $freetime = new \App\Models\FreeForMeet();
+        $freetime = new \App\Models\Freeformeet();
 
         $freetime->day_name = Carbon::now()
             ->startOfWeek()

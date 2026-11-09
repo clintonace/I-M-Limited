@@ -4,8 +4,8 @@ namespace App\Http\Controllers\New;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\FreeForMeet;
-use App\Models\ClientForMeet;
+use App\Models\Freeformeet;
+use App\Models\Clientformeet;
 use App\Models\FaqQuestion;
 use Carbon\Carbon;
 use App\Jobs\SendClientMailJob;
@@ -19,7 +19,7 @@ class OnboardingController extends Controller
     //
 
 
-    public function sendClientMail(Request $request, ClientForMeet $id)
+    public function sendClientMail(Request $request, Clientformeet $id)
     {
 
     // dd($request->all(), $id);
@@ -65,7 +65,7 @@ class OnboardingController extends Controller
     public function bookACall()
     {
 
-        $schedule = FreeForMeet::where('is_active', true)->get();
+        $schedule = Freeformeet::where('is_active', true)->get();
 
         // dd($schedule);
 
@@ -98,12 +98,12 @@ class OnboardingController extends Controller
         ]);
 
         // Get the selected schedule
-        $schedule = FreeForMeet::findOrFail(
+        $schedule = Freeformeet::findOrFail(
             $validatedData['schedule_id']
         );
 
         // Check how many bookings already exist for this schedule and day
-        $bookedCount = ClientForMeet::where(
+        $bookedCount = Clientformeet::where(
             'freeformeet_id',
             $schedule->id
         )
@@ -125,8 +125,8 @@ class OnboardingController extends Controller
         }
 
 
-        // Create a new ClientForMeet record
-        $clientForMeet = new ClientForMeet();
+        // Create a new Clientformeet record
+        $clientForMeet = new Clientformeet();
         $clientForMeet->email = $validatedData['email'];
         $clientForMeet->freeformeet_id = $request->input('schedule_id');
         $clientForMeet->starts_at = $request->input('start_time');
@@ -184,8 +184,8 @@ class OnboardingController extends Controller
     // {
 
     //     dd($request->all());
-    //     // $clientForMeet = ClientForMeet::findOrFail($id);
-    //     // $schedule = FreeForMeet::where('is_active', true)->get();
+    //     // $clientForMeet = Clientformeet::findOrFail($id);
+    //     // $schedule = Freeformeet::where('is_active', true)->get();
 
     //     // return view('newonboarding.editbookacall', compact('clientForMeet', 'schedule'));
         
