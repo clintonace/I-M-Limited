@@ -478,14 +478,60 @@
                                     </div>
                                 </div>
                             </div>
-                            <div data-w-tab="Tab 2" class="ui-feature-tab-pane w-tab-pane">
+                            <div  data-w-tab="Tab 2" class="ui-feature-tab-pane w-tab-pane">
                                 <div class="w-layout-grid ui-feature-grid _01">
-                                    <div id="w-node-_6e47be3f-ba76-917e-8f82-029fdc480d43-95272b21"
+                                    <div  AKIM id="w-node-_6e47be3f-ba76-917e-8f82-029fdc480d43-95272b21"
                                         class="ui-feature-div">
-                                        <div class="ui-feature-image-wrapper"><img sizes="100vw"
-                                                srcset="/newonboarding/images/feature2-p-500.webp 500w, /newonboarding/images/_BTP4004.jpg 800w, /newonboarding/images/_BTP4004.jpg 1080w, /newonboarding/images/_BTP4004.jpg 1600w, /newonboarding/images/_BTP4004.jpg 2000w, /newonboarding/images/_BTP4004.jpg"
-                                                alt="Feature Image" src="/newonboarding/images/_BTP4004.jpg"
-                                                loading="lazy" class="ui-feature-image" /></div>
+                                        <div class="ui-feature-image-wrapper akim-ceo"><img sizes="100vw"
+                                                srcset="/newonboarding/images/Akim.jpg 500w, /newonboarding/images/Akim.jpg 800w, /newonboarding/images/Akim.jpg 1080w, /newonboarding/images/Akim.jpg 1600w, /newonboarding/images/Akim.jpg 2000w, /newonboarding/images/Akim.jpg"
+                                                alt="Akim Bamidele Ismael, CEO of I&amp;M Limited" src="/newonboarding/images/Akim.jpg"
+                                                loading="lazy" class="ui-feature-image" />
+                                            <div class="akim-ceo__card">
+                                                <span class="akim-ceo__role"><span class="akim-ceo__dot"></span>Founder &amp; CEO</span>
+                                                <span class="akim-ceo__name">Akim Bamidele Ismael</span>
+                                            </div>
+                                        </div>
+                                        <style>
+                                            .akim-ceo { position: relative; overflow: hidden; border-radius: inherit; }
+                                            .akim-ceo .ui-feature-image { display: block; filter: brightness(.85) contrast(1.05) saturate(1.05); transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+                                            .akim-ceo:hover .ui-feature-image { transform: scale(1.04); }
+                                            .akim-ceo::after {
+                                                content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+                                                background: linear-gradient(to top, rgba(8,10,20,.82) 0%, rgba(8,10,20,.35) 40%, rgba(8,10,20,.15) 100%);
+                                            }
+                                            .akim-ceo__card {
+                                                position: absolute; left: 20px; bottom: 20px; z-index: 2;
+                                                display: flex; flex-direction: column; gap: 4px;
+                                                max-width: calc(100% - 40px); padding: 14px 20px; border-radius: 16px;
+                                                background: rgba(255,255,255,.12);
+                                                -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+                                                border: 1px solid rgba(255,255,255,.25);
+                                                box-shadow: 0 10px 30px rgba(0,0,0,.3);
+                                                animation: akimFloat 4s ease-in-out infinite;
+                                            }
+                                            .akim-ceo__role {
+                                                display: inline-flex; align-items: center; gap: 8px;
+                                                color: var(--color--orange, #ff7a00); font-size: 12px; font-weight: 600;
+                                                text-transform: uppercase; letter-spacing: .12em; line-height: 1;
+                                            }
+                                            .akim-ceo__dot {
+                                                width: 8px; height: 8px; border-radius: 50%;
+                                                background: var(--color--orange, #ff7a00);
+                                                box-shadow: 0 0 0 0 rgba(255,122,0,.6);
+                                                animation: akimPulse 2s ease-out infinite;
+                                            }
+                                            .akim-ceo__name { color: #fff; font-size: 20px; font-weight: 700; line-height: 1.2; letter-spacing: -.01em; }
+                                            @keyframes akimFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+                                            @keyframes akimPulse { 0% { box-shadow: 0 0 0 0 rgba(255,122,0,.6); } 100% { box-shadow: 0 0 0 10px rgba(255,122,0,0); } }
+                                            @media (max-width: 479px) {
+                                                .akim-ceo__card { left: 12px; bottom: 12px; padding: 10px 14px; }
+                                                .akim-ceo__name { font-size: 16px; }
+                                            }
+                                            @media (prefers-reduced-motion: reduce) {
+                                                .akim-ceo__card, .akim-ceo__dot { animation: none; }
+                                                .akim-ceo .ui-feature-image { transition: none; }
+                                            }
+                                        </style>
                                     </div>
                                     <div id="w-node-_6e47be3f-ba76-917e-8f82-029fdc480d46-95272b21"
                                         class="ui-feature-div">
